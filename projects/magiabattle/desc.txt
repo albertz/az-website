@@ -1,0 +1,5 @@
+Dieses kleine Spiel entstand spontan an einem gemuetlichen Abend, als die Idee von einem 
+Programmier-begeisterten Nicht-Programmierer geauessert wurde fuer dieses Spiel. Die Entwicklung des 
+Spiels dabei sollte eine Anregung liefern, um ein bisschen in das Programmieren mit Visual Basic
+(allgemein irgendwelchen RAD-Entwicklungsumgebungen) 
+einzufuehren. Evtl. wird spaeter hierzu noch ein Tutorial folgen.

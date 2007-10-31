@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Programmierhilfe</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="stylesheet.css" type="text/css">
+<SCRIPT ID=clientEventHandlersJS LANGUAGE=javascript>
+<!--
+
+function window_onload() {
+ if (document.all) {
+	visitURL("main.htm", "", screen.width*(3/4), screen.height*(3/4));
+ } else {
+	if (confirm("Diese Site wird leider nur im Internet Explorer richtig dargestellt. Trotzdem weiter?")) {
+		visitURL("main.htm", "", screen.width*(3/4), screen.height*(3/4));
+	};
+ };	
+}
+
+function visitURL(theURL, theName, w, h) {
+ var LeftPosition = (screen.width - w) / 2;
+ var TopPosition = (screen.height - h) / 2;
+ var settings = 'height=' + h + ',width=' + w + ',top=' + TopPosition + ',left=' + LeftPosition + ',scrollbars=yes,resizable=yes';
+ var win = window.open(theURL, theName, settings);
+ win.window.focus();
+}
+
+function window_onblur() {
+ Text.innerHTML = "Sie können dieses Fenster jetzt schließen.";
+}
+
+//-->
+</SCRIPT>
+
+<body bgcolor="#FFFFFF" text="#000000" LANGUAGE=javascript onload="return window_onload()" onblur="return window_onblur()">
+<div align="center" class="standard">
+  <p id="Text">Es sollte sich jetzt die eigentliche Seite in einem neuen 
+    Fenster &ouml;ffnen. Falls dies nicht der Fall ist, unterst&uuml;tzt Ihr Browser 
+    wahrscheinlich kein JavaScript. Laden Sie sich in diesem Fall bitte die aktuellste 
+    Version des <a href="http://www.microsoft.com/windows/ie_intl/de/download/default.htm" target="_blank">Internet 
+    Explorers</a> runter, um diese Seite fehlerfrei anzeigen zu k&ouml;nnen.</p>
+  <p>Ich danke Ihnen f&uuml;r Ihr Verst&auml;ndnis!</p>
+</div>
+</body>
+</html>

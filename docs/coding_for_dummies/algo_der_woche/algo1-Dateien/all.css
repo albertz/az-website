@@ -1,0 +1,23 @@
+/* Content */
+
+h2 { 
+  font-size:116%;
+}
+
+hr { 
+  width:90%;
+  height:1px;
+  color:black;
+  border-color:transparent;
+}
+
+img { 
+  border-width:0;
+  border-style:none;
+}
+
+img.inline { 
+  float:left;
+  margin-right:1ex;
+  margin-bottom:1ex;
+}

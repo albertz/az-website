@@ -1,0 +1,4 @@
+Dieses Programm funktioniert aehnlich wie das kleine Unix-Tool fetchmail: Es laedt die Mails von einem 
+POP-Account und sendet sie per SMTP an einen anderen Server. Interessant dabei ist der Source-Code, der 
+zu diesem Zweck die entsprechenden Klassen bereitstellt, so dass man diese leicht auch in anderen 
+Anwendungen weiterverwenden kann.

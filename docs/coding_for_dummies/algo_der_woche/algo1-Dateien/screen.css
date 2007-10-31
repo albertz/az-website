@@ -1,0 +1,279 @@
+* { 
+  font-family:Helvetica, Sans, Arial;
+}
+
+
+body { 
+  text-align:center;
+  background-color:#ffffff;
+  color:black;
+  margin:auto;
+  font-family:Sans, Helvetica;
+}
+
+img { 
+/*  border-width:0;*/
+/*  border-style:none;*/
+}
+
+#meta {
+  margin:20px auto 20px auto;
+  text-align:left;
+  width:960px;
+}
+
+#header { 
+  width:910px;
+  height:150px;
+  background-color:#ff0000; 
+  background-position:left;
+  background-repeat:no-repeat;
+/*  background-image:url("LogoADW_web.jpg"); */
+/*  background-image:url("WIJ06_scaled2.jpg"); */
+  padding:0px 20px 0px 20px; 
+  font-weight:bold;
+  text-align:center;
+
+  border-width:1px;
+  border-style:solid;
+  border-color:black;
+}
+
+#header img {
+  margin-left:10px;
+}
+
+#header h1.first {
+  vertical-align:middle;
+  color:white;
+  margin-left:198px;
+/*  font-size:350%; */
+  font-size:30pt;
+}
+
+#subheader { 
+  width:910px;
+  padding:3px 20px 3px 20px;
+  background-color:#91b0d1;
+  font-weight:bold;
+  text-align:right;
+  border-width:0px 1px 0px 1px;
+  border-style:solid;
+  border-color:black;
+  font-size:small;
+  min-height:2ex;
+}
+
+#footer { 
+  width:910px;
+  padding:3px 20px 3px 20px;
+  background-color:#91b0d1;
+  border-style:solid;
+  border-width:0px 1px 1px 1px;
+  border-color: black;
+  text-align:center;
+  font-size:smaller;
+  clear:both;
+  font-size:x-small;
+}
+
+
+#pagebody { 
+  background-color:#ff0000;
+  float:left;
+  width:950px;
+  padding:0;
+  margin:0;
+  border-width:1px;
+  border-color:black;
+  border-style:solid;
+}
+
+#main { 
+  float:left;
+  width:709px; 
+  min-height:600px;
+  background-color:white;
+  color:black;
+  border-color:black;
+  border-width:0px 0px 0px 1px;
+  border-style:solid;
+  background-repeat:no-repeat;
+  background-position:top right;
+  padding:15px 20px 20px 20px;
+  margin:0;
+
+}
+
+#main #titel {
+  color:#91b0d1;
+  font-size:250%;
+  text-align:left;
+}
+
+#main #adwtitel {
+  color:#91b0d1;
+  font-size:100%;
+  text-align:left;
+}
+
+#main #subtitel {
+  color:#91b0d1;
+  font-size:100%;
+  text-align:left;
+}
+
+#main #autoren {
+  color:black;
+  font-size:small;
+  text-align:right;
+  vertical-align:top;
+}
+
+#main #infobox {
+  color:black;
+  text-align:left;  
+  font-size:medium;
+  border-style:solid;
+  border-width:2px;
+  border-color:#ff0000;
+  padding:15px 20px 20px 20px;
+}
+
+#main #hinweis {
+  background-color:#96a8c4;
+  color:black;
+  text-align:left;  
+  font-size:medium;
+  border-style:none;
+  border-width:0px;
+  border-color:black;
+  padding:15px 20px 20px 20px;
+}
+
+#main #algorithm {
+  color:black;
+  margin-bottom: 0cm; 
+  border-style:solid;
+  border-width:1px;
+  font-size:medium;
+  text-align:left;
+  padding:15px 20px 20px 20px;
+}
+
+#main #algname {
+  font-variant:small-caps;    
+}
+
+
+/* Total width: 200 */
+#sidebar { 
+  width:178px;
+  padding:10px;
+  overflow:auto;
+  float:left;
+  background-color:#ff0000;
+  color:black;
+  border-style:none;
+  border-width:0px;
+  border-color:black;
+  margin:0px;
+  font-size:small;
+  font-weight:bold;
+}
+
+#content { 
+  padding:3ex;
+}
+
+/* Sidebar / navigation */
+
+#sidebar h2 { 
+/*  color:#00418f; */
+  color:black; 
+/*  color:#ffd0d0; */
+/*  color:#570000; */
+  border-style:none;
+  margin:0;
+  padding:0;
+  font-size:130%;
+}
+
+#sidebar h2.first { 
+  border-top-width:0px;
+}
+
+#sidebar ul {
+  list-style:none;
+  font-size:medium;
+  margin:0;
+  padding:0;
+}
+
+#sidebar li {
+  display:block;
+  border-style:none;
+  color:#808080;
+}
+
+#sidebar li.first { 
+}
+
+#sidebar li a { 
+  display:block;
+  padding:0.5ex;
+  text-decoration:none;
+/*  color:#808080; */
+/*  color:#780002; */
+  color:white;	   
+  border-width:0px;
+  border-style:none;
+  border-color:#f0f0f0;
+}
+
+#sidebar li a:hover { 
+  background-color:#d0d0d0;
+  border-width:0px;
+  border-style:solid;
+  border-color:#404040;
+  color:black;
+}
+
+/* Header */
+#headertext { 
+  height:0px;
+  overflow:hidden;
+  display:none;
+}
+
+#language { 
+  float:right;
+  font-size:x-small;
+}
+
+#language a { 
+  text-decoration:none;
+  color:#00418f;
+}
+
+#language img { 
+  vertical-align:middle;
+}
+
+#breadcrumb { 
+  font-size:x-small;
+  font-weight:bold;
+  color:#00418f;
+  margin-bottom:40px;
+}
+
+a { 
+  color:#00418f;
+  text-decoration:none;
+}
+
+a:hover { 
+  text-decoration:underline;
+}
+
+/* Content */

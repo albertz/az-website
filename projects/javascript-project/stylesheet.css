@@ -1,0 +1,7 @@
+.a_hover {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #0000FF; text-decoration: underline; cursor: hand}
+.a_active {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #FFFFFF; text-decoration: underline; background-color: #000099; cursor: hand}
+.a_selected {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #FFFFFF; background-color: #000099}
+.standard {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000}
+.a {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000; text-decoration: none; cursor: hand}
+a {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000; text-decoration: none}
+a:hover {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #0000FF; text-decoration: underline}

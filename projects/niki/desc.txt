@@ -1,0 +1,11 @@
+Niki ist ein Clon von NikiPascal. Man kann ein kleines Maennchen in einem Raum 
+rumbewegen und hat dabei spezielle Aufgaben zu loesen, wie z. B. irgendwelche Tueren 
+zu oeffnen oder einfach nur an eine spezielle Stelle zu gelangen.
+
+Das Programm ist weit fortgeschritten, aber noch nicht ganz vollstaendig. Es fehlen 
+noch ein paar Funktionen und Funktionalitaeten der Skriptsprache, mit der man das 
+ganze steuern kann. Diese ist im aktuellen Status eher unvollstaendig, sollte aber 
+leicht erweitert werden koennen.
+
+Vielleicht hat jemand ja mal Interesse, <a href="../azskript">AZSkript</a> an dieser 
+Stelle dafuer einzubinden.

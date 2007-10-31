@@ -1,0 +1,59 @@
+<html>
+<head><title>www.az2000.de/projects</title></head>
+<body>
+<h1>Service: Projekte</h1>
+<hr>
+<table cellspacing="0" cellpadding="10">
+<tr><th align="left">Name</th>
+<th align="left">URL</th>
+<th align="left">Description</th></tr>
+
+<tr><td>AZSkript 2</td>
+<td><a href="azskript2/">azskript2/</a></td>
+<td>Dynamisch, objektorientierte Programmiersprache</td></tr>
+
+<tr><td>AZChat 3</td>
+<td><a href="azchat3/">azchat3/</a></td>
+<td>P2P-Netzwerk</td></tr>
+
+<tr><td>SABO Racer</td>
+<td><a href="sabo_racer/">sabo_racer/</a></td>
+<td>Rennspiel</td></tr>
+
+<tr><td>ip@ctive Client</td>
+<td><a href="ipactive_client/">ipactive_client/</a></td>
+<td>Client fuer <a href="http://www.ipactive.de" 
+target="_blank">ip@ctive</a></td></tr>
+
+<tr><td>IIS_Hack</td>
+<td><a href="iis_hack/">iis_hack/</a></td>
+<td>"Demonstration" des WebClients</td></tr>
+
+<tr><td>Franks Gravitations Sim.</td>
+<td><a href="frank_physik_gravitation/">frank_physik_gravitation/</a></td>
+<td>Gravitations Simulation</td></tr>
+
+<tr><td>IP Saver</td>
+<td><a href="ip_saver/">ip_saver/</a></td>
+<td>Speichert IP in TXT auf FTP</td></tr>
+
+<tr><td>JavaScript-Schulprojekt</td>
+<td><a href="javascript-project/">javascript-project/</a></td>
+<td>JavaScript-Demonstration</td></tr>
+
+</table>
+<hr>
+<table cellspacing="0" cellpadding="10">
+<tr><td valign="top"><b>Owner:</b></td>
+<td>Zeyer, Albert<br>
+</table>
+<hr>
+<p>
+Quote of the day:<br>
+<i><?php system("/usr/games/bin/sex"); ?></i>
+</p>
+<hr>
+<p><?php system("uptime"); ?></p>
+</body>
+</html>
+

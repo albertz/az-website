@@ -1,0 +1,2 @@
+Dieses Programm hat die Aufgabe, ueber irgendwelche Aenderungen in der Verzeichnisstruktur (also wenn 
+Dateien hinzugekommen sind oder entfernt wurden) zu berichten.

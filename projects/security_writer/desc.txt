@@ -1,0 +1,2 @@
+SecurityWriter ist ein einfacher Texteditor, der zur Verschluesselung eine sehr 
+einfache selbstentwickelte Verschluesselung benutzt.

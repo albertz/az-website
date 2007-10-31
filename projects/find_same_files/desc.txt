@@ -1,0 +1,2 @@
+FindSameFiles sucht nach gemeinsamen Dateien (auch teilweise gemeinsam 
+enthaltenden Dateien) und loescht diese bei Wunsch.

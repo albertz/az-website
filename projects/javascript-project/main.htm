@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>Programmierhilfe</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="stylesheet.css" type="text/css">
+<SCRIPT ID=clientEventHandlersJS LANGUAGE=javascript>
+<!--
+
+var Status_TimerIntervall = 5000;
+var Status_Timer;
+var Status_aktiv = false;
+
+var WaitReady_TimerIntervall = 100;
+
+function execCommand(theFrame, theCommand) {
+ if (eval(theFrame)) {
+	eval(theFrame + "." + theCommand);
+ } else {
+	setTimeOut("execCommand('" + theFrame + "', '" + theCommand + "');", WaitReady_TimerIntervall); 
+ };	
+}
+
+function load_menue() {
+ if (frameMenue) {
+	frameMenue.load_menue();
+ } else {
+	setTimeout("load_menue();", WaitReady_TimerIntervall);
+ };	
+}
+
+function set_Titel(text) {
+ if (frameTitel) {
+	frameTitel.Titel.innerText = text;
+ } else {
+	setTimeout("set_Titel('" + text + "');", WaitReady_TimerIntervall);
+ };	
+}
+
+function set_Status(text) {
+ if (frameStatus) {
+	frameStatus.Status.innerText = text;
+ } else {
+	setTimeout("set_Status('" + text + "');", WaitReady_TimerIntervall);
+	return;
+ };		
+ if (Status_aktiv == true) {
+	if (text != "") clearTimeout(Status_Timer);
+ } else {
+	Status_aktiv = true;
+ };		
+ if (text == "") {
+	Status_aktiv = false;
+ } else {	
+	var temp = setTimeout('set_Status("");', Status_TimerIntervall);
+	Status_Timer = temp;
+ };	
+}
+
+function search_for(text) {
+ if (frameMenue) {
+	var dTitle;
+	for (var x = 1; x <= frameMenue.get_mnuCount(); x++) {
+		if (frameMenue.get_mnu(x).Caption.toLowerCase().indexOf(text.toLowerCase()) != -1) {
+			dTitle = "";
+			for (var temp = x; temp != 0; temp = frameMenue.get_ParentMenueID(temp)) {
+				dTitle = " - " + frameMenue.get_mnu(temp).Caption + dTitle;
+			 };
+			dTitle = dTitle.substring(3);
+			frameMain.ergebnis_add('javascript:parent.execCommand(\'frameMenue\',\'gotoLink(' + x + ')\')', dTitle);
+		};	
+	};
+	frameMain.ergebnis_show();
+ } else {
+	setTimeout("search_for('" + text + "');", WaitReady_TimerIntervall);
+ };	
+}
+
+//-->
+</SCRIPT>
+</head>
+<frameset rows="52,*,15" frameborder="NO" border="0" framespacing="0" LANGUAGE=javascript onload="load_menue();"> 
+  <frame src="oben.htm" noresize marginwidth="0" marginheight="0" id="frameTitel" scrolling="NO">
+  <frameset cols="30%,*" frameborder="YES" border="3" framespacing="3" bordercolor="#EFEDDF"> 
+    <frame src="menue.htm" id="frameMenue">
+    <frame src="about:blank" id="frameMain">
+  </frameset>
+  <frame src="unten.htm" noresize marginwidth="0" marginheight="0" id="frameStatus" scrolling="NO">
+</frameset>
+<noframes> 
+<body bgcolor="#FFFFFF" text="#000000" class="standard" LANGUAGE=javascript>
+Um diese Seite richtig anzeigen zu k&ouml;nnen, brauchen Sie einen Browser, der 
+Frames anzeigen kann. Ich empfehle Ihnen hierf&uuml;r den <a href="http://www.microsoft.com/windows/ie_intl/de/download/default.htm">Internet 
+Explorer</a>.
+</body>
+</noframes> 
+</html>

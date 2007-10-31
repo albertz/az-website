@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>&quot;Hallo Welt&quot; in JavaScript</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="stylesheet.css" type="text/css">
+<SCRIPT ID=clientEventHandlersJS LANGUAGE=javascript>
+<!--
+
+function window_onload() {
+ parent.set_Titel("'Hallo Welt' mit JavaScript");
+ parent.set_Status("loading ready");
+
+ return true;
+}
+
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" LANGUAGE=javascript onload="return window_onload()">
+<p class="standard">Wie in allen Programmiersprachen fange ich hier erstmal mit 
+  dem &quot;Hallo Welt&quot;-Beispiel an.</p>
+<p class="standard">Sie m&uuml;ssen als erstes den Skript-Bereich in deiner HTML-Seite 
+  definieren (wenn Sie keinen Editor benutzen, der das automatisch macht). Dieser 
+  Skript-Bereich ist einfach ein HTML-Tag, der den Code umschlie&szlig;t. Damit 
+  dieser Code &auml;ltere Browsers nicht durcheinander bringt, sollte man aus 
+  dem Code dazwischen einen HTML-Kommentar machen. Das ganze sollte dann in etwa 
+  so sein:<br>
+  <font face="Courier New, Courier, mono" size="2" color="#0000FF">&lt;html&gt;<br>
+  &lt;head&gt;<br>
+  &lt;title&gt;Test&lt;/title&gt;<br>
+  &lt;script language=JavaScript&gt;<br>
+  &lt;!--<br>
+  JavaScript-Code...<br>
+  //--&gt;<br>
+  &lt;/script&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  Hier jetzt die eigentliche Seite...<br>
+  &lt;/body&gt;<br>
+  &lt;/html&gt;</font><br>
+  Ereignisse m&uuml;ssen jetzt bei den entsprechenden HTML-Tags definiert werden. 
+  Wenn man z. B. einen Code beim Betreten der Seite ausf&uuml;hren will, dann 
+  ist das onload-Ereignis von body das richtige Ereignis. Man m&uuml;sste den 
+  Body-Tag dann so um&auml;ndern:<br>
+  <font size="2" color="#0000FF" face="Courier New, Courier, mono">&lt;body onload=&quot;JavaScript-Code&quot;&gt;</font></p>
+<p class="standard">Kommen wir zu unserem einfachen &quot;Hallo Welt&quot;-Beispiel 
+  zur&uuml;ck. Unser Ziel ist es, dass beim Aufrufen der Seite diese Meldung kommt. 
+  F&uuml;r Meldungen gibt es den JavaScript-Befehl alert. Mann muss also in das 
+  onload-Ereignis folgendes schreiben:<br>
+  <font face="Courier New, Courier, mono" size="2" color="#0000FF">alert(&quot;Hallo 
+  Welt&quot;);</font></p>
+<p class="standard">Sie k&ouml;nnen sich diese Beispiel jetzt betrachten, indem 
+  Sie im Men&uuml; auf den entsprechenden Eintrag klicken. Das Beispiel dort ist 
+  noch etwas erweitert um ein weiteres Ereignis, bei dem aber auch nur ein alert 
+  ausgef&uuml;hrt wird.</p>
+</body>
+</html>

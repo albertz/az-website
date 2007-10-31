@@ -1,0 +1,5 @@
+Verzeichnis-Info gibt Groessen-Informationen ueber ein angegebenes Verzeichnis an. Es 
+wird dabei errechnet, wie viel Platz Dateien und Unterverzeichnisse eigentlich 
+belegen, so dass man leicht erkennen kann, wo eigentlich mal wieder der ganze freie 
+Platz auf der neuen Platte hin ist. Im Prinzip ist es ein GUI-basiertes Gegenstueck 
+zu dem Unix-Programm <i>du</i>.

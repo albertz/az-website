@@ -1,0 +1,3 @@
+Nachdem ich die Verschluesselung in <a href="../security_writer">SecurityWriter</a> 
+entwickelt hatte, fand ich es interessant, mal zu testen, ob diese knackbar ist. 
+Heraus kam dabei dieses Programm.

@@ -1,0 +1,9 @@
+ServYou sollte ein Clon von dem bekannten Windows-FTP-Server ServU werden, welcher auch gut 
+fuer FXP zu gebrauchen war. ServYou wollte die Idee mit dem FXP in einem HTTP-Server 
+verpacken, ueber den man ueber eine geeignete Web-Oberflaeche entsprechendes hantieren 
+sollen konnte, d.h. also dort angeben, dass bestimmte Dateien auf einen anderen 
+ServYou-HTTP-Server kopiert oder verschoben werden sollen.<br>
+
+Das Programm kam nie wirklich sehr viel ueber diese grundsaetzliche Idee heraus, die 
+ich aber nach wie vor noch fruchtbar finde. Wenn dann wuerde ich das Programm nun 
+aber eher in C++ plattformunabhaengig umsetzen.

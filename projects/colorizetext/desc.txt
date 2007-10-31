@@ -1,0 +1,1 @@
+ColorizeText kolorisiert Texte (macht sie bunt).

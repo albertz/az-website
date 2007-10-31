@@ -1,0 +1,7 @@
+PSL (Perfect Script Language) wurde in erster Linie als CGI-Skriptsprache entwickelt 
+und bisher auch fuer nichts anderes benutzt. Ganz frueher lief mal mein Gaestbuch und 
+mein Counter darueber.
+
+Die erste Version enthielt einen sehr einfachen eigenen Webserver, die zweite 
+aktuelle Version kann ueber einen vorhandenen Webserver laufen (damals wurde nur der 
+IIS getestet, aber Apache sollte auch kein Problem sein) ueber <i>.psl</i>-Dateien.

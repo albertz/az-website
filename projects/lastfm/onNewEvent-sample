@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# just a debug-msg
+echo "SKRIPT: $@"
+
+if [ "$1" == "newtrack:" ]; then
+	# this is an own script which sets my pidgin-away-msg
+	~/Programmierung/pidgin/setstate.py "[last.fm] $2 - $4"
+fi
+
+# if you uncomment this, no MP3 will be saved
+#exit -1

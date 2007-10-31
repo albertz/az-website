@@ -1,0 +1,10 @@
+AZSimpleChat ist ein einfaches Chat-Programm, was letztendlich noch ein paar kleinere 
+Extras bieten sollte.
+
+Dieses Projekt ist nie wirklich weit fortgeschritten. Der unvollstaendige Code wird 
+demnaechst hier veroeffentlicht. Das Projekt wird von mir vermutlich nie mehr 
+fortgesetzt werden. Evtl. ist das Projekt fuer jemand anderem von Interesse oder 
+vielleicht interessiert auch der Aufbau des Projektes. Fuer Personen, die auch andere 
+Projekte von mir interessant fanden und evtl. in ihre eigenen Programme einbauen 
+wollen, ist es vielleicht deshalb ganz sinnvoll, sich dieses Programm mal wegen des 
+Aufbaus anzusehen.

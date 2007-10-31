@@ -1,0 +1,21 @@
+SimpleListGenerator ist ein einfacher M3U-Listen-Generator.<br>
+
+Das Programm erwartet als Parameter ein Verzeichnis und erstellt eine M3U-Datei auf 
+Basis aller MP3- und sonstigen Dateien in dem Verzeichnis. Fuer Unterverzeichnisse 
+werden auch Eintraege erstellt und zwar so, dass erwartet wird, dass in diesen 
+Unterverzeichnissen genauso eine M3U-Datei mit diesem Programm erstellt wurde. Auf 
+diesem Weg kann man fuer alle seine MP3s eine rekursiv zusammenhaengende Liste 
+basteln, vorausgesetzt, das entsprechende Abspielprogramm unterstuetzt Listen in 
+Listen (also Unterlisten). Der Windows Media Player beispielsweise tut dies, XMMS 
+beispielsweise leider nicht.<br>
+
+Um das Programm einfach nutzen zu koennen, erstellt man sich in seinem 'Dokumente und 
+Einstellungen' Ordner von seinem entsprechenden Benutzer in dem Verzeichnis 'SendTo' 
+(evtl. ist dieses Verzeichnis versteckt, man muss also in diesem Fall erst die Option 
+im Windows Explorer aktivieren, dass versteckte Verzeichnisse angezeigt werden) eine 
+Verknuepfung zu dem Programm (oder man kopiert die EXE-Datei direkt in dieses 
+Verzeichnis). Das hat zur Auswirkung, dass nun in dem 'Senden an' Menue, welches bei 
+rechter Maustaste auf eine Datei oder ein Verzeichnis erscheint, nun ein Eintrag zu 
+dem SimpleListGenerator erscheint. Ein Klick nun hierauf reicht aus, um die Liste zu 
+erstellen, denn der Datei- oder Verzeichnisname wird automatisch dem aufgerufenen 
+Programm aus der 'Senden an' Liste als Parameter uebergeben.

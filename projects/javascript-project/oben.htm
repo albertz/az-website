@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Oben</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="stylesheet.css" type="text/css">
+<SCRIPT ID=clientEventHandlersJS LANGUAGE=javascript>
+<!--
+
+function get_mainURL() {
+ var mainURL = parent.location.href;
+ var temp = "main.htm";
+ mainURL = mainURL.substring(0, mainURL.length - temp.length);
+ mainURL += "index.htm";
+ return mainURL;
+}
+
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" LANGUAGE=javascript>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="standard">
+  <tr>
+    <td bgcolor="#000099" height="26">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="standard">
+        <tr> 
+          <td background="windows_Titel.gif">
+            <font color="#FFFFFF" size="2">
+              <div id="Titel">&nbsp;</div>
+            </font>
+          </td>
+          <td background="windows_Titel.gif">
+            <div align="right"><a href="javascript:parent.window.close()" onmousemove="parent.set_Status('diese Site jetzt verlassen');"><img src="windows_Titel_Close.gif" width="23" height="26" border="0"></a></div>
+          </td>
+        </tr>
+      </table>
+	</td>
+  </tr>
+  <tr>
+    <td bgcolor="#EFEDDF" height="12">
+      <a href="javascript:parent.execCommand('frameMenue','gotoLink_back()')" onmousemove="parent.set_Status('Zurück');"><img src="Zurueck.gif" width="25" height="25" border="0"></a>
+      <a href="javascript:parent.execCommand('frameMenue','gotoLink_forward()')" onmousemove="parent.set_Status('Vorwärts');"><img src="Vor.gif" width="25" height="25" border="0"></a>
+      <a href="javascript:parent.execCommand('frameMenue','gotoLink_ParentMenue()')" onmousemove="parent.set_Status('Aufwärts');"><img src="Hoch.gif" width="25" height="25" border="0"></a> 
+	  <img src="Strich.gif" width="1" height="25">
+	  <script language="JavaScript">
+	  <!--
+			document.write(
+				'<span style="color:blue;font-weight:bold;cursor:hand;behavior:url(#default#homepage);"'+
+				" onClick=\"this.setHomePage('" + get_mainURL() + "');\" "+
+				" onmousemove=\"parent.set_Status('diese Site als Startseite einrichten');\">"+
+				"<img src=\"Startseite.gif\" width=\"25\" height=\"25\" border=\"0\"></span>"
+				);
+			document.write(" <a href=\"javascript:window.external.AddFavorite('" + get_mainURL() + "','Programmierhilfe');\" onmousemove=\"parent.set_Status('diese Site in die Favoriten aufnehmen')\"><img src=\"Favoriten_klein.gif\" width=\"25\" height=\"25\" border=\"0\"></a>");
+			document.write(" <img src=\"Strich.gif\" width=\"1\" height=\"25\">");
+	  -->
+	  </script>
+      <a href="javascript:parent.execCommand('frameMenue','gotoLink_search()')" onmousemove="parent.set_Status('Suchen');"><img src="Suchen_klein.gif" width="25" height="25" border="0"></a>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

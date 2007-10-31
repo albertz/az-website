@@ -1,0 +1,9 @@
+#!/bin/bash
+
+OLD_PATH=`pwd`
+cd /var/www/localhost/htdocs/projects
+
+echo "updating MySQL-table..."
+./mysql_put
+
+cd $OLD_PATH

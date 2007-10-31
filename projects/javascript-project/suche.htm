@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Suche</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="stylesheet.css" type="text/css">
+<SCRIPT ID=clientEventHandlersJS LANGUAGE=javascript>
+<!--
+
+var erg;
+
+function SuchButton_onclick() {
+ erg = "";
+ parent.search_for(SuchText.value);
+}
+
+function window_onload() {
+ parent.set_Titel("Suche");
+ parent.set_Status("loading ready");
+
+ return true;
+}
+
+function ergebnis_add(theLink, theCaption) {
+ erg+=('<a href="' + theLink + '">' + theCaption + '</a><br>');
+}
+
+function ergebnis_show() {
+ if (erg == "") {
+	Ergebnis.innerHTML = "Nichts gefunden.";
+ } else {
+	Ergebnis.innerHTML = erg;
+ };	
+}
+
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" LANGUAGE=javascript onload="return window_onload()">
+<p class="standard">Geben Sie hier bitte den Suchbegriff ein:<br>
+  <input type="text" name="SuchText" id="SuchText" size="50">
+  <input type="button" name="SuchButton" id="SuchButton" value="Suchen" LANGUAGE=javascript onclick="return SuchButton_onclick()">
+</p>
+<hr>
+<b class="standard">Ergebnis:</b><br>
+<div id="Ergebnis" class="standard"></div>
+</body>
+</html>

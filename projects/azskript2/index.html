@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>AZSkript</title>
+<style type="text/css">
+<!--
+.standard {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+-->
+</style>
+</head>
+<body class="standard">
+<p align="center"><strong>AZSkript<br>
+  <br>
+  </strong></p>
+<blockquote>
+  <p><em>Was ist das?</em></p>
+</blockquote>
+<p>Bei diesem Projekt handelt es sich um eine 100%ig dynamisches, objektorientiertes 
+  Modell, auf welchem eine Programmiersprache aufbaut.<br>
+  <br>
+</p>
+<blockquote>
+  <p><em>Wieso der Name?</em></p>
+</blockquote>
+<p>Urspr&uuml;nglich sollte das Projekt eine Fortsetzung der sehr einfachen Skriptsprache 
+  AZSkript 1 werden, welche ich mir fr&uuml;her f&uuml;r ein paar Spiele und Webserver 
+  etc. programmiert habe. Der eigentliche Name ist deshalb auch AZSkript 2, wobei 
+  die urspr&uuml;ngliche Idee war, AZSkript 1 um ein paar nette Features zu erweitern 
+  wie z. B. ein objektorientierter Ansatz und eine erweiterte und vereinfachte 
+  Syntax.<br>
+  <br>
+</p>
+<blockquote>
+  <p><em>Was ist nun aus AZSkript geworden bzw. wird aus AZSkript werden?</em></p>
+</blockquote>
+<p>Aus dem urspr&uuml;nglichen Vorhaben, nur eine neue Version von AZSkript 1 
+  zu programmieren, ist ein wenig mehr geworden. Die Idee des objektorientierten 
+  Ansatzes hat sich weiterentwickelt bis hin zu einem 100% dynamischen und objektorientierten 
+  Modell, wobei AZSkript gleichzeitig auch eine Laufzeitigumgebung f&uuml;r eine 
+  Programmiersprache enth&auml;lt inklusive einem daf&uuml;r n&uuml;tzlichen Interpreter.<br>
+  <br>
+</p>
+<blockquote> 
+  <p><em>Was kann AZSkript alles bzw. wird AZSkript mal k&ouml;nnen?</em></p>
+</blockquote>
+<p>Absolut alles in AZSkript ist ein Objekt. Selbst jeder einzelne Befehl, die 
+  Parameter-Liste, der Stack-Speicher, jeder Thread, jede Funktion, jede Klasse, 
+  einfach absolut alles ist in dem AZSkript-Modell ein Objekt. Au&szlig;erdem 
+  besitzt jedes Objekt die Eigenschaft, dass es v&ouml;llig dynamisch ist, was 
+  soviel hei&szlig;t, dass es &auml;nderbar ist. Jedes Objekt verf&uuml;gt abstrakt 
+  beschrieben &uuml;ber eine Child-Liste mit weiteren Objekten und &uuml;ber eine 
+  Execute-Funktion, welche selbst belegt werden kann. Es gibt mehrere verschiedene 
+  Basis-Objekte (alle erben von einem gemeinsamen abstrakten Interface f&uuml;r 
+  ein AZSkript-Objekt), wobei es bei jedem m&ouml;glich ist, die Child-List zu 
+  ver&auml;ndern, bei manchen besonderen Basis-Objekten lassen sich noch eine 
+  ganze Reihe anderer Sachen &auml;ndern.<br>
+  Dies soll ein erster grober Einblick in AZSkript gewesen sein, das eigentlich 
+  interessante ist die Dynamik, welche man auf verschiedenste Art nutzen kann. 
+  Genauere Informationen werden folgen.<br>
+  <br>
+</p>
+<blockquote>
+  <p><em>Welche Anwendungen sind mit AZSkript geplant?</em></p>
+</blockquote>
+<p>Ich selbst plane gleich eine ganze Reihe von Anwendungen, aber ich will nicht 
+  von meinen ganzen Vorhaben berichten, ohne &uuml;berhaupt erstmal AZSkript fertig 
+  zu haben. Es gibt auf jeden Fall eine ganze Reihe von Sachen, die durch AZSkript 
+  erm&ouml;glicht werden bzw. durch AZSkript sehr viel einfacher umzusetzen sind.<br>
+  <br>
+</p>
+<blockquote>
+  <p><em>In welchem Status befindet sich AZSkript?</em></p>
+</blockquote>
+<p>Vor ein paar Wochen (heute ist der 4. Dezember 2004) habe ich die erste lauff&auml;hige 
+  Version von AZSkript inklusive einem Beispiel-Programm (ein einfaches &quot;Hallo 
+  Welt&quot;) fertiggestellt.<br>
+  <br>
+</p>
+<blockquote>
+  <p><em>TODO</em></p>
+</blockquote>
+<p>Der AZSkript-Interpreter ist im Moment das aktuelle Unterprojekt von AZSkript. 
+  Danach folgen einige Wrapper-Objekte f&uuml;r die wxWindows-Integration (d. 
+  h. Objekte f&uuml;r GUI, f&uuml;r TCP-Sockets, File-I/O, etc.), daraufhin folgt 
+  das AZNetwork (Genaueres dazu folgt sp&auml;ter) und Weiteres...<br>
+  <br>
+</p>
+<blockquote>
+  <p><em>Was ist bereits fertig?</em></p>
+</blockquote>
+<p>Eine der Basis-Typen von AZSkript sind fertig, au&szlig;erdem ist eine erste 
+  lauff&auml;hige Version der Laufzeitumgebung von AZSkript fertig (d. h. das 
+  Multithreading-System mit der Ausf&uuml;hrungsm&ouml;glichkeiten von AZSkript-Code), 
+  sowie ein paar Debug-Test-Funktionen. Der AZSkript-Interpreter ist zur Zeit 
+  in Arbeit.<br>
+  <br>
+</p>
+<blockquote>
+  <p><em>Wo ist der AZSkript-Sourcecode verf&uuml;gbar?</em></p>
+</blockquote>
+<p>Ich ver&ouml;ffentliche ungern vollkommen unvollst&auml;ndige Programme, will 
+  hiermit also noch bis zu einer lauff&auml;higen Basis-Version mit funktionierendem 
+  Interpreter und einer Reihe von weiteren Basic-Objekten warten (sehr lange wird 
+  dies allerdings nicht mehr dauern und privat kann jeder bei Interesse den Source 
+  erhalten).<br>
+  Ich habe vor, das Projekt danach zu einem OpenSource-Projekt zu machen und tendiere 
+  im Moment zur GNU-Lizenz.<br>
+  <br>
+</p>
+<blockquote>
+  <p><em>Wer bin ich?</em></p>
+</blockquote>
+<p>Ich k&ouml;nnte jetzt sehr viel erz&auml;hlen aber als Alternative dies auch 
+  lassen. Ich entscheide mich einfach mal f&uuml;r Zweiteres und halte mich kurz. 
+  Ich bin ein Hobby-Programmierer, welcher ganz gerne irgendwelche Ideen spinnt 
+  und diese dann auch umbedingt umsetzen will, leider habe ich das Problem, dass 
+  ich schneller Ideen entwickeln kann, als ich Zeit habe, diese umzusetzen. Dies 
+  ist nun mein aktuelles Projekt.<br>
+  Erreichbar bin ich folgenderma&szlig;en:<br>
+  Name: Albert Zeyer<br>
+  Mail: <a href="mailto:admin@az2000.de">admin@az2000.de</a><br>
+  ICQ: 107220269<br>
+  Homepage: <a href="http://www.az2000.de" target="_blank">www.az2000.de</a><br>
+  <br>
+</p>
+</body>
+</html>

@@ -1,0 +1,10 @@
+Es handelt sich um einen in Visual Basic geschriebenen Webroboter, der 
+automatisch durch das WWW geht, dabei viele Funktionen unterstuetzt, die ueber andere 
+Webroboter hinausgehen, wie beispielsweise Cookies, Simulationen eines Webbrowsers 
+(d.h. das Laden aller Bilder auf der Seite, benutzten von richtigen Referer-Angaben, 
+Simulation menschliches Surfverhalten, in dem etwa wahlweise beispielsweise auf 30% 
+der Links geklickt wird und das nach einer zufaellig ausgewaehlten Pause).
+
+Das Archiv umfasst kein lauffaehiges Programm, sondern lediglich die noetigen 
+Klassen, die in ein anderes Programm eingebaut werden koennen. Beispiele hierzu 
+werden folgen.

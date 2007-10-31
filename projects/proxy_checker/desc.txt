@@ -1,0 +1,2 @@
+Man uebergibt diesem Programm eine Liste von HTTP-Proxy-Servern und es testet diese 
+dann systematisch durch.

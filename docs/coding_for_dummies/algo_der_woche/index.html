@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>Algorithmus der Woche - Informatikjahr 2006</title>
+
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="algo1-Dateien/all.css">
+  <link rel="stylesheet" type="text/css" href="algo1-Dateien/screen.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="algo1-Dateien/print.css" media="print">
+
+  <link rel="alternate stylesheet" media="screen" type="text/css" href="algo1-Dateien/alt.css" title="Alter Style (aber mit CSS)"></head><body>
+
+<div id="meta">
+<div id="header">
+
+
+<a href="http://www.informatikjahr.de/"><img src="algo1-Dateien/IJ-logo-1.gif" alt="Logo des Wissenschaftsjahres 2006" align="left" vspace="22"></a>
+
+<!--<h1 class="first"><nobr>Algorithmus der Woche</nobr></h1>-->
+<h1 class="first"><img src="algo1-Dateien/ADW-1.gif" align="middle" vspace="0"></h1>
+</div>
+<div id="subheader">
+<span id="organisation">
+Eine Initiative des <a href="http://www.ft-informatik.de/">Fakultätentags Informatik</a>
+</span>
+</div>
+
+<div id="pagebody">
+
+<!-- start sidebar -->
+<div id="sidebar">
+
+<h2 class="first">Algorithmus der Woche</h2><ul><li class="first"><a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/index.php">»&nbsp;<span style="text-align: right;">Startseite</span></a></li><li class="first"><a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/aktuell.php">»&nbsp;<span style="text-align: right;">aktueller Algorithmus</span></a></li><li class="first"><a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/liste.php">»&nbsp;<span style="text-align: right;">Liste der Algorithmen</span></a></li></ul><h2 class="first">Informationen</h2><ul><li class="first"><a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/Material/InfoFlyerPresse.pdf">»&nbsp;<span style="text-align: right;">Infoflyer Presse</span></a></li><li class="first"><a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/Material/InfoFlyerSchule.pdf">»&nbsp;<span style="text-align: right;">Infoflyer Schule</span></a></li><li class="first"><a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/logo.php">»&nbsp;<span style="text-align: right;">Download Logo</span></a></li></ul><h2 class="first">Gimmicks für's Klassenzimmer</h2><ul><li class="first"><a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/Gimmicks/VisuelleKryptographie/vc.php">»&nbsp;<span style="text-align: right;">Visuelle Kryptographie</span></a></li></ul><h2 class="first">Links</h2><ul><li class="first"><a href="http://www.informatikjahr.de/">»&nbsp;<span style="text-align: right;">Informatikjahr</span></a></li><li class="first"><a href="http://www.ft-informatik.de/">»&nbsp;<span style="text-align: right;">Fakultätentag Informatik</span></a></li></ul><h2 class="first">Intern</h2><ul><li class="first"><a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/autoren/informationen.php">»&nbsp;<span style="text-align: right;">Für Autoren</span></a></li><li class="first"><a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/organisatoren/themen.php">»&nbsp;<span style="text-align: right;">Für Organisatoren</span></a></li></ul><h2 class="first">Sonstiges</h2><ul><li class="first"><a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/impressum.php">»&nbsp;<span style="text-align: right;">Impressum</span></a></li><li class="first"><a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/gaestebuch.php">»&nbsp;<span style="text-align: right;">Gästebuch</span></a></li><li class="first"><a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/haftung.php">»&nbsp;<span style="text-align: right;">Haftung</span></a></li></ul>
+</div>
+<!-- END sidebar -->
+
+
+<!-- start main -->
+
+<div id="main">
+
+<div id="breadcrumb">Algorithmus der Woche » Binäre Suche</div>
+
+
+<div id="autoren">
+<b>Autoren</b><br>
+Thomas Seidl, RWTH Aachen<br>
+Jost Enderle, RWTH Aachen<br>
+</div>
+
+<div id="adwtitel"><b>1. Algorithmus der Woche</b></div>
+<div id="titel"><b>Binäre Suche</b></div>
+<div id="subtitel"><b>Wie durchsuche ich möglichst schnell ein CD-Regal?</b></div>
+
+<p>
+Wo ist nur die neue Nelly-CD? Meine große Schwester Linda mit ihrem
+Ordnungsfimmel hat sie bestimmt schon wieder ins CD-Regal gepackt.  Ich habe
+ihr schon tausend Mal gesagt, dass sie meine neuen CDs draußen liegen
+lassen soll. Jetzt darf ich wieder alle 500 CDs im Regal einzeln
+anschauen. Das dauert ewig, bis ich die alle durchsucht habe!
+</p>
+
+<p>
+OK, wenn ich Glück habe, finde ich die CD vielleicht schon früher
+und muss doch nicht auf alle Cover draufschauen. Im schlimmsten Fall hat aber
+Linda die CD mal wieder ihrer Freundin ausgeliehen: Dann darf ich alle
+durchsuchen und am Ende wieder Radio hören.
+</p> 
+
+<p></p><center><img src="algo1-Dateien/algo1_buecher.gif"></center> 
+<br>
+
+<p>
+Aaliyah, AC/DC, Alicia Keys, ... hmmm, Linda scheint
+die CDs nach Künstler sortiert zu haben. Damit sollte meine Nelly-CD wohl
+leichter zu finden sein. Ich greife einfach mal mitten rein. "Kelly
+Family", das war wohl zu weit vorne, ich muss weiter hinten suchen.
+"Rachmaninov", das war wieder zu weit hinten, mal ein bisschen weiter links
+nachschauen" ... "Lionel Hampton". Noch ein bisschen nach rechts ... "Nancy
+Sinatra" ... "Nelly"!
+</p> 
+
+<p>
+Das ging ja jetzt doch ganz flott! Mit der
+Sortierung reicht es, ein paar Mal hin- und herzuspringen, bis man die CD
+gefunden hat. Auch wenn die CD nicht im Regal gewesen wäre, hätte
+man das schnell gemerkt.  Wenn wir jetzt aber mal 10.000 CDs haben, muss ich
+dann wahrscheinlich doch wieder ein paar hundert Mal hin- und herspringen und
+die CDs anschauen. Ob man das irgendwie ausrechnen kann?
+</p> 
+
+<p>
+Linda studiert ja
+seit letztem Jahr Informatik, die hat sicher irgendwo Unterlagen herumliegen,
+in denen auch etwas Informatives drinsteht.  Mal sehen ... unter
+"Suchalgorithmen" bin ich wohl richtig. Hier wird beschrieben, wie man einen
+Eintrag in einer gegebenen Menge (hier: CDs) anhand eines Schlüsselwerts
+(hier: Künstler) sucht. Was ich zuerst versucht habe, nennt sich wohl
+"sequenzielle" oder "lineare Suche". Wie schon vermutet, muss man hier
+durchschnittlich die Hälfte der Einträge durchsuchen, bis man den
+gesuchten Schlüsselwert gefunden hat. Die Anzahl der Suchschritte steigt
+proportional mit der Anzahl der Einträge, d.&nbsp;h. wenn man doppelt so
+viel Einträge hat, muss man auch doppelt solange suchen.
+</p> 
+
+<p>
+</p><center><img src="algo1-Dateien/algo1_buecher2.gif"></center>
+ 
+<br>
+
+<p>
+Mein zweites Suchverfahren scheint auch einen extra
+Namen zu haben, "binäre Suche". Bei einem gegebenen Suchschlüssel
+und einer sortierten Liste von Einträgen fängt man bei dem mittleren
+Eintrag an und vergleicht dessen Schlüssel mit dem
+Suchschlüssel. Hat man den gesuchten Eintrag dann schon gefunden, ist die
+Suche beendet. Ansonsten wird dasselbe entweder für die linke oder die
+rechte Hälfte der Einträge gemacht, je nachdem, ob der gelesene
+Schlüssel größer oder kleiner war als der Suchschlüssel,
+und zwar so oft, bis man entweder den Eintrag gefunden hat oder bis keine
+Halbierung des Suchraums mehr möglich ist (d.h. man ist an der Stelle
+angekommen, an der der Eintrag eigentlich stehen müsste). In den
+Unterlagen meiner Schwester ist auch folgender Programm-Code abgedruckt:
+</p>
+
+<div id="algorithm">
+
+<p>
+Die Funktion <font id="algname">BinaereSuche</font> gibt die Position
+von "Schluessel" in Array "A" zwischen "links" und "rechts" aus.<br>
+</p>
+
+<p>
+<font id="algname">BinaereSuche</font>(A,Schluessel,links,rechts)
+
+</p><table><tbody><tr><td style="text-indent: 1ex;" valign="top">1&nbsp;</td><td style="text-indent: 0ex;" valign="top"><nobr><b>while</b> links ≤ rechts <b>do</b>&nbsp;&nbsp;&nbsp;</nobr></td></tr></tbody></table><table><tbody><tr><td style="text-indent: 1ex;" valign="top">2&nbsp;</td><td style="text-indent: 3ex;" valign="top"><nobr>mitte := (links + rechts)/2&nbsp;&nbsp;&nbsp;</nobr></td><td> {Mitte bestimmen, Ergebnis runden}</td></tr></tbody></table><table><tbody><tr><td style="text-indent: 1ex;" valign="top">3&nbsp;</td><td style="text-indent: 3ex;" valign="top"><nobr><b>if</b> A[mitte] = Schluessel <b>then</b> <b>return</b> mitte&nbsp;&nbsp;&nbsp;</nobr></td></tr></tbody></table><table><tbody><tr><td style="text-indent: 1ex;" valign="top">4&nbsp;</td><td style="text-indent: 3ex;" valign="top"><nobr><b>if</b> A[mitte] &gt; Schluessel <b>then</b> rechts := mitte-1&nbsp;&nbsp;&nbsp;</nobr></td></tr></tbody></table><table><tbody><tr><td style="text-indent: 1ex;" valign="top">5&nbsp;</td><td style="text-indent: 3ex;" valign="top"><nobr><b>if</b> A[mitte] &lt; Schluessel <b>then</b> links := mitte+1&nbsp;&nbsp;&nbsp;</nobr></td></tr></tbody></table><table><tbody><tr><td style="text-indent: 1ex;" valign="top">6&nbsp;</td><td style="text-indent: 0ex;" valign="top"><nobr><b>endwhile</b>&nbsp;&nbsp;&nbsp;</nobr></td></tr></tbody></table><table><tbody><tr><td style="text-indent: 1ex;" valign="top">7&nbsp;</td><td style="text-indent: 0ex;" valign="top"><nobr><b>return</b> "nicht gefunden"&nbsp;&nbsp;&nbsp;</nobr></td></tr></tbody></table>
+
+
+</div>
+
+
+<br>
+
+<p>
+Dabei ist <i>A</i> ein "Array"; das ist
+eine Liste von Daten, in dem die Einträge durchnummeriert sind, so wie im
+Regal die CD-Positionen. Der fünfte Eintrag in einem solchen Array wird
+dann zum Beispiel mit <i>A</i>[5] bezeichnet. Wenn unser Regal also 500 CDs
+enthält und wir nach dem Schlüssel "Nelly" suchen, müssen wir
+<font id="algname">BinaereSuche</font>(Regal, "Nelly", 1, 500) aufrufen, um die Position der gesuchten
+CD zu finden. Bei der Ausführung des Programms wird dann zunächst "links" auf 251 gesetzt, 
+danach "rechts" auf 375 usw.
+</p> 
+
+<p>
+Jetzt bleibt noch die Frage, wie viele Suchschritte wir eigentlich
+durchführen müssen, bis wir den richtigen Eintrag gefunden
+haben. Wenn wir Glück haben, finden wir den Eintrag schon im ersten
+Schritt; gibt es den gesuchten Eintrag nicht, müssen wir so oft springen,
+bis wir die Stelle erreicht haben, an der der Eintrag eigentlich stehen
+müsste.  Wir müssen also überlegen, wie oft man die Liste der
+Einträge halbieren kann, oder anders herum, wie viele Einträge wir
+mit einer bestimmten Anzahl von Vergleichen durchsuchen können.  Mit 1
+Vergleich können wir 2 Einträge durchsuchen, mit 2 Vergleichen dann
+4 Einträge, mit 3 Vergleichen schon 8 Einträge.  Mit <i>k</i> Vergleichen
+können wir also 
+<img src="algo1-Dateien/algo1_formel.gif" name="Object1" align="top" height="40" width="100"> 
+Einträge
+durchsuchen. Das wären dann für 10 Vergleiche schon 1024
+Einträge, für 20 Vergleiche über eine Million und für 30
+Vergleiche über eine Milliarde Einträge!  Will man
+"rückwärts" rechnen, d.h. aus der Anzahl von Einträgen
+die notwendige Anzahl von Vergleichen bestimmen, muss man die Umkehrfunktion
+zur Zweier-Potenz verwenden, die nennen das den Zweier-Logarithmus und
+bezeichnen die zugehörige Funktion mit log<sub>2</sub>. Wenn also mit <i>k</i>
+Vergleichen 2<sup><i>k</i></sup>&nbsp;=&nbsp;<i>N</i> Einträge durchsucht werden
+können, braucht man log<sub>2</sub>&nbsp;<i>N</i>&nbsp;=&nbsp;<i>k</i> viele Vergleiche
+für <i>N</i> Einträge. Wenn in unserem Regal also 10.000 CDs wären,
+dann haben wir log<sub>2</sub>&nbsp;10.000&nbsp;∼&nbsp;13,29.  Da es keine "halben Vergleiche"
+gibt, ergeben sich 14 Vergleiche!
+</p> 
+
+<p>
+</p><table>
+<tbody><tr><td valign="top">
+<!--<IMG SRC="/~algorithmus/pictures/algo1_baum.gif" ALIGN=right HSPACE=12> -->
+Das ist ja ganz schön wenig! Heute Abend werde ich Linda
+mal auf die Probe stellen und sie eine Zahl zwischen 1 und 1.000 raten lassen.
+Wenn sie in der Uni aufgepasst hat, dürfte sie dafür nicht mehr als
+10 Fragen benötigen. (Für das Raten einer Zahl zwischen 1 und 16 mit
+maximal 4 Fragen kann man wie in dem nebenstehenden Bild vorgehen.) Und falls
+doch, muss sie mir bei den Deutsch-Hausaufgaben helfen! Jetzt höre
+ich mir aber erst mal die Nelly-CD an ...
+</td>
+<td valign="top">
+<img src="algo1-Dateien/algo1_baum.gif" align="right" hspace="12">
+</td></tr>
+</tbody></table>
+
+
+
+<div id="infobox">
+<b>Autor:</b>
+<ul>
+<li><a href="http://www-i9.informatik.rwth-aachen.de/team/seidl">Prof. Dr. Thomas Seidl</a></li>
+<li><a href="http://www-i9.informatik.rwth-aachen.de/team/enderle">Dipl.-Inform. Jost Enderle</a></li>
+</ul>
+<b>Material:</b>
+<ul>
+<li><a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/Algorithmen/algo1/algo01.pdf">Druckversion des Beitrags
+(pdf)</a></li>
+<li><a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/Algorithmen/algo1/Folien.pdf">Folienpräsentation
+(pdf)</a></li>
+</ul>
+<b>Externe Links:</b>
+<ul>
+<li><a href="http://www-i9.informatik.rwth-aachen.de/algwoche/binsuche?lang=de&amp;offs=0">zusätzliche Informationsseite der Autoren</a></li>
+</ul>
+Für Inhalte und Verfügbarkeit der externen Links übernehmen wir
+keine Gewähr. (<a href="http://www-i1.informatik.rwth-aachen.de/%7Ealgorithmus/haftung.php">Haftungsausschluss</a>)
+</div>
+
+</div>
+
+<!-- END main -->
+
+</div><!-- END pagebody -->
+<div id="footer">Webpräsentation: 
+<a href="http://www-i1.informatik.rwth-aachen.de/">Lehrstuhl für
+Informatik 1</a>,  
+<a href="http://www.rwth-aachen.de/">RWTH Aachen</a> </div>
+</div><!-- END meta -->
+</body></html>

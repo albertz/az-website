@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>DHTML</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="stylesheet.css" type="text/css">
+<SCRIPT ID=clientEventHandlersJS LANGUAGE=javascript>
+<!--
+var anzK = 10;
+var XposK = 0;
+var YposK = 0;
+var i;
+var BildRichtung = 1;
+document.write('<div id="Div" style="position:absolute;top:0px;left:0px">');
+document.write('<div style="position:relative">');
+for (i = 0; i < anzK; i++) {
+	document.write('<div id="sDiv" style="position:absolute;background:#000000;top:0px;left:0px;width:'+ (i / 2) +';height:'+ (i / 2) +';font-size:'+ (i / 2) +'"></div>');
+};
+document.write('</div></div>');
+
+function animateLogo() {
+ Div.style.top = document.body.scrollTop;
+ for (i = 0; i < anzK; i++) {
+	if (i < anzK - 1) {
+		sDiv[i].style.top = sDiv[i + 1].style.top;
+		sDiv[i].style.left = sDiv[i + 1].style.left;
+	} else {
+		sDiv[i].style.top = YposK;
+		sDiv[i].style.left = XposK;
+	};
+ };
+
+ if (BildRichtung == 1) {
+	Bild.style.posLeft += 5;
+	if (Bild.style.posLeft + 5 >= screen.availWidth / 2)
+		BildRichtung = 2;
+ } else {
+	Bild.style.posLeft -= 5;
+	if (Bild.style.posLeft - 5 <= 0)
+		BildRichtung = 1;
+ };
+ 
+ setTimeout("animateLogo()", 10);
+}
+
+function window_onload() {
+animateLogo();
+
+ parent.set_Titel("DHTML");
+ parent.set_Status("loading ready");
+
+ return true;
+}
+
+function document_onmousemove() {
+ YposK = event.y + 4;
+ XposK = event.x + 1;
+}
+
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE=javascript FOR=document EVENT=onmousemove>
+<!--
+ document_onmousemove()
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" LANGUAGE=javascript onload="return window_onload()">
+<p class="standard">DHTML ist eins der wichtigsten und bedeutetsten Elemente von 
+  JavaScript. Unter DHTML versteht man die &Auml;nderung des HTML-Codes, wie z. 
+  B. die &Auml;nderungen von bestimmten Parametern eines HTML-Tags, zur Laufzeit. 
+  Mit diesem Feature ist beinahe alles M&ouml;glich, was man sich nur vorstellen 
+  kann. Alle m&ouml;glichen Bewegungen sind hier m&ouml;glich und auch sofortige 
+  Reaktionen auf Benutzereingaben (dass sich dann vielleicht irgendwo das Men&uuml; 
+  erweitert oder &auml;hnliches).</p>
+<p class="standard">Zur Demonstration habe ich hier gleich 2 solche Funktionen 
+  direkt in diese Seite eingebaut. Durch die erste sollte eine Spur von Kl&ouml;tzchen 
+  die Bewegungen Ihrer Maus folgen. Die 2. Funktion bewegt einfach ein Bild unter 
+  hin und her.</p>
+<p>
+ 
+<div id="Bild" style="position:absolute;left:9px;width:51;height:51; top: 216px"> 
+  <img src="Smilie.gif" width="51" height="51"> </div>
+<p></p>
+</body>
+</html>

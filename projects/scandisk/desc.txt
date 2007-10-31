@@ -1,0 +1,8 @@
+ScanDisk ist ein Clon des Windows-ScanDisk auf einem hoeheren Level. D.h. es wird 
+nicht direkt die Festplatte, Diskette oder aehnliches untersucht, sondern man gibt 
+dem Programm ein Verzeichnis an und ScanDisk versucht dann einfach, alle Dateien in 
+diesem Verzeichnis und in den Unterverzeichnissen einmal komplett zu lesen und meldet 
+dabei irgendwelche Fehler. Dadurch ist das Programm auch flexibler, denn man muss 
+nicht ein gesamtes Laufwerk scannen, sondern es reicht ein Unterverzeichnis. 
+Ausserdem kann man auch beispielsweise CDs testen oder auch Dateien, die uebers 
+Netzwerk verfuegbar sind (Verzeichnisname waere dann: \\Server\Freigabe\Unterverz).

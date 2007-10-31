@@ -1,0 +1,7 @@
+AZDataBase ist eine kleine einfache Datenbank, die entstand, weil ich fuer andere 
+Zwecke zufaul war, einen MySQL-Wrapper zu schreiben und das so einfacher fand.
+
+AZDataBase speichert seine Daten direkt in Dateien auf der Festplatte, ist also 
+Performance-maessig nicht gerade optimal. Der Zugriff auf die Daten erfolgt auf einem 
+Protokoll, welches auf HTTP aufsetzt und somit dem Vorteil bietet, auch ueber 
+HTTP-Proxie-Server erreichbar zu sein.

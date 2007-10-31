@@ -1,0 +1,6 @@
+Der Kern von CheckHTML ist dafuer zustaendig, eine HTML-Datei zu parsen und ueber 
+Events alle gefundenen Links und Grafiken zurueckzugeben.
+
+Das Programm hierzu ist nur eine ganz einfache kleine Praesentation dieser Funktion.
+
+<a href="../autohack">AutoHack</a> nutzt diese Klassen, um die HTML-Daten zu parsen.

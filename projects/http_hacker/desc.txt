@@ -1,0 +1,2 @@
+HTTP Hacker ist ein einfacher HTTP-Client mit einer sehr einfachen und umstaendlichen 
+Skriptsprache, mit der man diesen steuern kann.

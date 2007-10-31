@@ -1,0 +1,63 @@
+* { 
+  font-family:"Times New Roman", Times, Serif;
+}
+
+body { 
+  background:white;
+  color:black;
+}
+
+#sidebar, #language, #sidebar ul, #sidebar ul li, #sidebar h2 { 
+  display:none;
+}
+
+#header {
+  display:none;
+  font-family:Helvetica,Sans;
+  font-weight:bold;
+  color:gray;
+}
+
+#subheader { 
+  border-width:0 0 1px 0;
+  border-color:black;
+  border-style:solid;
+  color:gray;
+}
+
+#footer { 
+  display:none;
+/*  font-size:small;
+  border-width:1px 0 0 0;
+  border-color:black;
+  border-style:solid;
+  padding-top:1ex;
+  color:gray;
+*/
+}
+
+/* header */
+#headertext { 
+  font-size:120%;
+}
+
+#breadcrumb { 
+  display:none; 	    
+/*  font-size:smaller;*/
+}
+
+#adwtitel {
+  font-size:120%;
+  text-align:center;
+}
+#titel { 
+  font-size:180%;
+  text-align:center;
+}
+#subtitel {
+  font-size:120%;
+  text-align:center;
+}
+#autoren { 
+  text-align:right;
+}

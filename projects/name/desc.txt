@@ -1,0 +1,5 @@
+<i>Name</i> sucht in einem vordefinierten Verzeichnis in den enthaltenden Dateien 
+nach bestimmten Namen.
+
+Die gleiche Funktionalitaet ist auch in dem Programm <a href="../name2">Name2</a> 
+enthalten, wobei <i>Name2</i> sich sehr viel besser konfigurieren laesst.

@@ -1,0 +1,14 @@
+Das Spiel 3000 ist die Fortsetzung des <a href="../ds2000">Spiels 2000</a>.
+
+Die Engine ist im Prinzip fertiggestellt, sowie ein Testlevel. Die Ideen fuer weitere 
+Levels existieren auch alle, wurden dann aber aus Zeitgruenden nie umgesetzt und dann 
+wurde das Projekt leider eher immer beiseite geschoben, so dass es bei diesem Status 
+geblieben ist.
+
+Spaeter bei Tests unter Windows 2000 (das Programm wurde damals noch unter Windows 98 
+entwickelt) waren ein paar unschoene Grafikfehler zu sehen, bei denen ich damals auch 
+nicht weiter wusste, wie ich diese zu beheben habe.
+
+Falls jemand an diesem eigentlich schon relativ umfangreichen Projekt Interesse hat, 
+kann er sich gerne melden. Der anfaengliche Code und alles Bisherige wird demnaechst 
+hier veroeffentlicht, sobald ich das ganze mal ein wenig aufgeraeumt habe.

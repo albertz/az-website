@@ -1,0 +1,59 @@
+#!/usr/bin/php
+<?php
+	include("../sql.php");
+	include("../mysql_fileio.php");
+	include("id.php");
+	
+	echo "checking file-system...\n";
+	$nothing_to_do = true;
+	$d = dir(".");
+
+	while(false !== ($f = $d->read())) {
+	if(is_dir($f)) {
+	if(substr($f,0,1) != ".") { //perhaps not needed, but you never know
+	if(file_exists($f . "/mysql.name")) {
+	if($f != "default") { //perhaps not needed, but you never know
+		$f = $f . "/";
+		$p_name = read_from_file($f . "mysql.name");
+		$p_desc = read_from_file($f . "mysql.description");
+		$p_date = read_from_file($f . "mysql.date");
+		$p_mark = read_from_file($f . "mysql.marking");
+		$p_id = DB_GetID__URL($id, $f);
+
+		if($p_id > 0) { // get it?
+			$res = mysql_query(
+				"SELECT name, description, date, marking " .
+				"FROM content WHERE id = '$p_id'" );
+			$row = mysql_fetch_row($res);
+		if($row[0] != $p_name
+		|| $row[1] != $p_desc
+		|| $row[2] != $p_date
+		|| $row[3] != $p_mark) { // has to update?
+			mysql_query(
+			"UPDATE content " . 
+			"SET name='$p_name', description='$p_desc', " .
+			"date='$p_date', marking='$p_mark' " . 
+			"WHERE id='$p_id'" );
+
+			echo "> " . $f . "\n"; 
+			echo "changing: " . $row[0] . " - " . $row[1] . " - " . $row[2] . " - " . $row[3] . "\n"; 
+			echo "to: " . $p_name . " - " . $p_desc . " - " . $p_date . " - " . $p_mark . "\n";
+			$nothing_to_do = false;
+
+		} } else { // nothing there
+			mysql_query(
+			"INSERT content " .
+			"(parent_id, url, name, description, date, marking) " .
+			"VALUES ('$id', '$f', '$p_name', '$p_desc', '$p_date', '$p_mark')" );
+
+			echo "new: " . $p_name . " - " . $f . " - " . $p_desc . " - " . $p_date . " - " . $p_mark . "\n";
+			$nothing_to_do = false;
+		}
+
+	} } } } } // right dir check
+
+	if($nothing_to_do) {
+		echo "nothing to do today\n";
+	}
+
+?>

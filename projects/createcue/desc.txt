@@ -1,0 +1,1 @@
+CreateCue erstellt zu einer BIN-Daten die entsprechende CUE-Datei.

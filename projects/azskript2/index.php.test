@@ -1,0 +1,9 @@
+<?php
+	$titel = "Test";
+	$titel2 = $titel;
+	include("../../head.php");
+
+	$leader_titel = "";
+	$leaders = array("the king");
+	include("../../foot.php");
+?>

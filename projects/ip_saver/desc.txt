@@ -1,0 +1,4 @@
+IP Saver speichert die eigene IP in einer Datei auf einem FTP-Server.
+
+Ein etwas umfangreicheres und mehr zu empfehlendes Programm mit aehnlicher 
+erweiterter Funktionalitaet ist der <a href="../ipactive_client">ip@ctive Client</a>.

@@ -1,0 +1,196 @@
+body { 
+  background-color: #00418F; 
+  color:black;
+  font-family:sans;
+}
+
+#meta { 
+  margin:10px;
+  padding:0;
+  width:auto;
+}
+
+#header { 
+  background-color:white;
+  background-image:url("rwth_logo.gif");
+  background-position:right 15px;
+  background-repeat:no-repeat;
+  padding:0.5ex 0px 0.5ex 0px;
+  font-weight:bold;
+  text-align:left;
+  border-width:2ex 1px 1px 1px;
+  border-style:solid;
+  border-color:#96a8c4 black black black;
+  height:104px;
+  width:100%;
+}
+
+#headertext { 
+  padding:1ex;
+  display:block;
+  height:auto;
+  color:#404080;
+  width:66%;
+  background-image:url("bilder.jpg");
+  background-repeat:no-repeat;
+  background-position:right top;
+  min-height:84px;
+}
+
+#subheader {
+  padding:0.5ex 0px 0.5ex 0px;
+  background-color:#96a8c4;
+  font-size:77%;
+  font-weight:bold;
+  margin:0px;
+  border-width:0px 1px 0px 1px;
+  border-style:solid;
+  border-color:black;
+  width:100%;
+  min-height:2ex;
+}
+
+#pagebody { 
+  background-color:white;
+  float:left;
+  width:100%;
+  border-width:1px;
+  border-color:black;
+  border-style:solid;
+}
+
+#main { 
+  float:left;
+  width:85%; 
+  background-color:white;
+  color:black;
+  border-color:black;
+  border-width:0px 0px 0px 1px;
+  border-style:solid;
+  background-image:none;
+}
+
+#sidebar { 
+  width:12%;
+  float:left;
+  background-color:white;
+  color:black;
+  border-style:none;
+  border-width:0;
+  border-color:black;
+  font-size:77%;
+  padding:0;
+  font-weight:normal;
+}
+
+
+#content { 
+  padding:3ex;
+}
+
+#footer { 
+  width:100%;
+  padding:0.5ex 0px 0.5ex 0px;
+  background-color:#96a8c4;
+  border-style:solid;
+  border-width:0px 1px 1px 1px;
+  border-color: black;
+  text-align:center;
+  clear:both;
+  font-size:x-small;
+}
+
+
+/* Sidebar / navigation */
+
+#sidebar h2 { 
+  background-color:#96a8c4;
+  color:black ;
+  border-style:none;
+  border-width:1px 0px 1px 0px;
+  border-color:black;
+  padding:0.5ex 0.5ex 0.5ex 1ex;
+  margin:0;
+  font-size:100%;
+  font-weight:normal;
+}
+
+#sidebar h2.first { 
+  border-top-width:0px;
+}
+
+#sidebar ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+#sidebar li {
+  display:block;
+  margin:0;
+  padding:0;
+  border-style:solid;
+  border-width:0px 0px 1px 0px;
+  border-color: rgb(188, 188, 188); 
+  padding:0ex;
+}
+
+#sidebar li.first { 
+  border-width:1px 0px 1px 0px;
+  color:red;
+}
+
+#sidebar li a { 
+  margin:0;
+  display:block;
+  padding:0.5ex;
+  text-decoration:none;
+  color:black;
+  border-style:none;
+}
+
+#sidebar li a:hover { 
+  border-color: rgb(188, 188, 188);
+  background-color:#d0d0d0;
+}
+
+
+/* Content */
+/*
+#main h1 { 
+  padding:0.5ex;
+  background-color:#96a8c4; 
+  font-size:100%; 
+  font-weight:bold;
+  margin:0px;
+  width:50%;
+}
+*/
+
+#main p, ol, ul, h2, h3, h4, h5, hr { 
+  padding-left:100px;
+  padding-right:25px;
+}
+
+hr { 
+  width:90%;
+}
+
+#language { 
+  float:right;
+  margin-right:1ex;
+  margin-left:1ex;
+}
+
+#language a { 
+  text-decoration:none;
+  color:#00418f;
+}
+
+#language img { 
+  vertical-align:middle;
+}
+
+#breadcrumb { 
+  padding:0.5ex;
+}

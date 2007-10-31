@@ -1,0 +1,2 @@
+BildZeiger ist ein Programm, welches Bilder anzeigt. Nach dem Start werden alle 
+Bilder in dem eigenen Verzeichnis gesammelt und in Vollbild angezeigt.

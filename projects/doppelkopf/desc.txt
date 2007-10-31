@@ -1,0 +1,3 @@
+Doppelkopf ist die Fortsetzung von dem alten Doppelkopf-Programm. Es handelt sich 
+nicht um das Spiel, sondern um einen Manager der erzielten Punkte beim Spielen. Das 
+Spiel spielt man sowieso nicht am PC sondern mit Karten.

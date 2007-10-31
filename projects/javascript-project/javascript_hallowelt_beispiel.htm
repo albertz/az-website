@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<TITLE>Beispiel</TITLE>
+<SCRIPT ID=clientEventHandlersJS LANGUAGE=javascript>
+<!--
+
+function KlickButton_onclick() {
+ alert("Toll!");
+ alert("Guck dir zur Übung auch mal den Code von dieser Seite an.");
+}
+
+function window_onload() {
+ //der folgende Skript dient zur Kommunikation mit dem Hauptmenü dieser Site und ist vorerst erstmal unwichtig
+
+ parent.set_Titel("'Hallo Welt'-Beispiel");
+ parent.set_Status("loading ready");
+
+ return true;
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+<BODY onload="alert('die Seite wurde geladen'); return window_onload();">
+
+<P><CENTER><INPUT id=KlickButton type=button value="klick mich" name=KlickButton LANGUAGE=javascript onclick="KlickButton_onclick()"></CENTER></P>
+
+</BODY>
+</HTML>

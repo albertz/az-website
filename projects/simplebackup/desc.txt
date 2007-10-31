@@ -1,0 +1,2 @@
+SimpleBackup ist ein sehr einfaches Backup-Programm - man koennte es eher 
+Dateikopierprogramm nennen. Source kommt bald.

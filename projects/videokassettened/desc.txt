@@ -1,0 +1,2 @@
+Videokassetteneditor ist ein Programm zum Verwalten seiner Videokassetten, d.h. zur 
+Speicherung der Inhalte von diesen.

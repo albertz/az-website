@@ -1,0 +1,19 @@
+So etwas gehoert wohl in jede Laufbahn eines Programmierers. Es ist aber sehr 
+lehrreich dabei zu sehen, wie sich so ein Virus verbreiten kann und funktioniert.<br>
+
+Dieser Virus hier im speziellen richtet keinen Schaden an, sondern testet eher nur 
+die Moeglichkeiten, wie ein Virus sich eigentlich verbreiten kann. Er laeuft dabei im 
+Hintergrund und versucht sich an den Anfang der EXE-Datei des im Vordergrund 
+laufenden Programmes zu haengen. Bei dem naechsten Start einer solch modifizierten 
+EXE-Datei wird natuerlich dann der Virus als erstes gestartet und dieser guckt dann 
+nach, ob sich an seinem Ende noch ein anderes Programm befindet (naemlich das, was 
+vorher mal da war) und wenn ja, dann wird dieses auch noch gestartet. So laeuft der 
+Virus nach dem Start dann wieder im Hintergrund, aber das Programm wird trotz 
+infizierter EXE-Datei im Vordergrund normal gestartet.<br>
+
+Das ist das, was das Programm tut, in dem Fall auf einer relativ hohen Ebene und auf 
+eher primitivere Art. Ich empfehle uebrigens den Test nur in einer Testumgebung. Es 
+liegt zwar ein Programm zum Entfernen des Virus' bei, allerdings ist nicht 100%ig 
+garantiert, dass immer alles so reibungslos funktioniert.<br>
+
+<br>Download kommt spaeter.

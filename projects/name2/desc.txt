@@ -1,0 +1,2 @@
+<i>Name2</i> durchsucht ausgewaehlte Dateien in einem vordefinierten Verzeichnis nach 
+mehreren Suchtexten.

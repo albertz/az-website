@@ -1,0 +1,317 @@
+<html>
+<head>
+<title>Men&uuml;</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="stylesheet.css" type="text/css">
+<SCRIPT ID=clientEventHandlersJS LANGUAGE=javascript>
+<!--
+
+//Konstanten
+var lineHeight = 25;
+var SiteName = "Programmierhilfe";
+var PlusMinusHeight = 13;
+
+//Umgebungsvariablen
+var mnu_Counter = 1;
+var myMenue = new initialize_main();
+var Menues = new Array();
+Menues[0] = myMenue;
+var aktSelected = 0;
+var mnuHistory = new Array();
+var mnuHistoryCounter = 0;
+var mnuHistoryIndex = 0;
+var mnuHistoryDONTCHANGE = false;
+var mnuSuchen;
+
+function load_menue() {
+ new_menue(myMenue,
+           "Home",
+           "Startseite",
+           "Software.gif",
+           "startseite.htm",
+           false);
+ 
+ new_menue(myMenue,
+           "Visual Basic",
+           "Übersicht von Visual Basic",
+           "VB-Projekt.gif",
+           "visualbasic.htm",
+           false);
+ new_menue(myMenue.SubMenue[2],
+           "Entwicklungsumgebung",
+           "Entwicklungsumgebung von Visual Basic",
+           "Anzeige.gif",
+           "visualbasic_entwicklungsumgebung.htm",
+           false);
+ new_menue(myMenue.SubMenue[2],
+           "Hallo Welt",
+           '"Hallo Welt"-Programm in Visual Basic',
+           "Favoriten.gif",
+           "visualbasic_hallowelt.htm",
+           false);
+ 
+ new_menue(myMenue,
+           "JavaScript",
+           "Übersicht von JavaScript",
+           "JavaScript.gif",
+           "javascript.htm",
+           false);
+ new_menue(myMenue.SubMenue[3],
+           "Entwicklungsumgebung",
+           "Problem mit Entwicklungsumgebung",
+           "Anzeige.gif",
+           "javascript_entwicklungsumgebung.htm",
+           false);
+ new_menue(myMenue.SubMenue[3].SubMenue[1],
+           "Visual InterDev",
+           "das Programm Visual InterDev",
+           "Programm.gif",
+           "javascript_entwicklungsumgebung_interdev.htm",
+           false);
+ new_menue(myMenue.SubMenue[3].SubMenue[1],
+           "Dreamweaver",
+           "das Programm Dreamweaver",
+           "Programm.gif",
+           "javascript_entwicklungsumgebung_dreamweaver.htm",
+           false);
+ new_menue(myMenue.SubMenue[3].SubMenue[1],
+           "Texteditor",
+           "Texteditoren wie z. B. Notepad",
+           "Programm.gif",
+           "javascript_entwicklungsumgebung_texteditor.htm",
+           false);
+ new_menue(myMenue.SubMenue[3],
+           "Hallo Welt",
+           '"Hallo Welt"-Programm in JavaScript',
+           "Favoriten.gif",
+           "javascript_hallowelt.htm",
+           false);
+ new_menue(myMenue.SubMenue[3].SubMenue[2],
+           "Beispiel",
+           "hier testen",
+           "Testen.gif",
+           "javascript_hallowelt_beispiel.htm",
+           false);
+ new_menue(myMenue.SubMenue[3],
+           "DHTML",
+           "dynamisches HTML",
+           "DHTML.gif",
+           "javascript_dhtml.htm",
+           false);
+
+ mnuSuchen = mnu_Counter;
+ new_menue(myMenue,
+           "Suche",
+           "Suche auf dieser Site",
+           "Suchen.gif",
+           "suche.htm",
+           false);
+
+ new_menue(myMenue,
+           "Hilfe",
+           "Hilfe zu dieser Site",
+           "Hilfe.gif",
+           "hilfe.htm",
+           false);
+
+ new_menue(myMenue,
+           "About",
+           "Über mich",
+           "About.gif",
+           "about.htm",
+           false);
+ 
+ init_menue();
+ 
+ gotoLink(1);
+}
+
+function initialize_main() {
+ this.PathDeep = -1;
+ this.ID = 0;
+ this.SubMenue = new Array();
+ this.SubMenueCount = 0;
+ this.showSubMenue = true;
+}
+
+function init_menue() {
+ var x;
+ var HTMLcode = "";
+ for (x = 1; x <= Menues[0].SubMenueCount; x++) {
+	HTMLcode+=(get_CodeOfMenue(Menues[0].SubMenue[x].ID));
+ };
+ document.body.innerHTML = HTMLcode;
+}
+
+function get_CodeOfMenue(MenueID) {
+ var x;
+ var temp="";
+ temp+=('<table border="0" cellspacing="0" cellpadding="0"><tr height="' + lineHeight + '">');
+ for (x = 1; x <= Menues[MenueID].PathDeep; x++) {
+	temp+=('<td width="' + (PlusMinusHeight * (4/3)) + '" nowrap><img src="Leer.gif" width="' + PlusMinusHeight + '" height="' + PlusMinusHeight + '"></td>');
+ };
+ temp+=('<td width="' + (PlusMinusHeight * (4/3)) + '" nowrap>');
+ if (Menues[MenueID].SubMenueCount != 0) {
+	if (Menues[MenueID].showSubMenue == true) {
+		temp+=('<a href="javascript:hideSubMenue(' + MenueID + ')" onmousemove="parent.set_Status(\'Untermenü ausblenden\');"><img src="Minus.gif" width="' + PlusMinusHeight + '" height="' + PlusMinusHeight + '" border="0"></a>');
+	} else {
+		temp+=('<a href="javascript:showSubMenue(' + MenueID + ')" onmousemove="parent.set_Status(\'Untermenü anzeigen\');"><img src="Plus.gif" width="' + PlusMinusHeight + '" height="' + PlusMinusHeight + '" border="0"></a>');
+	};	
+ } else {
+	temp+=('<img src="Leer.gif" width="' + PlusMinusHeight + '" height="' + PlusMinusHeight + '">');
+ };	
+ temp+=('</td><td width="' + (lineHeight + PlusMinusHeight*(1/3)) + '" nowrap>');
+ temp+=('<img src="' + Menues[MenueID].IconURL + '" width="' + lineHeight + '" height="' + lineHeight + '">');
+ temp+=('</td><td nowrap><div id="mnu_' + MenueID + '_Caption" class="');
+ if (aktSelected == MenueID) {
+	temp+=('a_selected');
+ } else {	 
+	temp+=('a');
+ };	
+ temp+=('"');
+ if (aktSelected == MenueID) {
+	temp+=('>');
+	temp+=(Menues[MenueID].Caption);
+ } else {
+	temp+=(' onclick="gotoLink(' + MenueID + ');"');
+	temp+=(' onmousemove="view_description(' + MenueID + ');"');
+	temp+=(' onmouseover="mnu_' + MenueID + '_Caption.className=\'a_hover\';"');
+	temp+=(' onmouseout="mnu_' + MenueID + '_Caption.className=\'a\';"');
+	temp+=(' onmousedown="mnu_' + MenueID + '_Caption.className=\'a_active\';"');
+	temp+=(' onmouseup="mnu_' + MenueID + '_Caption.className=\'a\';"');
+	temp+=('>' + Menues[MenueID].Caption + '</a>');
+ };
+ temp+=('</div></td></tr></table>');
+ if (Menues[MenueID].SubMenueCount != 0) {
+	if (Menues[MenueID].showSubMenue == true) {
+		for (x = 1; x <= Menues[MenueID].SubMenueCount; x++) {
+			temp+=(get_CodeOfMenue(Menues[MenueID].SubMenue[x].ID));
+		};
+	};	
+ };
+ return temp;
+}
+
+function new_menue(ParentMenue, Caption, Description, IconURL, LinkURL, showSubMenue) {
+ var mTemp = new Object;
+ mTemp.ID = mnu_Counter;
+ mTemp.SubMenue = new Array();
+ mTemp.SubMenueCount = 0;
+ mTemp.showSubMenue = showSubMenue;
+ mTemp.LinkURL = LinkURL;
+ mTemp.Caption = Caption;
+ mTemp.IconURL = IconURL;
+ mTemp.PathDeep = ParentMenue.PathDeep + 1; 
+ mTemp.Description = Description;
+ 
+ ParentMenue.SubMenueCount++;
+ ParentMenue.SubMenue[ParentMenue.SubMenueCount] = mTemp;
+ 
+ Menues[mnu_Counter] = mTemp;
+ mnu_Counter++;
+}
+
+function get_ParentMenueID(MenueID) {
+ if (MenueID == 0) return;
+ for (var x = 0, y; x < mnu_Counter; x++) {
+	for (y = 1; y <= Menues[x].SubMenueCount; y++) {
+		if (Menues[x].SubMenue[y].ID == MenueID) {
+			return Menues[x].ID;
+		};
+	};
+ };
+}
+
+function showSubMenue(MenueID) {
+ Menues[MenueID].showSubMenue = true;
+ 
+ init_menue();
+}
+
+function hideSubMenue(MenueID) {
+ Menues[MenueID].showSubMenue = false;
+
+ checkSelected(MenueID);
+
+ init_menue();
+}
+
+function checkSelected(MenueID) {
+ if (aktSelected == 0) return;
+ for (var temp = get_ParentMenueID(aktSelected); temp != 0; temp = get_ParentMenueID(temp)) {
+	if (temp == MenueID) {
+		gotoLink(MenueID);
+		return;
+	};
+ };
+}
+
+function gotoLink_ParentMenue() {
+ if (aktSelected == 0) return;
+ var ParentMenueID = get_ParentMenueID(aktSelected);
+ if (ParentMenueID == 0) return;
+ gotoLink(ParentMenueID);
+}
+
+function gotoLink_back() {
+ if (mnuHistoryIndex <= 1) return;
+ if (mnuHistoryCounter <= 1) return;
+ mnuHistoryDONTCHANGE = true;
+ mnuHistoryIndex--;
+ gotoLink(mnuHistory[mnuHistoryIndex]);
+ mnuHistoryDONTCHANGE = false;
+}
+
+function gotoLink_forward() {
+ if (mnuHistoryIndex >= mnuHistoryCounter) return;
+ mnuHistoryDONTCHANGE = true;
+ mnuHistoryIndex++;
+ gotoLink(mnuHistory[mnuHistoryIndex]);
+ mnuHistoryDONTCHANGE = false;
+}
+
+function gotoLink_search() {
+ gotoLink(mnuSuchen);
+}
+
+function gotoLink(MenueID) {
+ aktSelected = MenueID;
+ parent.frameMain.location.href = Menues[MenueID].LinkURL;
+ var dTitle = "";
+ for (var temp = MenueID; temp != 0; temp = get_ParentMenueID(temp)) {
+	dTitle = " - " + Menues[temp].Caption + dTitle;
+	if (temp != MenueID) {
+		Menues[temp].showSubMenue = true;
+	};
+ };
+ parent.window.document.title = SiteName + dTitle;
+ 
+ init_menue();
+ 
+ if (mnuHistoryDONTCHANGE == false) {
+	mnuHistoryIndex++;
+	mnuHistoryCounter = mnuHistoryIndex;
+	mnuHistory[mnuHistoryIndex] = MenueID;
+ };
+}
+
+function view_description(MenueID) {
+ parent.set_Status(Menues[MenueID].Description);
+}
+
+function get_mnuCount() {
+ return (mnu_Counter - 1);
+}
+
+function get_mnu(index) {
+ return Menues[index];
+}
+
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#ffffff" text="#000000">
+<p class="standard">Loading...</p>
+</body>
+</html>

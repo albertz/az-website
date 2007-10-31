@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Hallo Welt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="stylesheet.css" type="text/css">
+<SCRIPT ID=clientEventHandlersJS LANGUAGE=javascript>
+<!--
+
+function window_onload() {
+ parent.set_Titel("'Hallo Welt'-Programm in Visual Basic");
+ parent.set_Status("loading ready");
+
+ return true;
+}
+
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" LANGUAGE=javascript onload="return window_onload()">
+<p class="standard">Wenn man ein neues Programm programmieren will, sollte mal 
+  normalerweise erst mal mit einer ausf&uuml;hrlichen Planung beginnen, was sehr 
+  wichtig f&uuml;r ein gutes, sauberes und stabiles Programm ist. Bei diesem Programm 
+  ist das aber jetzt nicht n&ouml;tig. Danach werden dann erstmal alle Steuerelemente 
+  auf der Form platziert und ihre Eigenschaften definiert. Setzen Sie jetzt mal 
+  2 Buttons auf die Form. Danach &auml;ndern Sie erstmal ihre Namen (das ist die 
+  Eigenschaft &quot;(Name)&quot;; unter diesem Namen werden diese Steuerelemente 
+  sp&auml;ter im Code angesprochen). Nennen Sie den einen Button &quot;KlickButton&quot; 
+  und den anderen &quot;EndeButton&quot;. Danach k&ouml;nnen Sie unter der Eigenschaft 
+  &quot;Caption&quot; die Aufschrift f&uuml;r diese Buttons festlegen. Schreiben 
+  Sie dort etwas entsprechendes. Das ganze sollte dann in etwa so aussehen:<br>
+  <img src="vb_hallowelt_form.gif" width="194" height="210"></p>
+<p class="standard">Nach einem Doppelklick auf eines der platzierten Objekte gelangen 
+  Sie immer sofort in den Code zu dem Standard-Ereignis des entsprechenden Objektes, 
+  in diesem Fall ist das das Click-Ereignis, welches ausgef&uuml;hrt wird, wenn 
+  man auf das Button klickt. Schreiben Sie jetzt bei dem KlickButton folgenden 
+  Code:<br>
+  <font face="Courier New, Courier, mono" color="#0000FF" size="2">MsgBox &quot;Hallo Welt!&quot;</font><br>
+  Beim EndeButton schreiben Sie folgenden Code:<br>
+  <font face="Courier New, Courier, mono" color="#0000FF" size="2">End</font><br>
+  Das ganze sollte dann in etwa so aussehen:<br>
+  <img src="vb_hallowelt_code.gif" width="327" height="245"></p>
+<p class="standard">Wenn Sie das Programm jetzt starten, &ouml;ffnet sich das 
+  von Ihnen bearbeitete Fenster. Wenn Sie auf den KlickButton klicken, dann kommt 
+  folgende Meldung:<br>
+  <img src="vb_hallowelt_meldung.gif" width="104" height="100"><br>
+  Nach einem Klick auf den EndeButton wird das Programm beendet.</p>
+<p class="standard">Das ganze l&auml;&szlig;t sich nat&uuml;rlich jetzt problemlos 
+  erweitern. Gucken Sie einfach mal die Eigenschaften durch und probieren Sie 
+  einfach mal ein bisschen. Das kann nie schaden - im Gegenteil, Sie lernen dabei 
+  sogar neues! Sie k&ouml;nnen nat&uuml;rlich auch versuchen, denn Code beim KlickButton 
+  zu Erweitern. F&uuml;gen Sie mal ein Komma hinter dem MsgBox-Befehl ein. Visual 
+  Basic m&uuml;sste jetzt eigentlich die m&ouml;glichen Parameter anzeigen. Hier 
+  bei MsgBox sind alle weiteren Befehle optional, dass hei&szlig;t, sie m&uuml;ssen 
+  nicht angegeben werden. Wenn sie nicht angegeben werden, wird enfach der Standard-Wert 
+  genommen. Daher kommt beispielsweise auch die unsch&ouml;ne &Uuml;berschrift 
+  dieser Meldung. Versuchen Sie selbst einmal rauszufinden, wie Sie jetzt den 
+  Titel &auml;ndern k&ouml;nnen. Au&szlig;erdem k&ouml;nnen Sie dann auch mal 
+  andere Steuerelemente testen. Setzen Sie einfach mal alle vorhandenen Steuerelemente 
+  auf die Form, um zu sehen, was sich dahinter verbirgt - das meiste sollte Ihnen 
+  aus dem Windows-Alltag bekannt vorkommen.</p>
+<p class="standard">Ich hoffe, Ihnen einen ersten Einblick in die Welt von Visual 
+  Basic geboten zu haben.</p>
+</body>
+</html>

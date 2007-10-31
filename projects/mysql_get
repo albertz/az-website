@@ -1,0 +1,50 @@
+#!/usr/bin/php
+<?php
+	include("../sql.php");
+	include("../mysql_fileio.php");
+	include("id.php");
+	
+	echo "reading MySQL-table...\n";
+	$nothing_to_do = true;
+        $res = mysql_query(
+		"SELECT name, url, description, date, marking " .
+		"FROM content " . 
+		"WHERE parent_id = $id ORDER BY id" );
+        while($row = mysql_fetch_row($res)) {
+		// $row[0] - name
+		// $row[1] - url (with / at the end)
+		// $row[2] - short description
+		// $row[3] - date
+		// $row[4] - marking
+	if(substr($row[1],0,1) != ".") {
+		$f = $row[1];
+		$p_name = read_from_file($f . "mysql.name");
+		$p_desc = read_from_file($f . "mysql.description");
+		$p_date = read_from_file($f . "mysql.date");
+		$p_mark = read_from_file($f . "mysql.marking");
+	if($p_name != $row[0]
+	|| $p_desc != $row[2]
+	|| $p_date != $row[3]
+	|| $p_mark != $row[4]) { // something new?
+		write_to_file(
+			$f . "mysql.name",
+			$row[0] );
+		write_to_file(
+			$f . "mysql.description",
+			$row[2] );
+		write_to_file(
+			$f . "mysql.date",
+			$row[3] );
+		write_to_file(
+			$f . "mysql.marking",
+			$row[4] );
+
+		echo "update: " . $row[0] . " - " . $row[1] . " - " . $row[2] . " - " . $row[3] . " - " . $row[4] . "\n";
+		$nothing_to_do = false;
+	} } }
+
+	if($nothing_to_do) {
+		echo "nothing to do today\n";
+	}
+
+?>
