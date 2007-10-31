@@ -1,0 +1,39 @@
+output_contenttype = "text/html"
+
+trigger_handler = "pics.php"
+
+function urlDecode(str)
+	str = string.gsub (str, "+", " ") 
+	str = string.gsub (str, "%%(%x%x)", function(h) return string.char(tonumber(h,16)) end) 
+	str = string.gsub (str, "\r\n", "\n") 
+	return str 
+end
+
+function g(expr, default)
+	if expr == nil then
+		return default
+	else
+		return expr
+	end
+end
+
+b = request["DOCUMENT_ROOT"]
+cwd = request["CWD"]
+file = get["dir"] .. "/" .. get["file"]
+file = urlDecode(file)
+
+fullfile = b .. "/pics/" .. file
+cachefile = file
+cachefile = cachefile .. ".size=" .. g(get["size"], 100)
+cachefile = cachefile .. ".quali=" .. g(get["quali"], 80)
+cachefile = string.gsub(cachefile, "/", "$$")
+cachefile = string.gsub(cachefile, "\\", "$$")
+cachefile = "/var/tmp/pics/" .. cachefile .. ".jpg"
+
+output_include = { cachefile }
+
+if file_isreg(cachefile) and file_mtime(cachefile) > file_mtime(fullfile) then
+	return CACHE_HIT
+else
+	return CACHE_MISS
+end
