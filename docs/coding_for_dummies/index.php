@@ -61,8 +61,11 @@ der Einstellung "Hm, das sieht ja alles ganz trivial aus, aber so
 extrem simpel kann das doch gar nicht sein, also muss das wohl ganz
 kompliziert sein, denn diesen komplizierten Inhalt sehe ich nicht."</p>
 <p><span class="offtopic" style="font-weight: bold;">Hinweis</span><span class="offtopic">:
-Dieses Tutorial ist zur Zeit unvollst&auml;ndig und wird stetig
-nachbearbeitet und erweitert. Bitte nicht erschrecken, wenn das Ende
+Dieses Tutorial ist zur Zeit noch nicht vollst&auml;ndig und wird
+stetig
+nachbearbeitet und erweitert. (Das Endziel ist die komplette
+Einf&uuml;hrung in die objekt-orientierte Programmierung.) Bitte nicht
+erschrecken, wenn das Ende
 etwas pl&ouml;tzlich kommt. Auch bin ich f&uuml;r Tipps
 deinerseits
 dankbar, falls du etwas nicht verstanden hast, so dass ich in dem Fall
@@ -71,8 +74,8 @@ auf das entsprechende Detail noch genauer eingehen kann.</span></p>
 schon lange zu wissen und verstanden zu haben, kannst du ruhig Kapitel
 &uuml;berfliegen bzw. auslassen.)<br></p><ol><li><a href="#anfang">Beginn der absoluten Grundlagen des
 Programmierens</a></li><li><a href="#pascal">Schnelleinf&uuml;hrung
-in Object Pascal</a></li><li><a href="#lazarus">Schnelleinf&uuml;hrung in Lazarus</a></li><li>Praktische Anwendung in
-Object Pascal</li></ol><h2><a name="anfang"></a>Der
+in Object Pascal</a></li><li><a href="#lazarus">Schnelleinf&uuml;hrung in Lazarus</a></li><li><a href="#Robot">Praktische Anwendung in
+Object Pascal</a></li></ol><h2><a name="anfang"></a>Der
 Anfang</h2><p>Beginnen wir mit dem Anfang:<br>
 Programmieren, was ist das eigentlich?</p>
 <h2>Definitionsversuch</h2>
@@ -226,8 +229,8 @@ Zimmer liegenden M&uuml;ll hinein,</span></li> <li><span class="algo">laufe mit 
 M&uuml;llkontainer zur&uuml;ck in den Keller.</span></li>
 </ol><p>Genug zu diesem Beispiel und zu einem Neuen.</p>
 <p><span style="text-decoration: underline;">Aufgabe</span>:<br>
-<span class="aufgabe"><img style="width: 150px; height: 68px; float: right;" alt="n hoch k" src="n_hoch_k.png">Es soll errechnet werden, was <span style="font-style: italic;">n</span> hoch <span style="font-style: italic;">k</span> ist (auch
-geschrieben als <span style="font-style: italic;">n</span>^<span style="font-style: italic;">k</span>). <span style="font-style: italic;">n</span> und <span style="font-style: italic;">k</span>
+<span class="aufgabe"><img style="width: 150px; height: 68px; float: right;" alt="n hoch k" src="n_hoch_k.png">Es soll errechnet werden, was <span class="var">n</span> hoch <span class="var">k</span> ist (auch
+geschrieben als <span class="var">n</span>^<span class="var">k</span>). <span style="font-style: italic;">n</span> und <span style="font-style: italic;">k</span>
 sollen dabei nicht negative, ganzen Zahlen (also ohne Nachkommastellen)
 sein. Dem Ausf&uuml;hrer wird als Voraussetzung gegeben, dass er
 multiplizieren kann.</span></p>
@@ -271,7 +274,7 @@ gewissen Situationen zu Uneindeutigkeiten kommen. (Was soll z. B. die
 Anweisung bedeuten "multipliziere 5 mit dem Inhalt des Speicherfeldes",
 wenn dort bisher kein Inahlt ist?)</p>
 <p><span style="text-decoration: underline;">L&ouml;sung</span>
-der eigentlichen Aufgabe "n hoch k":<br>
+der eigentlichen Aufgabe "<span class="var">n</span> hoch <span class="var">k</span>":<br>
 <span class="algo">(1.) Man merke sich einen <span class="var">Z&auml;hler</span>,
 der bei <span class="var">k</span>
 beginnen soll.</span><br class="algo">
@@ -1565,7 +1568,7 @@ paar vern&uuml;nftige Eigenschaften. Es empfiehlt sich, die
 <span class="var">Caption</span>-Eigenschaft (die Beschriftung) zu &auml;ndern. Damit du in etwa
 das gleiche Ergebnis wie ich im Folgenden bekommst, solltest du beim
 Timer das Intervall auf 100 setzen. Auch die internen Namen (<span class="var">Button1</span>,
-<span class="var">Label1</span>, <span class="var">Timer1</span>) habe ich soweit erstmal gelassen.</p><p>Der aktuelle Code sieht nun folgenderma&szlig;en aus:<br><?php PrintCode("lazarus_newproj_sample.pas");?></p><p>Lazarus
+<span class="var">Label1</span>, <span class="var">Timer1</span>) habe ich soweit erstmal gelassen.</p><p>Der <a name="new_empty_laz_project"></a>aktuelle Code sieht nun folgenderma&szlig;en aus:<br><?php PrintCode("lazarus_newproj_sample.pas");?></p><p>Lazarus
 hat f&uuml;r uns, wie man sieht, bereits gute Arbeit geleistet. Diese
 <span class="var">Unit1</span> ist die entsprechend zu der <span class="var">Form1</span> geh&ouml;rige Unit. Es wurden
 bereits alle abh&auml;ngigen Units im <span class="algo">uses</span>-Teil aufgelistet. Unsere Form wurde im <span class="algo">type</span>-Bereich
@@ -1591,7 +1594,7 @@ Man wird allerdings feststellen, dass man nicht wirklich etwas
 sinnvolles tun kann, denn bisher haben wir auch noch keinen Code
 geschrieben.</p><p>Dies holen wir jetzt nach. Nach einem Doppelklick
 auf den Button erstellt Lazarus automatisch eine
-Prozedur&nbsp;<span class="var">Button1Click</span>, welche mit dem Klickereignis des Buttons
+Prozedur&nbsp;<span class="var">Button1Click</span>, welche mit dem <a name="ereignis"></a><span style="font-weight: bold;">Klickereignis</span> des Buttons
 verkn&uuml;pft ist. Das bedeutet, wenn wir im eigentlichen Programm
 hinterher auf den Button klicken, wird die Prozedur <span class="var">Button1Click</span>
 aufgerufen. Lazarus geht au&szlig;erdem nach dem automatischen
@@ -1680,7 +1683,7 @@ abzu&auml;ndern oder zu erweitern. Das Entscheidende ist dann immer,
 das Ergebnis nach der &Auml;nderung zu betrachten und so einmal das
 Verst&auml;ndnis zu erlangen und gleichzeitig praktische Erfahrungen zu
 sammeln. Beides, das wirst du bald merken, sind ungemein sch&ouml;ne
-Gef&uuml;hle.</p><p>An dieser Stelle eignet sich wohl am besten das kleine Spiel <span style="font-weight: bold;">Robot</span>,
+Gef&uuml;hle.</p><p>An dieser Stelle eignet sich wohl am besten das kleine Spiel <span style="font-weight: bold;"><a name="Robot_link_screenshot"></a>Robot</span>,
 geschrieben mit Lazarus. Dieses habe ich urspr&uuml;nglich
 programmiert, um zu demonstrieren, was man bereits mit minimalen
 Programmiertechniken bereits erschaffen kann. Ich habe daf&uuml;r ein
@@ -1688,7 +1691,7 @@ neues Projekt in Lazarus erstellt und in dieser einen Form das gesamte
 Spiel untergebracht.</p><p>Lade dir ersteinmal am besten den
 Programmcode (am besten der Version 1.7, damit wir eine einheitliche
 Basis hier zum besprechen haben) herunter und &ouml;ffne ihn dann mit
-Lazarus:<br><a href="../robot2" target="_blank">Robot-Projektseite</a> mit Download</p><p>Screenshot von Robot nach dem Start:<br><img style="width: 572px; height: 694px;" alt="Robot 1.7 beim Start" src="robot1.7-shot1.png"></p><p>In Lazarus sieht das Projekt so aus:<br><img style="width: 799px; height: 687px;" alt="Robot in Lazarus" src="robot_in_lazarus.png"></p><p>Man
+Lazarus:<br><a href="http://www.az2000.de/projects/robot2/" target="_blank">Robot-Projektseite</a> mit Download</p><p>Screenshot von Robot nach dem Start:<br><img style="width: 572px; height: 694px;" alt="Robot 1.7 beim Start" src="robot1.7-shot1.png"></p><p>In Lazarus sieht das Projekt so aus:<br><img style="width: 799px; height: 687px;" alt="Robot in Lazarus" src="robot_in_lazarus.png"></p><p>Man
 sieht bereits, dass zur Entwicklungszeit (also in Lazarus) die Form
 noch sehr im Rohformat aussieht, also erst w&auml;hrend der Laufzeit
 (nach dem Start) alles gezeichnet wird. Werfen wir nun mal einen Blick
@@ -1708,7 +1711,39 @@ wirkliche Neuerung im gesamten Code (ausgenommen sind jetzt mal
 konkrete Funktionen oder &auml;hnliches, denn das ist eigentlich nichts
 wirklich Neues, sondern etwas, was man halt, wenn man es braucht, in
 einem Buch oder im Internet sich raussucht). Es wurden in diesem Teil
-f&uuml;r das Spiel einige neue Typen definiert, so z.B. <span class="var">TRoomNum</span>, <span class="var">TPlaceAbsNum</span>, <span class="var">TRoom </span>und weitere.</p><p>Was ist ein <span class="algo">record</span>?<br><?php PrintCode("record_sample.pas");?></p><p>Ein <span class="algo">record</span> ist im Prinzip nichts anderes als eine Zusammenfassung mehrerer einzelner anderer Variablen eines vorhandenen Variablentyps.</p><p></p><p><span class="offtopic">Vorzeitiges
+f&uuml;r das Spiel einige neue Typen definiert, so z.B. <span class="var">TRoomNum</span>, <span class="var">TPlaceAbsNum</span>, <span class="var">TRoom </span>und weitere.</p><p>Was ist ein <span class="algo">record</span>?<br><?php PrintCode("record_sample.pas");?></p><p>Ein <span class="algo">record</span> ist im Prinzip nichts anderes als eine Zusammenfassung mehrerer einzelner anderer Variablen eines vorhandenen Variablentyps.</p><p>Die n&auml;chste Neuerung ist ein Variablentyp in der Form <span class="algo">a..b</span>. Dies ist nichts weiter als eine eingeschr&auml;nkte <span class="var">Integer</span>-Typ, der nur Zahlen von <span class="algo">a</span> bis <span class="algo">b</span>
+zul&auml;sst (beide eingeschlossen). Manchmal ist es sinnvoll den
+Zahlenbereich im Vorhinein einzuschr&auml;nken um sp&auml;tere Fehler
+fr&uuml;hzeitig zu entdecken. Auch ist es sinnvoll, um dem Leser des
+Codes einen Hinweis zu geben, was in dieser Variable gespeichert werden
+soll. Man behalte sich immer im Hinterkopf, dass man den Code nicht nur
+programmiert, damit er funktioniert, sondern auch, dass er sp&auml;ter
+auch gut gelesen werden kann. Denn vielleicht wollen wir sp&auml;ter
+unseren l&auml;ngst vergessenen alten Code noch einmal ansehen,
+wiederverwenden und vielleicht erweitern. Dies ist aber nur
+m&ouml;glich, wenn wir dann auch verstehen, wieso unser alter Code
+eigentlich so ist wie er ist.</p><p>Ansonsten ist da noch der bisher unbekannte Typ <span class="var">TBitmap</span>. Hierbei handelt es sich wieder um einen Typ der bereits von Lazarus bereitgestellt wird, &auml;hnlich wie <span class="var">TForm</span>. <span class="var">TBitmap</span>
+enth&auml;lt alle Daten f&uuml;r ein komplettes Bitmap (also ein Bild)
+im Speicher. Wir werden in Variablen von diesem Typ letztendlich die
+Bilder von den Spielobjekten speichern.</p><p>Als letzte Typdefinition haben wir die Definition von <span class="var">TMainForm</span> als <span class="algo">class(<span class="var">TForm</span>)</span>.
+Diese Definition in der Form wurde komplett von Lazarus selbst
+vorgenommen, d.h. im Prinzip m&uuml;ssen wir uns hierum nicht weiter
+k&uuml;mmern. (Zum Vergleich: <a href="#new_empty_laz_project">das leere neue Lazarus-Projekt</a>.) Wie man aus dem Code erkennen kann, scheint diese Typdefinition wohl &auml;hnlich wie ein <span class="algo">record</span> zu sein, wobei es zus&auml;tzlich noch Funktionen und Methoden besitzt. Dies nennt man eine <span style="font-weight: bold;">Klasse</span>.
+Im Endeffekt ist es der Typ unseres sp&auml;teren Fensters, welches
+selbst auch einfach eine Variable ist (man nennt Variablen vom Typ
+einer Klasse auch <span style="font-weight: bold;">Klasseninstanzen</span> oder auch <span style="font-weight: bold;">Objekte</span>). An dieser Stelle ist es unwichtig die genaueren Details zu verstehen (das wird sp&auml;ter nachgeholt). Es reicht aus sich <span class="var">TMainForm</span> als ein besonderes <span class="algo">record</span><span class="algo"> </span>vorzustellen. Ausserdem basiert es auf dem Typ <span class="var">TForm</span> (das wurde in der Klammer angegeben). Das hei&szlig;t, dass <span class="var">TMainForm</span> so wie <span class="var">TForm</span>
+ist, nur durch ein paar Sachen erweitert wurde. Auch das ist an dieser
+Stelle aber nicht weiter von Bedeutung f&uuml;r das eigentliche
+Verst&auml;ndnis des Spiels. Fast der gesamte Code von der
+Typdefinition von <span class="var">TMainForm</span> wurde automatisch
+von Lazarus erstellt, w&auml;hrend ich die einzelnen Elemente wie
+Labels, Picture-Boxen (Boxen f&uuml;r Bildern), Panels (einfach nur
+Boxen f&uuml;r irgendwas) und Timer auf das Fenster gesetzt habe. Die
+ganzen Prozeduren wie z.B. <span class="var">GamePanelClick</span> wurden auch alle von Lazarus automatisch angelegt, als ich die entsprechenden <a href="#ereignis">Ereignisse</a> bearbeitete.</p><p>Der Code in der Typdefinition von <span class="var">TMainForm</span> ab "<span style="font-style: italic;">gameplay</span>"
+ist der, den ich selbst hinzugef&uuml;gt habe. Es sind weitere eigene
+Prozeduren f&uuml;r das eigentliche Spiel. Nach den Prozeduren kommen
+noch ein paar Variablen f&uuml;r das eigentliche Spiel. Z.B.
+enth&auml;lt die Variable <span class="var">MyWorld</span> die komplette Spielwelt.</p><p>Ganz am Ende bei den Typdefinitionen, also wieder ausserhalb von <span class="var">TMainForm</span>, sind noch ein paar weitere Funktionen. Diese habe ich angelegt, um leichter bestimmte Variablen umzuwandeln und umzurechnen.</p><p>Im <span class="algo">var</span>-Teil befinden sich globale Variablen f&uuml;r das gesamte Programm. Hier ist nur die Variable f&uuml;r unser Fenster (vom Typ <span class="var">TMainForm</span>). Alle weiteren Daten hatten wir ja innerhalb von <span class="var">TMainForm</span> gespeichert, d.h. sie sind in der Variable <span class="var">MainForm</span> gespeichert.</p><p>Im <span class="algo">implementation</span>-Teil befindet sich dann die genauere Deklaration aller vorher definierten Funktionen und Prozeduren.</p><p>Der <span class="algo">initialisation</span>-Teil ist auch f&uuml;r uns ersteinmal uninteressant (er wurde von Lazarus automatisch angelegt).</p><h2><a name="Robot"></a>Das Spiel Robot</h2><p>Ein <a href="#Robot_link_screenshot">Screenshot</a> haben wir bereits gesehen. Den <a href="http://www.az2000.de/projects/robot2/">Programmcode</a> haben wir nun auch auf unserer Festplatte entpackt.</p><p></p><p></p><p><span class="offtopic">Vorzeitiges
 Ende ...</span></p>
 <hr style="width: 100%; height: 2px;"><p class="offtopic">Author: Albert Zeyer<br>
 Mail: ich AT admin DOT de<br>
