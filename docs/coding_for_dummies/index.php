@@ -44,7 +44,7 @@ dummies</big></h1>
 <h1 style="text-align: center;">Programmieren
 f&uuml;r
 absolute ... Laien</h1>
-<p>Dies ist der Versuch, zu beweisen, das <span style="font-weight: bold;">Programmieren</span> etwas
+<p>Dies ist der Versuch, zu beweisen, dass <span style="font-weight: bold;">Programmieren</span> etwas
 sehr einfaches ist.</p>
 <p>Als ein Leser dieses Tutorials scheinst du vermutlich sehr
 verzweifelt zu sein, immer noch nicht programmieren zu k&ouml;nnen
