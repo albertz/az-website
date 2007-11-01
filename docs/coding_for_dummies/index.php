@@ -272,26 +272,26 @@ Anweisung bedeuten "multipliziere 5 mit dem Inhalt des Speicherfeldes",
 wenn dort bisher kein Inahlt ist?)</p>
 <p><span style="text-decoration: underline;">L&ouml;sung</span>
 der eigentlichen Aufgabe "n hoch k":<br>
-<span class="algo">(1.) Man merke sich einen <span style="font-style: italic;">Z&auml;hler</span>,
-der bei <span style="font-style: italic;">k</span>
+<span class="algo">(1.) Man merke sich einen <span class="var">Z&auml;hler</span>,
+der bei <span class="var">k</span>
 beginnen soll.</span><br class="algo">
-<span class="algo">(2.) Man merke sich das <span style="font-style: italic;">Zwischenergebnis</span>,
+<span class="algo">(2.) Man merke sich das <span class="var">Zwischenergebnis</span>,
 welches erstmal 1 sein soll.</span><br class="algo">
-<span class="algo">(3.) Wenn der <span style="font-style: italic;">Z&auml;hler</span>
+<span class="algo">(3.) Wenn der <span class="var">Z&auml;hler</span>
 nicht 0 ist, tue folgendes:</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; (4.) Multipliziere das <span style="font-style: italic;">Zwischenergebnis</span>
-mit <span style="font-style: italic;">n</span> und
-merke es sich als neues <span style="font-style: italic;">Zwischenergebnis</span>.</span><br class="algo">
+&nbsp;&nbsp;&nbsp; (4.) Multipliziere das <span class="var">Zwischenergebnis</span>
+mit <span class="var">n</span> und
+merke es sich als neues <span class="var">Zwischenergebnis</span>.</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; (5.) Z&auml;hle den <span style="font-style: italic;">Z&auml;hler</span> um
-eins runter (subtrahiere ihn mit 1) und merke es sich als neuen <span style="font-style: italic;">Z&auml;hler</span>-Wert.</span><br class="algo">
+&nbsp;&nbsp;&nbsp; (5.) Z&auml;hle den <span class="var">Z&auml;hler</span> um
+eins runter (subtrahiere ihn mit 1) und merke es sich als neuen <span class="var">Z&auml;hler</span>-Wert.</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; (6.) Gehe zu Befehl 3.<br>
 </span><span class="algo">Ende der im Wenn-Fall
 auszuf&uuml;hrenden Befehle.</span><br class="algo">
-<span class="algo">(7.) Das <span style="font-style: italic;">Ergebnis</span> ist nun
-der Wert vom <span style="font-style: italic;">Zwischenergebnis</span>.</span></p>
+<span class="algo">(7.) Das <span class="var">Ergebnis</span> ist nun
+der Wert vom <span class="var">Zwischenergebnis</span>.</span></p>
 <p>Um alle bisherigen Prinzipien (die Schleife und die zu
 merkenden
 Sachen) noch mal zu verdeutlichen, wollen wir als Mensch den
@@ -299,31 +299,31 @@ Algorithmus einmal f&uuml;r <span style="font-style: italic;">n</span>=3
 und <span style="font-style: italic;">k</span>=2
 durchgehen.</p>
 <ol class="algo"> <li>Befehl 1: Suche einen
-Notizblock f&uuml;r den <span style="font-style: italic;">Z&auml;hler</span>
-und
+Notizblock f&uuml;r den <span class="var">Z&auml;hler</span><span class="var">
+</span>und
 schreibe 2 drauf.</li> <li>B2: Suche einen Notizblock
-f&uuml;r das <span style="font-style: italic;">Zwischenergebnis</span>
-und schreibe 1 drauf.</li> <li>B3:
+f&uuml;r das <span class="var">Zwischenergebnis</span><span class="var">
+</span>und schreibe 1 drauf.</li> <li>B3:
 &Uuml;berpr&uuml;fe den Notizblock f&uuml;r
-den <span style="font-style: italic;">Z&auml;hler</span>,
+den <span class="var">Z&auml;hler</span>,
 ob dort eine Zahl ungleich 0 draufsteht. Weil das der Fall ist (es
 steht im Moment 2 drauf), gehe zu Befehl 4.</li> <li>B4:
-Der Wert vom <span style="font-style: italic;">Zwischenergebnis</span>-Block
+Der Wert vom <span class="var">Zwischenergebnis</span>-Block
 (ist im Moment 1) multipliziert mit 3 ergibt 3. Nun streichen wir den
-alten Wert vom <span style="font-style: italic;">Zwischenergebnis</span>-Block
-durch und schreiben stattdessen 3 drauf.</li> <li>B5: Der <span style="font-style: italic;">Z&auml;hler</span>block
-ist im Moment 2. Eins weniger ist also 1. Radiere den alten Inhalt vom <span style="font-style: italic;">Z&auml;hler</span>block
+alten Wert vom <span class="var">Zwischenergebnis</span>-Block
+durch und schreiben stattdessen 3 drauf.</li> <li>B5: Der <span class="var">Z&auml;hler</span>block
+ist im Moment 2. Eins weniger ist also 1. Radiere den alten Inhalt vom <span class="var">Z&auml;hler</span>block
 nun aus und schreibe die 1 drauf.</li> <li>B6: Wir sollen
 nun zu Befehl 3 gehen.</li> <li>B3:
-&Uuml;berpr&uuml;fe den <span style="font-style: italic;">Z&auml;hler</span>blockwert,
+&Uuml;berpr&uuml;fe den <span class="var">Z&auml;hler</span>blockwert,
 ob dieser ungleich 0 ist. Er ist im Moment 2. Also gehen wir weiter zu
-Befehl 4.</li> <li>B4: <span style="font-style: italic;">Zwischenergebnis</span>
-bekommt den neuen Wert 9.</li> <li>B5: Der <span style="font-style: italic;">Z&auml;hler</span>
-bekommt den neuen Wert 0.</li> <li>B6: Und weiter zu
-Befehl 3.</li> <li>B3: <span style="font-style: italic;">Z&auml;hler</span>
-ist nun 0, also gehe zum Ende der im Wenn-Fall auszuf&uuml;hrenden
-Befehle und damit zu Befehl 7.</li> <li>B4: Das <span style="font-style: italic;">Ergebnis</span>
-ist nun die Zahl, die auf dem <span style="font-style: italic;">Zwischenergebnis</span>-Block
+Befehl 4.</li> <li>B4: <span class="var">Zwischenergebnis</span>
+bekommt den neuen Wert 9.</li> <li>B5: Der <span class="var">Z&auml;hler</span><span class="var">
+</span>bekommt den neuen Wert 0.</li> <li>B6: Und weiter zu
+Befehl 3.</li> <li>B3: <span class="var">Z&auml;hler</span><span class="var">
+</span>ist nun 0, also gehe zum Ende der im Wenn-Fall auszuf&uuml;hrenden
+Befehle und damit zu Befehl 7.</li> <li>B4: Das <span class="var">Ergebnis</span><span class="var">
+</span>ist nun die Zahl, die auf dem <span class="var">Zwischenergebnis</span>-Block
 draufsteht, also 9.</li>
 </ol><p>Man mache sich einmal klar, dass dieser Algorithmus
 genau dem
@@ -348,36 +348,36 @@ verwendet werden.</span></p>
 </p><ol> <li><span class="algo">Man
 merke
 sich die aktuelle
-<span style="font-style: italic;">Ziffernposition</span>
-und setze diese
-<span style="font-style: italic;">Ziffernposition</span>
-auf die 1. Ziffer </span><span class="algo" style="font-style: italic;">[wir
+<span class="var">Ziffernposition</span><span class="var">
+</span>und setze diese
+<span class="var">Ziffernposition</span><span class="var">
+</span>auf die 1. Ziffer </span><span class="algo" style="font-style: italic;">[wir
 betrachten die ganz rechteste Ziffer beider Zahlen als die 1. Ziffer]</span></li>
 <li><span class="algo">Man merke sich den
-aktuellen <span style="font-style: italic;">&Uuml;bertrag</span>
-als 0.</span></li> <li><span class="algo">Man
-merke sich die Summe
+aktuellen <span class="var">&Uuml;bertrag</span><span class="var">
+</span>als 0.</span></li> <li><span class="algo">Man
+merke sich <span class="var">die Summe</span>
 der Ziffern an der aktuellen
-<span style="font-style: italic;">Ziffernposition</span>
-der beiden <span style="font-style: italic;">gegebenen
+<span class="var">Ziffernposition</span><span class="var">
+</span>der beiden <span class="var">gegebenen
 Zahlen</span> sowie zus&auml;tzlich
-dem gemerkten &Uuml;bertrag. </span><span class="algo" style="font-style: italic;">[diese
+dem <span class="var">gemerkten &Uuml;bertrag</span>. </span><span class="algo" style="font-style: italic;">[diese
 k&ouml;nnen wir nach Voraussetzung berechnen]</span></li>
-<li><span class="algo">Die 1. Ziffer dieser Summe
+<li><span class="algo">Die 1. Ziffer <span class="var">dieser Summe</span>
 notiere man sich als die Ziffer vom
-<span style="font-style: italic;">Ergebnis</span> an
-der aktuellen <span style="font-style: italic;">Ziffernposition</span>.</span></li>
-<li><span class="algo">Der <span style="font-style: italic;">&Uuml;bertrag</span>
-soll
+<span class="var">Ergebnis</span><span class="var"> </span>an
+der aktuellen <span class="var">Ziffernposition</span>.</span></li>
+<li><span class="algo">Der <span class="var">&Uuml;bertrag</span><span class="var">
+</span>soll
 nun die 2. Ziffer der gemerkten Summe
 sein (falls diese 2ziffrig ist, also &uuml;berhaupt ein
 &Uuml;bertrag vorhanden ist.)</span></li> <li><span class="algo">Erh&ouml;he die
-aktuelle <span style="font-style: italic;">Ziffernposition</span>
-um 1.</span></li> <li><span class="algo">Wenn&nbsp;der
-<span style="font-style: italic;">&Uuml;bertrag</span>
-nicht 0 ist oder wir nicht mit
-der aktuellen <span style="font-style: italic;">Ziffernposition</span>
-hinter dem Ende beider Zahlen sind,
+aktuelle <span class="var">Ziffernposition</span><span class="var">
+</span>um 1.</span></li> <li><span class="algo">Wenn&nbsp;der
+<span class="var">&Uuml;bertrag</span><span class="var">
+</span>nicht 0 ist oder wir nicht mit
+der aktuellen <span class="var">Ziffernposition</span><span class="var">
+</span>hinter dem Ende beider Zahlen sind,
 dann&nbsp;fahre mit Aktion 3 fort.</span></li>
 </ol><p><img style="width: 250px; height: 66px;" alt="" title="Beispiel einer schriftlichen Addition" src="addition_bsp.png"> (Nur ein Beispiel.)</p>
 <p><a name="variablen"></a>Im gesamten
@@ -416,28 +416,28 @@ den Algorithmus auch etwas lesbarer so schreiben:</p>
 <p>Nochmal die <span style="text-decoration: underline;">L&ouml;sung</span>:<br>
 </p><ol> <li><span class="algo">F&uuml;hre
 neue
-Variable ein:&nbsp;</span><span class="algo" style="font-style: italic;">Ziffernposition</span></li>
+Variable ein:&nbsp;</span><span class="algo var">Ziffernposition</span></li>
 <li><span class="algo">F&uuml;hre neue
-Variable ein: </span><span class="algo" style="font-style: italic;">&Uuml;bertrag</span></li>
+Variable ein: </span><span class="algo var">&Uuml;bertrag</span></li>
 <li><span class="algo">F&uuml;hre neue
-Variable ein: </span><span class="algo" style="font-style: italic;">Summe</span></li> <li><span class="algo">Setze </span><span class="algo" style="font-style: italic;">Ziffernposition</span><span class="algo">
-auf 1.</span></li> <li><span class="algo">Setze
-</span><span class="algo" style="font-style: italic;">&Uuml;bertrag</span><span class="algo">
-auf 0.</span></li> <li><span class="algo">Setze
-</span><span class="algo" style="font-style: italic;">Summe</span><span class="algo">
-auf (Ziffer an</span><span class="algo" style="font-style: italic;">
-Ziffernposition </span><span class="algo">von
-gegebener Zahl 1) +&nbsp;(Ziffer
+Variable ein: </span><span class="algo var">Summe</span></li> <li><span class="algo">Setze </span><span class="algo var">Ziffernposition</span><span class="algo"><span class="var">
+</span>auf 1.</span></li> <li><span class="algo">Setze
+</span><span class="algo var">&Uuml;bertrag</span><span class="algo"><span class="var">
+</span>auf 0.</span></li> <li><span class="algo">Setze
+</span><span class="algo var">Summe</span><span class="algo"><span class="var">
+</span>auf (Ziffer an</span><span class="algo" style="font-style: italic;">
+</span><span class="algo var">Ziffernposition</span><span class="algo" style="font-style: italic;"> </span><span class="algo">von
+<span class="var">gegebener Zahl 1</span>) +&nbsp;(Ziffer
 an</span><span class="algo" style="font-style: italic;">
-Ziffernposition </span><span class="algo">von
-gegebener Zahl 2) + </span><span class="algo" style="font-style: italic;">&Uuml;bertrag</span><span class="algo">.</span></li> <li><span class="algo">Setze die&nbsp;</span><span class="algo" style="font-style: italic;">Ziffernposition</span><span class="algo">-te
-Ziffer vom Ergebnis auf die 1. Ziffer von </span><span class="algo" style="font-style: italic;">Summe</span><span class="algo">.</span></li> <li><span class="algo">Setze </span><span class="algo" style="font-style: italic;">&Uuml;bertrag</span><span class="algo">
-auf&nbsp;die 2. Ziffer von </span><span class="algo" style="font-style: italic;">Summe</span><span class="algo">.</span></li> <li><span class="algo">Setze </span><span class="algo" style="font-style: italic;">Ziffernposition</span><span class="algo">
-auf </span><span class="algo" style="font-style: italic;">Ziffernposition</span><span class="algo">
+</span><span class="algo var">Ziffernposition</span><span class="algo" style="font-style: italic;"> </span><span class="algo">von
+<span class="var">gegebener Zahl 2</span>) + </span><span class="algo var">&Uuml;bertrag</span><span class="algo">.</span></li> <li><span class="algo">Setze die&nbsp;</span><span class="algo var">Ziffernposition</span><span class="algo">-te
+Ziffer vom <span class="var">Ergebnis</span> auf die 1. Ziffer von </span><span class="algo var">Summe</span><span class="algo">.</span></li> <li><span class="algo">Setze </span><span class="algo var">&Uuml;bertrag</span><span class="algo">
+auf&nbsp;die 2. Ziffer von </span><span class="algo var">Summe</span><span class="algo">.</span></li> <li><span class="algo">Setze </span><span class="algo var">Ziffernposition</span><span class="algo">
+auf </span><span class="algo var">Ziffernposition</span><span class="algo">
 + 1.</span></li> <li><span class="algo">Wenn
-(</span><span class="algo" style="font-style: italic;">&Uuml;bertrag</span><span class="algo">
+(</span><span class="algo var">&Uuml;bertrag</span><span class="algo">
 nicht 0 ist) oder
-(</span><span class="algo" style="font-style: italic;">Ziffernposition</span><span class="algo">
+(</span><span class="algo var">Ziffernposition</span><span class="algo">
 nicht hinter dem Ende beider Zahlen), dann (11.) fahre mit Aktion 6
 fort.</span></li>
 </ol><p>Die im Algorithmus benutzten Klammern dienen dabei
@@ -457,41 +457,41 @@ genannt)
 auch als Variablen an, um so die Notation einheitlicher zu halten.</p>
 <p>Wir wollen den Algorithmus noch ein letztes Mal, noch ein
 wenig lesbarer, formulieren. Hierzu ist es praktisch, eine
-Kurzschreibweise f&uuml;r die <span style="font-style: italic;">i</span>-te
-Ziffer von einer <span style="font-style: italic;">Zahl</span>
-einzuf&uuml;gen. Wir wollen diesen Wert also im Folgenden schreiben
-als <span style="font-style: italic;">Zahl[i]</span>.
-Au&szlig;erdem wollen wir mit <span style="font-style: italic;">ZifferAnzahl(Zahl)</span>
-die Zifferanzahl der <span style="font-style: italic;">Zahl</span>
-bezeichnen. Das Setzen einer Variable k&uuml;rzen wir ab mit einem
-Definitionszeichen. <span style="font-style: italic;">Zahl1</span>
-und <span style="font-style: italic;">Zahl2 </span>seien
-nun die beiden vorgegebenen Zahlen und <span style="font-style: italic;">Ergebnis</span> soll das
+Kurzschreibweise f&uuml;r die <span class="var">i</span>-te
+Ziffer von einer <span class="var">Zahl
+</span>einzuf&uuml;gen. Wir wollen diesen Wert also im Folgenden schreiben
+als <span class="var">Zahl[i]</span>.
+Au&szlig;erdem wollen wir mit <span class="var">ZifferAnzahl(Zahl)</span>
+die Zifferanzahl der <span class="var">Zahl</span><span class="var">
+</span>bezeichnen. Das Setzen einer Variable k&uuml;rzen wir ab mit einem
+Definitionszeichen. <span class="var">Zahl1</span>
+und <span class="var">Zahl2</span><span style="font-style: italic;"> </span>seien
+nun die beiden vorgegebenen Zahlen und <span class="var">Ergebnis</span> soll das
 Ergebnis sein. Da es kein einfaches Zeichen f&uuml;r
-Kleiner-oder-gleich gibt, verwenden wir hierf&uuml;r &lt;=
-(entsprechend &gt;=) (weil es meistens genau so gemacht wird).</p>
+Kleiner-oder-gleich gibt, verwenden wir hierf&uuml;r <span class="var">&lt;=</span>
+(entsprechend <span class="var">&gt;=</span>) (weil es meistens genau so gemacht wird).</p>
 <p>Und nochmal die <span style="text-decoration: underline;">L&ouml;sung</span>:<br>
 </p><ol> <li><span class="algo">Neue
-Variable: </span><span class="algo" style="font-style: italic;">Position</span></li>
-<li><span class="algo">Neue Variable: </span><span class="algo" style="font-style: italic;">&Uuml;bertrag</span></li>
-<li><span class="algo">Neue Variable: </span><span class="algo" style="font-style: italic;">Summe</span></li>
-<li><span class="algo"> </span><span class="algo" style="font-style: italic;">Position</span><span class="algo">
-:= 1.</span></li> <li><span class="algo">
-</span><span class="algo" style="font-style: italic;">&Uuml;bertrag</span><span class="algo">
-:= 0.</span></li> <li><span class="algo">
-</span><span class="algo" style="font-style: italic;">Summe</span><span class="algo">
-:= </span><span class="algo" style="font-style: italic;">Zahl1[Position]</span><span class="algo">
-+ </span><span class="algo" style="font-style: italic;">Zahl2[Position]</span><span class="algo">
-+ </span><span class="algo" style="font-style: italic;">&Uuml;bertrag</span><span class="algo">.</span></li> <li><span class="algo"> </span><span class="algo" style="font-style: italic;">Ergebnis[Position]</span><span class="algo">
-:= </span><span class="algo" style="font-style: italic;">Summe[1]</span><span class="algo">.</span></li> <li><span class="algo"> </span><span class="algo" style="font-style: italic;">&Uuml;bertrag</span><span class="algo">
-:=&nbsp;</span><span class="algo" style="font-style: italic;">Summe[2]</span><span class="algo">.</span></li> <li><span class="algo"> </span><span class="algo" style="font-style: italic;">Position</span><span class="algo">
-:= </span><span class="algo" style="font-style: italic;">Position</span><span class="algo">
+Variable: </span><span class="algo var">Position</span></li>
+<li><span class="algo">Neue Variable: </span><span class="algo var">&Uuml;bertrag</span></li>
+<li><span class="algo">Neue Variable: </span><span class="algo var">Summe</span></li>
+<li><span class="algo"> </span><span class="algo var">Position</span><span class="algo"><span class="var">
+</span>:= 1.</span></li> <li><span class="algo">
+</span><span class="algo var">&Uuml;bertrag</span><span class="algo"><span class="var">
+</span>:= 0.</span></li> <li><span class="algo">
+</span><span class="algo var">Summe</span><span class="algo"><span class="var">
+</span>:= </span><span class="algo var">Zahl1</span><span class="algo">[</span><span class="algo var">Position</span><span class="algo">]</span><span class="algo"></span><span class="algo">
++ </span><span class="algo var">Zahl2</span><span class="algo">[</span><span class="algo var">Position</span><span class="algo">]</span><span class="algo">
++ </span><span class="algo var">&Uuml;bertrag</span><span class="algo">.</span></li> <li><span class="algo"> </span><span class="algo var">Ergebnis</span><span class="algo">[</span><span class="algo var">Position</span><span class="algo">]</span><span class="algo">
+:= </span><span class="algo var">Summe</span><span class="algo">[</span><span class="algo var">1</span><span class="algo">]</span><span class="algo">.</span></li> <li><span class="algo"> </span><span class="algo var">&Uuml;bertrag</span><span class="algo">
+:=&nbsp;</span><span class="algo var">Summe</span><span class="algo">[</span><span class="algo var">2</span><span class="algo">]</span><span class="algo">.</span></li> <li><span class="algo"> </span><span class="algo var">Position</span><span class="algo"><span class="var">
+</span>:= </span><span class="algo var">Position</span><span class="algo">
 + 1.</span></li> <li><span class="algo">Wenn
-(nicht </span><span class="algo" style="font-style: italic;">&Uuml;bertrag</span><span class="algo">
-= 0 ist) oder
-(</span><span class="algo" style="font-style: italic;">Position</span><span class="algo">
-&lt;= </span><span class="algo" style="font-style: italic;">ZifferAnzahl(Zahl1)</span><span class="algo">)
-oder (</span><span class="algo" style="font-style: italic;">Position</span> <span class="algo">&lt;=</span> <span class="algo" style="font-style: italic;">ZifferAnzahl(Zahl2)</span><span class="algo">),
+(nicht </span><span class="algo var">&Uuml;bertrag</span><span class="algo"><span class="var">
+</span>= 0 ist) oder
+(</span><span class="algo var">Position</span><span class="algo">
+&lt;= </span><span class="algo">ZifferAnzahl(</span><span class="algo var">Zahl1</span><span class="algo">)</span><span class="algo">)
+oder (</span><span class="algo var">Position</span> <span class="algo">&lt;=</span> <span class="algo">ZifferAnzahl(</span><span class="algo var">Zahl2</span><span class="algo">)</span><span class="algo">),
 dann (11.) fahre mit Aktion 6 fort.</span></li>
 </ol><p><img style="width: 400px; height: 169px;" alt="" title="Beispiel eines Zwischenschritt" src="addition_bsp_zwischenschritt.png"><br>(Ausf&uuml;hrung
 des Befehls 7 und 8 rot markiert.)</p>
@@ -502,7 +502,7 @@ meisten Sprachen dieser und anderer Welten &uuml;bersetzen
 l&auml;sst und sich auf die verschiedensten Formen hinschreiben
 oder symbolisieren l&auml;sst, aber immer das gleiche bedeutet.</p>
 <p><a name="funktion"></a>Wir wollen diesen
-Algorithmus '<span style="font-style: italic;">Addierer</span>'
+Algorithmus '<span class="algo">Addierer</span>'
 nennen.
 Dieser Algorithmus ist von den 2 gegebenen Zahlen abh&auml;ngig und
 liefert ein Ergebnis. Alle gegebenen Werte/Informationen nennt man die <span style="font-weight: bold;">Parameter</span>. Das
@@ -510,16 +510,14 @@ Ergebnis nennt man auch den <span style="font-weight: bold;">R&uuml;ckgabewert</
 Da durch diesen Algorithmus nun bekannt ist, wie man 2 Zahlen addiert,
 k&ouml;nnen wir diese Technik nat&uuml;rlich in anderen
 Algorithmen weiterverwenden. Als Kurzform schreibt man h&auml;ufig,
-wenn man 2 Zahlen <span style="font-style: italic;">X</span>
-und <span style="font-style: italic;">Y</span>
-addieren will, <span style="font-style: italic;">Addierer(X,
-Y)</span>. Die Parameter werden dabei in den Klammern
+wenn man 2 Zahlen <span class="var">X</span>
+und <span class="var">Y</span>
+addieren will, <span class="var"><span class="algo">Addierer</span>(X,Y)</span>. Die Parameter werden dabei in den Klammern
 hintereinander angegeben, bekommen so also eine Reihenfolge. Wir wollen
-einfach mal den ersten Parameter als <span style="font-style: italic;">Zahl1</span> und den 2.
-Parameter als <span style="font-style: italic;">Zahl2</span>
+einfach mal den ersten Parameter als <span class="var">Zahl1</span> und den 2.
+Parameter als <span class="var">Zahl2</span>
 festlegen (wobei es bei der Addition nat&uuml;rlich keine Rolle
-spielt). Es gilt also z.B.: 5 = <span style="font-style: italic;">Addierer(</span>2,
-3<span style="font-style: italic;">)</span>. Man
+spielt). Es gilt also z.B.: <span class="var">5 = </span><span class="var"><span class="algo">Addierer</span>(</span><span class="var">2,3</span><span class="var">)</span>. Man
 betrachtet h&auml;ufig Addierer nun auch als <span style="font-weight: bold;">Funktion</span>, denn wie
 im Mathematischen Sinne einer Funktion bekommt man zu gewissen
 Parametern einen R&uuml;ckgabewert.</p>
@@ -533,28 +531,28 @@ nicht negative Zahlen) </span><span class="aufgabe" style="font-style: italic;">
 und </span><span class="aufgabe" style="font-style: italic;">Zahl2</span><span class="aufgabe">.</span></p>
 <p><span style="text-decoration: underline;">L&ouml;sung
 1</span> (grob formuliert):<span style="text-decoration: underline;"><br>
-</span><span class="algo">Rechne </span><span class="algo" style="font-style: italic;">Zahl2</span><span class="algo">
-genau </span><span class="algo" style="font-style: italic;">Zahl1</span><span class="algo">-mal
-aufeinander (also </span><span class="algo" style="font-style: italic;">Zahl2</span><span class="algo">
-+ </span><span class="algo" style="font-style: italic;">Zahl2</span><span class="algo"> + </span><span class="algo" style="font-style: italic;">Zahl2</span><span class="algo"> ...).</span><span style="text-decoration: underline;"></span></p>
+</span><span class="algo">Rechne </span><span class="algo var">Zahl2</span><span class="algo">
+genau </span><span class="algo var">Zahl1</span><span class="algo">-mal
+aufeinander (also </span><span class="algo var">Zahl2</span><span class="algo">
++ </span><span class="algo var">Zahl2</span><span class="algo"> + </span><span class="algo var">Zahl2</span><span class="algo"> ...).</span><span style="text-decoration: underline;"></span></p>
 <p><span style="text-decoration: underline;">L&ouml;sung
 1</span> (exakte Formulierung):<br>
-<span class="algo">(1.) Neue Variable: </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span><br class="algo">
-<span class="algo">(2.) Neue Variable: </span><span class="algo" style="font-style: italic;">Rest</span><br class="algo">
-<span class="algo">(3.) </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span><span class="algo">
-:= 0</span><br class="algo">
-<span class="algo">(4.) </span><span class="algo" style="font-style: italic;">Rest</span><span class="algo">
-:= </span><span class="algo" style="font-style: italic;">Zahl1</span><br class="algo">
+<span class="algo">(1.) Neue Variable: </span><span class="algo var">Zwischenergebnis</span><br class="algo">
+<span class="algo">(2.) Neue Variable: </span><span class="algo var">Rest</span><br class="algo">
+<span class="algo">(3.) </span><span class="algo var">Zwischenergebnis</span><span class="algo"><span class="var">
+</span>:= 0</span><br class="algo">
+<span class="algo">(4.) </span><span class="algo var">Rest</span><span class="algo"><span class="var">
+</span>:= </span><span class="algo var">Zahl1</span><br class="algo">
 <span class="algo" style="font-weight: bold;">Wiederhole</span><span class="algo">
 folgende Befehle, </span><span class="algo" style="font-weight: bold;">wenn</span><span class="algo">
-nicht </span><span class="algo" style="font-style: italic;">Rest</span><span class="algo">
-= 0 ist:</span><br class="algo">
-<span class="algo">&nbsp;&nbsp;&nbsp; (5.) </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span><span class="algo"> :=
-Addierer(</span><span class="algo" style="font-style: italic;">Zwischenergebnis</span><span class="algo">,&nbsp;</span><span class="algo" style="font-style: italic;">Zahl2</span><span class="algo">)</span><br class="algo">
-<span class="algo">&nbsp;&nbsp;&nbsp; (6.) </span><span class="algo" style="font-style: italic;">Rest</span><span class="algo"> := </span><span class="algo" style="font-style: italic;">Rest</span><span class="algo"> - 1</span><br class="algo">
+nicht </span><span class="algo var">Rest</span><span class="algo"><span class="var">
+</span>= 0 ist:</span><br class="algo">
+<span class="algo">&nbsp;&nbsp;&nbsp; (5.) </span><span class="algo var">Zwischenergebnis</span><span class="algo"><span class="var"> </span>:=
+</span><span class="algo"><span class="algo">Addierer</span></span><span class="algo">(</span><span class="algo var">Zwischenergebnis</span><span class="algo">,&nbsp;</span><span class="algo var">Zahl2</span><span class="algo">)</span><br class="algo">
+<span class="algo">&nbsp;&nbsp;&nbsp; (6.) </span><span class="algo var">Rest</span><span class="algo"><span class="var"> </span>:= </span><span class="algo var">Rest</span><span class="algo"><span class="var"> </span>- 1</span><br class="algo">
 <span class="algo">Ende der zu wiederholenden Befehle</span><br class="algo">
-<span class="algo">(7.) </span><span class="algo" style="font-style: italic;">Ergebnis</span><span class="algo">
-:= </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span></p>
+<span class="algo">(7.) </span><span class="algo var">Ergebnis</span><span class="algo"><span class="var">
+</span>:= </span><span class="algo var">Zwischenergebnis</span></p>
 <p>Die Schleife wurde diesmal wieder ein wenig anders
 geschrieben. Gemeint ist, dass alle Befehle innerhalb der Schleife
 immer zusammen einmal hintereinander ausgef&uuml;hrt werden sollen
@@ -571,17 +569,17 @@ die L&ouml;sung 1 auch &auml;quivalent so formulieren:</p>
 <p><span style="text-decoration: underline;">L&ouml;sung
 1</span>:<br>
 </p><ol> <li><span class="algo">Neue
-Variable: </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span></li>
-<li><span class="algo">Neue Variable: </span><span class="algo" style="font-style: italic;">Rest</span></li>
-<li><span class="algo"> </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span><span class="algo">
-:= 0</span></li> <li><span class="algo">
-</span><span class="algo" style="font-style: italic;">Rest</span><span class="algo">
-:= </span><span class="algo" style="font-style: italic;">Zahl1</span></li> <li><span class="algo">Wenn </span><span class="algo" style="font-style: italic;">Rest</span><span class="algo">
-= 0 ist, fahre mit Befehl 9 fort.</span></li> <li><span class="algo"></span><span class="algo" style="font-style: italic;">Zwischenergebnis</span><span class="algo"> :=
-Addierer(</span><span class="algo" style="font-style: italic;">Zwischenergebnis</span><span class="algo">,&nbsp;</span><span class="algo" style="font-style: italic;">Zahl2</span><span class="algo">)</span></li> <li><span class="algo"> </span><span class="algo" style="font-style: italic;">Rest</span><span class="algo">
-:= </span><span class="algo" style="font-style: italic;">Rest</span><span class="algo"> - 1</span></li> <li><span class="algo">Fahre nun mit Befehl 5 fort.</span></li>
-<li><span class="algo"></span><span class="algo" style="font-style: italic;">Ergebnis</span><span class="algo">
-:= </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span></li>
+Variable: </span><span class="algo var">Zwischenergebnis</span></li>
+<li><span class="algo">Neue Variable: </span><span class="algo var">Rest</span></li>
+<li><span class="algo"> </span><span class="algo var">Zwischenergebnis</span><span class="algo"><span class="var">
+</span>:= 0</span></li> <li><span class="algo">
+</span><span class="algo var">Rest</span><span class="algo"><span class="var">
+</span>:= </span><span class="algo var">Zahl1</span></li> <li><span class="algo">Wenn </span><span class="algo var">Rest</span><span class="algo"><span class="var">
+</span>= 0 ist, fahre mit Befehl 9 fort.</span></li> <li><span class="algo"></span><span class="algo var">Zwischenergebnis</span><span class="algo"> :=
+Addierer(</span><span class="algo var">Zwischenergebnis</span><span class="algo">,&nbsp;</span><span class="algo var">Zahl2</span><span class="algo">)</span></li> <li><span class="algo"> </span><span class="algo var">Rest</span><span class="algo">
+:= </span><span class="algo var">Rest</span><span class="algo"> - 1</span></li> <li><span class="algo">Fahre nun mit Befehl 5 fort.</span></li>
+<li><span class="algo"></span><span class="algo var">Ergebnis</span><span class="algo"><span class="var">
+</span>:= </span><span class="algo var">Zwischenergebnis</span></li>
 </ol><p><span style="font-style: italic;"></span>Im
 Endeffekt ist aber nat&uuml;rlich die bessere Lesbarkeit zu
 Empfehlen, die nat&uuml;rlich in der 'Wiederhole, wenn
@@ -600,7 +598,7 @@ benutzt wird, was genau hat der Ausf&uuml;hrer also
 verst&auml;ndlicherweise zu tun? Er arbeitet nun nat&uuml;rlich
 aus dem anderen Algorithmus die einzelnen Schritte ab, bis er das
 Ergebnis ermittelt hat und kehrt dann wieder zur&uuml;ck (in dem
-Fall kann dann damit nun die Variable <span style="font-style: italic;">Zwischenergebnis</span>
+Fall kann dann damit nun die Variable <span class="var">Zwischenergebnis</span>
 gesetzt werden).<br>
 Dies ist nicht ungew&ouml;hnlich und entspricht genau dem
 wirklichen
@@ -614,7 +612,7 @@ Spa&szlig; ihn mal mit 2 Zahlen ausprobiert, sieht man gleich, dass
 man
 bei diesem Algorithmus bei etwas gr&ouml;&szlig;eren Zahlen
 (vor allem
-bei einer gro&szlig;en <span style="font-style: italic;">Zahl1</span>,
+bei einer gro&szlig;en <span class="var">Zahl1</span>,
 wenn wir die Addierer-T&auml;tigkeit mal als relativ gering
 einsch&auml;tzen f&uuml;r alle Zahlen) ziemlich lange braucht.
 Wenn man
@@ -644,13 +642,13 @@ dass der Algorithmus von einem Computer ausgef&uuml;hrt wird, kann
 man
 auch durchaus davon ausgehen, dass das Addieren auf Prozessorebene nur
 einen Befehl kostet). Man kommt zu dem Ergebnis, dass die Befehle 5, 6,
-7 und 8 genau <span style="font-style: italic;">Zahl1</span>-mal
+7 und 8 genau <span class="var">Zahl1</span>-mal
 ausgef&uuml;hrt werden. Sonst hat man noch 5 Befehle, die
 &uuml;berhaupt nur einmal ausgef&uuml;hrt werden
 m&uuml;ssen. Insgesamt
-hat man also 4*<span style="font-style: italic;">Zahl1</span>+5
+hat man also 4*<span class="var">Zahl1</span>+5
 auszuf&uuml;hrende Befehle. Da diese Formel&nbsp;linear von der
-Eingabe (nur <span style="font-style: italic;">Zahl1</span>
+Eingabe (nur <span class="var">Zahl1</span>
 in diesem Fall) abh&auml;ngt, sagt man auch, der Algorithmus liegt
 in der linearen <span style="font-weight: bold;">Komplexit&auml;tsklasse</span>&nbsp;(der
 h&ouml;chste Grad der Formel entscheidet dar&uuml;ber, denn der
@@ -658,7 +656,7 @@ h&ouml;chste Grad ist nat&uuml;rlich bei
 gr&ouml;&szlig;eren Zahlen
 immer domminierend).</p>
 <p>Wie kann man den Algorithmus verbessern? Eine
-M&ouml;glichkeit w&auml;re, falls <span style="font-style: italic;">Zahl1</span> &gt; <span style="font-style: italic;">Zahl2</span>,
+M&ouml;glichkeit w&auml;re, falls <span class="var">Zahl1</span> &gt; <span class="var">Zahl2</span>,
 diese beiden zu vertauschen, denn so sind dann weniger Befehle
 auszuf&uuml;hren. Sind aber beide Zahlen gro&szlig;, hilft das
 nicht so
@@ -668,17 +666,17 @@ in der 3. Klasse unter dem Namen "schriftlich Multiplizieren" gelernt.
 Hier eine M&ouml;glichkeit, diesen Algorithmus zu formulieren:</p>
 <p><span style="text-decoration: underline;">L&ouml;sung
 2</span>:<br>
-<span class="algo">Neue Variablen: </span><span class="algo" style="font-style: italic;">Teil[</span><span class="algo">1</span><span class="algo" style="font-style: italic;">]</span><span class="algo">, </span><span class="algo" style="font-style: italic;">Teil[</span><span class="algo">2</span><span class="algo" style="font-style: italic;">]</span><span class="algo"> ... bis </span><span class="algo" style="font-style: italic;">Teil[</span><span class="algo">ZifferAnzahl(</span><span class="algo" style="font-style: italic;">Zahl2</span><span class="algo">)</span><span class="algo" style="font-style: italic;">]</span><br class="algo">
-<span class="algo">Neue Variable: </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span><br class="algo">
-<span class="algo">Neue Variable: </span><span class="algo" style="font-style: italic;">Position</span><br class="algo">
-<span class="algo">F&uuml;r </span><span class="algo" style="font-style: italic;">Position</span><span class="algo"> := 1 bis ZifferAnzahl(</span><span class="algo" style="font-style: italic;">Zahl2</span><span class="algo">), tue:</span><br class="algo">
+<span class="algo">Neue Variablen: </span><span class="algo var">Teil</span><span class="algo">[</span><span class="algo">1</span><span class="algo">]</span><span class="algo">, </span><span class="algo var">Teil</span><span class="algo">[</span><span class="algo">2</span><span class="algo">]</span><span class="algo"> ... bis </span><span class="algo var">Teil</span><span class="algo">[</span><span class="algo">ZifferAnzahl(Zahl2)</span><span class="algo">]</span><br class="algo">
+<span class="algo">Neue Variable: </span><span class="algo var">Zwischenergebnis</span><br class="algo">
+<span class="algo">Neue Variable: </span><span class="algo var">Position</span><br class="algo">
+<span class="algo">F&uuml;r </span><span class="algo var">Position</span><span class="algo"><span class="var"> </span>:= 1 bis ZifferAnzahl(</span><span class="algo var">Zahl2</span><span class="algo">), tue:</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp; (*1)
-&nbsp;&nbsp; </span><span class="algo" style="font-style: italic;">Teil[Position]</span><span class="algo"> := </span><span class="algo" style="font-style: italic;">Zahl2[Position]</span><span class="algo"> * </span><span class="algo" style="font-style: italic;">Zahl1</span><br class="algo">
-<span class="algo">Zwischenergebnis := 0</span><br class="algo">
-<span class="algo">F&uuml;r </span><span class="algo" style="font-style: italic;">Position</span><span class="algo"> := 1 bis ZifferAnzahl(</span><span class="algo" style="font-style: italic;">Zahl2</span><span class="algo">), tue:</span><br class="algo">
+&nbsp;&nbsp; </span><span class="algo var">Teil</span><span class="algo">[</span><span class="algo var">Position</span><span class="algo">]</span><span class="algo"> := </span><span class="algo var">Zahl2</span><span class="algo">[</span><span class="algo var">Position</span><span class="algo">]</span><span class="algo"> * </span><span class="algo var">Zahl1</span><br class="algo">
+<span class="algo"><span class="var">Zwischenergebnis</span> := 0</span><br class="algo">
+<span class="algo">F&uuml;r </span><span class="algo var">Position</span><span class="algo"><span class="var"> </span>:= 1 bis ZifferAnzahl(</span><span class="algo var">Zahl2</span><span class="algo">), tue:</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp; (*2)
-&nbsp;&nbsp; </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span><span class="algo"> := </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span><span class="algo"> + </span><span class="algo" style="font-style: italic;">Teil[Position]</span><span class="algo"> * 10^(</span><span class="algo" style="font-style: italic;">Position</span><span class="algo">-1)</span><br class="algo">
-<span class="algo" style="font-style: italic;">Ergebnis</span><span class="algo"> := </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span></p>
+&nbsp;&nbsp; </span><span class="algo var">Zwischenergebnis</span><span class="algo"><span class="var"> </span>:= </span><span class="algo var">Zwischenergebnis</span><span class="algo"><span class="var"> </span>+ </span><span class="algo var">Teil</span><span class="algo">[</span><span class="algo var">Position</span><span class="algo">]</span><span class="algo"> * 10^(</span><span class="algo var">Position</span><span class="algo">-1)</span><br class="algo">
+<span class="algo var">Ergebnis</span><span class="algo"><span class="var"> </span>:= </span><span class="algo var">Zwischenergebnis</span></p>
 <p>'F&uuml;r <span style="font-style: italic;">Position</span>
 := <span style="font-style: italic;">Start</span>
 bis <span style="font-style: italic;">Ende</span>,
@@ -729,17 +727,17 @@ herum,
 so ein Array zu benutzen. Hier jedoch geht es einfacher:</p>
 <p>bessere <span style="text-decoration: underline;">L&ouml;sung
 2</span>:<br>
-<span class="algo">Neue Variable: </span><span class="algo" style="font-style: italic;">Teilmultiplikation</span><span class="algo" style="font-style: italic;"></span><br class="algo">
-<span class="algo">Neue Variable: </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span><br class="algo">
-<span class="algo">Neue Variable: </span><span class="algo" style="font-style: italic;">Position<br>
-Zwischenergebnis</span><span class="algo"> := 0</span><br class="algo">
-<span class="algo">F&uuml;r </span><span class="algo" style="font-style: italic;">Position</span><span class="algo"> := 1 bis ZifferAnzahl(</span><span class="algo" style="font-style: italic;">Zahl2</span><span class="algo">), tue:</span><br class="algo">
-<span class="algo">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="algo" style="font-style: italic;"></span><span class="algo" style="font-style: italic;">Teilmultiplikation</span><span class="algo" style="font-style: italic;"></span><span class="algo"> := </span><span class="algo" style="font-style: italic;">Zahl2[Position]</span><span class="algo"> * </span><span class="algo" style="font-style: italic;">Zahl1<br>
+<span class="algo">Neue Variable: </span><span class="algo var">Teilmultiplikation</span><span class="algo" style="font-style: italic;"></span><br class="algo">
+<span class="algo">Neue Variable: </span><span class="algo var">Zwischenergebnis</span><br class="algo">
+<span class="algo">Neue Variable: </span><span class="algo var">Position</span><span class="algo" style="font-style: italic;"><br>
+</span><span class="algo var">Zwischenergebnis</span><span class="algo"><span class="var"> </span>:= 0</span><br class="algo">
+<span class="algo">F&uuml;r </span><span class="algo var">Position</span><span class="algo"><span class="var"> </span>:= 1 bis ZifferAnzahl(</span><span class="algo var">Zahl2</span><span class="algo">), tue:</span><br class="algo">
+<span class="algo">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="algo" style="font-style: italic;"></span><span class="algo var">Teilmultiplikation</span><span class="algo" style="font-style: italic;"></span><span class="algo"> := </span><span class="algo var">Zahl2</span><span class="algo">[</span><span class="algo var">Position</span><span class="algo">]</span><span class="algo"> * </span><span class="algo var">Zahl1</span><span class="algo" style="font-style: italic;"><br>
 </span><span class="algo">&nbsp;&nbsp;&nbsp;
-</span><span class="algo" style="font-style: italic;">Teilmultiplikation
-:= </span><span class="algo" style="font-style: italic;">Teilmultiplikation </span><span class="algo">* 10^(</span><span class="algo" style="font-style: italic;">Position</span><span class="algo">-1)</span><br class="algo">
-<span class="algo">&nbsp;&nbsp;&nbsp; </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span><span class="algo"> := </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span><span class="algo"> + </span><span class="algo" style="font-style: italic;">Teilmultiplikation</span><br class="algo">
-<span class="algo" style="font-style: italic;">Ergebnis</span><span class="algo"> := </span><span class="algo" style="font-style: italic;">Zwischenergebnis</span></p>
+</span><span class="algo var">Teilmultiplikation</span><span class="algo" style="font-style: italic;">
+:= </span><span class="algo var"></span><span class="algo var">Teilmultiplikation</span><span class="algo" style="font-style: italic;"> </span><span class="algo">* 10^(</span><span class="algo var">Position</span><span class="algo">-1)</span><br class="algo">
+<span class="algo">&nbsp;&nbsp;&nbsp; </span><span class="algo var">Zwischenergebnis</span><span class="algo"><span class="var"> </span>:= </span><span class="algo var">Zwischenergebnis</span><span class="algo"><span class="var"> </span>+ </span><span class="algo var">Teilmultiplikation</span><br class="algo">
+<span class="algo var">Ergebnis</span><span class="algo"><span class="var"> </span>:= </span><span class="algo var">Zwischenergebnis</span></p>
 <p>Nun noch ein etwas anderes, sehr wichtiges Beispiel.</p>
 <p><span style="text-decoration: underline;">Aufgabe</span>:<br>
 <span class="aufgabe">Man bekommt ein <span style="font-style: italic;">Kartenblatt</span>
@@ -795,32 +793,32 @@ in
 sortierter Reihenfolge, also das gew&uuml;nschte Ergebnis.</span></p>
 <p><span style="text-decoration: underline;">L&ouml;sung
 1</span> exakt:<br>
-<span class="algo">Neue Variable: <span style="font-style: italic;">Position</span></span><br class="algo">
-<span class="algo">Neue Variable: <span style="font-style: italic;">Karte</span></span><br>
+<span class="algo">Neue Variable: <span class="var">Position</span></span><br class="algo">
+<span class="algo">Neue Variable: <span class="var">Karte</span></span><br>
 <span class="algo">Erstelle einen neuen (anfangs leeren)
-Stapel, nenne ihn <span style="font-style: italic;">neuerStapel</span>.</span><br class="algo">
+Stapel, nenne ihn <span class="var">neuerStapel</span>.</span><br class="algo">
 <span class="algo">Wiederhole folgendes, solange noch
-Karten im <span style="font-style: italic;">Kartenblatt</span>
-sind:</span><br class="algo">
+Karten im <span class="var">Kartenblatt
+</span>sind:</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; Nehme die erste <span style="font-style: italic;">Karte</span> aus dem <span style="font-style: italic;">Kartenblatt</span> heraus.</span><br class="algo">
+&nbsp;&nbsp;&nbsp; Nehme die erste <span class="var">Karte </span>aus dem <span class="var">Kartenblatt </span>heraus.</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; F&uuml;r <span style="font-style: italic;">Position</span> := 1 bis
-(Anzahl Karten in <span style="font-style: italic;">neuerStapel</span>),
+&nbsp;&nbsp;&nbsp; F&uuml;r <span class="var">Position </span>:= 1 bis
+(Anzahl Karten in <span class="var">neuerStapel</span>),
 tue:</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; Wenn <span style="font-style: italic;">neuerStapel</span>[<span style="font-style: italic;">Position</span>] &gt; <span style="font-style: italic;">Karte</span> ist,
+&nbsp;&nbsp;&nbsp; Wenn <span class="var">neuerStapel</span></span><span class="algo">[</span><span class="algo"><span class="var">Position</span></span><span class="algo">]</span><span class="algo"> &gt; <span class="var">Karte</span> ist,
 h&ouml;re mit dieser Schleife vorzeitig auf.</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; Ende der "F&uuml;r"-Schleife.</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; F&uuml;ge Karte in <span style="font-style: italic;">neuerStapel</span> an <span style="font-style: italic;">Position</span> ein
-(zwischen <span style="font-style: italic;">Position</span>-1
-und <span style="font-style: italic;">Position</span>).</span><br class="algo">
+&nbsp;&nbsp;&nbsp; F&uuml;ge Karte in <span class="var">neuerStapel</span> an <span class="var">Position</span> ein
+(zwischen <span class="var">Position</span>-1
+und <span class="var">Position</span>).</span><br class="algo">
 <span class="algo">Ende der "Wiederholen"-Schleife.</span><br class="algo">
-<span class="algo"><span style="font-style: italic;">neuerStapel</span>
-ist nun das <span style="font-style: italic;">Ergebnis</span>.</span></p>
+<span class="algo"><span class="var">neuerStapel
+</span>ist nun das <span class="var">Ergebnis</span>.</span></p>
 <p>Wir wollen den Algorithmus noch etwas vereinfacht
 aufschreiben. Es
 bietet sich hier an, gleich eine ganze Reihe von Kurzschreibweisen
@@ -834,7 +832,7 @@ unendlichen Listen (wie z.B. die Liste aller positiven, ganzen Zahlen
 1,2,3,...) betrachten).</p>
 <p><a name="verweis_od_kopie"></a>Wenn wir nun
 schreiben w&uuml;rden:<br>
-&nbsp;&nbsp;&nbsp; <span class="algo" style="font-style: italic;">Karte</span><span class="algo"> := </span><span class="algo" style="font-style: italic;">Kartenblatt</span><span class="algo">[</span><span class="algo" style="font-style: italic;">Position</span><span class="algo">]</span><br>
+&nbsp;&nbsp;&nbsp; <span class="algo var">Karte</span><span class="algo"> := </span><span class="algo var">Kartenblatt</span><span class="algo">[</span><span class="algo var">Position</span><span class="algo">]</span><br>
 Dann stellt sich die Frage, ob das nun ein Rausnehmen aus dem <span style="font-style: italic;">Kartenblatt</span>
 bedeuten soll oder aber, dass die <span style="font-style: italic;">Karte</span>
 sich noch im <span style="font-style: italic;">Kartenblatt</span>
@@ -881,11 +879,11 @@ Texte/Buchstabenfolgen. Komplexere Typen sind z.B. ganze Listen oder
 andere Objekte, die gleich mehrere Sachen enthalten.</p>
 <p><span style="text-decoration: underline;">Beispiel
 1</span> (implizite Kopie):<br>
-<span class="algo">Neue Variablen vom Typ Zahl: </span><span class="algo" style="font-style: italic;">Zahl1</span><span class="algo">, </span><span class="algo" style="font-style: italic;">Zahl2</span><br class="algo">
-<span class="algo" style="font-style: italic;">Zahl1</span><span class="algo"> := 10</span><br class="algo">
-<span class="algo" style="font-style: italic;">Zahl2</span><span class="algo"> := </span><span class="algo" style="font-style: italic;">Zahl1</span><br class="algo">
-<span class="algo" style="font-style: italic;">Zahl2</span><span class="algo"> := 5</span><br class="algo">
-<span class="algo" style="font-style: italic;">Ergebnis</span><span class="algo"> := </span><span class="algo" style="font-style: italic;">Zahl1</span></p>
+<span class="algo">Neue Variablen vom Typ Zahl: </span><span class="algo var">Zahl1</span><span class="algo">, </span><span class="algo var">Zahl2</span><br class="algo">
+<span class="algo var">Zahl1</span><span class="algo"><span class="var"> </span>:= 10</span><br class="algo">
+<span class="algo var">Zahl2</span><span class="algo"><span class="var"> </span>:= </span><span class="algo var">Zahl1</span><br class="algo">
+<span class="algo var">Zahl2</span><span class="algo"><span class="var"> </span>:= 5</span><br class="algo">
+<span class="algo var">Ergebnis</span><span class="algo"><span class="var"> </span>:= </span><span class="algo var">Zahl1</span></p>
 <p>Das <span style="font-style: italic;">Ergebnis</span>
 ist nun 10, da bei der &Auml;nderung von <span style="font-style: italic;">Zahl2</span> die <span style="font-style: italic;">Zahl1</span> nicht
 ge&auml;ndert wurde, denn <span style="font-style: italic;">Zahl2</span>
@@ -893,26 +891,26 @@ war nur eine Kopie von <span style="font-style: italic;">Zahl1</span>,
 stand mit ihr also in keinem Zusammenhang nach der Kopie.</p>
 <p><span style="text-decoration: underline;">Beispiel
 2</span> (impliziter Verweis):<br>
-<span class="algo">Neue Variablen vom Typ Liste: </span><span class="algo" style="font-style: italic;">Liste1</span><span class="algo">, </span><span class="algo" style="font-style: italic;">Liste2</span><br class="algo">
-<span class="algo" style="font-style: italic;">Liste1</span><span class="algo"> und </span><span class="algo" style="font-style: italic;">Liste2</span><span class="algo"> sollen erstmal leer sein.</span><br class="algo">
-<span class="algo">F&uuml;ge die Zahl 5 in </span><span class="algo" style="font-style: italic;">Liste1</span><span class="algo"> am Ende hinzu.</span><br class="algo">
-<span class="algo">F&uuml;ge die Zahl 3 in </span><span class="algo" style="font-style: italic;">Liste1</span><span class="algo"> am Ende hinzu.</span><br class="algo">
-<span class="algo" style="font-style: italic;">Liste2</span><span class="algo"> := </span><span class="algo" style="font-style: italic;">Liste1</span><br class="algo">
-<span class="algo">F&uuml;ge die Zahl 42 in </span><span class="algo" style="font-style: italic;">Liste2</span><span class="algo"> am Ende hinzu.</span><br class="algo">
-<span class="algo" style="font-style: italic;">Ergebnis</span><span class="algo"> := </span><span class="algo" style="font-style: italic;">Liste1</span></p>
+<span class="algo">Neue Variablen vom Typ Liste: </span><span class="algo var">Liste1</span><span class="algo">, </span><span class="algo var">Liste2</span><br class="algo">
+<span class="algo var">Liste1</span><span class="algo"><span class="var"> </span>und </span><span class="algo var">Liste2</span><span class="algo"><span class="var"> </span>sollen erstmal leer sein.</span><br class="algo">
+<span class="algo">F&uuml;ge die Zahl 5 in </span><span class="algo var">Liste1</span><span class="algo"> am Ende hinzu.</span><br class="algo">
+<span class="algo">F&uuml;ge die Zahl 3 in </span><span class="algo var">Liste1</span><span class="algo"> am Ende hinzu.</span><br class="algo">
+<span class="algo var">Liste2</span><span class="algo"> := </span><span class="algo var">Liste1</span><br class="algo">
+<span class="algo">F&uuml;ge die Zahl 42 in </span><span class="algo var">Liste2</span><span class="algo"> am Ende hinzu.</span><br class="algo">
+<span class="algo var">Ergebnis</span><span class="algo"> := </span><span class="algo var">Liste1</span></p>
 <p>Das <span style="font-style: italic;">Ergebnis</span>
 ist nun die Liste, die aus 5, 3 und 42 besteht.</p>
 <p>Falls eine Kopie allerdings erw&uuml;nscht war,
 k&ouml;nnte man es z.B. folgenderma&szlig;en aufschreiben:</p>
 <p><span style="text-decoration: underline;">Beispiel
 3</span> (explizite Kopie):<br>
-<span class="algo">Neue Variablen vom Typ Liste: </span><span class="algo" style="font-style: italic;">Liste1</span><span class="algo">, </span><span class="algo" style="font-style: italic;">Liste2</span><br class="algo">
-<span class="algo" style="font-style: italic;">Liste1</span><span class="algo"> und </span><span class="algo" style="font-style: italic;">Liste2</span><span class="algo"> sollen erstmal leer sein.</span><br class="algo">
-<span class="algo">F&uuml;ge die Zahl 5 in </span><span class="algo" style="font-style: italic;">Liste1</span><span class="algo"> am Ende hinzu.</span><br class="algo">
-<span class="algo">F&uuml;ge die Zahl 3 in </span><span class="algo" style="font-style: italic;">Liste1</span><span class="algo"> am Ende hinzu.</span><br class="algo">
-<span class="algo" style="font-style: italic;">Liste2</span><span class="algo"> := </span><span class="algo">Copy(<span style="font-style: italic;">Liste1</span>)</span><br class="algo">
-<span class="algo">F&uuml;ge die Zahl 42 in </span><span class="algo" style="font-style: italic;">Liste2</span><span class="algo"> am Ende hinzu.</span><br class="algo">
-<span class="algo" style="font-style: italic;">Ergebnis</span><span class="algo"> := </span><span class="algo" style="font-style: italic;">Liste1</span></p>
+<span class="algo">Neue Variablen vom Typ Liste: </span><span class="algo var">Liste1</span><span class="algo">, </span><span class="algo var">Liste2</span><br class="algo">
+<span class="algo var">Liste1</span><span class="algo"><span class="var"> </span>und </span><span class="algo var">Liste2</span><span class="algo"><span class="var"> </span>sollen erstmal leer sein.</span><br class="algo">
+<span class="algo">F&uuml;ge die Zahl 5 in </span><span class="algo var">Liste1</span><span class="algo"><span class="var"> </span>am Ende hinzu.</span><br class="algo">
+<span class="algo">F&uuml;ge die Zahl 3 in </span><span class="algo var">Liste1</span><span class="algo"><span class="var"> </span>am Ende hinzu.</span><br class="algo">
+<span class="algo var">Liste2</span><span class="algo"><span class="var"> </span>:= </span><span class="algo">Copy(<span class="var">Liste1</span>)</span><br class="algo">
+<span class="algo">F&uuml;ge die Zahl 42 in </span><span class="algo var">Liste2</span><span class="algo"><span class="var"> </span>am Ende hinzu.</span><br class="algo">
+<span class="algo var">Ergebnis</span><span class="algo"><span class="var"> </span>:= </span><span class="algo var">Liste1</span></p>
 <p>Das <span style="font-style: italic;">Ergebnis</span>
 ist nun die Liste, die aus 5 und 3 besteht.</p>
 <p>Zur&uuml;ck zu dem urspr&uuml;nglichen Beispiel: Da
@@ -920,7 +918,7 @@ wir uns darauf
 festgelegt haben, dass Zahlen implizit kopiert werden sollen und wir
 die Karten als Zahlen darstellen wollten, liegen hier also Kopien vor.
 Dies soll uns aber nicht weiter st&ouml;ren. Nach dem Befehl:<br>
-&nbsp;&nbsp;&nbsp; <span class="algo" style="font-style: italic;">Karte</span><span class="algo"> := </span><span class="algo" style="font-style: italic;">Kartenblatt</span><span class="algo">[1]</span><br>
+&nbsp;&nbsp;&nbsp; <span class="algo var">Karte</span><span class="algo"> := </span><span class="algo var">Kartenblatt</span><span class="algo">[1]</span><br>
 Ist es allerdings noch notwendig, die erste Karte aus dem <span style="font-style: italic;">Kartenblatt</span> zu
 entfernen. Wir wollen hierzu eine Art Funktion einf&uuml;hren
 (&uuml;bliche Schreibweise, zus&auml;tzliche Methoden als
@@ -946,31 +944,31 @@ Schreibweisen und Festlegungen nun noch ein wenig exakter so
 formulieren:</p>
 <p><span style="text-decoration: underline;">L&ouml;sung
 1</span> exakt:<br>
-<span class="algo">Neue Variable vom Typ Zahl: <span style="font-style: italic;">Position</span></span><br class="algo">
-<span class="algo">Neue Variable vom Typ Zahl: <span style="font-style: italic;">Karte</span><br>
-Neue Variable vom Typ Liste: <span style="font-style: italic;">neuerStapel</span></span><span style="font-style: italic;" class="algo"></span><br class="algo">
-<span class="algo">Wiederhole folgendes, solange Length(<span style="font-style: italic;">Kartenblatt</span>)
+<span class="algo">Neue Variable vom Typ Zahl: <span class="var">Position</span></span><br class="algo">
+<span class="algo">Neue Variable vom Typ Zahl: <span class="var">Karte</span><br>
+Neue Variable vom Typ Liste: <span class="var">neuerStapel</span></span><span style="font-style: italic;" class="algo"></span><br class="algo">
+<span class="algo">Wiederhole folgendes, solange Length(<span class="var">Kartenblatt</span>)
 &gt; 0 ist:</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; <span style="font-style: italic;">&nbsp;Karte</span>
-:= <span style="font-style: italic;">Kartenblatt</span>[1]<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Delete(<span style="font-style: italic;">Kartenblatt</span>, 1)
+&nbsp;&nbsp; <span style="font-style: italic;">&nbsp;</span><span class="var">Karte
+</span>:= <span class="var">Kartenblatt</span>[1]<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Delete(<span class="var">Kartenblatt</span>, 1)
 &nbsp; &nbsp;&nbsp;&nbsp; </span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; F&uuml;r <span style="font-style: italic;">Position</span> := 1 bis
-Length(<span style="font-style: italic;">neuerStapel</span>),
+&nbsp;&nbsp;&nbsp; F&uuml;r <span class="var">Position </span>:= 1 bis
+Length(<span class="var">neuerStapel</span>),
 tue:</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; Wenn <span style="font-style: italic;">neuerStapel</span>[<span style="font-style: italic;">Position</span>] &gt; <span style="font-style: italic;">Karte</span> ist,
+&nbsp;&nbsp;&nbsp; Wenn <span class="var">neuerStapel</span>[<span class="var">Position</span>] &gt; <span class="var">Karte</span> ist,
 h&ouml;re mit dieser Schleife vorzeitig auf.</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; Ende der "F&uuml;r"-Schleife.<br>
 </span>&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; <span class="algo">Add(<span style="font-style: italic;">neuerStapel</span>, <span style="font-style: italic;">Position</span>, <span style="font-style: italic;">Karte</span>)</span><br class="algo">
+&nbsp;&nbsp;&nbsp; <span class="algo">Add(<span class="var">neuerStapel</span>, <span class="var">Position</span>, <span class="var">Karte</span>)</span><br class="algo">
 <span class="algo">Ende der "Wiederholen"-Schleife.</span><br class="algo">
-<span class="algo"><span style="font-style: italic;">Ergebnis</span>
-:= </span><span class="algo"><span style="font-style: italic;">neuerStapel</span></span></p>
+<span class="algo"><span class="var">Ergebnis</span>
+:= </span><span class="algo var">neuerStapel</span></p>
 <p><a name="vartyp"></a>Etwas stillschweigend
 haben wir hier und auch schon bereits in
 den
@@ -988,34 +986,34 @@ Zahlen und Zahlen mit Nachkommastellen.</p>
 <p>Betrachten wir noch einen weiteren Algorithmus zum Sortieren:</p>
 <p><span style="text-decoration: underline;"><a name="bubblesort_pseudo"></a>L&ouml;sung
 2</span> (Bubble-Sort):<br>
-<span class="algo">Neue Variablen vom Typ Zahl: <span style="font-style: italic;">x</span>, <span style="font-style: italic;">i</span>, <span style="font-style: italic;">j</span></span><br class="algo">
-<span class="algo">F&uuml;r i := 1 bis Length(<span style="font-style: italic;">Kartenblatt</span>), tue</span><br class="algo">
+<span class="algo">Neue Variablen vom Typ Zahl: <span class="var">x</span>, <span class="var">i</span>, <span class="var">j</span></span><br class="algo">
+<span class="algo">F&uuml;r <span class="var">i</span> := 1 bis Length(<span class="var">Kartenblatt</span>), tue</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; F&uuml;r j := 1 bis Length(<span style="font-style: italic;">Kartenblatt</span>)-1, tue</span><br class="algo">
-<span class="algo">&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; Wenn <span style="font-style: italic;">Kartenblatt</span>[<span style="font-style: italic;">j</span>] &gt; <span style="font-style: italic;">Kartenblatt</span>[<span style="font-style: italic;">j</span>+1], dann tue</span><br class="algo">
+&nbsp;&nbsp;&nbsp; F&uuml;r <span class="var">j</span> := 1 bis Length(<span class="var">Kartenblatt</span>)-1, tue</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; <span style="font-style: italic;">x</span>
-:= <span style="font-style: italic;">Kartenblatt</span>[<span style="font-style: italic;">j</span>]</span><br class="algo">
+&nbsp;&nbsp;&nbsp; Wenn <span class="var">Kartenblatt</span>[<span class="var">j</span>] &gt; <span class="var">Kartenblatt</span>[<span class="var">j</span>+1], dann tue</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; <span style="font-style: italic;">Kartenblatt</span>[<span style="font-style: italic;">j</span>] := <span style="font-style: italic;">Kartenblatt</span>[<span style="font-style: italic;">j</span>+1]</span><br class="algo">
+&nbsp;&nbsp;&nbsp; <span class="var">x</span>
+:= <span class="var">Kartenblatt</span>[<span class="var">j</span>]</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; <span style="font-style: italic;">Kartenblatt</span>[<span style="font-style: italic;">j</span>+1] := x</span><br class="algo">
+&nbsp;&nbsp;&nbsp; <span class="var">Kartenblatt</span>[<span class="var">j</span>] := <span class="var">Kartenblatt</span>[<span class="var">j</span>+1]</span><br class="algo">
+<span class="algo">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; <span class="var">Kartenblatt</span>[<span class="var">j</span>+1] := <span class="var">x</span></span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; Ende "Wenn"-Fall</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; Ende "F&uuml;r"-Schleife</span><br class="algo">
 <span class="algo">Ende "F&uuml;r"-Schleife<br>
-<span style="font-style: italic;">Ergebnis</span> :=
-<span style="font-style: italic;">Kartenblatt</span></span></p>
+<span class="var">Ergebnis</span> :=
+<span class="var">Kartenblatt</span></span></p>
 <p>Dies ist interessanterweise der Algorithmus, auf den die
 meisten
 Leute als erstes kommen, wenn sie sich einen Algorithmus zum Sortieren
@@ -1288,30 +1286,30 @@ schwieriger, eigentlich &uuml;berhaupt die Fehlerursache zu finden.)</p>
 <p><table style="text-align: left; width: 834px;" border="1" cellpadding="2" cellspacing="2"> <caption>Primitive
 <span style="font-weight: bold;">Variablentypen</span></caption><tbody>
 <tr> <th>Typ</th> <th>Bedeutung</th> <td>Beispiel</td>
-</tr> <tr> <td class="algo">Integer</td>
+</tr> <tr> <td class="algo var">Integer</td>
 <td>eine ganze Zahl</td> <td>-2
-oder 10</td> </tr> <tr> <td class="algo">Real</td>
+oder 10</td> </tr> <tr> <td class="algo var">Real</td>
 <td>eine
 Zahl mit Nachkommastellen</td> <td>3.1415</td> </tr>
-<tr> <td class="algo">Boolean</td> <td>nur
+<tr> <td class="algo var">Boolean</td> <td>nur
 2
 m&ouml;gliche Werte: true oder false</td> <td>true</td>
-</tr> <tr> <td class="algo">String</td>
+</tr> <tr> <td class="algo var">String</td>
 <td>ein Text</td> <td>'Einen
-sch&ouml;nen guten Tag.'</td> </tr> <tr> <td class="algo">Char</td> <td>(genau) ein
+sch&ouml;nen guten Tag.'</td> </tr> <tr> <td class="algo var">Char</td> <td>(genau) ein
 einzelnes
 Zeichen</td> <td>'b' oder '3' oder '+' oder ' '</td>
 </tr> </tbody></table></p><p><table style="text-align: left; width: 836px;" border="1" cellpadding="2" cellspacing="2"> <caption>Komplexere
 <span style="font-weight: bold;">Variablentypen</span></caption><tbody>
 <tr> <th>Typ</th> <th>Bedeutung</th> <td>Beispiel</td>
-</tr> <tr> <td class="algo">array of <span style="font-style: italic;">&lt;Typ&gt;</span></td>
+</tr> <tr> <td class="algo">array of <span style="font-style: italic;">&lt;<span class="var">Typ</span>&gt;</span></td>
 <td>ein <a href="#array">Array</a> (variabler
-L&auml;nge) vom Variablentyp <span style="font-style: italic;">&lt;Typ&gt;</span></td>
+L&auml;nge) vom Variablentyp <span style="font-style: italic;">&lt;<span class="var">Typ</span>&gt;</span></td>
 <td>(1,
-2)</td> </tr> <tr> <td class="algo">array[0..<span style="font-style: italic;">n</span>] of <span style="font-style: italic;">&lt;Typ&gt;</span></td>
+2)</td> </tr> <tr> <td class="algo">array[0..<span class="var">n</span>] of <span style="font-style: italic;">&lt;<span class="var">Typ</span>&gt;</span></td>
 <td>ein
-Array (fester L&auml;nge, n&auml;mlich genau <span style="font-style: italic;">n</span>+1
-Eintr&auml;gen) von <span style="font-style: italic;">&lt;Typ&gt;</span></td>
+Array (fester L&auml;nge, n&auml;mlich genau <span class="var">n</span>+1
+Eintr&auml;gen) von <span style="font-style: italic;">&lt;<span class="var">Typ</span>&gt;</span></td>
 <td>('a',
 'b', 'c')</td> </tr> </tbody>
 </table></p><p>Weitere Typen werden sp&auml;ter
@@ -1344,8 +1342,8 @@ wie auch die Parameter. Man beachte auch die von Pascal erlaubte
 Zusammenfassung von Variablen (bzw. auch Parametern), welche im
 Beispiel auch benutzt wurde. Man h&auml;tte es auch schreiben
 k&ouml;nnen:<br>
-&nbsp;&nbsp;&nbsp; <span class="algo">var x:
-Integer; i: Integer; j: Integer;<br>
+&nbsp;&nbsp;&nbsp; <span class="algo">var <span class="var">x</span>:
+<span class="var">Integer</span>; <span class="var">i</span>: <span class="var">Integer</span>; <span class="var">j</span>: <span class="var">Integer</span>;<br>
 </span>Falls keine Variablen erw&uuml;nscht werden,
 l&auml;sst man das Schl&uuml;sselwort <span class="algo">var</span>
 einfach weg.</p>
@@ -1371,7 +1369,7 @@ Ein Codeblock ist nichts weiter als ein Block (d.h. eine gewisse Anzahl
 von Befehlen) Code. Solche Codebl&ouml;cke k&ouml;nnen auch
 ineinander
 geschachtelt werden, wie es auch im Beispiel gemacht wurde. Einzelne <span style="font-weight: bold;">Befehle</span> sind dabei
-entweder Zuweisungen (<span class="algo">variable :=
+entweder Zuweisungen (<span class="algo"><span class="var">variable</span> :=
 irgendwas</span>), Funktions- oder Prozeduraufrufe, ein
 Schleifenanfang oder eine <span class="algo">if</span>-Abfrage.</p>
 <p>Der erste Befehl im Beispiel ist direkt eine <a href="#schleife">Schleife</a>. In diesem Fall wurde
@@ -1381,7 +1379,7 @@ genauso, wie es bereits f&uuml;r den &auml;quivalenten
 Pseudocode
 beschrieben wurde. Die <span class="algo">for</span>-Schleife
 sieht in Pascal immer folgenderma&szlig;en aus:<br>
-&nbsp;&nbsp;&nbsp; <span class="algo">for <span style="font-style: italic;">i</span> := <span style="font-style: italic;">start</span> to <span style="font-style: italic;">ende</span> do <span style="font-style: italic;">aktion</span>;</span><br>
+&nbsp;&nbsp;&nbsp; <span class="algo">for <span class="var">i</span> := <span class="var">start</span> to <span class="var">ende</span> do <span class="var">aktion</span>;</span><br>
 <span style="font-style: italic;">i</span>, <span style="font-style: italic;">start</span> und <span style="font-style: italic;">ende</span> sind dabei
 beliebige Variable oder Werte&nbsp;vom Typ Integer. <span style="font-style: italic;">aktion</span> ist entweder
 ein einzelner Befehl oder ein Codeblock.</p>
@@ -1402,69 +1400,69 @@ genau
 im Beispiel durchgehen, was der Computer bei der Ausf&uuml;hrung
 dieser
 Prozedur genau in welcher Reihenfolge tut, also wie er diesen Code
-liest. Sei dazu <span class="algo">meine_liste = (2,1)</span>
+liest. Sei dazu <span class="algo"><span class="var">meine_liste</span> = (2,1)</span>
 gegeben. Wir beschreiben nun, was genau der Computer macht, wenn an
-anderer Stelle der Befehl <span class="algo">BubbleSort(meine_liste);</span>
+anderer Stelle der Befehl <span class="algo">BubbleSort(<span class="var">meine_liste</span>);</span>
 aufgerufen wird.</p>
-<ol> <li class="algo">Setze den Parameter <span style="font-style: italic;">list</span> als Verweis
-auf <span style="font-style: italic;">meine_liste</span>.</li>
-<li class="algo">Erstelle die Variablen <span style="font-style: italic;">x</span>, <span style="font-style: italic;">i</span> und <span style="font-style: italic;">j</span> im
+<ol> <li class="algo">Setze den Parameter <span class="var">list</span> als Verweis
+auf <span class="var">meine_liste</span>.</li>
+<li class="algo">Erstelle die Variablen <span class="var">x</span>, <span class="var">i</span> und <span class="var">j</span> im
 Arbeitsspeicher.</li> <li class="algo">Gehe zu
 Befehl 1.</li> <li class="algo">Rufe die Funktion
-High auf, mit <span style="font-style: italic;">list</span>
+High auf, mit <span class="var">list</span>
 als Parameter
-und speichere den Wert als Endwert der Schleife. (Der Endwert ist damit
-1.)</li> <li class="algo">Setze <span style="font-style: italic;">i</span> := 0.</li> <li class="algo">Gehe zu Befehl 2.</li> <li class="algo">Rufe die Funktion High mit <span style="font-style: italic;">list</span> als Parameter
-auf, subtrahiere den Wert mit 1 und speichere den Wert als Endwert der
-Schleife. (Der Endwert ist damit 0.)</li> <li class="algo">Setze
-<span style="font-style: italic;">j</span> := 0.</li>
-<li class="algo">Gehe zu Befehl 3.</li> <li class="algo">&Uuml;berpr&uuml;fe, ob <span style="font-style: italic;">list</span>[<span style="font-style: italic;">j</span>] &gt; <span style="font-style: italic;">list</span>[<span style="font-style: italic;">j</span>+1] gilt. <span style="font-style: italic;">j</span> ist 0, <span style="font-style: italic;">j</span>+1 ist 1, <span style="font-style: italic;">list</span>[0] ist 2 und <span style="font-style: italic;">list</span>[1] ist 1. Weil
-2&gt;1 ist, gilt es also. Also gehe zu Befehl 4.</li> <li class="algo">Setze <span style="font-style: italic;">x</span>
-:= <span style="font-style: italic;">list</span>[<span style="font-style: italic;">j</span>]. (<span style="font-style: italic;">x</span> ist damit 2.)</li>
-<li class="algo">Setze <span style="font-style: italic;">list</span>[<span style="font-style: italic;">j</span>] := <span style="font-style: italic;">list</span>[<span style="font-style: italic;">j</span>+1]. (Beachte,
-hier wird direkt <span style="font-style: italic;">meine_liste</span>
-ge&auml;ndert! An der 0-ten Stelle ist nun eine 1. Also ist <span style="font-style: italic;">list</span> = (1,1), denn
-die 1-te Stelle wurde ja nicht ge&auml;ndert.)</li> <li class="algo">Setze <span style="font-style: italic;">list</span>[<span style="font-style: italic;">j</span>+1] := <span style="font-style: italic;">x</span>. (Damit ist <span style="font-style: italic;">list </span>= (1,2).)</li>
+und speichere den Wert als Endwert der Schleife. (Der <span class="var">Endwert</span> ist damit
+1.)</li> <li class="algo">Setze <span class="var">i</span> := 0.</li> <li class="algo">Gehe zu Befehl 2.</li> <li class="algo">Rufe die Funktion High mit <span class="var">list</span> als Parameter
+auf, subtrahiere den Wert mit 1 und speichere den Wert als <span class="var">Endwert</span> der
+Schleife. (Der <span class="var">Endwert</span> ist damit 0.)</li> <li class="algo">Setze
+<span class="var">j</span> := 0.</li>
+<li class="algo">Gehe zu Befehl 3.</li> <li class="algo">&Uuml;berpr&uuml;fe, ob <span class="var">list</span>[<span class="var">j</span>] &gt; <span class="var">list</span>[<span class="var">j</span>+1] gilt. <span class="var">j</span> ist 0, <span class="var">j</span>+1 ist 1, <span class="var">list</span>[0] ist 2 und <span class="var">list</span>[1] ist 1. Weil
+2&gt;1 ist, gilt es also. Also gehe zu Befehl 4.</li> <li class="algo">Setze <span class="var">x</span>
+:= <span class="var">list</span>[<span class="var">j</span>]. (<span class="var">x</span> ist damit 2.)</li>
+<li class="algo">Setze <span class="var">list</span>[<span class="var">j</span>] := <span class="var">list</span>[<span class="var">j</span>+1]. (Beachte,
+hier wird direkt <span class="var">meine_liste</span>
+ge&auml;ndert! An der 0-ten Stelle ist nun eine 1. Also ist <span class="var">list</span> = (1,1), denn
+die 1-te Stelle wurde ja nicht ge&auml;ndert.)</li> <li class="algo">Setze <span class="var">list</span>[j+1] := <span class="var">x</span>. (Damit ist <span class="var">list</span><span style="font-style: italic;"> </span>= (1,2).)</li>
 <li class="algo">Ende des Codeblocks der if-Abfrage.</li>
 <li class="algo">Ende des Codeblocks der
 for-Schleife&nbsp;aus Befehl 2, gehe also zur Stelle 2 und
 erh&ouml;he <span style="font-style: italic;">j</span>
-um eins. (<span style="font-style: italic;">j</span>
-ist dann 1.) &Uuml;berpr&uuml;fe, ob <span style="font-style: italic;">j</span> nun
-gr&ouml;&szlig;er als der gespeicherte Endwert ist (der Endwert
+um eins. (<span class="var">j</span>
+ist dann 1.) &Uuml;berpr&uuml;fe, ob <span class="var">j</span> nun
+gr&ouml;&szlig;er als der gespeicherte <span class="var">Endwert</span> ist (der <span class="var">Endwert</span>
 war 0).
 Dies ist der Fall, also h&ouml;re auf, die Schleife noch einmal zu
 durchlaufen und gehe damit zum n&auml;chsten Befehl hinter der
 Schleife.</li> <li class="algo">Ende des Codeblocks
 der for-Schleife
-aus Befehl 1, gehe also zur Stelle 1 und erh&ouml;he <span style="font-style: italic;">i</span> um eins. (<span style="font-style: italic;">i</span> ist dann 1.)
-&Uuml;berpr&uuml;fe, ob <span style="font-style: italic;">i</span>
+aus Befehl 1, gehe also zur Stelle 1 und erh&ouml;he <span class="var">i</span> um eins. (<span class="var">i</span> ist dann 1.)
+&Uuml;berpr&uuml;fe, ob <span class="var">i</span>
 nun gr&ouml;&szlig;er als der gespeicherte Endwert ist (der
 Endwert war
-1). Dies ist nicht der Fall, also fahre mit Befehl 2 fort.</li> <li class="algo">Rufe die Funktion High mit <span style="font-style: italic;">list</span> als Parameter
-auf, subtrahiere den Wert mit 1 und speichere den Wert als Endwert der
-Schleife. (Der Endwert ist damit 0.)</li> <li class="algo">Setze
-<span style="font-style: italic;">j</span> := 0.</li>
-<li class="algo">Gehe zu Befehl 3.</li> <li class="algo">&Uuml;berpr&uuml;fe, ob <span style="font-style: italic;">list</span>[<span style="font-style: italic;">j</span>] &gt; <span style="font-style: italic;">list</span>[<span style="font-style: italic;">j</span>+1] gilt.&nbsp;<span style="font-style: italic;">list</span>[0] ist 1 und <span style="font-style: italic;">list</span>[1] ist 2. Weil
+1). Dies ist nicht der Fall, also fahre mit Befehl 2 fort.</li> <li class="algo">Rufe die Funktion High mit <span class="var">list</span><span class="var"> </span>als Parameter
+auf, subtrahiere den Wert mit 1 und speichere den Wert als <span class="var">Endwert</span> der
+Schleife. (Der <span class="var">Endwert</span> ist damit 0.)</li> <li class="algo">Setze
+<span class="var">j</span> := 0.</li>
+<li class="algo">Gehe zu Befehl 3.</li> <li class="algo">&Uuml;berpr&uuml;fe, ob <span class="var">list</span>[<span class="var">j</span>] &gt; <span class="var">list</span>[<span class="var">j</span>+1] gilt.&nbsp;<span class="var">list</span>[0] ist 1 und <span class="var">list</span>[1] ist 2. Weil
 nicht 1&gt;2 gilt, &uuml;berspringen wir den Inhalt der
 if-Abfrage. Also gehe zum n&auml;chsten Befehl dahinter.</li>
 <li class="algo">Ende
 des Codeblocks der for-Schleife&nbsp;aus Befehl 2, gehe also zur
 Stelle 2
-und erh&ouml;he <span style="font-style: italic;">j</span>
-um eins. (<span style="font-style: italic;">j</span>
-ist dann 1.) &Uuml;berpr&uuml;fe, ob <span style="font-style: italic;">j</span> nun
+und erh&ouml;he <span class="var">j</span>
+um eins. (<span class="var">j</span>
+ist dann 1.) &Uuml;berpr&uuml;fe, ob <span class="var">j</span> nun
 gr&ouml;&szlig;er als
-der gespeicherte Endwert ist (der Endwert war 0). Dies ist der Fall,
+der gespeicherte Endwert ist (der <span class="var">Endwert</span> war 0). Dies ist der Fall,
 also h&ouml;re auf, die Schleife noch einmal zu durchlaufen und
 gehe damit
 zum n&auml;chsten Befehl hinter der Schleife.</li> <li class="algo">Ende des Codeblocks der for-Schleife
 aus Befehl 1, gehe also zur Stelle
 1 und erh&ouml;he <span style="font-style: italic;">i</span>
-um eins. (<span style="font-style: italic;">i</span>
-ist dann 2.) &Uuml;berpr&uuml;fe, ob <span style="font-style: italic;">i</span> nun
+um eins. (<span class="var">i</span>
+ist dann 2.) &Uuml;berpr&uuml;fe, ob <span class="var">i</span> nun
 gr&ouml;&szlig;er als
-der gespeicherte Endwert ist (der Endwert war 1). Dies ist der
+der gespeicherte Endwert ist (der <span class="var">Endwert</span> war 1). Dies ist der
 Fall, also h&ouml;re auf, die Schleife noch einmal zu durchlaufen
 und gehe zum n&auml;chsten Befehl dahinter.</li> <li class="algo">Ende des Codeblocks der
 Funktion. Damit sind wir fertig.</li>
@@ -1564,7 +1562,7 @@ nichts anderes als einen Text anzuzeigen. Und ein Timer ist daf&uuml;r
 da, irgendwelchen Code in regelm&auml;&szlig;igen Abst&auml;nden
 auszuf&uuml;hren. Nun w&auml;hlen wir den Button aus und geben ihm ein
 paar vern&uuml;nftige Eigenschaften. Es empfiehlt sich, die
-Caption-Eigenschaft (die Beschriftung) zu &auml;ndern. Damit du in etwa
+<span class="var">Caption</span>-Eigenschaft (die Beschriftung) zu &auml;ndern. Damit du in etwa
 das gleiche Ergebnis wie ich im Folgenden bekommst, solltest du beim
 Timer das Intervall auf 100 setzen. Auch die internen Namen (<span class="var">Button1</span>,
 <span class="var">Label1</span>, <span class="var">Timer1</span>) habe ich soweit erstmal gelassen.</p><p>Der aktuelle Code sieht nun folgenderma&szlig;en aus:<br><?php PrintCode("lazarus_newproj_sample.pas");?></p><p>Lazarus
@@ -1599,67 +1597,67 @@ hinterher auf den Button klicken, wird die Prozedur <span class="var">Button1Cli
 aufgerufen. Lazarus geht au&szlig;erdem nach dem automatischen
 Erstellen der Prozedur auch an die richtige Stelle im Code, so dass wir
 direkt beginnen k&ouml;nnen, den eigentlichen Code einzugeben (ist das
-nicht super einfach?).</p><p>Zum Test geben wir mal folgende 2 Zeilen ein:<br><span class="algo">Label1.Top := Label1.Top - 10;</span><br class="algo"><span class="algo">Label1.Caption := IntToStr(Label1.Top);</span></p><p>Nun
+nicht super einfach?).</p><p>Zum Test geben wir mal folgende 2 Zeilen ein:<br><span class="algo"><span class="var">Label1</span>.<span class="var">Top</span> := <span class="var">Label1</span>.<span class="var">Top</span> - 10;</span><br class="algo"><span class="algo"><span class="var">Label1</span>.<span class="var">Caption</span> := <span class="var">IntToStr</span>(<span class="var">Label1</span>.<span class="var">Top</span>);</span></p><p>Nun
 testen (d.h. starten) wir erneut das Programm. Nach einem Klick auf den
 Button k&ouml;nnen wir nun das erstaunliche Ergebnis bestaunen.</p><p>Ein
 wenig was zum Code: Wer aufmerksam war, hat sicherlich bemerkt, dass
 die Prozedur <span class="var">Button1Click</span> innerhalb des Typs <span class="var">TForm1</span> deklariert wurde
 (im <span class="algo">interface</span>-Teil) und im <span class="algo">implementation</span>-Teil
 den Namen <span class="var">TForm1.Button1Click</span> bekommen hat. Dies ist eine dem Typ
-zugeordnete Funktion. Solche Funktionen/Prozeduren bekommen immer im <span class="algo">implementation</span>-Teil den vollen Namen, damit keine Namenskonflikte entstehen k&ouml;nnen. Der Parameter <span class="algo">Sender: TObject</span>
+zugeordnete Funktion. Solche Funktionen/Prozeduren bekommen immer im <span class="algo">implementation</span>-Teil den vollen Namen, damit keine Namenskonflikte entstehen k&ouml;nnen. Der Parameter <span class="algo"><span class="var">Sender</span>: <span class="var">TObject</span></span>
 informiert beim Aufruf &uuml;ber das sendende Objekt, welches in dem
 Fall immer <span class="var">Form1</span> ist. Wir k&ouml;nnen den Parameter also vollkommen
 ignorieren (erst viel sp&auml;ter wird er sinnvoll werden). Im
 eigentlichen Code &auml;ndern wir gleich 2 Eigenschaften des Objektes
 <span class="var">Label1</span>. Auf dessen Eigenschaften (allgemein auf die Untervariablen
 eines selbstdefinierten Typs) greift man immer mit einem Punkt zu, also
-<span class="algo">Objektname.Eigenschaft</span>. In dem Fall
-vermindern wir <span class="var">Label1.Top</span> um 10. Wie man sicherlich beim Testen des
-Programms festgestellt hat, gibt die Eigenschaft Top (vom Typ <span class="algo">Integer</span>)
+<span class="algo"><span class="var">Objektname</span>.<span class="var">Eigenschaf</span>t</span>. In dem Fall
+vermindern wir <span class="algo"><span class="var">Label1</span>.<span class="var">Top</span></span> um 10. Wie man sicherlich beim Testen des
+Programms festgestellt hat, gibt die Eigenschaft <span class="var">Top </span>(vom Typ <span class="algo var">Integer</span>)
 die Y-Position des Labels an. Etwas verwirrend ist, dass die
 Y-Koordinate scheinbar umgedreht ist (also ganz oben ist 0 und nach
 unten hin wird es positiv). Dies hat sich im PC-Bereich durchgesetzt -
 wohl aus dem Grund, da man auch von oben nach unten liest und so der
 Punkt (0,0) (links oben) dann auch der Startpunkt ist. Die
-Caption-Eigenschaft (vom Typ <span class="algo">String</span>) entspricht der Beschriftung. <span class="var">IntToStr</span> ist eine Funktion, die einen Wert vom Typ <span class="algo">Integer</span> (also eine Zahl) in einen Wert vom Typ <span class="algo">String</span>
-(also einen Text) umwandelt. Man beachte (und halte sich immer im
+<span class="var">Caption</span>-Eigenschaft (vom Typ <span class="algo var">String</span>) entspricht der Beschriftung. <span class="var">IntToStr</span> ist eine Funktion, die einen Wert vom Typ <span class="algo var">Integer</span><span class="var"> </span>(also eine Zahl) in einen Wert vom Typ <span class="algo var">String</span><span class="var">
+</span>(also einen Text) umwandelt. Man beachte (und halte sich immer im
 Kopf), dass dies wirklich eine echte Umwandlung ist. Dies merkt man
-schon daran, dass sich nicht jeder beliebige String in einen Integer
-umwandeln l&auml;sst. F&uuml;r die Strings, f&uuml;r die dies aber doch
-m&ouml;glich ist, gibt es die Funktion StrToInt.</p><p>Wir wollen nun
+schon daran, dass sich nicht jeder beliebige <span class="var">String</span><span class="var"> </span>in einen Integer
+umwandeln l&auml;sst. F&uuml;r die <span class="var">String</span>s, f&uuml;r die dies aber doch
+m&ouml;glich ist, gibt es die Funktion <span class="var">StrToInt</span>.</p><p>Wir wollen nun
 das Label auf der anderen Seite aber auch wieder nach unten laufen
 lassen. Hierzu benutzen wir am besten unseren Timer. Wir t&auml;tigen
 mal einen Doppelklick auf diesen, so dass Lazarus automatisch die
-Prozedur Timer1Timer erstellt. Diese wird bei jedem Intervall des
+Prozedur <span class="var">Timer1Timer</span> erstellt. Diese wird bei jedem Intervall des
 Timers, falls er aktiviert ist, ausgef&uuml;hrt. Wir f&uuml;gen nun
-folgenden Code hinzu:<br><span class="algo">Label1.Top := Label1.Top + 1;</span><br><span class="algo">Label1.Caption := IntToStr(Label1.Top);</span></p><p>Das
+folgenden Code hinzu:<br><span class="algo"><span class="var">Label1</span>.<span class="var">Top</span> := <span class="var">Label1</span>.<span class="var">Top</span> + 1;</span><br><span class="algo"><span class="var">Label1</span>.<span class="var">Caption</span> := <span class="var">IntToStr</span>(<span class="var">Label1</span>.<span class="var">Top</span>);</span></p><p>Das
 aktuelle Ergebnis scheint schon ganz lustig zu sein. Etwas st&ouml;rend
 ist noch, dass das Label nicht am unteren Rand der Form halt macht,
-sondern ewig weiter wandert. Dies ist schnell korrigiert, Timer1Timer
-sieht nun folgenderma&szlig;en aus:<br><span class="algo">&nbsp; if Label1.Top + Label1.Height &lt; Form1.Height then</span><br class="algo"><span class="algo">&nbsp; begin</span><br class="algo"><span class="algo">&nbsp;&nbsp;&nbsp; Label1.Top := Label1.Top + 1;</span><br class="algo"><span class="algo">&nbsp;&nbsp;&nbsp; Label1.Caption := IntToStr(Label1.Top);</span><br class="algo"><span class="algo">&nbsp; end;</span></p><p>Es
+sondern ewig weiter wandert. Dies ist schnell korrigiert, <span class="var">Timer1Timer</span>
+sieht nun folgenderma&szlig;en aus:<br><span class="algo">&nbsp; if <span class="var">Label1</span>.<span class="var">Top</span> + <span class="var">Label1</span>.<span class="var">Height</span> &lt; <span class="var">Form1</span>.<span class="var">Height</span> then</span><br class="algo"><span class="algo">&nbsp; begin</span><br class="algo"><span class="algo">&nbsp;&nbsp;&nbsp; <span class="var">Label1</span>.<span class="var">Top</span> := <span class="var">Label1</span>.<span class="var">Top</span> + 1;</span><br class="algo"><span class="algo">&nbsp;&nbsp;&nbsp; <span class="var">Label1</span>.<span class="var">Caption</span> := <span class="var">IntToStr</span>(<span class="var">Label1</span>.<span class="var">Top</span>);</span><br class="algo"><span class="algo">&nbsp; end;</span></p><p>Es
 w&auml;re ja nun noch ganz lustig, wenn sich dieser Fall nach unten des
 Labels noch beschleunigt, so wie ein richtiger Fall im realen Leben
 auch sein w&uuml;rde. Hierf&uuml;r muss das Label eine aktuelle
 Geschwindigkeit haben, die sich im Fall immer weiter
 vergr&ouml;&szlig;ert und von der die Positions&auml;nderung
 abh&auml;ngt. F&uuml;r die Geschwindigkeit des Labels f&uuml;gen wir
-also eine neue Variable ein, die wir innerhalb der TForm1-Deklaration
-platzieren (innerhalb die <span class="algo">private</span>-Sektion, denn f&uuml;r solche Sachen ist diese da):<br><span class="algo">Label1Vel: Integer;</span></p><p>Nun
-passen wir Timer1Timer erneut an. Wir wollen, dass wenn das Label unten
+also eine neue Variable ein, die wir innerhalb der <span class="var">TForm1</span>-Deklaration
+platzieren (innerhalb die <span class="algo">private</span>-Sektion, denn f&uuml;r solche Sachen ist diese da):<br><span class="algo"><span class="var">Label1Vel</span>: <span class="var">Integer</span>;</span></p><p>Nun
+passen wir <span class="var">Timer1Timer</span> erneut an. Wir wollen, dass wenn das Label unten
 angekommen ist, die Geschwindigkeit gerade negiert wird und auch etwas
 Energie verloren geht, so dass die Geschwindigkeit auch halbiert werden
 soll. Weil man mit einem Integer keine normale Division
 durchf&uuml;hren kann (denn dies geht nur mit Kommazahlen problemlos),
-m&uuml;ssen wir die Ganzzahldivision <span class="algo">div</span> benutzen. Dies resultiert im folgenden Code:<br><span class="algo">&nbsp; if Label1.Top + Label1Vel + Label1.Height &gt; Form1.Height then</span><br class="algo"><span class="algo">&nbsp;&nbsp;&nbsp; Label1Vel := -Label1Vel div 2</span><br class="algo"><span class="algo">&nbsp; else</span><br class="algo"><span class="algo">&nbsp; begin</span><br class="algo"><span class="algo">&nbsp;&nbsp;&nbsp; Label1.Top := Label1.Top + Label1Vel;</span><br class="algo"><span class="algo">&nbsp;&nbsp;&nbsp; Label1.Caption := IntToStr(Label1.Top);</span><br class="algo"><span class="algo">&nbsp;&nbsp;&nbsp; Label1Vel := Label1Vel + 1;</span><br class="algo"><span class="algo">&nbsp; end;</span></p><p>Wirklich
+m&uuml;ssen wir die Ganzzahldivision <span class="algo">div</span> benutzen. Dies resultiert im folgenden Code:<br><span class="algo">&nbsp; if <span class="var">Label1</span>.<span class="var">Top</span> + <span class="var">Label1Vel</span> + <span class="var">Label1</span>.<span class="var">Height</span> &gt; <span class="var">Form1</span>.<span class="var">Height</span> then</span><br class="algo"><span class="algo">&nbsp;&nbsp;&nbsp; <span class="var">Label1Vel</span> := -<span class="var">Label1Vel</span> div 2</span><br class="algo"><span class="algo">&nbsp; else</span><br class="algo"><span class="algo">&nbsp; begin</span><br class="algo"><span class="algo">&nbsp;&nbsp;&nbsp; <span class="var">Label1</span>.<span class="var">Top</span> := <span class="var">Label1</span>.<span class="var">Top</span> + <span class="var">Label1Vel</span>;</span><br class="algo"><span class="algo">&nbsp;&nbsp;&nbsp; <span class="var">Label1</span>.<span class="var">Caption</span> := <span class="var">IntToStr</span>(<span class="var">Label1</span>.<span class="var">Top</span>);</span><br class="algo"><span class="algo">&nbsp;&nbsp;&nbsp; <span class="var">Label1Vel</span> := <span class="var">Label1Vel</span> + 1;</span><br class="algo"><span class="algo">&nbsp; end;</span></p><p>Wirklich
 lehrreich f&uuml;r dich wird das ganze, wenn du aber jetzt selbst mal
 ein wenig rumspielst und eigene Varianten testest. Eine kleine
 Erweiterung aber trotzdem vielleicht noch: W&auml;hle das Label aus und
-setze die Eigenschaft DragMode auf dmAutomatic. W&auml;hle nun im
+setze die Eigenschaft <span class="var">DragMode</span> auf <span class="var">dmAutomatic</span>. W&auml;hle nun im
 Objektinspektor die <span class="var">Form1</span> aus und statt den Eigenschaften klicke hier
 auf den Tab Ereignisse. Es werden die Ereignisse der <span class="var">Form1</span> aufgelistet.
-Man mache einen Doppelklick auf das Feld neben OnDragOver. Eine
+Man mache einen Doppelklick auf das Feld neben <span class="var">OnDragOver</span>. Eine
 Funktion <span class="var">FormDragOver</span> wird erstellt, in welche man folgenden Code
-hinzuf&uuml;gen mag:<br><span class="algo">Label1.Left := X; Label1.Top := Y;</span></p><p>Man bestaune erneut das Ergebnis...</p><p class="offtopic">Hier
+hinzuf&uuml;gen mag:<br><span class="algo"><span class="var">Label1</span>.<span class="var">Left</span> := <span class="var">X</span>; <span class="var">Label1</span>.<span class="var">Top</span> := <span class="var">Y</span>;</span></p><p>Man bestaune erneut das Ergebnis...</p><p class="offtopic">Hier
 fehlen noch weitere Beispiele und eine Einf&uuml;hrung in die am
 h&auml;ufigsten verwendeten Steuerelemente, sowie eine Einf&uuml;hrung
 in prinzipielle Programmiertechniken.</p><p>Nachdem du bereits nun
@@ -1697,10 +1695,10 @@ noch sehr im Rohformat aussieht, also erst w&auml;hrend der Laufzeit
 auf den Code dieser Form:<br><?php PrintCode("robot_umainform_part.pas");?></p><p>Was ist nun wirklich neu zu unserem bisherigen Wissen? Gehen wir diese Code-&Uuml;bersicht einmal Schrittweise durch.&nbsp;</p><p>Im <span class="algo">uses</span>-Teil
 befinden sich noch ein paar mehr Units als sonst. Diese wurden
 automatisch dort im Code hinzugef&uuml;gt, als ich entsprechende
-Steuerelemente auf der Form platziert hatte. Dann ist da noch dieses <span class="algo">{$IFDEF win32} ... {$ENDIF}</span>. Dies ist, wie wir bereits gesagt hatten, eine Compileranweisung. <span class="algo">IFDEF</span> ist dabei die Abfrage, ob ein spezieller Wert des Compilers definiert ist oder nicht. <span style="font-style: italic;">win32</span>
-ist dabei genau dann definiert, wenn der Code f&uuml;r ein normales
-aktuelles Windows kompiliert wird. In dem Fall wird also noch die Unit <span style="font-style: italic;">MMSystem</span>
-hinzugef&uuml;gt. Diese stellt unter Windows spezielle Funktionen zum
+Steuerelemente auf der Form platziert hatte. Dann ist da noch dieses <span class="algo">{$IFDEF win32} ... {$ENDIF}</span>. Dies ist, wie wir bereits gesagt hatten, eine Compileranweisung. <span class="algo">IFDEF</span> ist dabei die Abfrage, ob ein spezieller Wert des Compilers definiert ist oder nicht. <span class="var">win32</span><span class="var">
+</span>ist dabei genau dann definiert, wenn der Code f&uuml;r ein normales
+aktuelles Windows kompiliert wird. In dem Fall wird also noch die Unit <span class="var">MMSystem</span><span class="var">
+</span>hinzugef&uuml;gt. Diese stellt unter Windows spezielle Funktionen zum
 Soundabspielen bereit (mehr dazu sp&auml;ter an entsprechender Stelle).</p><p>Im <span class="algo">const</span>-Teil
 werden nun f&uuml;r den eigentlichen Code einige Konstanten definiert.
 Die&nbsp;konkreten Konstanten zu erkl&auml;ren ist vermutlich aber erst
@@ -1710,7 +1708,7 @@ wirkliche Neuerung im gesamten Code (ausgenommen sind jetzt mal
 konkrete Funktionen oder &auml;hnliches, denn das ist eigentlich nichts
 wirklich Neues, sondern etwas, was man halt, wenn man es braucht, in
 einem Buch oder im Internet sich raussucht). Es wurden in diesem Teil
-f&uuml;r das Spiel einige neue Typen definiert, so z.B. <span style="font-style: italic;">TRoomNum</span>, <span style="font-style: italic;">TPlaceAbsNum</span>, <span style="font-style: italic;">TRoom</span> und weitere.</p><p>Was ist ein <span class="algo">record</span>?<br><?php PrintCode("record_sample.pas");?></p><p>Ein <span class="algo">record</span> ist im Prinzip nichts anderes als eine Zusammenfassung mehrerer einzelner anderer Variablen eines vorhandenen Variablentyps.</p><p></p><p><span class="offtopic">Vorzeitiges
+f&uuml;r das Spiel einige neue Typen definiert, so z.B. <span class="var">TRoomNum</span>, <span class="var">TPlaceAbsNum</span>, <span class="var">TRoom </span>und weitere.</p><p>Was ist ein <span class="algo">record</span>?<br><?php PrintCode("record_sample.pas");?></p><p>Ein <span class="algo">record</span> ist im Prinzip nichts anderes als eine Zusammenfassung mehrerer einzelner anderer Variablen eines vorhandenen Variablentyps.</p><p></p><p><span class="offtopic">Vorzeitiges
 Ende ...</span></p>
 <hr style="width: 100%; height: 2px;"><p class="offtopic">Author: Albert Zeyer<br>
 Mail: ich AT admin DOT de<br>
