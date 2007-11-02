@@ -52,6 +52,8 @@
 
 <?php
 	$file = "desc.txt";
+	if(!file_exists($file))
+		$file = "mysql.description";
 	if(file_exists($file)) {
 ?>
 <p>
