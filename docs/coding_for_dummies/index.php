@@ -230,7 +230,7 @@ M&uuml;llkontainer zur&uuml;ck in den Keller.</span></li>
 </ol><p>Genug zu diesem Beispiel und zu einem Neuen.</p>
 <p><span style="text-decoration: underline;">Aufgabe</span>:<br>
 <span class="aufgabe"><img style="width: 150px; height: 68px; float: right;" alt="n hoch k" src="n_hoch_k.png">Es soll errechnet werden, was <span class="var">n</span> hoch <span class="var">k</span> ist (auch
-geschrieben als <span class="var">n</span>^<span class="var">k</span>). <span style="font-style: italic;">n</span> und <span style="font-style: italic;">k</span>
+geschrieben als <span class="var">n</span>^<span class="var">k</span>). <span class="var">n</span> und <span class="var">k</span>
 sollen dabei nicht negative, ganzen Zahlen (also ohne Nachkommastellen)
 sein. Dem Ausf&uuml;hrer wird als Voraussetzung gegeben, dass er
 multiplizieren kann.</span></p>
@@ -1559,7 +1559,7 @@ kann man hier die Steuerelemente einf&uuml;gen, wie man gerade Lust
 hat. Nach einem Doppelklick auf ein Steuerelement (z.B. auf ein dort
 platzierten Button) gelangt man automatisch zu dem entsprechenden Code
 des Standardereignisses des Steuerelements (z.B. ist sehr h&auml;ufig
-das Standardereignis ein einfacher Mausklick).</p><p>Packen wir nun mal ein Button (<img style="width: 28px; height: 18px;" alt="Button-Symbol" src="lazarus_button.png">), ein Label (<img style="width: 25px; height: 19px;" alt="Label-Symbol" src="lazarus_label.png">) und ein Timer (der findet sich unter der Kategorie 'System':&nbsp;<img style="width: 23px; height: 21px;" alt="Timer-Symbol" src="lazarus_timer.png">) auf unsere Form:<br><img style="width: 300px; height: 270px;" alt="Form mit Label, Button und Timer" src="lazarus_formwithlabeltimerbutton.png"></p><p>Ein
+das Standardereignis ein einfacher Mausklick).</p><p>Packen wir nun mal ein Button (<img title="TButton" style="width: 28px; height: 18px;" alt="TButton" src="lazarus_button.png">), ein Label (<img title="TLabel" style="width: 25px; height: 19px;" alt="TLabel" src="lazarus_label.png">) und ein Timer (der findet sich unter der Kategorie 'System':&nbsp;<img title="TTimer" style="width: 23px; height: 21px;" alt="TTimer" src="lazarus_timer.png">) auf unsere Form:<br><img style="width: 300px; height: 270px;" alt="Form mit Label, Button und Timer" src="lazarus_formwithlabeltimerbutton.png"></p><p>Ein
 Button ist dabei eins dieser wohlbekannten Klickfelder. Ein Label tut
 nichts anderes als einen Text anzuzeigen. Und ein Timer ist daf&uuml;r
 da, irgendwelchen Code in regelm&auml;&szlig;igen Abst&auml;nden
@@ -1594,7 +1594,7 @@ Man wird allerdings feststellen, dass man nicht wirklich etwas
 sinnvolles tun kann, denn bisher haben wir auch noch keinen Code
 geschrieben.</p><p>Dies holen wir jetzt nach. Nach einem Doppelklick
 auf den Button erstellt Lazarus automatisch eine
-Prozedur&nbsp;<span class="var">Button1Click</span>, welche mit dem <a name="ereignis"></a><span style="font-weight: bold;">Klickereignis</span> des Buttons
+Prozedur&nbsp;<span class="var">Button1Click</span>, welche mit dem <a name="klickereignis"></a><span style="font-weight: bold;">Klickereignis</span> des Buttons
 verkn&uuml;pft ist. Das bedeutet, wenn wir im eigentlichen Programm
 hinterher auf den Button klicken, wird die Prozedur <span class="var">Button1Click</span>
 aufgerufen. Lazarus geht au&szlig;erdem nach dem automatischen
@@ -1631,7 +1631,7 @@ m&ouml;glich ist, gibt es die Funktion <span class="var">StrToInt</span>.</p><p>
 das Label auf der anderen Seite aber auch wieder nach unten laufen
 lassen. Hierzu benutzen wir am besten unseren Timer. Wir t&auml;tigen
 mal einen Doppelklick auf diesen, so dass Lazarus automatisch die
-Prozedur <span class="var">Timer1Timer</span> erstellt. Diese wird bei jedem Intervall des
+Prozedur <span class="var">Timer1Timer</span> erstellt. <a name="timerereignis"></a>Diese wird bei jedem Intervall des
 Timers, falls er aktiviert ist, ausgef&uuml;hrt. Wir f&uuml;gen nun
 folgenden Code hinzu:<br><span class="algo"><span class="var">Label1</span>.<span class="var">Top</span> := <span class="var">Label1</span>.<span class="var">Top</span> + 1;</span><br><span class="algo"><span class="var">Label1</span>.<span class="var">Caption</span> := <span class="var">IntToStr</span>(<span class="var">Label1</span>.<span class="var">Top</span>);</span></p><p>Das
 aktuelle Ergebnis scheint schon ganz lustig zu sein. Etwas st&ouml;rend
@@ -1660,7 +1660,32 @@ Objektinspektor die <span class="var">Form1</span> aus und statt den Eigenschaft
 auf den Tab Ereignisse. Es werden die Ereignisse der <span class="var">Form1</span> aufgelistet.
 Man mache einen Doppelklick auf das Feld neben <span class="var">OnDragOver</span>. Eine
 Funktion <span class="var">FormDragOver</span> wird erstellt, in welche man folgenden Code
-hinzuf&uuml;gen mag:<br><span class="algo"><span class="var">Label1</span>.<span class="var">Left</span> := <span class="var">X</span>; <span class="var">Label1</span>.<span class="var">Top</span> := <span class="var">Y</span>;</span></p><p>Man bestaune erneut das Ergebnis...</p><p class="offtopic">Hier
+hinzuf&uuml;gen mag:<br><span class="algo"><span class="var">Label1</span>.<span class="var">Left</span> := <span class="var">X</span>; <span class="var">Label1</span>.<span class="var">Top</span> := <span class="var">Y</span>;</span></p><p>Man bestaune erneut das Ergebnis...</p><p>Mal
+ein paar Gedanken zu unseren bisherigen Beispielen in Lazarus: Als
+erstes haben wir damit begonnen unser sp&auml;teres Fenster zu
+entwerfen im Editor, indem wir die entsprechenden Steuerelemente auf
+der Form platziert haben. Dann haben wir Code geschrieben. Um konkreter
+zu sein: Wir haben den Code geschrieben, der bei bestimmten <a name="Ereignisse"></a><span style="font-weight: bold;">Ereignissen</span> der Steuerelemente ausgef&uuml;hrt wird (wie z.B. das <a href="#klickereignis">Klickereignis</a> von einem Button, d.h. das Ereignis, wenn man auf den Button draufklickt). Diese Form der Programmierung nennt man die <span style="font-weight: bold;">Ereignisgesteuerte</span>
+Programmierung. Das hei&szlig;t einfach nur, dass all der Code den man
+schreibt gewissen Ereignissen zugeordnet ist und dann bei den
+entsprechenden Ereignissen ausgef&uuml;hrt wird. Z.B. wird dieProzedur&nbsp; <span class="var">Button1Click</span> im <a href="#klickereignis">vorherigen Beispiel</a>
+genau dann ausgef&uuml;hrt, wenn man auf den Button klickt. Das
+hei&szlig;t &uuml;brigens auch, dass in einem Ereignisgesteuerten
+Programm gar kein Code ausgef&uuml;hrt wird, so lange kein Ereignis
+eintritt. In diesem Zustand "schl&auml;ft" das Programm sozusagen und
+wartet halt auf neue Ereignisse, bei denen es dann irgendetwas
+ausf&uuml;hren kann.</p><p>Es gibt eine ganze Reihe von Ereignissen, die alle bei den verschiedenen Steuerelementen eintreten k&ouml;nnen. Bei dem <span style="font-weight: bold;">Button</span> ist dies z.B. das <span style="font-weight: bold;">Klickereignis</span>, aber das Klickereignis kann nat&uuml;rlich f&uuml;r grunds&auml;tzlich alle anderen Steuerelemente auch eintreten. Bei einem <span style="font-weight: bold;">Textfeld</span> (f&uuml;r die Texteingabe) gibt es z.B. das <span style="font-weight: bold;">KeyPress</span>-Ereignis (wenn man eine Taste dr&uuml;ckt) oder auch das <span style="font-weight: bold;">Change</span>-Ereignis
+(wenn der Text ge&auml;ndert wird). Bei gewissen Ereignissen bekommt
+man ausserdem auch noch ein paar Informationen als Parameter mit. Z.B.
+bekommt man bei dem KeyPress-Ereignis nat&uuml;rlich auch mit, welche
+Taste denn nun gedr&uuml;ckt wurde. Bei dem <span style="font-weight: bold;">MouseMove</span>-Ereignis bekommt man z.B. die genaue Position der Maus mit.</p><p>Sehen wir uns einmal in Lazarus an, welche Ereignisse wir so zu
+Verf&uuml;gung haben. Nach dem Starten von Lazarus setzen wir also ein <span style="font-weight: bold;">Textfeld</span> (<img style="width: 28px; height: 23px;" alt="TEdit" title="TEdit" src="lazarus_editbox.png">) auf unsere Form. Danach w&auml;hlen wir im Objektinspektor die Ereignisliste (das Tab&nbsp;<span style="font-style: italic;">Ereignisse</span>, direkt rechts neben&nbsp;<span style="font-style: italic;">Eigenschaften</span>)
+aus. Wir sehen nun eine Liste aller f&uuml;r dieses Steuerelement (das
+Textfeld) verf&uuml;gbaren Ereignisse. Machen wir ein Doppelklick auf ein
+Ereignis, erstellt Lazarus uns automatisch eine Funktion f&uuml;r das
+entsprechende Ereignis. Dies habe ich hier einmal f&uuml;r das <span style="font-weight: bold;">Change</span>-Ereignis gemacht. Lazarus hat dann automatisch die Funktion <span class="var">TForm1.Edit1Change</span> erstellt. (<span class="var">Edit1</span> ist der Name von dem Textfeld gewesen, da ich das nicht weiter ge&auml;ndert hatte.)<br></p><p><img style="width: 663px; height: 574px;" alt="Lazarus f&uuml;r OnChange" src="laz_change_ereignis__klein.jpg"></p><p>Zum Test setzen wir mal direkt unter das Textfeld noch ein Label (<img style="width: 25px; height: 19px;" alt="TLabel" title="TLabel" src="lazarus_label.png">). Nun schreiben wir in die Funktion <span class="var">TForm1.Edit1Change</span> folgenden Code:<br><span class="algo"><span class="var">Label1</span>.<span class="var">Caption</span> := <span class="var">Edit1</span>.<span class="var">Text</span>;</span></p><p>Das
+Ergebnis ist wie erwartet, dass bei jeder Text&auml;nderung in dem
+Textfeld der angezeigte Text im Label (die Caption) aktuallisiert wird.</p><p class="offtopic">Hier
 fehlen noch weitere Beispiele und eine Einf&uuml;hrung in die am
 h&auml;ufigsten verwendeten Steuerelemente, sowie eine Einf&uuml;hrung
 in prinzipielle Programmiertechniken.</p><p>Nachdem du bereits nun
@@ -1739,7 +1764,7 @@ Typdefinition von <span class="var">TMainForm</span> wurde automatisch
 von Lazarus erstellt, w&auml;hrend ich die einzelnen Elemente wie
 Labels, Picture-Boxen (Boxen f&uuml;r Bildern), Panels (einfach nur
 Boxen f&uuml;r irgendwas) und Timer auf das Fenster gesetzt habe. Die
-ganzen Prozeduren wie z.B. <span class="var">GamePanelClick</span> wurden auch alle von Lazarus automatisch angelegt, als ich die entsprechenden <a href="#ereignis">Ereignisse</a> bearbeitete.</p><p>Der Code in der Typdefinition von <span class="var">TMainForm</span> ab "<span style="font-style: italic;">gameplay</span>"
+ganzen Prozeduren wie z.B. <span class="var">GamePanelClick</span> wurden auch alle von Lazarus automatisch angelegt, als ich die entsprechenden <a href="#Ereignisse">Ereignisse</a> bearbeitete.</p><p>Der Code in der Typdefinition von <span class="var">TMainForm</span> ab "<span style="font-style: italic;">gameplay</span>"
 ist der, den ich selbst hinzugef&uuml;gt habe. Es sind weitere eigene
 Prozeduren f&uuml;r das eigentliche Spiel. Nach den Prozeduren kommen
 noch ein paar Variablen f&uuml;r das eigentliche Spiel. Z.B.
@@ -1747,7 +1772,7 @@ enth&auml;lt die Variable <span class="var">MyWorld</span> die komplette Spielwe
 haben wir nun auch auf unserer Festplatte entpackt. Nach der bereits
 groben Einf&uuml;hrung in den Code, wo wir ein paar gr&ouml;bere
 Unklarheiten (vor allem wegen neuen Variablentypen) gekl&auml;rt haben,
-wollen wir nun auf ein paar Stellen mal einen genaueren Blick werfen.</p><p></p><p></p><p><span class="offtopic">Vorzeitiges
+wollen wir nun auf ein paar Stellen mal einen genaueren Blick werfen.</p><p>Sehen wir uns mal die Prozedur <span class="var">TMainForm.FormKeyDown</span> im <span class="algo">implementation</span>-Teil an. Dies ist die Prozedur der Hauptform, die bei dem <span style="font-weight: bold;">KeyDown</span>-<a href="#Ereignisse">Ereignis</a> der Hauptform ausgef&uuml;hrt wird, d.h. genau dann, wenn der Spieler eine Taste herunterdr&uuml;ckt.<br><?php PrintCode("robot_formkeydown.pas");?></p><p></p><p><span class="offtopic">Vorzeitiges
 Ende ...</span></p>
 <hr style="width: 100%; height: 2px;"><p class="offtopic">Author: Albert Zeyer<br>
 Mail: ich AT admin DOT de<br>
