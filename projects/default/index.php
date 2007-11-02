@@ -1,5 +1,6 @@
 <?php
 	include("../../sql.php");
+	include("../default/text.php");
 	
 	// TODO: does this handling of request-variables in a special file
 	$url = $_SERVER["REQUEST_URI"];
@@ -18,7 +19,7 @@
 	default:
 		$lang = "";
 	}
-	
+
 	if($db_online) {
 		$id = DB_GetID__FullURL($url);
 		$titel = DB_GetName($id);
@@ -29,7 +30,7 @@
 		$titel = read_from_file("mysql.name");		
 		$description = read_from_file("mysql.description");
 	}	
-	$titel2 = "Project: $titel";
+	$titel2 = $titel2 . $titel;
 	include("../../head.php");
 
 	if($lang == "en") {
@@ -42,33 +43,38 @@
 	} else
 		$file = "main.php";
 	
-	if(file_exists($file))
+	if(file_exists($file)) {
+		$showing_main_file = true;
 		include($file);
-	else {
+	} else {
+		$showing_main_file = false;
 ?>
 
-<p>
-<b>Description</b><br>
 <?php
 	$file = "desc.txt";
-	if(file_exists($file))
-		include($file);
-	else
-		echo "I am working on it...\n";
+	if(file_exists($file)) {
 ?>
+<p>
+<b>Description</b><br>
+<?php include($file); ?>
 </p>
+<?php } ?>
 
 <p>
 <b>Files</b><br>
 <?php
+	function FileExt($fname) {
+		$pos = strrpos($fname, ".");
+		if($pos === false) return "";
+		return strtolower(substr($fname, $pos + 1));
+	}
+
 	function ListFiles($dir) {
 		$d = dir($dir);
 		$files_count = 0;
 		while(false !== ($entry = $d->read())) {
+			if($entry != "" && substr($entry, 0, 1) != ".")
 			switch($entry) {
-			case "":
-			case ".":
-			case "..":
 			case "index.php":
 			case "desc.txt":
 			case "mysql.name":
@@ -77,7 +83,17 @@
 			case "mysql.marking":
 				break;
 			default:
-				echo '<a href="'.$dir.'/'.$entry.'">'.$entry.'</a><br>';
+				switch(FileExt($entry)) {
+				case "jpg":
+				case "jpeg":
+				case "png":
+				case "gif":
+				case "svg":
+					echo '<img src="'.$dir.'/'.$entry.'"><br>';
+					break;
+				default:
+					echo '<a href="'.$dir.'/'.$entry.'">'.$entry.'</a><br>';
+				}
 				echo "\n";
 				$files_count++;
 			}
@@ -91,20 +107,11 @@
 ?>
 </p>
 
-<hr>
-<p>
-<b>Other files</b><br>
-<?php ListFiles("../downloads"); ?>
-</p>
-
 <?php
 	}
 
 	include("../default/copyright.php");
-
 	include("../default/other.php");
-
-	$leader_titel = "Coder:";
-	$leaders = array('Albert Zeyer (<a href="mailto:admin@az2000.de">Mail</a>)');
 	include("../../foot.php");
 ?>
+
