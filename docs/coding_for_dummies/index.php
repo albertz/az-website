@@ -254,18 +254,18 @@ sich auch einfach eine Schublade vor, in die genau eine Information
 reinpasst - und diese kann abgefragt werden oder auch durch eine andere
 ersetzt werden.</p>
 <p><span style="text-decoration: underline;">Beispiel</span>:<br>
-<img style="width: 100px; height: 144px; float: left;" alt="Buchstaben-Speicherfeld" src="buchstabe.png" hspace="5" vspace="5">Wir wollen uns einen <span style="font-style: italic;">Buchstaben</span>
-merken. Am Anfang wollen wir uns f&uuml;r den <span style="font-style: italic;">Buchstaben</span> mal das
-'A' merken.<br>
-Wir erinnern uns nun, dass wir uns f&uuml;r den <span style="font-style: italic;">Buchstaben</span> ein 'A'
+<img style="width: 100px; height: 144px; float: left;" alt="Buchstaben-Speicherfeld" src="buchstabe.png" hspace="5" vspace="5">Wir wollen uns einen <span class="var">Buchstaben
+</span>merken. Am Anfang wollen wir uns f&uuml;r den <span class="var">Buchstaben </span>mal das
+'<span style="font-style: italic;">A</span>' merken.<br>
+Wir erinnern uns nun, dass wir uns f&uuml;r den <span class="var">Buchstaben</span> ein '<span style="font-style: italic;">A</span>'
 gemerkt haben.<br>
-Nun wollen wir uns f&uuml;r den <span style="font-style: italic;">Buchstaben</span>
-stattdessen ein 'B' merken. Nun haben wir uns also f&uuml;r den <span style="font-style: italic;">Buchstaben</span> ein 'B'
-gemerkt und wissen deshalb nichts mehr von dem 'A', denn nun haben wir
-stattdessen uns ja das 'B' gemerkt. (Bei der Benutzung eines
+Nun wollen wir uns f&uuml;r den <span class="var">Buchstaben
+</span>stattdessen ein '<span style="font-style: italic;">B</span>' merken. Nun haben wir uns also f&uuml;r den <span class="var">Buchstaben </span>ein 'B'
+gemerkt und wissen deshalb nichts mehr von dem '<span style="font-style: italic;">A</span>', denn nun haben wir
+stattdessen uns ja das '<span style="font-style: italic;">B</span>' gemerkt. (Bei der Benutzung eines
 Notizblocks hei&szlig;t das, dass beim neuen Setzen eines neuen
 Wertes der alte gestrichen wird. F&uuml;r eine Sache, in diesem
-Fall dem <span style="font-style: italic;">Buchstaben</span>,
+Fall dem <span class="var">Buchstaben</span>,
 kann immer nur ein Wert gemerkt werden.)</p>
 <p>Man beachte, dass man einen Anfangswert auch angeben sollte,
 denn
@@ -277,9 +277,9 @@ wenn dort bisher kein Inahlt ist?)</p>
 der eigentlichen Aufgabe "<span class="var">n</span> hoch <span class="var">k</span>":<br>
 <span class="algo">(1.) Man merke sich einen <span class="var">Z&auml;hler</span>,
 der bei <span class="var">k</span>
-beginnen soll.</span><br class="algo">
+beginnen soll. <span style="font-style: italic;">[<span class="var">Z&auml;hler</span> entspricht also dabei der Bezeichnung f&uuml;r Schublade 1]</span></span><br class="algo">
 <span class="algo">(2.) Man merke sich das <span class="var">Zwischenergebnis</span>,
-welches erstmal 1 sein soll.</span><br class="algo">
+welches erstmal 1 sein soll. <span style="font-style: italic;">[<span class="var">Zwischenergebnis</span> ist die Schublade 2]</span></span><br class="algo">
 <span class="algo">(3.) Wenn der <span class="var">Z&auml;hler</span>
 nicht 0 ist, tue folgendes:</span><br class="algo">
 <span class="algo">&nbsp;&nbsp;&nbsp;
@@ -294,7 +294,7 @@ eins runter (subtrahiere ihn mit 1) und merke es sich als neuen <span class="var
 </span><span class="algo">Ende der im Wenn-Fall
 auszuf&uuml;hrenden Befehle.</span><br class="algo">
 <span class="algo">(7.) Das <span class="var">Ergebnis</span> ist nun
-der Wert vom <span class="var">Zwischenergebnis</span>.</span></p>
+der Wert vom <span class="var">Zwischenergebnis</span>. <span style="font-style: italic;">[man k&ouml;nnte das </span><span style="font-style: italic;" class="var">Ergebnis</span><span style="font-style: italic;"> als die Ergebnis-Schublade ansehen]</span></span></p>
 <p>Um alle bisherigen Prinzipien (die Schleife und die zu
 merkenden
 Sachen) noch mal zu verdeutlichen, wollen wir als Mensch den
@@ -560,9 +560,9 @@ nicht </span><span class="algo var">Rest</span><span class="algo"><span class="v
 geschrieben. Gemeint ist, dass alle Befehle innerhalb der Schleife
 immer zusammen einmal hintereinander ausgef&uuml;hrt werden sollen
 und danach erneut die &Uuml;berpr&uuml;fung der Bedingung der
-Schleife (nicht <span style="font-style: italic;">Rest</span>
-= 0) durchgef&uuml;hrt werden soll und falls diese
-&Uuml;berpr&uuml;fung negativ ausf&auml;llt (wenn <span style="font-style: italic;">Rest</span> = 0 ist), dann
+Schleife (nicht <span class="var">Rest</span><span class="var">
+</span>= 0) durchgef&uuml;hrt werden soll und falls diese
+&Uuml;berpr&uuml;fung negativ ausf&auml;llt (wenn <span class="var">Rest</span><span class="var"> </span>= 0 ist), dann
 sollen die Befehle innerhalb der Schleife nicht noch ein weiteres Mal
 ausgef&uuml;hrt werden, sondern damit ist die Schleife
 abgeschlossen (und evtl. Befehle hinter der Schleife sollen nun
@@ -680,40 +680,40 @@ Hier eine M&ouml;glichkeit, diesen Algorithmus zu formulieren:</p>
 <span class="algo">&nbsp;&nbsp;&nbsp; (*2)
 &nbsp;&nbsp; </span><span class="algo var">Zwischenergebnis</span><span class="algo"><span class="var"> </span>:= </span><span class="algo var">Zwischenergebnis</span><span class="algo"><span class="var"> </span>+ </span><span class="algo var">Teil</span><span class="algo">[</span><span class="algo var">Position</span><span class="algo">]</span><span class="algo"> * 10^(</span><span class="algo var">Position</span><span class="algo">-1)</span><br class="algo">
 <span class="algo var">Ergebnis</span><span class="algo"><span class="var"> </span>:= </span><span class="algo var">Zwischenergebnis</span></p>
-<p>'F&uuml;r <span style="font-style: italic;">Position</span>
-:= <span style="font-style: italic;">Start</span>
-bis <span style="font-style: italic;">Ende</span>,
-tue <span style="font-style: italic;">Aktion</span>'
-soll bedeuten, dass wir <span style="font-style: italic;">Position</span>
-als erstes auf <span style="font-style: italic;">Start</span>
-setzen, dann die <span style="font-style: italic;">Aktion</span>
-ausf&uuml;hren, danach <span style="font-style: italic;">Position</span>
+<p>'F&uuml;r <span class="var">Position</span><span class="var">
+</span>:= <span style="font-style: italic;" class="var">Start</span><span class="var">
+</span>bis <span style="font-style: italic;" class="var">Ende</span>,
+tue <span style="font-style: italic;" class="var">Aktion</span>'
+soll bedeuten, dass wir <span class="var">Position</span>
+als erstes auf <span style="font-style: italic;" class="var">Start</span>
+setzen, dann die <span style="font-style: italic;" class="var">Aktion</span>
+ausf&uuml;hren, danach <span class="var">Position</span>
 um eins erh&ouml;hen, erneut die Aktion ausf&uuml;hren und dies
-solange wiederholen, bis <span style="font-style: italic;">Position</span>
-bei <span style="font-style: italic;">Ende</span>
-angelangt ist, wof&uuml;r wir dann ein letztes Mal die Aktion
-ausf&uuml;hren (insgesamt sind das <span style="font-style: italic;">Ziel</span> - <span style="font-style: italic;">Start</span> + 1
-Ausf&uuml;hrungen von Aktion; falls <span style="font-style: italic;">Start</span> &gt; <span style="font-style: italic;">Ziel</span> ist, wollen
-wir die Aktion gar nicht ausf&uuml;hren).</p>
+solange wiederholen, bis <span class="var">Position</span>
+bei <span class="var" style="font-style: italic;">Ende</span>
+angelangt ist, wof&uuml;r wir dann ein letztes Mal die <span class="var" style="font-style: italic;">Aktion</span>
+ausf&uuml;hren (insgesamt sind das <span style="font-style: italic;" class="var">Ziel</span><span style="font-style: italic;"> </span>- <span class="var" style="font-style: italic;">Start</span><span class="var"> </span>+ 1
+Ausf&uuml;hrungen von <span style="font-style: italic;" class="var">Aktion</span>; falls <span class="var" style="font-style: italic;">Start</span> &gt;&nbsp;<span class="var" style="font-style: italic;">Ende</span> ist, wollen
+wir die <span style="font-style: italic;" class="var">Aktion</span> gar nicht ausf&uuml;hren).</p>
 <p>Wir wollen in (*1) die Multiplikation mal als primitiv
 voraussetzen
 (man k&ouml;nnte hierf&uuml;r beispielsweise den in
 L&ouml;sung 1
-angegebenen Algorithmus verwenden, denn <span style="font-style: italic;">Zahl2[Position]</span> ist
+angegebenen Algorithmus verwenden, denn <span class="var">Zahl2[Position]</span> ist
 nur eine Ziffer, also eine Zahl von 0-9, so dass auch L&ouml;sung 1
-hierf&uuml;r schnell sein sollte). In (*2) soll 10^<span style="font-style: italic;">k</span> f&uuml;r "10
-hoch <span style="font-style: italic;">k</span>"
+hierf&uuml;r schnell sein sollte). In (*2) soll 10^<span class="var">k</span> f&uuml;r "10
+hoch <span class="var">k</span>"
 stehen. Die Multiplikation mit der 10er-Potenz bedeutet nur das
 Anh&auml;ngen von Nullen an der rechten Seite der Zahl, kann also
 auch
 als primitiv angesehen werden.</p>
 <p><a name="array"></a>Nachdem hoffentlich
 klar geworden ist, dass dies exakt dem
-entspricht, was man bei einer schriftlichen Multiplikation tut (<span style="font-style: italic;">Teil[</span>1<span style="font-style: italic;">]</span>, <span style="font-style: italic;">Teil[</span>2<span style="font-style: italic;">]</span> ... bis <span style="font-style: italic;">Teil[</span>ZifferAnzahl(<span style="font-style: italic;">Zahl2</span>)<span style="font-style: italic;">] </span>sind dabei die
+entspricht, was man bei einer schriftlichen Multiplikation tut (<span class="var">Teil</span>[1], <span class="var">Teil</span>[2] ... bis <span class="var">Teil</span>[ZifferAnzahl(<span class="var">Zahl2</span>)]<span style="font-style: italic;"> </span>sind dabei die
 untereinander hingeschriebenen Teilergebnisse, die man hinterher alle
 zusammenaddiert),
 die man aus der Grundschule kennt, wollen wir den Algorithmus etwas
-verbessern. St&ouml;rend in ihm ist die ganze Reihe von Variablen (<span style="font-style: italic;">Teil[</span>1<span style="font-style: italic;">]</span>, <span style="font-style: italic;">Teil[</span>2<span style="font-style: italic;">]</span> ... bis <span style="font-style: italic;">Teil[</span>ZifferAnzahl(<span style="font-style: italic;">Zahl2</span>)<span style="font-style: italic;">]</span>),
+verbessern. St&ouml;rend in ihm ist die ganze Reihe von Variablen (<span class="var">Teil</span>[1], <span class="var">Teil</span>[2] ... bis <span class="var">Teil</span>[ZifferAnzahl(<span class="var">Zahl2</span>)]),
 denn hierf&uuml;r muss der Ausf&uuml;hrer eine ganze Menge von
 Informationen sich merken (ein Mensch bei Verwendung eines Blatt
 Papiers f&uuml;r die Ausf&uuml;hrung hat nat&uuml;rlich den
@@ -743,15 +743,15 @@ so ein Array zu benutzen. Hier jedoch geht es einfacher:</p>
 <span class="algo var">Ergebnis</span><span class="algo"><span class="var"> </span>:= </span><span class="algo var">Zwischenergebnis</span></p>
 <p>Nun noch ein etwas anderes, sehr wichtiges Beispiel.</p>
 <p><span style="text-decoration: underline;">Aufgabe</span>:<br>
-<span class="aufgabe">Man bekommt ein <span style="font-style: italic;">Kartenblatt</span>
+<span class="aufgabe">Man bekommt ein <span class="var">Kartenblatt</span>
 (Anzahl der Karten soll hier nicht weiter festgelegt sein) und soll
 dieses Sortieren, wobei am Anfang die kleinste Karte stehen soll und am
 Ende die Gr&ouml;&szlig;te. Wir wollen dabei keine Farben
 unterscheiden. Wir wollen folgende Reihenfolge (niedrigste Karte bis
 h&ouml;chste Karte): Ass, 2, 3, 4, 5, 6, 7, 8, 9, 10, Bube, Dame,
-K&ouml;nig, Joker. Wir wollen <span style="font-style: italic;">Karte1</span>
-&lt; <span style="font-style: italic;">Karte2</span>
-schreiben, wenn <span style="font-style: italic;">Karte1</span>
+K&ouml;nig, Joker. Wir wollen <span class="var">Karte1</span>
+&lt; <span class="var">Karte2</span>
+schreiben, wenn <span class="var">Karte1</span>
 niedriger ist. Wir k&ouml;nnen zur Vereinfachung dem Ass den
 Zahlenwert
 1 geben und Bube, Dame, K&ouml;nig, Joker entsprechend die Werte
@@ -836,21 +836,21 @@ unendlichen Listen (wie z.B. die Liste aller positiven, ganzen Zahlen
 <p><a name="verweis_od_kopie"></a>Wenn wir nun
 schreiben w&uuml;rden:<br>
 &nbsp;&nbsp;&nbsp; <span class="algo var">Karte</span><span class="algo"> := </span><span class="algo var">Kartenblatt</span><span class="algo">[</span><span class="algo var">Position</span><span class="algo">]</span><br>
-Dann stellt sich die Frage, ob das nun ein Rausnehmen aus dem <span style="font-style: italic;">Kartenblatt</span>
-bedeuten soll oder aber, dass die <span style="font-style: italic;">Karte</span>
-sich noch im <span style="font-style: italic;">Kartenblatt</span>
-befindet und die Variable <span style="font-style: italic;">Karte</span>
+Dann stellt sich die Frage, ob das nun ein Rausnehmen aus dem <span class="var">Kartenblatt</span>
+bedeuten soll oder aber, dass die <span class="var">Karte</span>
+sich noch im <span class="var">Kartenblatt</span>
+befindet und die Variable <span class="var">Karte</span>
 nur ein <span style="font-weight: bold;">Verweis</span>
 oder vielleicht auch eine <span style="font-weight: bold;">Kopie</span>
-auf den Eintrag im <span style="font-style: italic;">Kartenblatt</span>.
+auf den Eintrag im <span class="var">Kartenblatt</span>.
 Wir wollen uns darauf festlegen, dass in so einem Fall die Liste
 niemals ge&auml;ndert wird (es w&uuml;rden an vielen anderen
 Stellen,
 wenn man sich auch mal die vorherigen Algorithmen betrachtet, sonst
 Verwirrungen entstehen).</p>
-<p>Es stellt sich immer noch die Frage, ob <span style="font-style: italic;">Karte</span> nun eine
-Kopie der Karte im <span style="font-style: italic;">Kartenblatt</span>
-ist oder nur ein Verweis auf diese Karte im <span style="font-style: italic;">Kartenblatt</span>
+<p>Es stellt sich immer noch die Frage, ob <span class="var">Karte</span> nun eine
+Kopie der Karte im <span class="var">Kartenblatt</span>
+ist oder nur ein Verweis auf diese Karte im <span class="var">Kartenblatt</span>
 (in diesem Beispiel ist es f&uuml;r einen Mensch als
 Ausf&uuml;hrer
 nat&uuml;rlich nicht so leicht, die Karte eben mal zu kopieren;
@@ -859,13 +859,13 @@ aber um ganz normale Zahlen geht, was wir ja vereinfacht angenommen
 haben, ist dies nat&uuml;rlich m&ouml;glich).</p>
 <p>Eine Kopie und ein Verweis (manchmal auch <span style="font-weight: bold;">Referenz</span> genannt)
 ist aber nat&uuml;rlich etwas
-unterschiedliches. Wenn man z.B. auf <span style="font-style: italic;">Karte</span> nun "Hallo"
+unterschiedliches. Wenn man z.B. auf <span class="var">Karte</span> nun "Hallo"
 oben links in die Ecke schreibt und es sich um eine Kopie gehandelt
-hat, dann hat sich bei der Originalkarte im <span style="font-style: italic;">Kartenblatt</span> nichts
-ge&auml;ndert. Wenn aber die Variable <span style="font-style: italic;">Karte</span> nur ein
-Verweis auf die Karte im <span style="font-style: italic;">Kartenblatt</span>
-war und nun auf <span style="font-style: italic;">Karte</span>
-"Hallo" geschrieben wurde, ist damit die Karte im <span style="font-style: italic;">Kartenblatt</span>
+hat, dann hat sich bei der Originalkarte im <span class="var">Kartenblatt</span> nichts
+ge&auml;ndert. Wenn aber die Variable <span class="var">Karte</span> nur ein
+Verweis auf die Karte im <span class="var">Kartenblatt</span>
+war und nun auf <span class="var">Karte</span>
+"Hallo" geschrieben wurde, ist damit die Karte im <span class="var">Kartenblatt</span>
 beschrieben worden.</p>
 <p>In manchen F&auml;llen kann es nun gew&uuml;nscht
 sein, dass es sich
@@ -887,10 +887,10 @@ andere Objekte, die gleich mehrere Sachen enthalten.</p>
 <span class="algo var">Zahl2</span><span class="algo"><span class="var"> </span>:= </span><span class="algo var">Zahl1</span><br class="algo">
 <span class="algo var">Zahl2</span><span class="algo"><span class="var"> </span>:= 5</span><br class="algo">
 <span class="algo var">Ergebnis</span><span class="algo"><span class="var"> </span>:= </span><span class="algo var">Zahl1</span></p>
-<p>Das <span style="font-style: italic;">Ergebnis</span>
-ist nun 10, da bei der &Auml;nderung von <span style="font-style: italic;">Zahl2</span> die <span style="font-style: italic;">Zahl1</span> nicht
-ge&auml;ndert wurde, denn <span style="font-style: italic;">Zahl2</span>
-war nur eine Kopie von <span style="font-style: italic;">Zahl1</span>,
+<p>Das <span class="var">Ergebnis</span>
+ist nun 10, da bei der &Auml;nderung von <span class="var">Zahl2</span><span class="var"> </span>die <span class="var">Zahl1</span><span class="var"> </span>nicht
+ge&auml;ndert wurde, denn <span class="var">Zahl2</span><span class="var">
+</span>war nur eine Kopie von <span class="var">Zahl1</span>,
 stand mit ihr also in keinem Zusammenhang nach der Kopie.</p>
 <p><span style="text-decoration: underline;">Beispiel
 2</span> (impliziter Verweis):<br>
@@ -901,7 +901,7 @@ stand mit ihr also in keinem Zusammenhang nach der Kopie.</p>
 <span class="algo var">Liste2</span><span class="algo"> := </span><span class="algo var">Liste1</span><br class="algo">
 <span class="algo">F&uuml;ge die Zahl 42 in </span><span class="algo var">Liste2</span><span class="algo"> am Ende hinzu.</span><br class="algo">
 <span class="algo var">Ergebnis</span><span class="algo"> := </span><span class="algo var">Liste1</span></p>
-<p>Das <span style="font-style: italic;">Ergebnis</span>
+<p>Das <span class="var">Ergebnis</span>
 ist nun die Liste, die aus 5, 3 und 42 besteht.</p>
 <p>Falls eine Kopie allerdings erw&uuml;nscht war,
 k&ouml;nnte man es z.B. folgenderma&szlig;en aufschreiben:</p>
@@ -914,7 +914,7 @@ k&ouml;nnte man es z.B. folgenderma&szlig;en aufschreiben:</p>
 <span class="algo var">Liste2</span><span class="algo"><span class="var"> </span>:= </span><span class="algo">Copy(<span class="var">Liste1</span>)</span><br class="algo">
 <span class="algo">F&uuml;ge die Zahl 42 in </span><span class="algo var">Liste2</span><span class="algo"><span class="var"> </span>am Ende hinzu.</span><br class="algo">
 <span class="algo var">Ergebnis</span><span class="algo"><span class="var"> </span>:= </span><span class="algo var">Liste1</span></p>
-<p>Das <span style="font-style: italic;">Ergebnis</span>
+<p>Das <span class="var">Ergebnis</span>
 ist nun die Liste, die aus 5 und 3 besteht.</p>
 <p>Zur&uuml;ck zu dem urspr&uuml;nglichen Beispiel: Da
 wir uns darauf
@@ -922,19 +922,19 @@ festgelegt haben, dass Zahlen implizit kopiert werden sollen und wir
 die Karten als Zahlen darstellen wollten, liegen hier also Kopien vor.
 Dies soll uns aber nicht weiter st&ouml;ren. Nach dem Befehl:<br>
 &nbsp;&nbsp;&nbsp; <span class="algo var">Karte</span><span class="algo"> := </span><span class="algo var">Kartenblatt</span><span class="algo">[1]</span><br>
-Ist es allerdings noch notwendig, die erste Karte aus dem <span style="font-style: italic;">Kartenblatt</span> zu
+Ist es allerdings noch notwendig, die erste Karte aus dem <span class="var">Kartenblatt</span> zu
 entfernen. Wir wollen hierzu eine Art Funktion einf&uuml;hren
 (&uuml;bliche Schreibweise, zus&auml;tzliche Methoden als
-Funktionen anzusehen), die wir <span style="font-style: italic;">Delete</span>
-nennen wollen, wobei <span style="font-style: italic;">Delete</span>(<span style="font-style: italic;">Liste, i</span>) die <span style="font-style: italic;">i</span>-te Stelle der <span style="font-style: italic;">Liste </span>l&ouml;schen
-soll. Wie bereits fr&uuml;her wollen wir mit <span style="font-style: italic;">Length</span>(<span style="font-style: italic;">Liste</span>) die Anzahl
-der Eintr&auml;ge in der <span style="font-style: italic;">Liste</span>
-bezeichnen. Wir wollen au&szlig;erdem mit der Funktion <span style="font-style: italic;">Add</span>(<span style="font-style: italic;">Liste</span>, <span style="font-style: italic;">i</span>, <span style="font-style: italic;">Eintrag</span>) das
-Hinzuf&uuml;gen von <span style="font-style: italic;">Eintrag</span>
-an der <span style="font-style: italic;">i</span>-ten
-Stelle (d.h. zwischen dem <span style="font-style: italic;">i</span>-1-ten
-und dem <span style="font-style: italic;">i</span>-ten
-Eintrag) in der <span style="font-style: italic;">Liste</span>
+Funktionen anzusehen), die wir <span class="algo">Delete</span>
+nennen wollen, wobei <span class="algo">Delete</span>(<span class="var">Liste</span><span style="font-style: italic;">, </span><span class="var">i</span>) die <span class="var">i</span>-te Stelle der <span class="var">Liste</span><span style="font-style: italic;"> </span>l&ouml;schen
+soll. Wie bereits fr&uuml;her wollen wir mit <span class="algo">Length</span>(<span class="var">Liste</span>) die Anzahl
+der Eintr&auml;ge in der <span class="var">Liste</span>
+bezeichnen. Wir wollen au&szlig;erdem mit der Funktion <span class="algo">Add</span>(<span class="var">Liste</span>, <span class="var">i</span>, <span style="font-style: italic;" class="var">Eintrag</span>) das
+Hinzuf&uuml;gen von <span class="var" style="font-style: italic;">Eintrag</span>
+an der <span class="var">i</span>-ten
+Stelle (d.h. zwischen dem (<span class="var">i</span>-1)-ten
+und dem <span class="var">i</span>-ten
+Eintrag) in der <span class="var">Liste</span>
 bezeichnen. Legen wir uns im Folgenden nun auch darauf fest, dass neue
 Variablen f&uuml;r Zahlen anfangs automatisch mit 0 initialisiert
 werden sollen und Listen am Anfang nach der Einf&uuml;hrung leer
