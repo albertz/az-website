@@ -298,8 +298,8 @@ der Wert vom <span class="var">Zwischenergebnis</span>. <span style="font-style:
 <p>Um alle bisherigen Prinzipien (die Schleife und die zu
 merkenden
 Sachen) noch mal zu verdeutlichen, wollen wir als Mensch den
-Algorithmus einmal f&uuml;r <span style="font-style: italic;">n</span>=3
-und <span style="font-style: italic;">k</span>=2
+Algorithmus einmal f&uuml;r <span class="var">n</span>=3
+und <span class="var">k</span>=2
 durchgehen.</p>
 <ol class="algo"> <li>Befehl 1: Suche einen
 Notizblock f&uuml;r den <span class="var">Z&auml;hler</span><span class="var">
