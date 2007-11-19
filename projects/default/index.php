@@ -57,6 +57,7 @@
 			switch($entry) {
 			case "index.php":
 			case "desc.txt":
+			case "main.php":
 			case "mysql.name":
 			case "mysql.description":
 			case "mysql.date":
