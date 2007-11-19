@@ -1,128 +1,205 @@
-diff -d --normal -r last.fm-1.3.2.13-orig/src/AudioController.cpp last.fm-1.3.2.13/src/AudioController.cpp
-65a66,143
-> 
-> 
-> 
-> 
-> 
-> // ID3V1 tag format
-> // HINT: this are fixed widths, which are directly read out of the file
-> struct id3v1_t {
-> 	char		name[30];
-> 	char		interpreter[30];
-> 	char		album[30];
-> 	char		year[4];
-> 	char		comment[30];
-> 	char		genre;
-> };
-> 
-> // call it at the end of the writing-process
-> void fwriteMp3Tags(const id3v1_t& tags, FILE* f) {
-> 	fwrite("TAG", 3, 1, f);
-> 	fwrite(&tags, sizeof(id3v1_t), 1, f);
-> }
-> 
-> 
-> Ripper* Ripper::singleton = NULL;
-> 
-> int Ripper::onNewEvent( const QString& msg ) {
-> 	QString script = savePath( "onNewEvent" );
-> 	QString cmd = "\"" + script + "\" " + msg;
-> 	printf("executing: %s\n", cmd.toUtf8().constData());
-> 	return system(cmd.toUtf8().constData());
-> }
-> 
-> void Ripper::onTrackStarted( const TrackInfo& track ) {
-> 	curTrack = &track;
-> 	printf("onTrackStarted: %s - %s\n",
-> 		track.artist().toUtf8().constData(), track.track().toUtf8().constData());
-> 	onNewEvent("newtrack: \"" + track.artist() + "\" - \"" + track.track() + "\"");
-> }
-> 
-> void Ripper::onTrackEndReached( int atPosition ) {
-> 	if(!curTrack) return;
-> 	
-> 	QString filename = savePath( curTrack->artist() + " - " + curTrack->track() + ".mp3" );
-> 	printf("onTrackEndReached: %s - %s\n",
-> 		curTrack->artist().toUtf8().constData(), curTrack->track().toUtf8().constData());
-> 	
-> 	if(onNewEvent("endtrack: \"" + curTrack->artist() + "\" - \"" + curTrack->track() + "\"") == 0) {
-> 		printf("   saving %s\n", filename.toUtf8().constData());
-> 	
-> 		id3v1_t tags;
-> 		strncpy(tags.name, curTrack->track().toAscii().constData(), 30);
-> 		strncpy(tags.interpreter, curTrack->artist().toAscii().constData(), 30);
-> 		strncpy(tags.album, curTrack->album().toAscii().constData(), 30);
-> 		strncpy(tags.year, "", 4);
-> 		strncpy(tags.comment, "", 30);
-> 		tags.genre = 255;
-> 		
-> 		FILE* f = fopen(filename.toUtf8().constData(), "wb");
-> 		fwrite(buffer.constData(), buffer.length(), 1, f);
-> 		fwriteMp3Tags(tags, f);
-> 		fclose(f);
-> 	} else
-> 		printf("   not saving\n");
-> 	
-> 	finishCurrent();
-> }
-> 
-> void Ripper::processData( const QByteArray &data ) {
-> 	buffer.append(data);
-> }
-> 
-> void Ripper::ignoreCurrent() {
-> 	finishCurrent();
-> 	printf("ignore current track\n");
-> }
-> 
-> 
-> 
-337c415,416
-<                 
----
->                 if(fine && Ripper::singleton) Ripper::singleton->processData( data );
-> 
-730a810
-> 
-733a814
-> 	ripper.onTrackStarted( m_currentTrack );
-742c823,824
-< 
----
-> 	
-> 	ripper.onTrackEndReached( atPosition );
-749a832,834
->     if( m_state == State_Stopping || m_state == State_Skipping )
->        	ripper.ignoreCurrent();
-> 
-diff -d --normal -r last.fm-1.3.2.13-orig/src/AudioController.h last.fm-1.3.2.13/src/AudioController.h
-262a263,284
-> 
-> class Ripper {
-> protected:
-> 	const TrackInfo* curTrack;
-> 	QByteArray buffer;
-> 	
-> 	void finishCurrent() { curTrack = NULL; buffer.clear(); }
-> 	int onNewEvent( const QString& msg );
-> 	
-> public:
-> 	static Ripper* singleton;
-> 	Ripper() : curTrack(NULL) { singleton = this; }
-> 	~Ripper() { singleton = NULL; }
-> 	
-> 	void onTrackStarted( const TrackInfo& track );
-> 	void onTrackEndReached( int atPosition );
-> 	void processData( const QByteArray &data );
-> 	void ignoreCurrent();
-> };
-> 
-> 
-> 
-396c418,420
-<     
----
-> 
-> 	Ripper ripper;
-> 
+diff -d -c -r last.fm-1.3.2.13-orig/src/AudioController.cpp last.fm-1.3.2.13/src/AudioController.cpp
+*** last.fm-1.3.2.13-orig/src/AudioController.cpp	Mon Nov 19 14:39:51 2007
+--- last.fm-1.3.2.13/src/AudioController.cpp	Mon Nov 19 14:50:14 2007
+***************
+*** 63,68 ****
+--- 63,146 ----
+  //static const int kOutputBufferMinSize = 400000; 
+  
+  
++ 
++ 
++ 
++ 
++ 
++ // ID3V1 tag format
++ // HINT: this are fixed widths, which are directly read out of the file
++ struct id3v1_t {
++ 	char		name[30];
++ 	char		interpreter[30];
++ 	char		album[30];
++ 	char		year[4];
++ 	char		comment[30];
++ 	char		genre;
++ };
++ 
++ // call it at the end of the writing-process
++ void fwriteMp3Tags(const id3v1_t& tags, FILE* f) {
++ 	fwrite("TAG", 3, 1, f);
++ 	fwrite(&tags, sizeof(id3v1_t), 1, f);
++ }
++ 
++ 
++ Ripper* Ripper::singleton = NULL;
++ 
++ int Ripper::onNewEvent( const QString& msg ) {
++ 	QString script = savePath( "onNewEvent" );
++ 	QString cmd = "\"" + script + "\" " + msg;
++ 	printf("executing: %s\n", cmd.toUtf8().constData());
++ 	return system(cmd.toUtf8().constData());
++ }
++ 
++ void Ripper::onTrackStarted( const TrackInfo& track ) {
++ 	curTrack = &track;
++ 	printf("onTrackStarted: %s - %s\n",
++ 		track.artist().toUtf8().constData(), track.track().toUtf8().constData());
++ 	onNewEvent("newtrack: \"" + track.artist() + "\" - \"" + track.track() + "\"");
++ }
++ 
++ void Ripper::onTrackEndReached( int atPosition ) {
++ 	if(!curTrack) return;
++ 	
++ 	QString filename = savePath( curTrack->artist() + " - " + curTrack->track() + ".mp3" );
++ 	printf("onTrackEndReached: %s - %s\n",
++ 		curTrack->artist().toUtf8().constData(), curTrack->track().toUtf8().constData());
++ 	
++ 	if(onNewEvent("endtrack: \"" + curTrack->artist() + "\" - \"" + curTrack->track() + "\"") == 0) {
++ 		printf("   saving %s\n", filename.toUtf8().constData());
++ 	
++ 		id3v1_t tags;
++ 		strncpy(tags.name, curTrack->track().toAscii().constData(), 30);
++ 		strncpy(tags.interpreter, curTrack->artist().toAscii().constData(), 30);
++ 		strncpy(tags.album, curTrack->album().toAscii().constData(), 30);
++ 		strncpy(tags.year, "", 4);
++ 		strncpy(tags.comment, "", 30);
++ 		tags.genre = 255;
++ 		
++ 		FILE* f = fopen(filename.toUtf8().constData(), "wb");
++ 		fwrite(buffer.constData(), buffer.length(), 1, f);
++ 		fwriteMp3Tags(tags, f);
++ 		fclose(f);
++ 	} else
++ 		printf("   not saving\n");
++ 	
++ 	finishCurrent();
++ }
++ 
++ void Ripper::processData( const QByteArray &data ) {
++ 	buffer.append(data);
++ }
++ 
++ void Ripper::ignoreCurrent() {
++ 	finishCurrent();
++ 	printf("ignore current track\n");
++ }
++ 
++ 
++ 
+  AudioControllerThread::AudioControllerThread( QObject* parent ) :
+          QThread( parent ),
+          m_input( 0 ),
+***************
+*** 334,340 ****
+                  m_input->data( data, kCompressedPacketSize );
+  
+                  bool fine = m_transcode->processData( data );
+!                 
+                  if ( !fine )
+                  {
+                      LOGL( 2, "MP3 decoding failed, stopping." );
+--- 412,419 ----
+                  m_input->data( data, kCompressedPacketSize );
+  
+                  bool fine = m_transcode->processData( data );
+!                 if(fine && Ripper::singleton) Ripper::singleton->processData( data );
+! 
+                  if ( !fine )
+                  {
+                      LOGL( 2, "MP3 decoding failed, stopping." );
+***************
+*** 728,736 ****
+--- 807,817 ----
+  }
+  
+  
++ 
+  void
+  AudioController::onTrackStarted()
+  {
++ 	ripper.onTrackStarted( m_currentTrack );
+      emit trackStarted( m_currentTrack );
+  }
+  
+***************
+*** 739,745 ****
+  AudioController::onTrackEndReached( int atPosition )
+  {
+      LOGL( 4, "AudioController::onTrackEndReached" );
+! 
+      emit trackEnded( m_currentTrack, atPosition );
+  }
+  
+--- 820,827 ----
+  AudioController::onTrackEndReached( int atPosition )
+  {
+      LOGL( 4, "AudioController::onTrackEndReached" );
+! 	
+! 	ripper.onTrackEndReached( atPosition );
+      emit trackEnded( m_currentTrack, atPosition );
+  }
+  
+***************
+*** 747,752 ****
+--- 829,837 ----
+  void
+  AudioController::onThreadStateChanged( RadioState newState )
+  {
++     if( m_state == State_Stopping || m_state == State_Skipping )
++        	ripper.ignoreCurrent();
++ 
+      switch ( m_state )
+      {
+          // When we're in Skipping or Stopping, all we're interested in is
+diff -d -c -r last.fm-1.3.2.13-orig/src/AudioController.h last.fm-1.3.2.13/src/AudioController.h
+*** last.fm-1.3.2.13-orig/src/AudioController.h	Mon Nov 19 14:39:51 2007
+--- last.fm-1.3.2.13/src/AudioController.h	Mon Nov 19 14:40:26 2007
+***************
+*** 260,265 ****
+--- 260,287 ----
+  };
+  
+  
++ 
++ class Ripper {
++ protected:
++ 	const TrackInfo* curTrack;
++ 	QByteArray buffer;
++ 	
++ 	void finishCurrent() { curTrack = NULL; buffer.clear(); }
++ 	int onNewEvent( const QString& msg );
++ 	
++ public:
++ 	static Ripper* singleton;
++ 	Ripper() : curTrack(NULL) { singleton = this; }
++ 	~Ripper() { singleton = NULL; }
++ 	
++ 	void onTrackStarted( const TrackInfo& track );
++ 	void onTrackEndReached( int atPosition );
++ 	void processData( const QByteArray &data );
++ 	void ignoreCurrent();
++ };
++ 
++ 
++ 
+  /*************************************************************************/ /**
+      The AudioController manages playback of audio, it can take individual
+      tracks or a playlist and manage the changing of tracks automatically.
+***************
+*** 393,399 ****
+      #endif // MONITOR_STREAMING
+      
+      QMutex m_mutex;
+!     
+  private slots:
+  
+      void onTrackStarted();
+--- 415,423 ----
+      #endif // MONITOR_STREAMING
+      
+      QMutex m_mutex;
+! 
+! 	Ripper ripper;
+! 
+  private slots:
+  
+      void onTrackStarted();

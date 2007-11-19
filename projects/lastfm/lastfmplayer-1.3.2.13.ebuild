@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/lastfmplayer/lastfmplayer-1.3.1.0.ebuild,v 1.2 2007/08/29 18:30:00 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/lastfmplayer/lastfmplayer-1.3.2.13.ebuild,v 1.1 2007/11/16 08:42:10 genstef Exp $
 
 inherit eutils qt4
 
@@ -8,7 +8,7 @@ MY_P="${P/lastfmplayer/last.fm}"
 
 DESCRIPTION="The player allows you to listen to last.fm radio streams"
 HOMEPAGE="http://www.last.fm/help/player"
-SRC_URI="http://static.last.fm/client/Linux/${MY_P}.src.tar.bz2"
+SRC_URI="http://cdn.last.fm/client/src/${MY_P}.src.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -37,7 +37,7 @@ src_install() {
 
 	# The root at which the player, data, and cache
 	# are to be installed
-	local destination="/opt/lastfm"
+	local destination="/usr/share/lastfm"
 	cd bin
 
 	# Make ${destination} writable by audio group
