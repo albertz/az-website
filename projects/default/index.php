@@ -42,29 +42,7 @@
 		}
 	} else
 		$file = "main.php";
-	
-	if(file_exists($file)) {
-		$showing_main_file = true;
-		include($file);
-	} else {
-		$showing_main_file = false;
-?>
 
-<?php
-	$file = "desc.txt";
-	if(!file_exists($file))
-		$file = "mysql.description";
-	if(file_exists($file)) {
-?>
-<p>
-<b>Description</b><br>
-<?php include($file); ?>
-</p>
-<?php } ?>
-
-<p>
-<b>Files</b><br>
-<?php
 	function FileExt($fname) {
 		$pos = strrpos($fname, ".");
 		if($pos === false) return "";
@@ -104,7 +82,29 @@
 			echo "No files.";
 		return;
 	}
+	
+	if(file_exists($file)) {
+		$showing_main_file = true;
+		include($file);
+	} else {
+		$showing_main_file = false;
+?>
 
+<?php
+	$file = "desc.txt";
+	if(!file_exists($file))
+		$file = "mysql.description";
+	if(file_exists($file)) {
+?>
+<p>
+<b>Description</b><br>
+<?php include($file); ?>
+</p>
+<?php } ?>
+
+<p>
+<b>Files</b><br>
+<?php
 	ListFiles("."); //current web-dir, _not_ from linked-file (other to includes)
 ?>
 </p>

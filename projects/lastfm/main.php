@@ -23,6 +23,16 @@ the songs you listen to till the end; songs you skip aren't saved). You can
 also use the script for example to set your message in your instant messanger
 or you can save a log with all played songs or something like this.</p>
 
-The patch is available for version 1.3.1.0 and 1.3.2.13 of lastfmplayer.<br>
-Download lastfmplayer-1.3.1.0: http://static.last.fm/client/Linux/last.fm-1.3.1.0.src.tar.bz2<br>
-Download lastfmplayer-1.3.2.13: http://cdn.last.fm/client/src/last.fm-1.3.2.13.src.tar.bz2
+<p>The patch is available for version 1.3.1.0 and 1.3.2.13 of lastfmplayer.</p>
+
+<hr>
+
+Download <a href="http://static.last.fm/client/Linux/last.fm-1.3.1.0.src.tar.bz2">lastfmplayer-1.3.1.0</a>
+<a href="http://cdn.last.fm/client/src/last.fm-1.3.2.13.src.tar.bz2">lastfmplayer-1.3.2.13</a>
+
+<hr>
+
+<h2>Files</h2>
+<?php ListFiles("."); ?>
+
+
