@@ -1,6 +1,7 @@
 <?php
 	if(!$nodb)
 	{
+		include("/etc/mysql.php");
 		mysql_connect("localhost", $mysql_user, $mysql_pass);
 		mysql_select_db("firewall");
 	}
