@@ -314,7 +314,10 @@ information and the source-code can be found here:<br>
 					$dir = substr( $dir, 0, strlen( $dir ) - 1 );
 				show_dir($dir);
 			} else {
-				header('Location: http://'. $_SERVER['SERVER_NAME'] . $_SERVER["REQUEST_URI"] . "/");
+				$uri = "http://". $_SERVER['SERVER_NAME'] . $_SERVER["REQUEST_URI"];
+				if( substr( $uri, strlen( $uri ) - 1 ) != "/" )
+					$uri = $uri . "/";
+				header("Location: " . $uri);
 			}
 		}
 	} else if(is_file($web_root.$dir)) {
