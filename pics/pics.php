@@ -295,7 +295,7 @@ information and the source-code can be found here:<br>
 	//phpinfo();
 	//print_r($query);
 
-	if(is_dir($web_root.$dir)) {
+	if(is_dir($web_root.$dir)) {		
 		$file = $query["file"];
 		$type = strtolower($query["type"]);
 		if($file) {
@@ -309,9 +309,11 @@ information and the source-code can be found here:<br>
 			else
 				show_image($dir."/".$file, $size, $quali);
 		} else {
-			if( $dir == "" || substr( $dir, strlen( $dir ) - 1 ) == "/" )
+			if( $dir == "" || substr( $dir, strlen( $dir ) - 1 ) == "/" ) {
+				while(substr( $dir, strlen( $dir ) - 1) == "/")
+					$dir = substr( $dir, 0, strlen( $dir ) - 1 );
 				show_dir($dir);
-			else {
+			} else {
 				header('Location: http://'. $_SERVER['SERVER_NAME'] . $_SERVER["REQUEST_URI"] . "/");
 			}
 		}
