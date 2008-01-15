@@ -1,4 +1,4 @@
-output_contenttype = "text/html"
+output_contenttype = "image/jpg"
 
 trigger_handler = "pics.php"
 
