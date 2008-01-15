@@ -13,6 +13,19 @@ Qualitaetsstufen).
 </p>
 
 <p>
+<i>(Im Moment gibt es die eigentliche Beschreibung fuer die aktuelle Version nur
+in Englisch.)</i>
+</p>
+
+<p><b>Source Code</b>:
+<a href="http://www.az2000.de/viewvc/Website/pics/pics.php?view=markup">pics.php</a>
+<a href="http://www.az2000.de/viewvc/Website/pics/pic.cml?view=markup">pic.cml</a>
+</p>
+
+<hr>
+<h2>Aeltere, etwas simplere Version</h2>
+
+<p>
 <b>Installation (auf einem Apache-Server)</b><br>
 Das Skript liegt bei mir unter <i>/images/pics.php</i>. Das Skript muss evtl.
 noch angepasst werden, um anderweitig zu laufen (sollte nicht weiter

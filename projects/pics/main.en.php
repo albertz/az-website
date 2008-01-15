@@ -1,5 +1,5 @@
 <p>
-<a href="?lang=en">For english version, click here.</a>
+<a href="?lang=de">Fuer die deutsche Version hier klicken.</a>
 </p>
 
 <p>
