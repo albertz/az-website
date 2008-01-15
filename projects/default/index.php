@@ -12,12 +12,11 @@
 		$url = substr($url, 0, $lastdirof+1);
 
 	switch(strtolower($_REQUEST["lang"])) {
-	case "en":
+	case "en": case "de":
 		$lang = strtolower($_REQUEST["lang"]);
 		break;
-	case "de":
 	default:
-		$lang = "";
+		$lang = "en";
 	}
 
 	if($db_online) {
@@ -33,11 +32,7 @@
 	$titel2 = $titel2 . $titel;
 	include("../../head.php");
 
-	if($lang == "en" || $lang == "de")
-		$file = "main." . $lang . ".php";
-	else
-		$file = "main.php";
-
+	$file = "main." . $lang . ".php";
 	if(!file_exists($file)) {
 		$file = "main.en.php"; 
 		if(!file_exists($file))
