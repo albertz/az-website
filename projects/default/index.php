@@ -33,7 +33,7 @@
 	$titel2 = $titel2 . $titel;
 	include("../../head.php");
 
-	if($lang == "en" || $lang == "de") {
+	if($lang == "en" || $lang == "de")
 		$file = "main." . $lang . ".php";
 	else
 		$file = "main.php";
