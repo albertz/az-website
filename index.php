@@ -9,6 +9,7 @@
 		$start_titel = "";
 		$listing_showdate = false;
 		$listing_sorting = false;
+		$lang = "en";
 	}
 
 	include("main.php"); // load the shit
