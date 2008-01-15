@@ -33,15 +33,16 @@
 	$titel2 = $titel2 . $titel;
 	include("../../head.php");
 
-	if($lang == "en") {
+	if($lang == "en" || $lang == "de") {
 		$file = "main." . $lang . ".php";
-		if(!file_exists($file)) {
-			$file = "main.en.php"; 
-			if(!file_exists($file))
-				$file = "main.php";
-		}
-	} else
+	else
 		$file = "main.php";
+
+	if(!file_exists($file)) {
+		$file = "main.en.php"; 
+		if(!file_exists($file))
+			$file = "main.php";
+	}
 
 	function FileExt($fname) {
 		$pos = strrpos($fname, ".");
