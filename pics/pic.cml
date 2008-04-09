@@ -30,6 +30,10 @@ cachefile = string.gsub(cachefile, "/", "$$")
 cachefile = string.gsub(cachefile, "\\", "$$")
 cachefile = "/var/tmp/pics/" .. cachefile .. ".jpg"
 
+-- local log = io.open("/var/log/lighttpd/pic.log", "a")
+-- log:write(cachefile, " - ", fullfile, "\n")
+-- log:close()
+
 output_include = { cachefile }
 
 if file_isreg(cachefile) and file_mtime(cachefile) > file_mtime(fullfile) then
