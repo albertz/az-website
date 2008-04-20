@@ -146,7 +146,7 @@ Zugang sollte aber erlaubt sein:</p>
 			return;
 		}
 
-		if(file_exists($cachefile) && (filectime($cachefile) >= filectime($file))) {
+		if(file_exists($cachefile) && (filemtime($cachefile) >= filemtime($file))) {
 			header("Accept-Ranges: bytes", true);
 			header("Content-Type: " . $imageformat, true);
 
@@ -156,16 +156,8 @@ Zugang sollte aber erlaubt sein:</p>
 			return;
 		}
 
-/*		echo "cache = " . $cachefile . "\n";
-		echo "file = " . $file . "\n";
-
-		if(file_exists($cachefile))
-			echo "c ex\n";
-		else
-			echo "c n ex\n";
-
-		return;
-*/
+		set_time_limit(0);
+		while(! @mkdir("/var/tmp/pics/.lock") ) usleep(100000);
 
 		header("Accept-Ranges: bytes", true);
 		header("Content-Type: " . $imageformat, true);
@@ -226,6 +218,8 @@ Zugang sollte aber erlaubt sein:</p>
 		//imagepng($new_img);
 		imagejpeg($new_img, $cachefile, $quali);		
 		imagedestroy($new_img);
+
+		rmdir("/var/tmp/pics/.lock");
 
 		$fp = fopen($cachefile,"rb");
 		fpassthru($fp);
