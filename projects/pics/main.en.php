@@ -68,7 +68,8 @@ I have also added this routine in the PHP-script in case you don't want
 to use <i>mod_cml</i> but though you want the use of the caches. Though
 as I said, PHP is much slower by doing this and forwarding the data of
 the cached image. It should be sufficient in the rewrite-rules to
-replace "pic.cml" with "pics.php".
+replace "pic.cml" with "pics.php".<br>
+<i>(Currently, mod_cml does not exist for Apache. But at recent times, I have updated the pics.php that it is also fast without mod_cml.)</i>
 </p>
 
 <h1>Downloads</h1>
