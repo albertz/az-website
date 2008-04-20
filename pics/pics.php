@@ -92,7 +92,7 @@ Zugang sollte aber erlaubt sein:</p>
 <h2><?php echo $file ?></h2>
 <p>
 <?php if(isset($prevf)) { ?>
-<a href="<?php echo rawurlencode($prevf)."?type=html&size=".$size."&quali=".$quali;
+<a href="<?php echo rawurlencode($prevf)."?size=".$size."&quali=".$quali;
 ?>">previous picture</a>
 -
 <?php } ?>
@@ -127,6 +127,7 @@ Zugang sollte aber erlaubt sein:</p>
 
 	function show_image($file, $size, $quali) {
 		global $web_root;	
+		$imageformat = "image/jpeg";
 
 		if(strpos($file, "..") !== false) {
 			show_error_hack();
@@ -145,15 +146,29 @@ Zugang sollte aber erlaubt sein:</p>
 			return;
 		}
 
-		header("Accept-Ranges: bytes", true);
-		header("Content-Type: image/jpeg", true);
-		//header("Content-Type: image/png", true);
-
 		if(file_exists($cachefile) && (filectime($cachefile) >= filectime($file))) {
-	        	$fp = fopen($cachefile, "rb");
-		        fpassthru($fp);
+			header("Accept-Ranges: bytes", true);
+			header("Content-Type: " . $imageformat, true);
+
+	        $fp = fopen($cachefile, "rb");
+		    fpassthru($fp);
 			fclose($fp);
+			return;
 		}
+
+/*		echo "cache = " . $cachefile . "\n";
+		echo "file = " . $file . "\n";
+
+		if(file_exists($cachefile))
+			echo "c ex\n";
+		else
+			echo "c n ex\n";
+
+		return;
+*/
+
+		header("Accept-Ranges: bytes", true);
+		header("Content-Type: " . $imageformat, true);
 		
 		$info = pathinfo($file);
 		switch( strtolower($info["extension"]) ) {
@@ -251,7 +266,7 @@ Zugang sollte aber erlaubt sein:</p>
 					case "png":
 					case "gif":
 						echo "<a href='$enc'>";
-						echo "<img src='?file=$enc&type=pic&size=100' ";
+						echo "<img src='$enc?type=pic&size=100' ";
 						echo "border='0' align='middle'></a>&nbsp;\n";
 //						echo "<a href='?file=$enc&size=0.25&type=html'>";
 //						echo "$file</a>\n";
@@ -303,22 +318,15 @@ information and the source-code can be found here:<br>
 			$quali = $query["quali"];
 			$size = $query["size"];
 			if(!$quali) $quali = 80;
-			if(!$size) $size = 100;
-			if($type == "html")
-				show_image_html($file, $size, $quali);
-			else
+			if(!$size) $size = 0.25;
+			if($type == "pic")
 				show_image($dir."/".$file, $size, $quali);
+			else
+				show_image_html($file, $size, $quali);
 		} else {
-			if( $dir == "" || substr( $dir, strlen( $dir ) - 1 ) == "/" ) {
-				while(substr( $dir, strlen( $dir ) - 1) == "/")
-					$dir = substr( $dir, 0, strlen( $dir ) - 1 );
-				show_dir($dir);
-			} else {
-				$uri = "http://". $_SERVER['SERVER_NAME'] . $_SERVER["REQUEST_URI"];
-				if( substr( $uri, strlen( $uri ) - 1 ) != "/" )
-					$uri = $uri . "/";
-				header("Location: " . $uri);
-			}
+			while(substr( $dir, strlen( $dir ) - 1) == "/")
+				$dir = substr( $dir, 0, strlen( $dir ) - 1 );
+			show_dir($dir);
 		}
 	} else if(is_file($web_root.$dir)) {
 		$type = strtolower($query["type"]);
