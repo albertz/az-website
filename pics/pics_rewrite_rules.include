@@ -1,0 +1,17 @@
+# Rewrite rules for Apache
+
+# see http://httpd.apache.org/docs/1.3/mod/mod_rewrite.html
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule "^(.*/)?pics/(.*/)?$" "$1pics/pics.php?dir=$2" [last,QSA]
+
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule "^(.*/)?pics/(.*)$" "/$1pics/$2/" [R,last,QSA]
+
+RewriteCond %{QUERY_STRING} =get
+RewriteRule "^(.*/)?pics/(.*)$" "$1pics/$2" [last]
+
+RewriteCond %{REQUEST_FILENAME} !(.*)/pics.php
+RewriteRule "^(.*/)?pics/(.*)$" "$1pics/pics.php?dir=$2" [last,QSA]
