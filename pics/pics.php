@@ -4,7 +4,7 @@
 	code under GPL
 	by Albert Zeyer
 
-	special caching version for lighttpd
+	special caching version
 */
 //----------------------------------------------------------
 
