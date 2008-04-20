@@ -40,6 +40,22 @@ url.rewrite = (
     "^/pics/(.*)" => "/pics/pics.php?dir=$1" )
 </pre>
 
+<p>In <i>Apache</i>, I use the following ruleset:</p>
+
+<pre>
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule "^(.*/)?pics/(.*/)?$" "$1pics/pics.php?dir=$2" [last,QSA]
+
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule "^/var/www/localhost/htdocs/(.*/)?pics/(.*)$" "/$1pics/$2/" [R,last,QSA]
+
+RewriteCond %{QUERY_STRING} =get
+RewriteRule "^(.*/)?pics/(.*)$" "$1pics/$2" [last]
+
+RewriteCond %{REQUEST_FILENAME} !(.*)/pics.php
+RewriteRule "^(.*/)?pics/(.*)$" "$1pics/pics.php?dir=$2" [last,QSA]
+</pre>
+
 <h1>mod_cml</h1>
 <p>
 I also use <i>mod_cml</i> as you can see from the rules. This increases
