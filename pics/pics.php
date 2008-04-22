@@ -129,11 +129,6 @@ Zugang sollte aber erlaubt sein:</p>
 		global $web_root;	
 		$imageformat = "image/jpeg";
 
-		if(strpos($file, "..") !== false) {
-			show_error_hack();
-			return;
-		}
-
 		$cachefile = $file;
 		$cachefile = $cachefile . ".size=" . $size;
 		$cachefile = $cachefile . ".quali=" . $quali;
@@ -294,46 +289,54 @@ information and the source-code can be found here:<br>
 <?php
 	}
 
+//----------------------------------------------------------
+
+	function handle_file($dir, $file, $size, $quali, $type) {
+		if(!$quali || !is_numeric($quali) || $quali <= 5) $quali = 80;
+		if(!$size || !is_numeric($size) || $size <= 0) $size = 0.25;
+		
+		$quali = round($quali);
+		if($size > 1) $size = round($size);
+		
+		if($type == "pic")
+			show_image($dir."/".$file, $size, $quali);
+		else
+			show_image_html($file, $size, $quali);	
+	}
 
 //----------------------------------------------------------
 
 	$web_root = "../pics/"; // Ort: pics/
-	$dir = $_REQUEST["dir"];
 	$query = $_REQUEST;
+
+	$dir = rawurldecode($query["dir"]);
+	$file = $query["file"];
+	if($file) $file = rawurldecode($file);
+
+	$quali = $query["quali"];
+	$size = $query["size"];
+	$type = strtolower($query["type"]);
 
 	//phpinfo();
 	//print_r($query);
 
+	if(strpos($dir."/".$file, "..") !== false) {
+		show_error_hack();
+		return;
+	}
+
 	if(is_dir($web_root.$dir)) {		
-		$file = $query["file"];
-		$type = strtolower($query["type"]);
 		if($file) {
-			$file = rawurldecode($file);
-			$quali = $query["quali"];
-			$size = $query["size"];
-			if(!$quali) $quali = 80;
-			if(!$size) $size = 0.25;
-			if($type == "pic")
-				show_image($dir."/".$file, $size, $quali);
-			else
-				show_image_html($file, $size, $quali);
+			handle_file($dir, $file, $size, $quali, $type);
 		} else {
 			while(substr( $dir, strlen( $dir ) - 1) == "/")
 				$dir = substr( $dir, 0, strlen( $dir ) - 1 );
 			show_dir($dir);
 		}
 	} else if(is_file($web_root.$dir)) {
-		$type = strtolower($query["type"]);
 		$file = basename($dir);
 		$dir = dirname($dir);
-		$quali = $query["quali"];
-		$size = $query["size"];
-		if(!$quali) $quali = 80;
-		if(!$size) $size = 0.25;
-		if($type == "pic")
-			show_image($dir."/".$file, $size, $quali);
-		else
-			show_image_html($file, $size, $quali);
+		handle_file($dir, $file, $size, $quali, $type);
 	} else {
 		show_error_404();
 	}
