@@ -13,8 +13,8 @@
 ?>
 <center>
 <h2>Error 403 - Forbidden</h2>
-<p>Der Zugang zu dieser Datei ist Ihnen nicht gestatten. Folgender 
-Zugang sollte aber erlaubt sein:</p>
+<p>The access to the requested file is forbidden. But you can
+take a look here:</p>
 <hr>
 <p><a href="http://www.az2000.de/">Home</a></p>
 </center>
@@ -29,7 +29,7 @@ Zugang sollte aber erlaubt sein:</p>
 ?>
 <center>
 <h2>Error 403 - Forbidden</h2>
-<p>Netter Versuch, war aber nix. Guck lieber hier:</p>
+<p>Nice try, but no chance! Go back to my main site:</p>
 <hr>
 <p><a href="http://www.az2000.de/">Home</a></p>
 </center>
@@ -40,11 +40,11 @@ Zugang sollte aber erlaubt sein:</p>
 //----------------------------------------------------------
 
 	function show_error_404() {
-        	header ("Accept-Ranges: bytes", true);
-	        header ("Content-Type: image/gif", true);
+		header ("Accept-Ranges: bytes", true);
+		header ("Content-Type: image/gif", true);
 
-        	$fp = fopen("../error404.gif","rb");
-	        fpassthru($fp);
+		$fp = fopen("../error404.gif","rb");
+		fpassthru($fp);
 		fclose($fp);
 	}
 
