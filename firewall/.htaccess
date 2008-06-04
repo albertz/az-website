@@ -1,7 +1,7 @@
-AuthType Digest
+AuthType Basic
 AuthName "Firewall-Login; Password Required (leave user empty)"
 #AuthName Firewall
-AuthUserFile /var/www/localhost/htdocs/firewall/.htdigest
+AuthUserFile /var/www/localhost/htdocs/firewall/.htpasswd
 #AuthDigestFile /var/www/localhost/htdocs/firewall/.htdigest
 #AuthDigestFile .htdigest
 Require valid-user

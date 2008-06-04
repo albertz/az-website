@@ -15,8 +15,8 @@
 			$error = "password has to be at least 4 characters long";
 		else
 		{
-			$f = fopen(".htdigest", "w");
-			fwrite($f, ":Firewall:" . md5(":Firewall:" . $password));
+			$f = fopen(".htpasswd", "w");
+			fwrite($f, ":" . crypt($password));
 			fclose($f);
 
 			header("Location: ./");
