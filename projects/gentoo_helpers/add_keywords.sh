@@ -15,7 +15,7 @@ keywordsfile=/etc/portage/package.keywords
 [ -d $keywordsfile ] && keywordsfile=$keywordsfile/main.keywords
 
 arch=""
-for parch in /usr/portage/profiles/default-linux/*; do
+for parch in /usr/portage/profiles/default-linux/* /usr/portage/profiles/default/linux/*; do
 	if [ "$(readlink /etc/make.profile | grep $parch )" != "" ]; then
 		arch=$(expr $parch : '.*/\(.*\)' '|' $parch)
 		break
