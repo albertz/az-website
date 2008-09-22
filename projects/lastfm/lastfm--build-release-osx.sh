@@ -24,11 +24,11 @@ fi
 export QMAKESPEC=macx-g++
 
 ADDQTSCRIPT=`pwd`/`dirname $0`/lastfm--add-Qt-to-bundle.sh
+DEPOSXSCRIPT=`pwd`/`dirname $0`/lastfm--deposx.sh
 
-if [ ! -x $ADDQTSCRIPT ]; then
-	echo "Error: $ADDQTSCRIPT not found"
-	exit -1
-fi
+[ ! -x $ADDQTSCRIPT ] && echo "Error: $ADDQTSCRIPT not found" && exit -1
+[ ! -x $DEPOSXSCRIPT ] && echo "Error: $DEPOSXSCRIPT not found" && exit -1
+
 
 
 
@@ -169,7 +169,7 @@ header "Assembling application bundle..."
                    imageformats \
                    sqldrivers/libqsqlite.dylib
 
-    $ROOT/dist/mac/deposx.sh
+    $DEPOSXSCRIPT
 
     #HACK avoid issues when upgrading due to renaming of executable for 1.3.0
     cd Contents/MacOS
