@@ -54,9 +54,11 @@ svn co svn://svn.audioscrobbler.net/clientside/Last.fm/tags/1.4.1.57486 lastfm
 curl "http://www.az2000.de/projects/lastfm/1.4.1.57486-added_saving_and_event_support.patch" > lastfm.patch
 curl "http://www.az2000.de/projects/lastfm/lastfm--build-release-osx.sh" > lastfm--build-release-osx.sh
 curl "http://www.az2000.de/projects/lastfm/lastfm--add-Qt-to-bundle.sh" > lastfm--add-Qt-to-bundle.sh
+curl "http://www.az2000.de/projects/lastfm/lastfm--deposx.sh" > lastfm--deposx.sh
 
 chmod +x lastfm--build-release-osx.sh
 chmod +x lastfm--add-Qt-to-bundle.sh
+chmod +x lastfm--deposx.sh
 
 cd lastfm
 
