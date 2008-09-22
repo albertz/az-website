@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# just a debug-msg
+echo "SKRIPT: $@"
+
+if [ "$1" == "endtrack:" ]; then
+	if [ -e "$(dirname $0)/$2 - $4.mp3" ]; then
+		echo "already saved"
+		exit -1
+	fi 
+fi
+
+# if you uncomment this, no MP3 will be saved
+#exit -1
