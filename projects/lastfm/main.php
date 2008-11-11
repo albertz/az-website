@@ -64,7 +64,7 @@ cd lastfm
 
 patch -p1 --dry-run < ../lastfm-1.4.1.57486-added_saving_and_event_support.patch
 # if dry-run was ok, then do it:
-patch -p1 --dry-run < ../lastfm-1.4.1.57486-added_saving_and_event_support.patch
+patch -p1 < ../lastfm-1.4.1.57486-added_saving_and_event_support.patch
 
 # now let's build everything:
 ../lastfm--build-release-osx.sh
