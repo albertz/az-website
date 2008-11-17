@@ -11,4 +11,6 @@ and your surrounding area.<br>
 Very important is also the multi-vitamin-juice on the paper.
 </p>
 
+<p>This picture is dedicated to Laura.</p>
+
 </center>

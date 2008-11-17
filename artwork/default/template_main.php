@@ -1,14 +1,15 @@
 <center>
 
 <p>
-Well, what makes the cow?<br>
-The cow makes <b>moooh</b>!
+%DESC%
 </p>
+
+<p>This picture is dedicated to %DEDTO%.</p>
 
 <p>
 (Click to view the original picture.)<br>
-<a href="the_cow_22_08_06.jpg">
-<img src="the_cow_22_08_06_low.jpg" width="576" height="700" border="0">
+<a href="%SNAME%.big.jpg">
+<img src="%SNAME%.low.jpg" width="%W%" height="%H%" border="0">
 </a><br>
 </p>
 
