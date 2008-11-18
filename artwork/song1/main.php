@@ -1,10 +1,10 @@
 <p>
-This song belongs to the <a href="http://midiwriter.sourceforge.net">MidiWriter</a> project. It is dedicated to %DEDTO%.
+This song belongs to the <a href="http://midiwriter.sourceforge.net">MidiWriter</a> project. It is dedicated to nobody.
 </p>
 
 <p>
-- <a href="http://midiwriter.sourceforge.net/#%SNAME%">description</a><br>
-- <a href="http://midiwriter.svn.sourceforge.net/viewvc/midiwriter/%SNAME%.mid?view=co">Midi file</a>
+- <a href="http://midiwriter.sourceforge.net/#song1">description</a><br>
+- <a href="http://midiwriter.svn.sourceforge.net/viewvc/midiwriter/song1.mid?view=co">Midi file</a>
 - <a href="http://downloads.sourceforge.net/midiwriter/song1.ogg">Ogg file</a>
 </p>
 

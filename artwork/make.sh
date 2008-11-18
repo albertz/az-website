@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SONG=0
-[ "$1" == "-s"Ê] && SONG=1 && shift
+[ "x$1" == "x-s" ] && SONG=1 && shift
 SNAME=$1
 [ -f "$1" ] && FILE="$1" && SNAME="$(dirname "$1")"
 [ "$SNAME" == "" ] && echo "please specify the artwork short name" && exit 1
