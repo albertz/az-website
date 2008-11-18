@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SONG=0
+[ "$1" == "-s"Ê] && SONG=1 && shift
 SNAME=$1
 [ -f "$1" ] && FILE="$1" && SNAME="$(dirname "$1")"
 [ "$SNAME" == "" ] && echo "please specify the artwork short name" && exit 1
@@ -42,9 +44,10 @@ if [ -e $SNAME/main.php ]; then
 else
 
 
-TMPLFILE=default/template_main.php
+TMPLFILE=default/template_pic.php
 [ "$FILE" != "" ] && TMPLFILE=default/template_pic_simple.php
-	
+[ "$SONG" == "1" ] && TMPLFILE=default/template_song.php
+ 
 VARS="$(grep -E "%[A-Z0-9]+%" -o $TMPLFILE | uniq)"
 cp $TMPLFILE $SNAME/main.php
 
