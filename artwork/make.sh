@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SNAME=$1
+[ -f "$1" ] && FILE="$1" && SNAME="$(dirname "$1")"
 [ "$SNAME" == "" ] && echo "please specify the artwork short name" && exit 1
 [ ! -d "$SNAME" ] && echo "artwork $SNAME does not exist" && exit 1
 
@@ -40,11 +41,15 @@ if [ -e $SNAME/main.php ]; then
 	echo "$SNAME/main.php already exists, ignoring template generation"
 else
 
-# [ ! -e "$SNAME/$SNAME.big.jpg" ] && echo "picture $SNAME.big.jpg does not exist" && exit 1
-# [ ! -e "$SNAME/$SNAME.low.jpg" ] && echo "picture $SNAME.low.jpg does not exist" && exit 1
+
+TMPLFILE=default/template_main.php
+[ "$FILE" != "" ] && TMPLFILE=default/template_pic_simple.php
 	
-VARS="$(grep -E "%[A-Z0-9]+%" -o default/template_main.php | uniq)"
-cp default/template_main.php $SNAME/main.php
+VARS="$(grep -E "%[A-Z0-9]+%" -o $TMPLFILE | uniq)"
+cp $TMPLFILE $SNAME/main.php
+
+IMGFILE="$FILE"
+[ "$IMGFILE" == "" ] && IMGFILE=$SNAME/$SNAME.low.jpg
 
 for VAR in $VARS; do
 	VAL=""
@@ -54,8 +59,9 @@ for VAR in $VARS; do
 		"%NAME%") VAL="$(cat $SNAME/mysql.name)";;
 		"%MARKING%") VAL="$(cat $SNAME/mysql.marking)";;
 		"%DATE%") VAL="$(cat $SNAME/mysql.date)";;
-		"%W%") VAL=$(image_w $SNAME/$SNAME.low.jpg);;
-		"%H%") VAL=$(image_h $SNAME/$SNAME.low.jpg);;
+		"%FILE%") VAL="$(basename $FILE)";;
+		"%W%") VAL=$(image_w $IMGFILE);;
+		"%H%") VAL=$(image_h $IMGFILE);;
 		*)
 			echo -n "> "
 			grep -m 1 "$VAR" $SNAME/main.php
