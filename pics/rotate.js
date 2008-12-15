@@ -3,13 +3,14 @@ The JavaScript Source!! http://javascript.internet.com
 Created by: Benoit Asselin | http://www.ab-d.fr */
 
 function rotate(p_deg) {
-	if(document.getElementById('canvas')) {
+	var img = 'image';
+	var canvas = document.getElementById('canvas');
+	if(canvas) {
 		/*
 		Ok!: Firefox 2, Safari 3, Opera 9.5b2
 		No: Opera 9.27
 		*/
-		var image = document.getElementById('image');
-		var canvas = document.getElementById('canvas');
+		var image = document.getElementById(img);
 		var canvasContext = canvas.getContext('2d');
 		
 		switch(p_deg) {
@@ -45,7 +46,7 @@ function rotate(p_deg) {
 		/*
 		Ok!: MSIE 6 et 7
 		*/
-		var image = document.getElementById('image');
+		var image = document.getElementById(img);
 		switch(p_deg) {
 			default :
 			case 0 :

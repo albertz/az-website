@@ -116,11 +116,11 @@ take a look here:</p>
 		echo "&quali=".$quali;
 ?>"><img src="<?php
 		echo ".?file=".rawurlencode($file)."&type=pic&size=".$size."&quali=".$quali;
-?>" border="0" alt=""></a></p>
+?>" border="0" alt="" id="image"></a></p>
 <p><a href="<?php echo rawurlencode($file); ?>?get">show original picture</a></p>
 </center>
 <?php
-		show_foot();
+		show_foot("img", $file);
 	}
 
 //----------------------------------------------------------
@@ -295,7 +295,8 @@ take a look here:</p>
 		return true;
 	}
 
-	function show_foot() {
+	function show_foot($img, $file) {
+/* <canvas id="canvas"></canvas> */
 ?>
 <hr>
 <center><p>
@@ -304,6 +305,12 @@ information and the source-code can be found here:<br>
 </p></center>
 </body></html>
 <?php
+/*
+<script type="text/javascript" src="/pics/rotate.js?get"></script>
+<script type="text/javascript">
+rotate(90);
+</script>
+*/
 	}
 
 //----------------------------------------------------------
