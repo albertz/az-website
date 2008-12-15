@@ -54,7 +54,7 @@ take a look here:</p>
 		global $web_root;
 		global $dir;
 
-		show_head();
+		if(!show_head($web_root.$dir)) return;
 
 		$handle = opendir($web_root.$dir);
 		$filelist = array();
@@ -141,6 +141,8 @@ take a look here:</p>
 			return;
 		}
 
+		if(!lastModifiedHeader($file)) return;
+
 		if(file_exists($cachefile) && (filemtime($cachefile) >= filemtime($file))) {
 			header("Accept-Ranges: bytes", true);
 			header("Content-Type: " . $imageformat, true);
@@ -151,12 +153,12 @@ take a look here:</p>
 			return;
 		}
 
+		header("Accept-Ranges: bytes", true);
+		header("Content-Type: " . $imageformat, true);
+
 		set_time_limit(0);
 		while(! @mkdir("/var/tmp/pics/.lock") ) usleep(100000);
 
-		header("Accept-Ranges: bytes", true);
-		header("Content-Type: " . $imageformat, true);
-		
 		$info = pathinfo($file);
 		switch( strtolower($info["extension"]) ) {
 			case "jpg":
@@ -225,7 +227,7 @@ take a look here:</p>
 	function show_dir($dir) {
 		global $web_root;
 
-		show_head();
+		if(!show_head($web_root.$dir)) return;
 ?>
 <center><h2><?php echo $dir; ?></h2></center><hr>
 <center><a href="../">Up a directory</a></center><br>
@@ -270,12 +272,27 @@ take a look here:</p>
 		show_foot();
 	}
 
-	function show_head() {
+	function lastModifiedHeader($file) {
+		$contentDate = filemtime($file);
+		$ifModifiedSince = isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? stripslashes($_SERVER['HTTP_IF_MODIFIED_SINCE']) : false;
+		if ($ifModifiedSince && strtotime($ifModifiedSince) >= $contentDate) {
+			header('HTTP/1.0 304 Not Modified');
+			die; // stop processing
+			return false;
+		}
+		$lastModified = gmdate('D, d M Y H:i:s', $contentDate) . ' GMT';
+		header('Last-Modified: ' . $lastModified);
+		return true;
+	}
+
+	function show_head($file) {
+		if($file) if(!lastModifiedHeader($file)) return false;
 ?>
 <html><head>
 <title>www.az2000.de picture browser</title>
 </head><body>
 <?php
+		return true;
 	}
 
 	function show_foot() {
@@ -317,14 +334,10 @@ information and the source-code can be found here:<br>
 	$size = $query["size"];
 	$type = strtolower($query["type"]);
 
-	//phpinfo();
-	//print_r($query);
-
 	if(strpos($dir."/".$file, "..") !== false) {
 		show_error_hack();
-		return;
 	}
-
+	else
 	if(is_dir($web_root.$dir)) {		
 		if($file) {
 			handle_file($dir, $file, $size, $quali, $type);
@@ -340,5 +353,9 @@ information and the source-code can be found here:<br>
 	} else {
 		show_error_404();
 	}
+
+	//phpinfo();
+	//print_r($query);
+
 ?>
 
