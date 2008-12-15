@@ -116,7 +116,7 @@ take a look here:</p>
 		echo "&quali=".$quali;
 ?>"><img src="<?php
 		echo ".?file=".rawurlencode($file)."&type=pic&size=".$size."&quali=".$quali;
-?>" border="0"></a></p>
+?>" border="0" alt=""></a></p>
 <p><a href="<?php echo rawurlencode($file); ?>?get">show original picture</a></p>
 </center>
 <?php
@@ -258,7 +258,7 @@ take a look here:</p>
 					case "gif":
 						echo "<a href='$enc'>";
 						echo "<img src='$enc?type=pic&size=100' ";
-						echo "border='0' align='middle'></a>&nbsp;\n";
+						echo "border='0' align='middle' alt=''></a>&nbsp;\n";
 //						echo "<a href='?file=$enc&size=0.25&type=html'>";
 //						echo "$file</a>\n";
 						break;
