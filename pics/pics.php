@@ -120,7 +120,7 @@ take a look here:</p>
 <p><a href="<?php echo rawurlencode($file); ?>?get">show original picture</a></p>
 </center>
 <?php
-		show_foot("img", $file);
+		show_foot();
 	}
 
 //----------------------------------------------------------
@@ -285,7 +285,7 @@ take a look here:</p>
 		return true;
 	}
 
-	function show_head($file) {
+	function show_head($file = NULL) {
 		if($file) if(!lastModifiedHeader($file)) return false;
 ?>
 <html><head>
@@ -295,8 +295,7 @@ take a look here:</p>
 		return true;
 	}
 
-	function show_foot($img, $file) {
-/* <canvas id="canvas"></canvas> */
+	function show_foot() {
 ?>
 <hr>
 <center><p>
@@ -305,12 +304,6 @@ information and the source-code can be found here:<br>
 </p></center>
 </body></html>
 <?php
-/*
-<script type="text/javascript" src="/pics/rotate.js?get"></script>
-<script type="text/javascript">
-rotate(90);
-</script>
-*/
 	}
 
 //----------------------------------------------------------
