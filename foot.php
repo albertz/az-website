@@ -33,8 +33,13 @@ if(0) {
 
 <p>
 <h2>Uptime</h2>
-<?php system("uptime"); ?>
+<?php system("uptime");?>
 </p>
+
+<?php
+// because of bottom social bar
+if($usegooglegadgets) echo "<br><br><br>";
+?>
 
 </body>
 </html>
