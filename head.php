@@ -12,8 +12,9 @@
 //   $aacolor : link-color when activated
 //   $avcolor : link-color when visited
 //   $ahcolor : link-color when mouse is over
+//   $usegooglegadgets : if they should be included or not
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
 <head>
@@ -102,16 +103,19 @@ h2 {
 <tr><td><h1><?php echo $titel2; ?></h1></td>
 <td align="right">
 <?php
+$usegooglegadgets = true;
 if ( isset($_SERVER['HTTPS']) || strtolower($_SERVER['HTTPS']) == 'on' )
 {
-        echo '<b><i>https</i></b>';
+	echo '<b><i>https</i></b>';
+	$usegooglegadgets = false;
 }
 else
 {
-	echo '<a href="https://';
+	// Doesn't work well together with Google gadgets.
+/*	echo '<a href="https://';
 	echo $_SERVER["HTTP_HOST"];
 	echo $_SERVER["REQUEST_URI"];
-	echo '">activate <b>https</b></a>';
+	echo '">activate <b>https</b></a>'; */
 }
 ?>
 </td></tr>
@@ -119,3 +123,36 @@ else
 
 <hr>
 
+<?php if($usegooglegadgets) { ?>
+
+<!-- Include the Google Friend Connect javascript library. -->
+<script type="text/javascript" src="http://www.google.com/friendconnect/script/friendconnect.js"></script>
+<!-- Define the div tag where the gadget will be inserted. -->
+<div id="div-2672630853770555690"></div>
+<!-- Render the gadget into a div. -->
+<script type="text/javascript">
+var skin = {};
+skin['BORDER_COLOR'] = '#cccccc';
+skin['ENDCAP_BG_COLOR'] = '#e0ecff';
+skin['ENDCAP_TEXT_COLOR'] = '#333333';
+skin['ENDCAP_LINK_COLOR'] = '#0000cc';
+skin['ALTERNATE_BG_COLOR'] = '#ffffff';
+skin['CONTENT_BG_COLOR'] = '#ffffff';
+skin['CONTENT_LINK_COLOR'] = '#0000cc';
+skin['CONTENT_TEXT_COLOR'] = '#333333';
+skin['CONTENT_SECONDARY_LINK_COLOR'] = '#7777cc';
+skin['CONTENT_SECONDARY_TEXT_COLOR'] = '#666666';
+skin['CONTENT_HEADLINE_COLOR'] = '#333333';
+skin['POSITION'] = 'bottom';
+skin['DEFAULT_COMMENT_TEXT'] = '- add your comment here -';
+skin['HEADER_TEXT'] = 'Comments';
+google.friendconnect.container.setParentUrl('/' /* location of rpc_relay.html and canvas.html */);
+google.friendconnect.container.renderSocialBar(
+ { id: 'div-2672630853770555690',
+   site: '08163282174927477210',
+   'view-params':{"scope":"PAGE","allowAnonymousPost":"true","features":"video,comment","showWall":"true"}
+ },
+  skin);
+</script>
+
+<?php } ?>
