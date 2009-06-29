@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="de-de"><head> <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>coding for absolute dummies</title> <meta content="Albert Zeyer" name="author"> <meta content="Tutorial zum Erlernen des Programmierens - geschrieben f&uuml;r absolute Laien" name="description"> <meta content="Tutorial,Programmieren,Algorithmus,Pascal,Object Pascal,einfach,Lernen,elementar" name="keywords"> <link rel="home" title="Webserver von Albert Zeyer" href="http://www.az2000.de/">
 <link rel="start" title="Webserver von Albert Zeyer" href="http://www.az2000.de/"> <style type="text/css">
   body, table, p { font-family: sans-serif;
@@ -1774,7 +1774,73 @@ groben Einf&uuml;hrung in den Code, wo wir ein paar gr&ouml;bere
 Unklarheiten (vor allem wegen neuen Variablentypen) gekl&auml;rt haben,
 wollen wir nun auf ein paar Stellen mal einen genaueren Blick werfen.</p><p>Sehen wir uns mal die Prozedur <span class="var">TMainForm.FormKeyDown</span> im <span class="algo">implementation</span>-Teil an. Dies ist die Prozedur der Hauptform, die bei dem <span style="font-weight: bold;">KeyDown</span>-<a href="#Ereignisse">Ereignis</a> der Hauptform ausgef&uuml;hrt wird, d.h. genau dann, wenn der Spieler eine Taste herunterdr&uuml;ckt.<br><?php PrintCode("robot_formkeydown.pas");?></p><p></p><p><span class="offtopic">Vorzeitiges
 Ende ...</span></p>
-<hr style="width: 100%; height: 2px;"><p class="offtopic">Author: Albert Zeyer<br>
+
+<hr style="width: 100%; height: 2px;">
+
+<!-- Include the Google Friend Connect javascript library. -->
+<script type="text/javascript" src="http://www.google.com/friendconnect/script/friendconnect.js"></script>
+<!-- Define the div tag where the gadget will be inserted. -->
+<div id="div-7599043468151018889" style="width:600px;border:1px solid #cccccc;"></div>
+<!-- Render the gadget into a div. -->
+<script type="text/javascript">
+var skin = {};
+skin['FONT_FAMILY'] = 'verdana,sans-serif';
+skin['BORDER_COLOR'] = '#cccccc';
+skin['ENDCAP_BG_COLOR'] = '#e0ecff';
+skin['ENDCAP_TEXT_COLOR'] = '#333333';
+skin['ENDCAP_LINK_COLOR'] = '#0000cc';
+skin['ALTERNATE_BG_COLOR'] = '#ffffff';
+skin['CONTENT_BG_COLOR'] = '#ffffff';
+skin['CONTENT_LINK_COLOR'] = '#0000cc';
+skin['CONTENT_TEXT_COLOR'] = '#333333';
+skin['CONTENT_SECONDARY_LINK_COLOR'] = '#7777cc';
+skin['CONTENT_SECONDARY_TEXT_COLOR'] = '#666666';
+skin['CONTENT_HEADLINE_COLOR'] = '#333333';
+skin['DEFAULT_COMMENT_TEXT'] = '- add your comment here -';
+skin['HEADER_TEXT'] = 'Comments';
+skin['POSTS_PER_PAGE'] = '10';
+google.friendconnect.container.setParentUrl('/' /* location of rpc_relay.html and canvas.html */);
+google.friendconnect.container.renderWallGadget(
+ { id: 'div-7599043468151018889',
+   site: '08163282174927477210',
+   'view-params':{"disableMinMax":"false","scope":"PAGE","allowAnonymousPost":"true","features":"video,comment","startMaximized":"true"}
+ },
+  skin);
+</script>
+
+<!-- Include the Google Friend Connect javascript library. -->
+<script type="text/javascript" src="http://www.google.com/friendconnect/script/friendconnect.js"></script>
+<!-- Define the div tag where the gadget will be inserted. -->
+<div id="div-4966905418522366317"></div>
+<!-- Render the gadget into a div. -->
+<script type="text/javascript">
+var skin = {};
+skin['BORDER_COLOR'] = '#cccccc';
+skin['ENDCAP_BG_COLOR'] = '#e0ecff';
+skin['ENDCAP_TEXT_COLOR'] = '#333333';
+skin['ENDCAP_LINK_COLOR'] = '#0000cc';
+skin['ALTERNATE_BG_COLOR'] = '#ffffff';
+skin['CONTENT_BG_COLOR'] = '#ffffff';
+skin['CONTENT_LINK_COLOR'] = '#0000cc';
+skin['CONTENT_TEXT_COLOR'] = '#333333';
+skin['CONTENT_SECONDARY_LINK_COLOR'] = '#7777cc';
+skin['CONTENT_SECONDARY_TEXT_COLOR'] = '#666666';
+skin['CONTENT_HEADLINE_COLOR'] = '#333333';
+skin['POSITION'] = 'bottom';
+skin['DEFAULT_COMMENT_TEXT'] = '- add your comment here -';
+skin['HEADER_TEXT'] = 'Comments';
+google.friendconnect.container.setParentUrl('/' /* location of rpc_relay.html and canvas.html */);
+google.friendconnect.container.renderSocialBar(
+ { id: 'div-4966905418522366317',
+   site: '08163282174927477210',
+   'view-params':{"scope":"PAGE","allowAnonymousPost":"true","features":"video,comment","showWall":"true"}
+ },
+  skin);
+</script>
+
+<hr style="width: 100%; height: 2px;">
+<p class="offtopic">Author: Albert Zeyer<br>
 Mail: ich AT admin DOT de<br>
 <a href="..">andere Projekte</a></p><p class="offtopic"><a href="http://www.nvu.com"><img alt="Document made with Nvu" src="http://www.nvu.com/images/madewithNvu80x15clear.png" border="0"></a></p>
 </body></html>
+
