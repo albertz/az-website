@@ -36,11 +36,6 @@ if(0) {
 <?php system("uptime");?>
 </p>
 
-<?php
-// because of bottom social bar
-if($usegooglegadgets) echo "<br><br><br>";
-?>
-
 </body>
 </html>
 
