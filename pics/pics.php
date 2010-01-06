@@ -53,10 +53,9 @@ take a look here:</p>
 	function show_image_html($file, $size, $quali) {
 		global $web_root;
 		global $dir;
-		global $usegooglegadgets;
 
 		if(!show_head($web_root.$dir)) return;
-		
+
 		$handle = opendir($web_root.$dir);
 		$filelist = array();
 		while($f = readdir($handle)) {
@@ -118,39 +117,6 @@ take a look here:</p>
 ?>"><img src="<?php
 		echo ".?file=".rawurlencode($file)."&type=pic&size=".$size."&quali=".$quali;
 ?>" border="0" alt="" id="image"></a></p>
-
-<?php
-		if($usegooglegadgets) {
-?>
-<center>
-<!-- Include the Google Friend Connect javascript library. -->
-<script type="text/javascript" src="http://www.google.com/friendconnect/script/friendconnect.js"></script>
-<!-- Define the div tag where the gadget will be inserted. -->
-<div id="div-6417254867784556256" style="width:100%;border:1px solid #cccccc;"></div>
-<!-- Render the gadget into a div. -->
-<script type="text/javascript">
-var skin = {};
-skin['HEIGHT'] = '73';
-skin['BORDER_COLOR'] = '#cccccc';
-skin['ENDCAP_BG_COLOR'] = '#e0ecff';
-skin['ENDCAP_TEXT_COLOR'] = '#333333';
-skin['BUTTON_STYLE'] = 'modular';
-skin['BUTTON_TEXT'] = 'Recommend it!';
-skin['BUTTON_ICON'] = 'heart';
-skin['BUTTON_MODULE_PROMO_TEXT'] = 'Did you like this picture?';
-google.friendconnect.container.setParentUrl('/' /* location of rpc_relay.html and canvas.html */);
-google.friendconnect.container.renderOpenSocialGadget(
- { id: 'div-6417254867784556256',
-   url:'http://www.google.com/friendconnect/gadgets/recommended_pages.xml',
-   height: 73,
-   site: '08163282174927477210',
-   'view-params':{"pageUrl":location.href,"pageTitle":" <?php echo $dir." - ".$file; ?> " ,"docId":"recommendedPages"}
- },
-  skin);
-</script>
-</center>
-<?php } ?>
-
 <p><a href="<?php echo rawurlencode($file); ?>?get">show original picture</a></p>
 </center>
 <?php
@@ -322,122 +288,15 @@ google.friendconnect.container.renderOpenSocialGadget(
 	function show_head($file = NULL) {
 		if($file) if(!lastModifiedHeader($file)) return false;
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html><head>
 <title>www.az2000.de picture browser</title>
 </head><body>
 <?php
-global $usegooglegadgets;
-$usegooglegadgets = true;
-if ( isset($_SERVER['HTTPS']) || strtolower($_SERVER['HTTPS']) == 'on' )
-	// because there are problems yet with HTTPS
-    $usegooglegadgets = false;
-else {
-?>
-<!-- Include the Google Friend Connect javascript library. -->
-<script type="text/javascript" src="http://www.google.com/friendconnect/script/friendconnect.js"></script>
-<!-- Define the div tag where the gadget will be inserted. -->
-<div id="div-2672630853770555690"></div>
-<!-- Render the gadget into a div. -->
-<script type="text/javascript">
-var skin = {};
-skin['BORDER_COLOR'] = '#cccccc';
-skin['ENDCAP_BG_COLOR'] = '#e0ecff';
-skin['ENDCAP_TEXT_COLOR'] = '#333333';
-skin['ENDCAP_LINK_COLOR'] = '#0000cc';
-skin['ALTERNATE_BG_COLOR'] = '#ffffff';
-skin['CONTENT_BG_COLOR'] = '#ffffff';
-skin['CONTENT_LINK_COLOR'] = '#0000cc';
-skin['CONTENT_TEXT_COLOR'] = '#333333';
-skin['CONTENT_SECONDARY_LINK_COLOR'] = '#7777cc';
-skin['CONTENT_SECONDARY_TEXT_COLOR'] = '#666666';
-skin['CONTENT_HEADLINE_COLOR'] = '#333333';
-skin['POSITION'] = 'top';
-skin['DEFAULT_COMMENT_TEXT'] = '- add your comment here -';
-skin['HEADER_TEXT'] = 'Comments';
-google.friendconnect.container.setParentUrl('/' /* location of rpc_relay.html and canvas.html */);
-google.friendconnect.container.renderSocialBar(
- { id: 'div-2672630853770555690',
-   site: '08163282174927477210', 
-   'view-params':{"scope":"PAGE","allowAnonymousPost":"true","features":"video,comment","showWall":"true"}
- },
-  skin);
-</script>
-<br>
-<?php
-} // $usegooglegadgets
-
 		return true;
 	}
 
 	function show_foot() {
-		global $usegooglegadgets;
-		if($usegooglegadgets) {
 ?>
-<hr><center>
-<!-- Include the Google Friend Connect javascript library. -->
-<script type="text/javascript" src="http://www.google.com/friendconnect/script/friendconnect.js"></script>
-<!-- Define the div tag where the gadget will be inserted. -->
-<div id="div-7216373314891494478" style="width:600px;border:1px solid #cccccc;"></div>
-<!-- Render the gadget into a div. -->
-<script type="text/javascript">
-var skin = {};
-skin['BORDER_COLOR'] = '#cccccc';
-skin['ENDCAP_BG_COLOR'] = '#e0ecff';
-skin['ENDCAP_TEXT_COLOR'] = '#333333';
-skin['ENDCAP_LINK_COLOR'] = '#0000cc';
-skin['ALTERNATE_BG_COLOR'] = '#ffffff';
-skin['CONTENT_BG_COLOR'] = '#ffffff';
-skin['CONTENT_LINK_COLOR'] = '#0000cc';
-skin['CONTENT_TEXT_COLOR'] = '#333333';
-skin['CONTENT_SECONDARY_LINK_COLOR'] = '#7777cc';
-skin['CONTENT_SECONDARY_TEXT_COLOR'] = '#666666';
-skin['CONTENT_HEADLINE_COLOR'] = '#333333';
-skin['DEFAULT_COMMENT_TEXT'] = '- add your comments / review here -';
-skin['HEADER_TEXT'] = 'Ratings and comments';
-skin['POSTS_PER_PAGE'] = '10';
-google.friendconnect.container.setParentUrl('/' /* location of rpc_relay.html and canvas.html */);
-google.friendconnect.container.renderReviewGadget(
- { id: 'div-7216373314891494478',
-   site: '08163282174927477210',
-   'view-params':{"disableMinMax":"false","scope":"PAGE","allowAnonymousPost":"true","startMaximized":"true"}
- },
-  skin);
-</script>
-
-<br>
-<!-- Include the Google Friend Connect javascript library. -->
-<script type="text/javascript" src="http://www.google.com/friendconnect/script/friendconnect.js"></script>
-<!-- Define the div tag where the gadget will be inserted. -->
-<div id="div-5129130442398665633" style="width:300px;border:1px solid #cccccc;"></div>
-<!-- Render the gadget into a div. -->
-<script type="text/javascript">
-var skin = {};
-skin['BORDER_COLOR'] = '#cccccc';
-skin['ENDCAP_BG_COLOR'] = '#e0ecff';
-skin['ENDCAP_TEXT_COLOR'] = '#333333';
-skin['ENDCAP_LINK_COLOR'] = '#0000cc';
-skin['ALTERNATE_BG_COLOR'] = '#ffffff';
-skin['CONTENT_BG_COLOR'] = '#ffffff';
-skin['CONTENT_LINK_COLOR'] = '#0000cc';
-skin['CONTENT_TEXT_COLOR'] = '#333333';
-skin['CONTENT_SECONDARY_LINK_COLOR'] = '#7777cc';
-skin['CONTENT_SECONDARY_TEXT_COLOR'] = '#666666';
-skin['CONTENT_HEADLINE_COLOR'] = '#333333';
-skin['HEADER_TEXT'] = 'Recommended pictures';
-skin['RECOMMENDATIONS_PER_PAGE'] = '5';
-google.friendconnect.container.setParentUrl('/' /* location of rpc_relay.html and canvas.html */);
-google.friendconnect.container.renderOpenSocialGadget(
- { id: 'div-5129130442398665633',
-   url:'http://www.google.com/friendconnect/gadgets/recommended_pages.xml',
-   site: '08163282174927477210',
-   'view-params':{"docId":"recommendedPages"}
- },
-  skin);
-</script>
-
-</center>
-<?php } ?>
 <hr>
 <center><p>
 information and the source-code can be found here:<br>
