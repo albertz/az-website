@@ -176,9 +176,9 @@ function get_CodeOfMenue(MenueID) {
 	temp+=(' onclick="gotoLink(' + MenueID + ');"');
 	temp+=(' onmousemove="view_description(' + MenueID + ');"');
 	temp+=(' onmouseover="mnu_' + MenueID + '_Caption.className=\'a_hover\';"');
-	temp+=(' onmouseout="mnu_' + MenueID + '_Caption.className=\'a\';"');
+	temp+=(' onmouseout="if(aktSelected != ' + MenueID + ') mnu_' + MenueID + '_Caption.className=\'a\';"');
 	temp+=(' onmousedown="mnu_' + MenueID + '_Caption.className=\'a_active\';"');
-	temp+=(' onmouseup="mnu_' + MenueID + '_Caption.className=\'a\';"');
+	temp+=(' onmouseup="if(aktSelected != ' + MenueID + ') mnu_' + MenueID + '_Caption.className=\'a\';"');
 	temp+=('>' + Menues[MenueID].Caption + '</a>');
  };
  temp+=('</div></td></tr></table>');
