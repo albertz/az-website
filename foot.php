@@ -23,19 +23,40 @@ if(0) {
 }
 ?>
 
+<?php
+$url = ($_SERVER['HTTPS'] != "on") ? "http://" : "https://";
+$url .= $_SERVER["HTTP_HOST"];
+$tmp = explode("?", $_SERVER["REQUEST_URI"]);
+$url .= $tmp[0];
+
+// TODO: as long as we don't have separate Flattr buttons:
+$url = "http://www.az2000.de/";
+?>
+<a class="FlattrButton" style="display:none;"
+ href="<?php echo $url; ?>"
+ title="<?php echo $titel; ?>"
+ lang="<?php echo ($lang == "de") ? "de_DE" : "en_US"; ?>">
+ revv="flattr;category:rest"
+  <?php echo $description; ?>
+</a>
+<script type="text/javascript">
+function loadFlattr() {
+	if(typeof(FlattrLoader) == "undefined")
+		setTimeout(loadFlattr, 100);
+	else
+		FlattrLoader.setup();
+}
+loadFlattr();
+</script>
+
 <hr>
 <?php include("counter.php"); ?>
 
-<p>
 <h2>Quote of the day</h2>
-<i><?php system("cat /etc/qotd"); ?></i>
-</p>
+<p><i><?php system("cat /etc/qotd"); ?></i></p>
 
-<p>
 <h2>Uptime</h2>
-<?php system("uptime");?>
-</p>
+<p><?php system("uptime");?></p>
 
 </body>
 </html>
-

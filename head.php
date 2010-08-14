@@ -95,6 +95,25 @@ h2 {
 }
 -->
 </style>
+
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+    
+    (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        
+        s.type = 'text/javascript';
+        s.async = true;
+		s.src = 
+		<?php echo ($_SERVER['HTTPS'] != "on") ? "'http://'" : "'https://'"; ?>
+        + 'api.flattr.com/js/0.5.0/load.js?uid=albert';
+        
+        t.parentNode.insertBefore(s, t);
+    })();
+    
+//--><!]]>
+</script>
+
 </head>
 <body>
 
@@ -102,10 +121,14 @@ h2 {
 <tr><td><h1><?php echo $titel2; ?></h1></td>
 <td align="right">
 <?php
-	echo '<a href="https://';
-	echo $_SERVER["HTTP_HOST"];
-	echo $_SERVER["REQUEST_URI"];
-	echo '">activate <b>https</b></a>';
+	if($_SERVER['HTTPS'] != "on") {
+		echo '<a href="https://';
+		echo $_SERVER["HTTP_HOST"];
+		echo $_SERVER["REQUEST_URI"];
+		echo '">activate <b>https</b></a>';
+	} else {
+		echo "<i>https</i>";
+	}
 ?>
 </td></tr>
 </table>
