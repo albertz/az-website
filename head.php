@@ -134,3 +134,23 @@ h2 {
 </table>
 
 <hr>
+
+<?php
+$url = ($_SERVER['HTTPS'] != "on") ? "http://" : "https://";
+$url .= $_SERVER["HTTP_HOST"];
+$tmp = explode("?", $_SERVER["REQUEST_URI"]);
+$url .= $tmp[0];
+
+// TODO: as long as we don't have separate Flattr buttons:
+$url = "http://www.az2000.de/";
+?>
+<div style="float: right; overflow: visible; text-align: right; z-index: 100;">
+<a class="FlattrButton" style="display:none;"
+ href="<?php echo $url; ?>"
+ title="<?php echo $titel; ?>"
+ lang="<?php echo ($lang == "de") ? "de_DE" : "en_US"; ?>">
+ revv="flattr;category:rest"
+  <?php echo $description; ?>
+</a>
+</div>
+
