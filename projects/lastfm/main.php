@@ -30,7 +30,7 @@ of lastfmplayer.</p>
 
 <p>I created also a patched MacOSX package. Download the <i>Last.fm-1.6.1.1337.dmg</i>. You can install it by simply opening the DMG and copying the Last.fm application to your applications directory.</p>
 
-<p>Now, for an easy setup (to actually let Last.fm save your songs), open a Terminal (under Applications / Utilities) and type the following:
+<p>Now, for an easy setup (to actually let Last.fm save your songs), open a Terminal (under Applications / Utilities) and type the following:</p>
 <pre>
 # download an easy onNewEvent script
 mkdir -p ~/"Library/Application Support/Last.fm"
@@ -43,12 +43,12 @@ cd ~/Music
 ln -s ~/"Library/Application Support/Last.fm" LastFM
 </pre>
 
-Your Last.fm should be ready to save songs now. It will save all fully heard songs. You can browse all saved songs in your Music / LastFM directory. Don't touch the non-MP3 files there, they belong to Last.fm.
+<p>Your Last.fm should be ready to save songs now. It will save all fully heard songs. You can browse all saved songs in your Music / LastFM directory. Don't touch the non-MP3 files there, they belong to Last.fm.
 </p>
 
 <br>
 
-<p>If you want to compile Last.fm by yourself on MacOSX (<i>You don't need to do that. Do that only if you fully understand that.</i>), you need to install the Xcode developer tools and the Qt4 SDK. Then do something like the following:
+<p>If you want to compile Last.fm by yourself on MacOSX (<i>You don't need to do that. Do that only if you fully understand that.</i>), you need to install the Xcode developer tools and the Qt4 SDK. Then do something like the following:</p>
 <pre>
 svn co svn://svn.audioscrobbler.net/clientside/Last.fm/tags/1.4.1.57486 lastfm
 curl "http://www.az2000.de/projects/lastfm/1.4.1.57486-added_saving_and_event_support.patch" > lastfm.patch
@@ -71,7 +71,6 @@ patch -p1 < ../lastfm-1.4.1.57486-added_saving_and_event_support.patch
 
 # if that was successfull, you have the Last.fm-1.6.1.1337.dmg in lastfm/dist/
 </pre>
-</p>
 
 <hr>
 

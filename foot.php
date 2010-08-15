@@ -5,48 +5,23 @@
 //   $leaders : array of the leaders of the page
 ?>
 
-<p>
-<?php
-switch($lang) {
-case "de": echo "Falls Sie meine Arbeit unterstützen wollen, bitte spenden Sie via Flattr hier: ";
-default: echo "If you want to support my work, please donate via Flattr here: ";
-}
-
-$url = ($_SERVER['HTTPS'] != "on") ? "http://" : "https://";
-$url .= $_SERVER["HTTP_HOST"];
-$tmp = explode("?", $_SERVER["REQUEST_URI"]);
-$url .= $tmp[0];
-
-// TODO: as long as we don't have separate Flattr buttons:
-$url = "http://www.az2000.de/";
-?>
-<span style="display: inline-block; vertical-align: middle; height: 60px;">
-<a class="FlattrButton" style="display:none;"
- href="<?php echo $url; ?>"
- title="<?php echo $titel; ?>"
- lang="<?php echo ($lang == "de") ? "de_DE" : "en_US"; ?>">
- revv="flattr;category:rest"
-  <?php echo $description; ?>
-</a>
-</span></p>
-<script type="text/javascript">
-function loadFlattr() {
-	if(typeof(FlattrLoader) == "undefined")
-		setTimeout(loadFlattr, 100);
-	else
-		FlattrLoader.setup();
-}
-loadFlattr();
-</script>
-
 <hr>
 <h2><?php echo $leader_titel; ?></h2>
 <p>
 <?php
 	foreach($leaders as $leader) {
-		echo $leader."<br>";
+		echo $leader;
 	}
 ?>
+
+<span style="display: inline; overflow: visible;">
+<a class="FlattrButton" style="display:none;"
+ href="http://www.az2000.de/"
+ title="Homepage of Albert Zeyer"
+ rev="flattr;category:rest;button:compact;"
+Homepage with many open source projects including source code, artworks, both images and music, pictures and some writings about technical stuff, tutorials and some stories.
+</a>
+</span>
 </p>
 
 <?php
@@ -65,6 +40,16 @@ if(0) {
 
 <h2>Uptime</h2>
 <p><?php system("uptime");?></p>
+
+<script type="text/javascript">
+function loadFlattr() {
+	if(typeof(FlattrLoader) == "undefined")
+		setTimeout(loadFlattr, 100);
+	else
+		FlattrLoader.setup();
+}
+loadFlattr();
+</script>
 
 </body>
 </html>
