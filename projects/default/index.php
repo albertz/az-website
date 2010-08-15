@@ -32,7 +32,28 @@
 	}	
 	$titel2 = $titel2 . $titel;
 	include("../../head.php");
+?>
 
+<?php
+$url = ($_SERVER['HTTPS'] != "on") ? "http://" : "https://";
+$url .= $_SERVER["HTTP_HOST"];
+$tmp = explode("?", $_SERVER["REQUEST_URI"]);
+$url .= $tmp[0];
+
+// TODO: as long as we don't have separate Flattr buttons:
+$url = "http://www.az2000.de/";
+?>
+<div style="float: right; overflow: visible; text-align: right; z-index: 100;">
+<a class="FlattrButton" style="display:none;"
+ href="<?php echo $url; ?>"
+ title="<?php echo $titel; ?>"
+ lang="<?php echo ($lang == "de") ? "de_DE" : "en_US"; ?>">
+ revv="flattr;category:rest"
+  <?php echo $description; ?>
+</a>
+</div>
+
+<?php
 	$file = "main." . $lang . ".php";
 	if(!file_exists($file)) {
 		$file = "main.en.php"; 
@@ -105,7 +126,34 @@ google.friendconnect.container.renderReviewGadget(
 </script>
 <?php
 } // $usegooglegadgets
+?>
 
+<p>
+<?php
+switch($lang) {
+case "de": echo "Falls Sie meine Arbeit unterstützen wollen, bitte spenden Sie via Flattr hier: ";
+default: echo "If you want to support my work, please donate via Flattr here: ";
+}
+
+$url = ($_SERVER['HTTPS'] != "on") ? "http://" : "https://";
+$url .= $_SERVER["HTTP_HOST"];
+$tmp = explode("?", $_SERVER["REQUEST_URI"]);
+$url .= $tmp[0];
+
+// TODO: as long as we don't have separate Flattr buttons:
+$url = "http://www.az2000.de/";
+?>
+<span style="display: inline-block; vertical-align: middle; height: 60px;">
+<a class="FlattrButton" style="display:none;"
+ href="<?php echo $url; ?>"
+ title="<?php echo $titel; ?>"
+ lang="<?php echo ($lang == "de") ? "de_DE" : "en_US"; ?>">
+ revv="flattr;category:rest"
+  <?php echo $description; ?>
+</a>
+</span></p>
+
+<?php
 	include("../default/copyright.php");
 	include("../default/other.php");
 	include("../../foot.php");
