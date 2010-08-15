@@ -48,7 +48,7 @@ $url = "http://www.az2000.de/";
  href="<?php echo $url; ?>"
  title="<?php echo $titel; ?>"
  lang="<?php echo ($lang == "de") ? "de_DE" : "en_US"; ?>">
- revv="flattr;category:rest"
+ rev="flattr;category:rest;"
   <?php echo $description; ?>
 </a>
 </div>
@@ -148,7 +148,7 @@ $url = "http://www.az2000.de/";
  href="<?php echo $url; ?>"
  title="<?php echo $titel; ?>"
  lang="<?php echo ($lang == "de") ? "de_DE" : "en_US"; ?>">
- revv="flattr;category:rest"
+ rev="flattr;category:rest;"
   <?php echo $description; ?>
 </a>
 </span></p>
