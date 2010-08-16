@@ -30,27 +30,62 @@
 		$titel = read_from_file("mysql.name");		
 		$description = read_from_file("mysql.description");
 	}	
-	$titel2 = $titel2 . $titel;
+	$titel2 = ucfirst($contenttype) . ": " . $titel;
 	include("../../head.php");
 ?>
 
 <?php
-$url = ($_SERVER['HTTPS'] != "on") ? "http://" : "https://";
-$url .= $_SERVER["HTTP_HOST"];
-$tmp = explode("?", $_SERVER["REQUEST_URI"]);
-$url .= $tmp[0];
+function flattrTitle() {
+	global $titel, $titel2;
+	if(strlen($titel) >= 5) return $titel;
+	if(strlen($titel2) >= 5) return $titel2;
+	if(strlen($titel) > 0) return $titel . " Albert Zeyer";
+	return "Something by Albert Zeyer";
+}
 
-// TODO: as long as we don't have separate Flattr buttons:
-//$url = "http://www.az2000.de/";
+function flattrCategorie() {
+	global $contenttype;
+	switch($contenttype) {
+	case "project": return "software";
+	case "text": return "text";
+	case "artwork": return "images";
+	}
+	return "rest";
+}
+
+function flattrLang() {
+	global $lang;
+	$ln = ($lang == "de") ? "de_DE" : "en_US";
+	return $ln;
+}
+
+function flattrDescription() {
+	global $description, $contenttype;
+	if(strlen($description) >= 5) return $description;
+	return flattrTitle() . ". " . ucfirst($contenttype) . " by Albert Zeyer.";
+}
+
+function putFlattrButton() {
+	$url = ($_SERVER['HTTPS'] != "on") ? "http://" : "https://";
+	$url .= $_SERVER["HTTP_HOST"];
+	$tmp = explode("?", $_SERVER["REQUEST_URI"]);
+	$url .= $tmp[0];
+
+	// TODO: as long as we don't have separate Flattr buttons:
+	//$url = "http://www.az2000.de/";
+
+	echo "<a class=\"FlattrButton\" style=\"display:none;\"\n";
+	echo " href=\"" . $url . "\"\n"; 
+	echo " title=\"" . flattrTitle() . "\"\n";
+	echo " rev=\"flattr;category:" . flattrCategorie() . ";\"\n";
+	echo " lang=\"" . flattrLang() . "\">\n";
+	echo flattrDescription();
+	echo "</a>\n";
+}
 ?>
+
 <div style="float: right; overflow: visible; text-align: right; z-index: 100;">
-<a class="FlattrButton" style="display:none;"
- href="<?php echo $url; ?>"
- title="<?php echo $titel; ?>"
- rev="flattr;category:rest;"
- lang="<?php echo ($lang == "de") ? "de_DE" : "en_US"; ?>">
-  <?php echo $description; ?>
-</a>
+<?php putFlattrButton(); ?>
 </div>
 
 <?php
@@ -134,23 +169,10 @@ switch($lang) {
 case "de": echo "Falls Sie meine Arbeit unterstützen wollen, bitte spenden Sie via Flattr hier: ";
 default: echo "If you want to support my work, please donate via Flattr here: ";
 }
-
-$url = ($_SERVER['HTTPS'] != "on") ? "http://" : "https://";
-$url .= $_SERVER["HTTP_HOST"];
-$tmp = explode("?", $_SERVER["REQUEST_URI"]);
-$url .= $tmp[0];
-
-// TODO: as long as we don't have separate Flattr buttons:
-//$url = "http://www.az2000.de/";
 ?>
+
 <span style="display: inline-block; vertical-align: middle; height: 60px;">
-<a class="FlattrButton" style="display:none;"
- href="<?php echo $url; ?>"
- title="<?php echo $titel; ?>"
- rev="flattr;category:rest;"
- lang="<?php echo ($lang == "de") ? "de_DE" : "en_US"; ?>">
-  <?php echo $description; ?>
-</a>
+<?php putFlattrButton(); ?>
 </span></p>
 
 <?php
