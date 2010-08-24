@@ -42,8 +42,10 @@ if(0) {
 <p><?php system("uptime");?></p>
 
 <?php
-if(!$db_online)
-	echo "<small>NOTE: MySQL server is offline, you may not see the full content.</small>";
+if(!$db_online) {
+	echo "<p><font color='red' size='-1'>NOTE: MySQL server is offline, you may not see the full content.";
+	echo "<br>Problem: " . $db_off_reason . "</font></p>";
+}
 ?>
 
 <script type="text/javascript">

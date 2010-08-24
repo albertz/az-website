@@ -18,11 +18,17 @@ if($sql_is_included != 1) {
 	$projects_id = 2;
 		
 	include("/etc/mysql.php");
-	$link = is_callable(mysql_connect) ? @mysql_connect("localhost", $mysql_user, $mysql_pass) : 0;
-	if(!$link) {
-		$db_online = false;		
-	} else {
-		mysql_select_db("homepage");
+	$db_online = false;		
+	if(!is_callable(mysql_connect))
+		$db_off_reason = "MySQL support not available in PHP (mysql_connect not callable).";
+	else {
+		$link = @mysql_connect("localhost", $mysql_user, $mysql_pass);
+		if(!$link)
+			$db_off_reason = "Cannot connect to MySQL server.";
+		else {
+			$db_online = true;
+			mysql_select_db("homepage");
+		}
 	}
 
 	function DB_GetName($id) {
