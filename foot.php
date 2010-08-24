@@ -41,6 +41,11 @@ if(0) {
 <h2>Uptime</h2>
 <p><?php system("uptime");?></p>
 
+<?php
+if(!$db_online)
+	echo "<small>NOTE: MySQL server is offline, you may not see the full content.</small>";
+?>
+
 <script type="text/javascript">
 function loadFlattr() {
 	if(typeof(FlattrLoader) == "undefined")
