@@ -41,6 +41,9 @@ if(0) {
 <h2>Uptime</h2>
 <p><?php system("uptime");?></p>
 
+<h2>About this homepage</h2>
+<p>The code can be seen <a href="http://www.az2000.de/viewvc/Website/">here</a>. Please contact me if you find any problems. :)</p>
+
 <?php
 if(!$db_online) {
 	echo "<p><font color='red' size='-1'>NOTE: MySQL server is offline, you may not see the full content.";
