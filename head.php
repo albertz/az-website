@@ -96,7 +96,8 @@ h2 {
 }
 
 .listing-entry {
-	margin-top: 7px;
+	margin-top: 5px;
+	margin-bottom: 2px;
 	border-bottom: 1px dotted #999;
 	overflow: hidden;
 }
