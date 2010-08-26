@@ -9,8 +9,6 @@
 //   $listing_order : one of {asc, desc}
 //   $query : array of http params
 
-// TODO: sorting in offline-version
-
 // check sorting
 switch($listing_sortby) {
 	case "date":
@@ -47,31 +45,6 @@ $th_url = "URL";
 $th_desc = "Description";
 $th_date = "Date";
 
-if( $listing_sorting ) { // the user-control-links for sorting followes
-if($sortby != "name")
-	$th_name = '<a href="'.$myurl.'&sort=name">'.$th_name.'</a>';
-
-if($sortby != "url")
-	$th_url = '<a href="'.$myurl.'&sort=url">'.$th_url.'</a>';
-
-if($sortby != "description")
-	$th_desc = '<a href="'.$myurl.'&sort=desc">'.$th_desc.'</a>';
-
-if($sortby != "date")
-	$th_date = '<a href="'.$myurl.'&sort=date">'.$th_date.'</a>';
-}
-
-?>
-
-<table cellspacing="0" cellpadding="10">
-<tr>
-        <th align="left"><?php echo $th_name; ?></th>
-        <th align="left"><?php echo $th_url; ?></th>
-        <th align="left"><?php echo $th_desc; ?></th>
-<?php if( $listing_showdate ) { ?>
-        <th align="left"><?php echo $th_date; ?></th>
-<?php } // $listing_showdate
-
 if( $listing_sorting ) {
 $tmp_query = $query;
 
@@ -79,16 +52,14 @@ unset($tmp_query["order"]);
 $tmp_raw_query = create_query_string($tmp_query);
 $myurl = $url_only . "?" . $tmp_raw_query;
 
-if($sortorder == "ASC")
-	$th_sort = '<a href="'.$myurl.'&order=desc">desc</a>';
-else
-	$th_sort = '<a href="'.$myurl.'&order=asc">asc</a>';
-?>
-        <th align="left"><?php echo $th_sort; ?></th>
-<?php } // $listing_sorting ?>
-</tr>
+} // $listing_sorting ?>
 
 <?php
+function make_entry($name, $url, $desc, $date = "0000.00.00") {
+	global $listing_showdate;
+
+}
+
 	$loop = true;
 	if($db_online) {
 		// get the shit
@@ -102,20 +73,12 @@ else
 			include("mysql_fileio.php");
 			$d = dir(".");
 		} else if($id == $main_id) {
-			echo '<tr><td valign="top">';
-			echo "Projekte";
-			echo '</td>';
-			echo '<td valign="top">';
-			echo '<a href="projects/">projects/</a>';
-			echo '</td>';
-			echo '<td valign="top">';
-			echo 'meine Projekte';
-			echo '</td></tr>';
-			$loop = false;			
-		} else {
-			echo "<tr><td valign='top' colspan='2'>\n";
-			echo "no content in offline version\n";
-			echo "</td></tr>";	
+			make_entry("Projekte", "projects/", "my projects");
+			make_entry("Artwork", "artwork/", "my artwork");
+			$loop = false;
+		} else { ?>
+			<div class="error-no-content">no content in offline version</div>
+			<?php
 			$loop = false;
 		}
 	}
@@ -156,26 +119,25 @@ else
 	
 	if($e_link != "") {
 ?>
-		<tr><td valign="top">
-	<font color="<?php echo color_mulinvers($tcolor, $e_mark/100); ?>">
-	<?php echo $e_name; ?></font></td>
-		<td valign="top">
-	<?php echo '<a style="color:' .
-	color_mulinvers($acolor, $e_mark/100) .
-	'" href="' . $e_link . '">' . $e_link . '</a>'; ?></td>
-		<td valign="top">
-	<font color="<?php echo color_mulinvers($tcolor, $e_mark/100); ?>">
-	<?php echo $e_desc; ?></font></td>
+<div class="listing-entry"
+	style="color: <?php echo color_mulinvers($tcolor, $e_mark/100); ?>;">
+<a class="lentry-title"
+	style="color: <?php echo color_mulinvers($acolor, $e_mark/100); ?>;"
+	href="<?php echo $e_link; ?>">
+<?php echo $e_name; ?></a>
+
+<span class="lentry-description"
+	style="color: <?php echo color_mulinvers($tcolor, $e_mark/100); ?>;">
+<?php echo $e_desc; ?></span>
+
 <?php if( $listing_showdate ) { ?>
-		<td valign="top">
-	<font color="<?php echo color_mulinvers($tcolor, $e_mark/100); ?>">
-	<?php echo $e_date; ?></font></td>
-<?php
-	} // $listing_showdate ?>
-</tr>
+<span class="lentry-date">
+<?php echo $e_date; ?></span>
+<?php } // $listing_showdate ?>
+
+</div>
+
 <?php
 	} }
 ?>
-
-</table>
 

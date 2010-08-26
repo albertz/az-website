@@ -60,7 +60,7 @@ $hcolor = '#111111'; //dark something
 <style type="text/css">
 <!--
 body,td,th,p {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;
 	font-size: medium;
 	color: <?php echo $tcolor; ?>;
 }
@@ -69,19 +69,19 @@ body {
 }
 a:link {
 	color: <?php echo $acolor; ?>;
-	text-decoration: underline;
+	text-decoration: none;
 }
 a:visited {
 	color: <?php echo $avcolor; ?>;
-	text-decoration: underline;
+	text-decoration: none;
 }
 a:hover {
 	color: <?php echo $ahcolor; ?>;
-	text-decoration: none;
+	text-decoration: underline;
 }
 a:active {
 	color: <?php echo $aacolor; ?>;
-	text-decoration: underline;
+	text-decoration: none;
 }
 h1,h2,h3,h4,h5,h6 {
 	font-weight: bold;
@@ -92,6 +92,25 @@ h1 {
 }
 h2 {
 	font-size: medium;
+}
+
+.listing-entry {
+	margin-top: 7px;
+	border-bottom: 1px dotted #999;
+	overflow: hidden;
+}
+
+.lentry-title {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+
+.lentry-date {
+	height: 0px;
+	float: right;
+	font-size: small;
+	color: #999;
 }
 -->
 </style>
