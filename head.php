@@ -24,6 +24,7 @@
 <?php if($description != "") { ?>
 <meta name="description" content="<?php echo $description; ?>">
 <?php } ?>
+<meta name="viewport" content="width=320;">
 <link rel="home" title="Webserver of Albert Zeyer" href="http://www.az2000.de/">
 <link rel="start" title="Webserver of Albert Zeyer" href="http://www.az2000.de/">
 <?php
@@ -43,7 +44,7 @@ switch(rand(1,5)) {
 case 1: $tcolor = '#000000'; break; //black
 case 2: $tcolor = '#006600'; break; //dark green
 case 3: $tcolor = '#333333'; break; //dark grey
-case 4: $tcolor = '#0000DD'; break; //dark blue
+case 4: $tcolor = '#888800'; break; //dark blue
 case 5: $tcolor = '#777700'; break; //braun
 }
 
