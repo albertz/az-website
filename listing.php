@@ -57,7 +57,23 @@ $myurl = $url_only . "?" . $tmp_raw_query;
 <?php
 function make_entry($name, $url, $desc, $date = "0000.00.00") {
 	global $listing_showdate;
-
+	global $d;
+	if(!$d) {
+		class Data {
+			public $data = array();
+			public $index = 0;
+		    function read() {
+		        if($index < count($data)) {
+					$entry = $data[$index];
+					$index++;
+					return $entry;
+				}
+				return False;
+		    }
+		}
+		$d = new Data();
+	}
+	$d->data[] = $url;
 }
 
 	$loop = true;
@@ -69,18 +85,20 @@ function make_entry($name, $url, $desc, $date = "0000.00.00") {
 			"WHERE parent_id = $id " .
 			"$sortstring" );
 	} else { // no db online, has to hack a little bit
-		if($id == $projects_id) {
-			include("mysql_fileio.php");
+		include("mysql_fileio.php");
+		/* if($id == $projects_id) {
 			$d = dir(".");
 		} else if($id == $main_id) {
-			make_entry("Projekte", "projects/", "my projects");
-			make_entry("Artwork", "artwork/", "my artwork");
-			$loop = false;
+			//make_entry("Projekte", "projects", "my projects");
+			//make_entry("Artwork", "artwork", "my artwork");
+			//$loop = false;
+			$d = dir(".");
 		} else { ?>
 			<div class="error-no-content">no content in offline version</div>
 			<?php
 			$loop = false;
-		}
+		} */
+		$d = dir(".");
 	}
 
 	while($loop) {
@@ -97,11 +115,13 @@ function make_entry($name, $url, $desc, $date = "0000.00.00") {
 		if($f = $d->read()) { // we get one more entry in the dir
 			$e_link = ""; // will set it in the following
 		if($f == "..") {
-			$e_link = "../";
-			$e_name = "..";
-			$e_desc = "back to main-site";
-			$e_date = "0000-00-00";
-			$e_mark = 100;
+			if($id != $main_id) {
+				$e_link = "../";
+				$e_name = "..";
+				$e_desc = "back to main-site";
+				$e_date = "0000-00-00";
+				$e_mark = 100;
+			}
 		} else
 		if(is_dir($f))
 		if(substr($f,0,1) != ".")
