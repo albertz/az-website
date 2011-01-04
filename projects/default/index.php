@@ -106,7 +106,11 @@ function putFlattrButton() {
 ?>
 
 <?php
-	$file = "desc.txt";
+	$file = "desc." . $lang . ".txt";
+	if(!file_exists($file))
+		$file = "desc.en.txt";
+	if(!file_exists($file))
+		$file = "desc.txt";
 	if(!file_exists($file))
 		$file = "mysql.description";
 	if(file_exists($file)) {

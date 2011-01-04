@@ -16,8 +16,8 @@
 			if($entry != "" && substr($entry, 0, 1) != ".")
 			switch($entry) {
 			case "index.php":
-			case "desc.txt":
-			case "main.php":
+			case "desc.txt": case "desc.en.txt": case "desc.de.txt":
+			case "main.php": case "main.en.php": case "main.de.php":
 			case "mysql.name":
 			case "mysql.description":
 			case "mysql.date":
