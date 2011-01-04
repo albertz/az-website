@@ -1,7 +1,5 @@
 <p>
-<b>German?</b><br>
-Wenn du Deutsch doch lieber magst (aus welchen Gruenden auch immer):
-<a href="?lang=de">DIES IST DER LINK</a>
+<a href="?lang=de">German version of this page.</a>
 </p>
 
 <p>
