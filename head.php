@@ -18,7 +18,7 @@
 <html>
 <head>
 <title><?php echo $titel; ?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="author" content="Albert Zeyer">
 <meta name="keywords" content="<?php echo $titel; ?>,Albert Zeyer">
 <?php if($description != "") { ?>
