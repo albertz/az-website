@@ -1,3 +1,5 @@
+<p><a href="?lang=en">Englische version.</a></p>
+
 <p>
 <b>Disclaimer / Geschichte</b><br>
 Dieses Spiel entstand urspruenglich als Werbespiel fuer die Firma SABO, 
