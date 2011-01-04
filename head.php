@@ -126,7 +126,7 @@ h2 {
         s.type = 'text/javascript';
         s.async = true;
 		s.src = 
-		<?php echo ($_SERVER['HTTPS'] != "on") ? "'http://'" : "'https://'"; ?>
+		<?php echo (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") ? "'http://'" : "'https://'"; ?>
         + 'api.flattr.com/js/0.5.0/load.js?uid=albert';
         
         t.parentNode.insertBefore(s, t);
@@ -142,7 +142,7 @@ h2 {
 <tr><td><h1><?php echo $titel2; ?></h1></td>
 <td align="right">
 <?php
-	if($_SERVER['HTTPS'] != "on") {
+	if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
 		echo '<a href="https://';
 		echo $_SERVER["HTTP_HOST"];
 		echo $_SERVER["REQUEST_URI"];

@@ -49,7 +49,7 @@ benoetigten Dateien bereits vorhanden sind.<br>
 target="_blank">http://www.vb-fun.de/vb/komponenten/komponente0041.shtml</a> 
 (falls der Link nicht mehr funktioniert, bitte Bescheid geben)
 </p>
-<? } // $lang ?>
+<?php } // $lang ?>
 
 <p>
 <b>Download</b><br>

@@ -11,7 +11,7 @@
 //  DB: homepage
 //  table: content
 
-if($sql_is_included != 1) {
+if(!isset($sql_is_included)) {
 
 	$db_online = true;
 	$main_id = 1;
@@ -19,9 +19,11 @@ if($sql_is_included != 1) {
 		
 	include("/etc/mysql.php");
 	$db_online = false;		
-	if(!is_callable(mysql_connect))
+	if(!function_exists("mysql_connect")) {
+		$db_off_reason = "MySQL support not available in PHP (mysql_connect not available).";
+    } else if(!is_callable("mysql_connect")) {
 		$db_off_reason = "MySQL support not available in PHP (mysql_connect not callable).";
-	else {
+	} else {
 		$link = @mysql_connect("localhost", $mysql_user, $mysql_pass);
 		if(!$link)
 			$db_off_reason = "Cannot connect to MySQL server.";
