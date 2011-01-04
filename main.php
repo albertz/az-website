@@ -18,13 +18,22 @@
 	include("sql.php"); // sql-shit (connect to, functions to get)
 	include("libs.php"); // some helper-functions
 
+    if(!isset($_REQUEST['lang']))
+        $lang = "en";
+    else
+    switch(strtolower($_REQUEST["lang"])) {
+    case "en": case "de":
+        $lang = strtolower($_REQUEST["lang"]);
+        break;
+    }
 
 //	$raw_query = $_SERVER["REDIRECT_QUERY_STRING"]; // if it is a hacked 403 or something
 	$raw_query = $_SERVER["QUERY_STRING"]; // real url param-string
 	$query = parse_query_string($raw_query); // makes an array of url params
 
 	// get $myurl without url params
-	$url_only = $_SERVER['SCRIPT_URI'];
+	$url_only = $_SERVER['SCRIPT_NAME'];
+	$url_only = preg_replace("/\/index\.php$/", "/", $url_only);
 
 	// load title
 	if($db_online) {
@@ -52,9 +61,9 @@
 	if(!isset($listing_sorting))
 		$listing_sorting = true;
 	if(!isset($listing_sortby))
-		$listing_sortby = $query["sort"];
+		$listing_sortby = isset($query["sort"]) ? $query["sort"] : "";
 	if(!isset($listing_order))
-		$listing_order = $query["order"];
+		$listing_order = isset($query["order"]) ? $query["order"] : "";
 	include("listing.php");
 
 	// while there aren't any ...

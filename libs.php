@@ -7,6 +7,7 @@ function parse_query_string($query) {
 	$return_val = array();
 
 	foreach (explode('&', $query) as $key => $value) {
+		if(strpos($value, '=') === false) continue;
 		list($attribute, $attribute_value) = explode('=', $value);
 		$return_val[$attribute] = $attribute_value;
 	}

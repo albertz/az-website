@@ -3,7 +3,7 @@
 	include("../../functions.php");
 	include("../default/text.php");
 	
-	// TODO: does this handling of request-variables in a special file
+	// TODO: do this handling of request-variables in a special file
 	$url = $_SERVER["REQUEST_URI"];
 	$paramof = strrpos($url, "?");
 	if(! $paramof === false)

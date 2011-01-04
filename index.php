@@ -2,7 +2,7 @@
 // index.php - it's the index!
 // get's nothing
 	
-	$id = $_REQUEST['id'];
+	$id = isset($_REQUEST['id']) ? $_REQUEST['id'] : "";
 	if($id == "" || !is_numeric($id))
 		$id = 1;
 	if($id == 1) {
@@ -11,6 +11,6 @@
 		$listing_sorting = false;
 		$lang = "en";
 	}
-
+ 
 	include("main.php"); // load the shit
 ?>
