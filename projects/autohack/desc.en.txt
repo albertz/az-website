@@ -1,0 +1,5 @@
+It's a webrobot, coded in Visual Basic. It crawls through the WWW and has advanced features
+like cookie support and human behavior simulation (e.g. also load all images,
+randomly click only on about 30% of the links, etc.).
+
+The archiv does not contain a full application but just the needed classes/framework to embed it easily somewhere else.
