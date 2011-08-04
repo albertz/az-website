@@ -66,6 +66,21 @@ take a look here:</p>
 
 //----------------------------------------------------------
 
+	function make_url($fn, $size, $quali, $typ) {
+		global $default_size, $default_quali;
+		if($size == $default_size) $size = NULL;
+		if($quali == $default_quali) $quali = NULL;
+		$url = rawurlencode($fn);
+		$args = array();
+		if($size) $args["size"] = (string) $size;
+		if($quali) $args["quali"] = (string) $quali;
+		if($typ) $args["type"] = $typ;
+		if($args) $url = $url . "?" . http_build_query($args);
+		return $url;
+	}
+
+//----------------------------------------------------------
+
 	function show_image_html($file, $size, $quali) {
 		global $web_root;
 		global $dir;
@@ -108,28 +123,25 @@ take a look here:</p>
 <h2><?php echo $file ?></h2>
 <p>
 <?php if(isset($prevf)) { ?>
-<a href="<?php echo rawurlencode($prevf)."?size=".$size."&quali=".$quali;
-?>">previous picture</a>
+<a href="<?php echo make_url($prevf, $size, $quali, NULL); ?>">previous picture</a>
 -
 <?php } ?>
 <a href=".">other files</a>
 <?php if(isset($nextf)) { ?>
 -
-<a href="<?php echo rawurlencode($nextf)."?type=html&size=".$size."&quali=".$quali;
-?>">next picture</a>
+<a href="<?php echo make_url($nextf, $size, $quali, NULL); ?>">next picture</a>
 <?php } ?>
 </p>
 <p><a href="<?php
-		echo rawurlencode($file)."?type=html&size=";
 		if($size > 1 || $size <= 0.25)
-			echo "0.5";
+			$nextsize = 0.5;
 		else if($size <= 0.5)
-			echo "0.75";
+			$nextsize = 0.75;
 		else if($size != 1)
-			echo "1";
+			$nextsize = 1;
 		else
-			echo "0.25";
-		echo "&quali=".$quali;
+			$nextsize = 0.25;
+		echo make_url($file, $nextsize, $quali, NULL);
 ?>"><img src="<?php
 		echo ".?file=".rawurlencode($file)."&type=pic&size=".$size."&quali=".$quali;
 ?>" border="0" alt="" id="image"></a></p>
