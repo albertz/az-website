@@ -289,8 +289,11 @@ take a look here:</p>
 	function show_head($file = NULL) {
 		if($file) if(!lastModifiedHeader($file)) return false;
 ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html><head>
 <title>www.az2000.de picture browser</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="/style.css.php"> 
 </head><body>
 <?php
 		return true;
