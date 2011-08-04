@@ -42,6 +42,7 @@ take a look here:</p>
 	function show_error_404() {
 		header ("Accept-Ranges: bytes", true);
 		header ("Content-Type: image/gif", true);
+		header ("Dir: " . $_REQUEST["dir"]);
 
 		$fp = fopen("../error404.gif","rb");
 		fpassthru($fp);
@@ -327,11 +328,11 @@ information and the source-code can be found here:<br>
 	$query = $_REQUEST;
 
 	$dir = rawurldecode($query["dir"]);
-	$file = $query["file"];
+	$file = $query["file"] or NULL;
 	if($file) $file = rawurldecode($file);
 
-	$quali = $query["quali"];
-	$size = $query["size"];
+	$quali = $query["quali"] or NULL;
+	$size = $query["size"] or NULL;
 	$type = strtolower($query["type"]);
 
 	if(strpos($dir."/".$file, "..") !== false) {
