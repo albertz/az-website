@@ -5,13 +5,13 @@
 RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule "^(.*/)?pics/(.*/)?$" "$1pics/pics.php?dir=$2" [last,QSA]
+RewriteRule "^(.*/)?pics/(.*/)?$" "$1pics/pics.php?dir=$2" [NE,last,QSA]
 
 RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule "^/var/www/localhost/htdocs/(.*/)?pics/(.*)$" "/$1pics/$2/" [R,last,QSA]
+RewriteRule "^/var/www/localhost/htdocs/(.*/)?pics/(.*)$" "/$1pics/$2/" [NE,R,last,QSA]
 
 RewriteCond %{QUERY_STRING} =get
 RewriteRule "^(.*/)?pics/(.*)$" "$1pics/$2" [last]
 
 RewriteCond %{REQUEST_FILENAME} !(.*)/pics.php
-RewriteRule "^(.*/)?pics/(.*)$" "$1pics/pics.php?dir=$2" [last,QSA]
+RewriteRule "^(.*/)?pics/(.*)$" "$1pics/pics.php?dir=$2" [NE,last,QSA]
