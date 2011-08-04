@@ -29,30 +29,4 @@ function create_query_string($query_ar) {
 	return $return_val;
 }
 
-// get some color "#rrggbb" and multiplies it with $scal
-function color_mulinvers($col, $scal) {
-	// read them
-	$r = hexdec( substr($col, 1, 2) );
-	$g = hexdec( substr($col, 3, 2) );
-	$b = hexdec( substr($col, 5, 2) );
-
-	// 'mul-invers' them
-	$r = 255 - $r; $g = 255 - $g; $b = 255 - $b;
-	$r *= $scal; $g *= $scal; $b *= $scal;
-	if($r > 255) $r = 255;
-	if($g > 255) $g = 255;
-	if($b > 255) $b = 255;
-	$r = 255 - $r; $g = 255 - $g; $b = 255 - $b;
-
-	// make them websafe-colors
-	$r = ( round($r/51) * 51 );
-	$g = ( round($g/51) * 51 );
-	$b = ( round($b/51) * 51 );
-	
-	return "#" .
-		str_pad(dechex($r), 2, '0', STR_PAD_LEFT) .
-		str_pad(dechex($g), 2, '0', STR_PAD_LEFT) .
-		str_pad(dechex($b), 2, '0', STR_PAD_LEFT);
-}
-
 ?>
