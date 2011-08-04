@@ -317,9 +317,9 @@ take a look here:</p>
 
 	function lastModifiedHeader($file) {
 		$contentDate = filemtime($file);
-		$scriptDate = filemtime($_SERVER["SCRIPT_FILENAME"]);
+		$contentDate = max($contentDate, filemtime($_SERVER["SCRIPT_FILENAME"]));
 		$ifModifiedSince = isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? stripslashes($_SERVER['HTTP_IF_MODIFIED_SINCE']) : false;
-		if ($ifModifiedSince && strtotime($ifModifiedSince) >= $contentDate && strtotime($ifModifiedSince) >= $scriptDate) {
+		if ($ifModifiedSince && strtotime($ifModifiedSince) >= $contentDate) {
 			header('HTTP/1.0 304 Not Modified');
 			die; // stop processing
 			return false;
