@@ -389,12 +389,15 @@ information and the source-code can be found here:<br>
 	$query = $_REQUEST;
 
 	$dir = rawurldecode($query["dir"]);
-	$file = $query["file"] or NULL;
+	if(isset($query["file"])) $file = $query["file"]; else $file = NULL;
 	if($file) $file = rawurldecode($file);
 
-	$quali = $query["quali"] or NULL;
-	$size = $query["size"] or NULL;
-	$type = strtolower($query["type"]);
+	if(isset($query["quali"])) $quali = $query["quali"]; else $quali = NULL;
+	if(isset($query["size"])) $size = $query["size"]; else $size = NULL;
+	if(isset($query["type"]))
+		$type = strtolower($query["type"]);
+	else
+		$type = NULL;
 
 	if(strpos($dir."/".$file, "..") !== false) {
 		show_error_hack();
