@@ -142,7 +142,7 @@ take a look here:</p>
 		else
 			$nextsize = 0.25;
 		echo make_url($file, $nextsize, $quali, NULL);
-?>"><img src="<?php
+?>"><img id="img" src="<?php
 		echo ".?file=".rawurlencode($file)."&type=pic&size=".$size."&quali=".$quali;
 ?>" border="0" alt="" id="image"></a></p>
 <p><a href="<?php echo rawurlencode($file); ?>?get">show original picture</a></p>
@@ -338,7 +338,7 @@ take a look here:</p>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="/style.css.php"> 
 <script type="text/javascript">
-function global_onkeydown(e) {
+function body_onkeydown(e) {
 	var keyunicode = e.charCode || e.keyCode;
 	var obj = null;
 	if(keyunicode == 37) { // left
@@ -350,8 +350,29 @@ function global_onkeydown(e) {
 		self.location.href = obj.href;
 	}
 }
+
+function prefetch(url, depth) {
+	var iframe = document.createElement("iframe");
+	iframe.src = url + "#_prefetched_" + depth;
+	iframe.width = iframe.height = 0;
+	iframe.style.display = 'none';
+	iframe.frameborder = 0;
+	document.body.appendChild(iframe);
+}
+
+function body_onload() {
+	var prefetch_depth = 0;
+	if(self.document.location.hash.search("_prefetched_") >= 0)
+		prefetch_depth = parseInt(self.document.location.hash.substring(self.document.location.hash.search("_prefetched_") + "_prefetched_".length));
+
+	if(prefetch_depth < 10) {
+		var obj = document.getElementById("nextref");
+		if(obj)
+			prefetch(obj.href, prefetch_depth + 1);
+	}
+}
 </script>
-</head><body onkeydown="global_onkeydown(window.event);">
+</head><body onkeydown="body_onkeydown(window.event);" onload="body_onload();">
 <?php
 		return true;
 	}
