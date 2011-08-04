@@ -39,6 +39,21 @@ take a look here:</p>
 
 //----------------------------------------------------------
 
+	function show_error_custom($title, $msg) {
+		show_head();
+?>
+<center>
+<h2>Error: <?php echo $title; ?></h2>
+<p><?php echo $msg; ?></p>
+<hr>
+<p><a href="http://www.az2000.de/">Home</a></p>
+</center>
+<?php
+		show_foot();
+	}
+
+//----------------------------------------------------------
+
 	function show_error_404() {
 		header ("Accept-Ranges: bytes", true);
 		header ("Content-Type: image/gif", true);
@@ -312,13 +327,29 @@ information and the source-code can be found here:<br>
 
 //----------------------------------------------------------
 
+	$default_quali = 80;
+	$default_size = 0.25;
+
 	function handle_file($dir, $file, $size, $quali, $type) {
-		if(!$quali || !is_numeric($quali) || $quali <= 5) $quali = 80;
-		if(!$size || !is_numeric($size) || $size <= 0) $size = 0.25;
+		global $default_quali, $default_size;
+		if(!$quali || !is_numeric($quali) || $quali <= 5) $quali = $default_quali;
+		if(!$size || !is_numeric($size) || $size <= 0) $size = $default_size;
 		
 		$quali = round($quali);
 		if($size > 1) $size = round($size);
 		
+		switch($size) {
+		case 0.25:
+		case 0.5:
+		case 0.75:
+		case 1:
+		case 100:
+			break; // all ok
+		default:
+			show_error_custom("Bad size", "Size " . (string) $size . " is not allowed.");
+			return;
+		}
+
 		if($type == "pic")
 			show_image($dir."/".$file, $size, $quali);
 		else
