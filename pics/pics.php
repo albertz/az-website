@@ -211,6 +211,11 @@ take a look here:</p>
 			default:
 				$old_img = imagecreatefromjpeg($file);
 		};
+		if(!$old_img) {
+			header("X-Pics: failed to load " . $file, false);
+			show_error_404();
+			return;
+		}
 
 		if($size == 1) {
 			// only change quali (later)
