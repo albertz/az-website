@@ -123,13 +123,13 @@ take a look here:</p>
 <h2><?php echo $file ?></h2>
 <p>
 <?php if(isset($prevf)) { ?>
-<a href="<?php echo make_url($prevf, $size, $quali, NULL); ?>">previous picture</a>
+<a id="prevref" href="<?php echo make_url($prevf, $size, $quali, NULL); ?>">previous picture</a>
 -
 <?php } ?>
-<a href=".">other files</a>
+<a id="upref" href=".">other files</a>
 <?php if(isset($nextf)) { ?>
 -
-<a href="<?php echo make_url($nextf, $size, $quali, NULL); ?>">next picture</a>
+<a id="nextref" href="<?php echo make_url($nextf, $size, $quali, NULL); ?>">next picture</a>
 <?php } ?>
 </p>
 <p><a href="<?php
@@ -336,7 +336,21 @@ take a look here:</p>
 <title>www.az2000.de picture browser</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="/style.css.php"> 
-</head><body>
+<script type="text/javascript">
+function global_onkeydown(e) {
+	var keyunicode = e.charCode || e.keyCode;
+	var obj = null;
+	if(keyunicode == 37) { // left
+		obj = document.getElementById("prevref");
+	} else if(keyunicode == 39) { // right
+		obj = document.getElementById("nextref");
+	}
+	if(obj) {
+		self.location.href = obj.href;
+	}
+}
+</script>
+</head><body onkeydown="global_onkeydown(window.event);">
 <?php
 		return true;
 	}
