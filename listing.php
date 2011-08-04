@@ -140,14 +140,14 @@ function make_entry($name, $url, $desc, $date = "0000.00.00") {
 	if($e_link != "") {
 ?>
 <div class="listing-entry"
-	style="color: <?php echo color_mulinvers($tcolor, $e_mark/100); ?>;">
+	style="opacity: <?php echo $e_mark/100; ?>;">
 <a class="lentry-title"
-	style="color: <?php echo color_mulinvers($acolor, $e_mark/100); ?>;"
+	style="opacity: <?php echo $e_mark/100; ?>;"
 	href="<?php echo $e_link; ?>">
 <?php echo $e_name; ?></a>
 
 <span class="lentry-description"
-	style="color: <?php echo color_mulinvers($tcolor, $e_mark/100); ?>;">
+	style="opacity: <?php echo $e_mark/100; ?>;">
 <?php echo $e_desc; ?></span>
 
 <?php if( $listing_showdate ) { ?>
