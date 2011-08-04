@@ -163,17 +163,23 @@ take a look here:</p>
 		$cachefile = str_replace("/", "$$", $cachefile);
 		$cachefile = str_replace("\\", "$$", $cachefile);
 		$cachefile = "/var/tmp/pics/" . $cachefile . ".jpg";
+		header("X-Pics-File: " . $file, false);
 		$file = $web_root.$file;
 		if(!is_file($file)) {
+			header("X-Pics: Error 404", false);
 			show_error_404();
 			return;
 		}
 
-		if(!lastModifiedHeader($file)) return;
+		if(!lastModifiedHeader($file)) {
+			header("X-Pics: !lastModifiedHeader", false);
+			return;
+		}
 
 		if(file_exists($cachefile) && (filemtime($cachefile) >= filemtime($file))) {
 			header("Accept-Ranges: bytes", true);
 			header("Content-Type: " . $imageformat, true);
+			header("X-Pics: From cache", false);
 
 	        $fp = fopen($cachefile, "rb");
 		    fpassthru($fp);
@@ -185,7 +191,10 @@ take a look here:</p>
 		header("Content-Type: " . $imageformat, true);
 
 		set_time_limit(0);
-		while(! @mkdir("/var/tmp/pics/.lock") ) usleep(100000);
+		while(! @mkdir("/var/tmp/pics/.lock") ) {
+			header("X-Pics: sleeping ..., waiting for lock", false);
+			usleep(100000);
+		}
 
 		$info = pathinfo($file);
 		switch( strtolower($info["extension"]) ) {
@@ -207,6 +216,7 @@ take a look here:</p>
 			// only change quali (later)
 			$new_img = $old_img;
 		} else {
+			header("X-Pics: converting ...", false);
 
 			$old_width = imagesx($old_img);
 			$old_height = imagesy($old_img);
@@ -241,7 +251,7 @@ take a look here:</p>
 		}
 
 		//imagepng($new_img);
-		imagejpeg($new_img, $cachefile, $quali);		
+		imagejpeg($new_img, $cachefile, $quali);
 		imagedestroy($new_img);
 
 		rmdir("/var/tmp/pics/.lock");
