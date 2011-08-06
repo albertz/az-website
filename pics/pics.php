@@ -81,7 +81,40 @@ take a look here:</p>
 
 //----------------------------------------------------------
 
-	function show_image_html($file, $size, $quali) {
+	function orientation_style($ifd0ori, $w, $h) {
+		$hflip = $vflip = false;
+		$rot = 0;
+		switch($ifd0ori) {
+		case 1: break;
+		case 2: $hflip = true; break;
+		case 3: $rot = 180; break;
+		case 4: $vflip = true; break;
+		case 5: $vflip = true; $rot = 90; break;
+		case 6: $rot = 90; break;
+		case 7: $hflip = true; $rot = 90; break;
+		case 8: $rot = -90; break;
+		}
+		$transs = array();
+		if($rot != 0)
+			$transs[] = "rotate(" . (string)$rot . "deg)";
+		if($rot == 90 || $rot == -90)
+			list($w, $h) = array($h, $w);
+		if($hflip)
+			$transs[] = "scaleX(-1)";
+		if($vflip)
+			$transs[] = "scaleY(-1)";
+		$s = "";
+		foreach($transs as $trans)
+			foreach(array("-webkit-", "-moz-", "-o-", "") as $prefix) {
+				$prefix .= "transform: ";
+				$s .= $prefix . $trans . "; ";
+			}
+		return array($s, $w, $h);
+	}
+
+//----------------------------------------------------------
+
+	function show_image_html($fdir, $file, $size, $quali) {
 		global $web_root;
 		global $dir;
 
@@ -132,7 +165,25 @@ take a look here:</p>
 <a id="nextref" href="<?php echo make_url($nextf, $size, $quali, NULL); ?>">next picture</a>
 <?php } ?>
 </p>
-<p><a href="<?php
+<p>
+<?php
+		$exif = exif_read_data($web_root."/".$fdir."/".$file, 0, true);
+		if($exif && isset($exif['IFD0']['Orientation']))
+			$ifd0ori = $exif['IFD0']['Orientation'];
+		else
+			$ifd0ori = 1;
+		if($exif) {
+			$w = $exif["COMPUTED"]["Width"] * $size;
+			$h = $exif["COMPUTED"]["Height"] * $size;
+		} else { $w = $h = 0; }
+		list($img_style, $new_w, $new_h) = orientation_style($ifd0ori, $w, $h);
+?>
+<div style="display:block; width:<?php echo $new_w; ?>px; height:<?php echo $new_h; ?>px;">
+<div style="position:relative; <?php
+		echo "left:" . ($new_w - $w)*(1.0/2.0) . "px; ";
+		echo "top:" . ($new_h - $h)*(1.0/2.0) . "px; ";
+?>; display:block;">
+<a href="<?php
 		if($size > 1 || $size <= 0.25)
 			$nextsize = 0.5;
 		else if($size <= 0.5)
@@ -142,10 +193,29 @@ take a look here:</p>
 		else
 			$nextsize = 0.25;
 		echo make_url($file, $nextsize, $quali, NULL);
-?>"><img id="img" src="<?php
+?>">
+<img id="img" src="<?php
 		echo ".?file=".rawurlencode($file)."&type=pic&size=".$size."&quali=".$quali;
-?>" border="0" alt="" id="image"></a></p>
+?>" border="0" alt="" id="image" style="<?php echo $img_style; ?>">
+</a></div></div></p>
 <p><a href="<?php echo rawurlencode($file); ?>?get">show original picture</a></p>
+<div style="min-width:100px; font-size:smaller;">
+<h3>Meta information</h3>
+<?php
+		foreach ($exif as $key => $section) {
+		    foreach ($section as $name => $val) {
+				$keyname = $key.".".$name;
+				switch($keyname) {
+				case "EXIF.MakerNote":
+				case "IFD0.UndefinedTag:0xC4A5":
+					break;
+				default:
+		     	   echo "$keyname: <code>$val</code><br />\n";
+				}
+		    }
+		}
+?>
+</div>
 </center>
 <?php
 		show_foot();
@@ -416,7 +486,7 @@ information and the source-code can be found here:<br>
 		if($type == "pic")
 			show_image($dir."/".$file, $size, $quali);
 		else
-			show_image_html($file, $size, $quali);	
+			show_image_html($dir, $file, $size, $quali);	
 	}
 
 //----------------------------------------------------------
