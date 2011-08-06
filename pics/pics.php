@@ -354,7 +354,6 @@ take a look here:</p>
 
 		foreach($filelist as $file) {
 			$enc = rawurlencode($file);
-			if($dir != "") $end = $dir . "/" . $end;
 			if(substr($file, 0, 1) == "."
 			|| $file == "pic.cml"
 			|| $file == "pics.php") {
