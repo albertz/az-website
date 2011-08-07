@@ -225,7 +225,6 @@ take a look here:</p>
 
 	function show_image($file, $size, $quali) {
 		global $web_root;	
-		$imageformat = "image/jpeg";
 
 		$cachefile = $file;
 		$cachefile = $cachefile . ".size=" . $size;
@@ -245,6 +244,8 @@ take a look here:</p>
 			header("X-Pics: !lastModifiedHeader", false);
 			return;
 		}
+
+		list($w, $h, $imageformat,) = getimagesize($file);
 
 		if(file_exists($cachefile) && (filemtime($cachefile) >= filemtime($file))) {
 			//header("Accept-Ranges: bytes", true);
