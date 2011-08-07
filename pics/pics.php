@@ -209,7 +209,9 @@ take a look here:</p>
 				case "IFD0.UndefinedTag:0xC4A5":
 					break;
 				default:
-		     	   echo "$keyname: <code>$val</code><br />\n";
+					echo "$keyname: <code>";
+					print_r($val);
+					echo "</code><br />\n";
 				}
 		    }
 		}
