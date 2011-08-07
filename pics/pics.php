@@ -305,10 +305,6 @@ function gmaps_initialize() {
 		header("Content-Type: " . $imageformat, true);
 
 		set_time_limit(0);
-		while(! @mkdir("/var/tmp/pics/.lock") ) {
-			header("X-Pics: sleeping ..., waiting for lock", false);
-			usleep(100000);
-		}
 
 		$info = pathinfo($file);
 		switch( strtolower($info["extension"]) ) {
@@ -369,11 +365,16 @@ function gmaps_initialize() {
 			imagedestroy($old_img);
 		}
 
+		/*while(! @mkdir("/var/tmp/pics/.lock") ) {
+			header("X-Pics: sleeping ..., waiting for lock", false);
+			usleep(100000);
+		}*/
+
 		//imagepng($new_img);
 		imagejpeg($new_img, $cachefile, $quali);
 		imagedestroy($new_img);
 
-		rmdir("/var/tmp/pics/.lock");
+		//rmdir("/var/tmp/pics/.lock");
 
 		$fp = fopen($cachefile,"rb");
 		fpassthru($fp);
