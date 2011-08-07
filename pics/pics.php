@@ -149,8 +149,8 @@ take a look here:</p>
 		sort($filelist);
 
 		$file_i = array_search($file, $filelist);
-		$prevf = $filelist[$file_i - 1];
-		$nextf = $filelist[$file_i + 1];
+		$prevf = @$filelist[$file_i - 1];
+		$nextf = @$filelist[$file_i + 1];
 ?>
 <center>
 <h2><?php echo $file ?></h2>
@@ -245,6 +245,7 @@ function gmaps_initialize() {
 <?php
 		} /* GPS */
 
+		if($exif)
 		foreach ($exif as $key => $section) {
 		    foreach ($section as $name => $val) {
 				$keyname = $key.".".$name;
