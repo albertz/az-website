@@ -75,7 +75,6 @@ replace "pic.cml" with "pics.php".<br>
 <h1>Downloads</h1>
 <p>
 <b>Source Code</b>:
-<a href="http://www.az2000.de/viewvc/Website/pics/pics.php?view=markup">pics.php</a>
-<a href="http://www.az2000.de/viewvc/Website/pics/pic.cml?view=markup">pic.cml</a>
+<a href="https://gitorious.org/az-website/website/blobs/master/pics/pics.php">pics.php</a>
 </p>
 

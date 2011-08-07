@@ -48,5 +48,5 @@ veroeffentlichen.
 
 <p>
 <b>Download</b><br>
-<a href="/images/pics.php.txt">Source Code (PHP)</a>
+<a href="https://gitorious.org/az-website/website/blobs/master/pics/pics.php">Source Code (PHP)</a>
 </p>
