@@ -1,0 +1,17 @@
+/viewvc
+/squirrelmail
+/wwwroot_alt
+/ponkstyle
+/pics
+/downloads
+/dev
+/phpmyadmin
+/pankeey
+
+.htaccess
+.htpasswd
+pwn0meter.html
+pwn0meter.txt
+
+*~
+.keep_*
