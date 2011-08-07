@@ -4,7 +4,7 @@
 	code under GPL
 	by Albert Zeyer
 
-	special caching version
+	http://www.az2000.de/projects/pics/
 */
 //----------------------------------------------------------
 
