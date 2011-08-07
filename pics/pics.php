@@ -201,6 +201,50 @@ take a look here:</p>
 <div style="min-width:100px; font-size:smaller;">
 <h3>Meta information</h3>
 <?php
+		$exif_lat = @$exif["GPS"]["GPSLatitude"];
+		$exif_lon = @$exif["GPS"]["GPSLongitude"];
+		if ( !empty($exif_lat) && !empty($exif_lon) ) {
+			function sexagesimal_to_float($x) {
+				list($h, $m, $s) = $x;
+				list($h0,$h1) = explode("/", $h);
+				list($m0,$m1) = explode("/", $m);
+				list($s0,$s1) = explode("/", $s);
+				return $h0/$h1 + $m0/$m1/60 + $s0/$s1/3600;
+			}
+			$lat = sexagesimal_to_float($exif_lat);
+			if (@$exif["GPSLatitudeRef"][0] == "S")
+				$lat = -$lat;
+			$lon = sexagesimal_to_float($exif_lon);
+			if (@$exif["GPSLongitudeRef"][0] == "W")
+				$lon = -$lon;
+?>
+<script src="http<?php
+		if(@$_SERVER['HTTPS'] == "on") echo "s";
+?>://maps.googleapis.com/maps/api/js?sensor=false&key=<?php
+		if(@$_SERVER['HTTPS'] == "on")
+			echo "ABQIAAAAMIi4vvyQ9mohrSQ6SYMyhRRRVNx-TT1fV-IPI-2HnICjPKGJThRhBoE5IRssnqdMynUhAaPFHqJ2Dw";
+		else
+			echo "ABQIAAAAMIi4vvyQ9mohrSQ6SYMyhRTN_z_RLu-y0jj6F6s603o_BB5uHRTA912-U27sLYREIQPgVJl3ciNQNw";
+?>" type="text/javascript"></script>
+<div id="gmap_canvas" style="width: 75%; height: 300px;"></div>
+<script type="text/javascript">
+function gmaps_initialize() {
+	var myOptions = {
+		zoom: 8,
+		center: new google.maps.LatLng(<?php echo $lat . ", " . $lon; ?>),
+		mapTypeId: "hybrid"
+	};
+	var map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+	var marker = new google.maps.Marker({
+		position: myOptions.center,
+		map: map,
+		title: "Position"
+	});
+}
+</script>
+<?php
+		} /* GPS */
+
 		foreach ($exif as $key => $section) {
 		    foreach ($section as $name => $val) {
 				$keyname = $key.".".$name;
@@ -431,15 +475,19 @@ function prefetch(url, depth) {
 	document.body.appendChild(iframe);
 }
 
-function body_onload() {
-	var prefetch_depth = 0;
-	if(self.document.location.hash.search("_prefetched_") >= 0)
-		prefetch_depth = parseInt(self.document.location.hash.substring(self.document.location.hash.search("_prefetched_") + "_prefetched_".length));
+var prefetch_depth = 0;
+if(self.document.location.hash.search("_prefetched_") >= 0)
+	prefetch_depth = parseInt(self.document.location.hash.substring(self.document.location.hash.search("_prefetched_") + "_prefetched_".length));
 
+function body_onload() {
 	if(prefetch_depth < 5) {
 		var obj = document.getElementById("nextref");
 		if(obj)
 			prefetch(obj.href, prefetch_depth + 1);
+	}
+
+	if(prefetch_depth == 0 && typeof gmaps_initialize !== 'undefined') {
+		gmaps_initialize();
 	}
 }
 </script>
