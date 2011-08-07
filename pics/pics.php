@@ -55,7 +55,6 @@ take a look here:</p>
 //----------------------------------------------------------
 
 	function show_error_404() {
-		header ("Accept-Ranges: bytes", true);
 		header ("Content-Type: image/gif", true);
 		header ("Dir: " . $_REQUEST["dir"]);
 
@@ -294,7 +293,6 @@ function gmaps_initialize() {
 		list($w, $h, $imageformat,) = getimagesize($file);
 
 		if(file_exists($cachefile) && (filemtime($cachefile) >= filemtime($file))) {
-			//header("Accept-Ranges: bytes", true);
 			header("Content-Type: " . $imageformat, true);
 			header("X-Pics: From cache", false);
 
@@ -304,7 +302,6 @@ function gmaps_initialize() {
 			return;
 		}
 
-		//header("Accept-Ranges: bytes", true);
 		header("Content-Type: " . $imageformat, true);
 
 		set_time_limit(0);
