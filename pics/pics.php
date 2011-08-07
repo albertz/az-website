@@ -167,15 +167,14 @@ take a look here:</p>
 </p>
 <p>
 <?php
-		$exif = exif_read_data($web_root."/".$fdir."/".$file, 0, true);
+		list($w, $h, $imageformat,) = getimagesize($web_root."/".$fdir."/".$file);
+		$w *= $size;
+		$h *= $size;
+		$exif = @exif_read_data($web_root."/".$fdir."/".$file, 0, true);
 		if($exif && isset($exif['IFD0']['Orientation']))
 			$ifd0ori = $exif['IFD0']['Orientation'];
 		else
 			$ifd0ori = 1;
-		if($exif) {
-			$w = $exif["COMPUTED"]["Width"] * $size;
-			$h = $exif["COMPUTED"]["Height"] * $size;
-		} else { $w = $h = 0; }
 		list($img_style, $new_w, $new_h) = orientation_style($ifd0ori, $w, $h);
 ?>
 <div style="display:block; width:<?php echo $new_w; ?>px; height:<?php echo $new_h; ?>px;">
