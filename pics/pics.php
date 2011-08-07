@@ -247,6 +247,9 @@ function gmaps_initialize() {
 		if($exif)
 		foreach ($exif as $key => $section) {
 		    foreach ($section as $name => $val) {
+				if($key == "MAKERNOTE") continue;
+				if($key == "COMPUTED") continue;
+				if($key == "THUMBNAIL") continue;
 				$keyname = $key.".".$name;
 				switch($keyname) {
 				case "EXIF.MakerNote":
