@@ -493,7 +493,7 @@ function body_onload() {
 	}
 }
 </script>
-</head><body onkeydown="body_onkeydown(window.event);" onload="body_onload();">
+</head><body onkeydown="body_onkeydown(event);" onload="body_onload();">
 <?php
 		return true;
 	}
