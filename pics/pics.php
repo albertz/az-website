@@ -247,7 +247,7 @@ take a look here:</p>
 		}
 
 		if(file_exists($cachefile) && (filemtime($cachefile) >= filemtime($file))) {
-			header("Accept-Ranges: bytes", true);
+			//header("Accept-Ranges: bytes", true);
 			header("Content-Type: " . $imageformat, true);
 			header("X-Pics: From cache", false);
 
@@ -257,7 +257,7 @@ take a look here:</p>
 			return;
 		}
 
-		header("Accept-Ranges: bytes", true);
+		//header("Accept-Ranges: bytes", true);
 		header("Content-Type: " . $imageformat, true);
 
 		set_time_limit(0);
