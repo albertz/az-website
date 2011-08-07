@@ -317,16 +317,16 @@ function gmaps_initialize() {
 		switch( strtolower($info["extension"]) ) {
 			case "jpg":
 			case "jpeg":
-				$old_img = imagecreatefromjpeg($file);
+				$old_img = @imagecreatefromjpeg($file);
 				break;
 			case "gif":
-				$old_img = imagecreatefromgif($file);
+				$old_img = @imagecreatefromgif($file);
 				break;
 			case "png":
-				$old_img = imagecreatefrompng($file);
+				$old_img = @imagecreatefrompng($file);
 				break;
 			default:
-				$old_img = imagecreatefromjpeg($file);
+				$old_img = @imagecreatefromjpeg($file);
 		};
 		if(!$old_img) {
 			header("X-Pics: failed to load " . $file, false);
