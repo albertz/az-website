@@ -406,10 +406,9 @@ function gmaps_initialize() {
 			|| $file == "pic.cml"
 			|| $file == "pics.php") {
 				//ignore
-			} else {
-			if(is_dir($web_root.$dir."/".$file)) {
+			} else if(is_dir($web_root.$dir."/".$file)) {
 				echo "<center><a href='$enc/'>$file</a></center>\n";
-			} else {
+			} else if(is_readable($web_root.$dir."/".$file)) {
 				$info = pathinfo($file);
 				switch( strtolower($info["extension"]) ) {
 					case "jpg":
@@ -425,7 +424,6 @@ function gmaps_initialize() {
 					default:
 						echo "<center><a href='$enc?get'>$file</a></center>\n";
 				}
-			}
 			}
 		}
 
