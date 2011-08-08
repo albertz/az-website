@@ -386,12 +386,23 @@ function gmaps_initialize() {
 //----------------------------------------------------------
 
 	function show_dir($dir) {
-		global $web_root;
+		global $web_root, $query, $querystr;
 
 		if(!show_head($web_root.$dir)) return;
 ?>
-<center><h2><?php echo $dir; ?></h2></center><hr>
-<center><a href="../">Up a directory</a></center><br>
+<center>
+<h2><?php echo $dir; ?></h2>
+<?php
+		if(isset($query["filter"])) {
+			$filter = $query["filter"];
+			$filter = rawurldecode($filter);
+			echo "<p><b>Filter:</b> " . htmlspecialchars($filter) . "</p>";
+		}
+		else $filter = "*";
+?>
+<hr>
+<p><a href="../<?php echo $querystr; ?>">Up a directory</a></p>
+</center>
 <?php
 		$handle = opendir($web_root.$dir);
 		$filelist = array();
@@ -407,8 +418,9 @@ function gmaps_initialize() {
 			|| $file == "pics.php") {
 				//ignore
 			} else if(is_dir($web_root.$dir."/".$file)) {
-				echo "<center><a href='$enc/'>$file</a></center>\n";
+				echo "<center><a href='$enc/{$querystr}'>{$file}</a></center>\n";
 			} else if(is_readable($web_root.$dir."/".$file)) {
+				if(!fnmatch($filter, $file, FNM_CASEFOLD)) continue;
 				$info = pathinfo($file);
 				switch( strtolower($info["extension"]) ) {
 					case "jpg":
@@ -542,6 +554,8 @@ information and the source-code can be found here:<br>
 
 	$web_root = "../pics/"; // Ort: pics/
 	$query = $_REQUEST;
+	$querystr = explode("?", $_SERVER["REQUEST_URI"], 2);
+	$querystr = isset($querystr[1]) ? ("?" . $querystr[1]) : "";
 
 	$dir = rawurldecode($query["dir"]);
 	if(isset($query["file"])) $file = $query["file"]; else $file = NULL;
