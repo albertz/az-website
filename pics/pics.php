@@ -482,7 +482,7 @@ if(self.document.location.hash.search("_prefetched_") >= 0)
 	prefetch_depth = parseInt(self.document.location.hash.substring(self.document.location.hash.search("_prefetched_") + "_prefetched_".length));
 
 function body_onload() {
-	if(prefetch_depth < 5) {
+	if(prefetch_depth < 2) {
 		var obj = document.getElementById("nextref");
 		if(obj)
 			prefetch(obj.href, prefetch_depth + 1);
