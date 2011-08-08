@@ -556,9 +556,7 @@ information and the source-code can be found here:<br>
 
 	if(strpos($dir."/".$file, "..") !== false) {
 		show_error_hack();
-	}
-	else
-	if(is_dir($web_root.$dir)) {		
+	} else if(is_dir($web_root.$dir)) {		
 		if($file) {
 			handle_file($dir, $file, $size, $quali, $type);
 		} else {
