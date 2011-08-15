@@ -297,6 +297,7 @@ function gmaps_initialize() {
 
 		if(file_exists($cachefile) && (filemtime($cachefile) >= filemtime($file))) {
 			header("Content-Type: " . $imageformat, true);
+			header("Content-Length: " . filesize($cachefile));
 			header("X-Pics: From cache", false);
 
 	        $fp = fopen($cachefile, "rb");
@@ -379,6 +380,7 @@ function gmaps_initialize() {
 
 		//rmdir("/var/tmp/pics/.lock");
 
+		header("Content-Length: " . filesize($cachefile));
 		$fp = fopen($cachefile,"rb");
 		fpassthru($fp);
 	}
