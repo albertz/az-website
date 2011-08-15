@@ -126,10 +126,9 @@ take a look here:</p>
 			|| $f == "pic.cml"
 			|| $f == "pics.php") {
 				//ignore
-			} else {
-			if(is_dir($web_root.$dir."/".$f)) {
+			} else if(is_dir($web_root.$dir."/".$f)) {
 				// ignore
-			} else {
+			} else if(is_readable($web_root.$dir."/".$f)) {
 				$info = pathinfo($f);
 				switch( strtolower($info["extension"]) ) {
 					case "jpg":
@@ -141,7 +140,6 @@ take a look here:</p>
 					default:
 						// ignore
 				}
-			}
 			}
 		}
 		closedir($handle);
