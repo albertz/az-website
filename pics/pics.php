@@ -65,7 +65,7 @@ take a look here:</p>
 
 //----------------------------------------------------------
 
-	function make_url($fn, $size, $quali, $typ) {
+	function make_url($fn, $size, $quali, $typ, $filter) {
 		global $default_size, $default_quali;
 		if($size == $default_size) $size = NULL;
 		if($quali == $default_quali) $quali = NULL;
@@ -74,6 +74,7 @@ take a look here:</p>
 		if($size) $args["size"] = (string) $size;
 		if($quali) $args["quali"] = (string) $quali;
 		if($typ) $args["type"] = $typ;
+		if($filter) $args["filter"] = $filter;
 		if($args) $url = $url . "?" . http_build_query($args);
 		return $url;
 	}
@@ -114,10 +115,19 @@ take a look here:</p>
 //----------------------------------------------------------
 
 	function show_image_html($fdir, $file, $size, $quali) {
-		global $web_root;
-		global $dir;
+		global $web_root, $dir, $query;
 
 		if(!show_head($web_root.$dir)) return;
+?>
+<center>
+<h2><?php echo $file ?></h2>
+<?php
+        if(isset($query["filter"])) {
+            $filter = $query["filter"];
+            $filter = rawurldecode($filter);
+            echo "<p><b>Filter:</b> " . htmlspecialchars($filter) . "</p>";
+        }
+        else $filter = "*";
 
 		$handle = opendir($web_root.$dir);
 		$filelist = array();
@@ -129,6 +139,7 @@ take a look here:</p>
 			} else if(is_dir($web_root.$dir."/".$f)) {
 				// ignore
 			} else if(is_readable($web_root.$dir."/".$f)) {
+				if(!fnmatch($filter, $f, FNM_CASEFOLD)) continue;
 				$info = pathinfo($f);
 				switch( strtolower($info["extension"]) ) {
 					case "jpg":
@@ -149,17 +160,15 @@ take a look here:</p>
 		$prevf = @$filelist[$file_i - 1];
 		$nextf = @$filelist[$file_i + 1];
 ?>
-<center>
-<h2><?php echo $file ?></h2>
 <p>
 <?php if(isset($prevf)) { ?>
-<a id="prevref" href="<?php echo make_url($prevf, $size, $quali, NULL); ?>">previous picture</a>
+<a id="prevref" href="<?php echo make_url($prevf, $size, $quali, NULL, @$query["filter"]); ?>">previous picture</a>
 -
 <?php } ?>
 <a id="upref" href=".">other files</a>
 <?php if(isset($nextf)) { ?>
 -
-<a id="nextref" href="<?php echo make_url($nextf, $size, $quali, NULL); ?>">next picture</a>
+<a id="nextref" href="<?php echo make_url($nextf, $size, $quali, NULL, @$query["filter"]); ?>">next picture</a>
 <?php } ?>
 </p>
 <p>
@@ -188,7 +197,7 @@ take a look here:</p>
 			$nextsize = 1;
 		else
 			$nextsize = 0.25;
-		echo make_url($file, $nextsize, $quali, NULL);
+		echo make_url($file, $nextsize, $quali, NULL, @$query["filter"]);
 ?>">
 <img id="img" src="<?php
 		echo ".?file=".rawurlencode($file)."&type=pic&size=".$size."&quali=".$quali;
@@ -427,7 +436,7 @@ function gmaps_initialize() {
 					case "jpeg":
 					case "png":
 					case "gif":
-						echo "<a href='$enc'>";
+						echo "<a href='$enc{$querystr}'>";
 						echo "<img src='$enc?type=pic&size=100' ";
 						echo "border='0' align='middle' alt=''></a>&nbsp;\n";
 //						echo "<a href='?file=$enc&size=0.25&type=html'>";
