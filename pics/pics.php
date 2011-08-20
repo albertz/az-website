@@ -370,7 +370,10 @@ function gmaps_initialize() {
 				}
 			}
 			$new_img = imagecreatetruecolor($new_width, $new_height);
-			imagecopyresampled($new_img, $old_img, 0, 0, 0, 0, 
+
+			$resizefunc = "imagecopyresampled";
+			if($new_width <= 100) $resizefunc = "imagecopyresized";
+			$resizefunc($new_img, $old_img, 0, 0, 0, 0, 
 				$new_width, $new_height, $old_width, $old_height);
 
 			imagedestroy($old_img);
