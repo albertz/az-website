@@ -534,7 +534,14 @@ information and the source-code can be found here:<br>
 	$default_size = 0.25;
 
 	function handle_file($dir, $file, $size, $quali, $type) {
-		global $default_quali, $default_size;
+		global $web_root, $default_quali, $default_size;
+
+		list($w, $h, $imageformat,) = getimagesize($web_root."/".$dir."/".$file);
+		$BASE_W = 1280;
+		if($w <= $BASE_W) $default_size = 1.0;
+		else if($w <= $BASE_W / 0.75) $default_size = 0.75;
+		else if($w <= $BASE_W / 0.5) $default_size = 0.5;
+
 		if(!$quali || !is_numeric($quali) || $quali <= 5) $quali = $default_quali;
 		if(!$size || !is_numeric($size) || $size <= 0) $size = $default_size;
 		
