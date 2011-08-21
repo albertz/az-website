@@ -217,10 +217,10 @@ take a look here:</p>
 				return $h0/$h1 + $m0/$m1/60 + $s0/$s1/3600;
 			}
 			$lat = sexagesimal_to_float($exif_lat);
-			if (@$exif["GPSLatitudeRef"][0] == "S")
+			if (@$exif["GPS"]["GPSLatitudeRef"][0] == "S")
 				$lat = -$lat;
 			$lon = sexagesimal_to_float($exif_lon);
-			if (@$exif["GPSLongitudeRef"][0] == "W")
+			if (@$exif["GPS"]["GPSLongitudeRef"][0] == "W")
 				$lon = -$lon;
 ?>
 <script src="http<?php
