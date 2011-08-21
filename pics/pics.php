@@ -183,11 +183,6 @@ take a look here:</p>
 			$ifd0ori = 1;
 		list($img_style, $new_w, $new_h) = orientation_style($ifd0ori, $w, $h);
 ?>
-<div style="display:block; width:<?php echo $new_w; ?>px; height:<?php echo $new_h; ?>px;">
-<div style="position:relative; <?php
-		echo "left:" . ($new_w - $w)*(1.0/2.0) . "px; ";
-		echo "top:" . ($new_h - $h)*(1.0/2.0) . "px; ";
-?>; display:block;">
 <a href="<?php
 		if($size > 1 || $size <= 0.25)
 			$nextsize = 0.5;
@@ -201,8 +196,12 @@ take a look here:</p>
 ?>">
 <img id="img" src="<?php
 		echo ".?file=".rawurlencode($file)."&type=pic&size=".$size."&quali=".$quali;
-?>" border="0" alt="" id="image" style="<?php echo $img_style; ?>">
-</a></div></div></p>
+?>" border="0" alt="" style="<?php
+		echo $img_style;
+		echo "margin: " . -($new_w - $w)*(1.0/2.0) . "px";
+		echo " " . -($new_h - $h)*(1.0/2.0) . "px; ";
+?>">
+</a></p>
 <p><a href="<?php echo rawurlencode($file); ?>?get">show original picture</a></p>
 <div style="min-width:100px; font-size:smaller;">
 <h3>Meta information</h3>
