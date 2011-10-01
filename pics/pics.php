@@ -222,6 +222,7 @@ take a look here:</p>
 			$lon = sexagesimal_to_float($exif_lon);
 			if (@$exif["GPS"]["GPSLongitudeRef"][0] == "W")
 				$lon = -$lon;
+			if($lat || $lon) {
 ?>
 <script src="http<?php
 		if(@$_SERVER['HTTPS'] == "on") echo "s";
@@ -248,7 +249,7 @@ function gmaps_initialize() {
 }
 </script>
 <?php
-		} /* GPS */
+		}} /* GPS */
 
 		if($exif)
 		foreach ($exif as $key => $section) {
