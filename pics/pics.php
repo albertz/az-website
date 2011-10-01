@@ -141,7 +141,7 @@ take a look here:</p>
 			} else if(is_readable($web_root.$dir."/".$f)) {
 				if(!fnmatch($filter, $f, FNM_CASEFOLD)) continue;
 				$info = pathinfo($f);
-				switch( strtolower($info["extension"]) ) {
+				switch( strtolower(@$info["extension"]) ) {
 					case "jpg":
 					case "jpeg":
 					case "png":
@@ -433,7 +433,7 @@ function gmaps_initialize() {
 			} else if(is_readable($web_root.$dir."/".$file)) {
 				if(!fnmatch($filter, $file, FNM_CASEFOLD)) continue;
 				$info = pathinfo($file);
-				switch( strtolower($info["extension"]) ) {
+				switch( strtolower(@$info["extension"]) ) {
 					case "jpg":
 					case "jpeg":
 					case "png":
