@@ -73,8 +73,7 @@
 	$leader_titel = "Administrator:";
 	$leaders = array(
 		'Albert Zeyer
-		(<a href="mailto:admin@az2000.de">Mail</a>,
-		Tel.: 0049 151 22105652)');
+		(<a href="mailto:albzey@gmail.com">Mail</a>)');
 	include("foot.php");
 ?>
 
