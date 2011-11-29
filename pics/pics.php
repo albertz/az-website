@@ -429,9 +429,11 @@ function gmaps_initialize() {
 			|| $file == "pic.cml"
 			|| $file == "pics.php") {
 				//ignore
+			} else if(!is_readable($web_root.$dir."/".$file)) {
+				//ignore
 			} else if(is_dir($web_root.$dir."/".$file)) {
 				echo "<center><a href='$enc/{$querystr}'>{$file}</a></center>\n";
-			} else if(is_readable($web_root.$dir."/".$file)) {
+			} else { // not a dir -- assume reg. file
 				if(!fnmatch($filter, $file, FNM_CASEFOLD)) continue;
 				$info = pathinfo($file);
 				switch( strtolower(@$info["extension"]) ) {
