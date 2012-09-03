@@ -227,10 +227,13 @@ take a look here:</p>
 <script src="http<?php
 		if(@$_SERVER['HTTPS'] == "on") echo "s";
 ?>://maps.googleapis.com/maps/api/js?sensor=false&key=<?php
+// https://developers.google.com/maps/documentation/javascript/tutorial#Obtaining_Key
+// https://code.google.com/apis/console/#project:216487069150:access
 		if(@$_SERVER['HTTPS'] == "on")
 			echo "ABQIAAAAMIi4vvyQ9mohrSQ6SYMyhRRRVNx-TT1fV-IPI-2HnICjPKGJThRhBoE5IRssnqdMynUhAaPFHqJ2Dw";
 		else
-			echo "ABQIAAAAMIi4vvyQ9mohrSQ6SYMyhRTN_z_RLu-y0jj6F6s603o_BB5uHRTA912-U27sLYREIQPgVJl3ciNQNw";
+			//echo "ABQIAAAAMIi4vvyQ9mohrSQ6SYMyhRTN_z_RLu-y0jj6F6s603o_BB5uHRTA912-U27sLYREIQPgVJl3ciNQNw";
+			echo "AIzaSyBcL1kugCp72ZzJ6bFqM8kOH_RzEIL7wNU";
 ?>" type="text/javascript"></script>
 <div id="gmap_canvas" style="width: 75%; height: 300px;"></div>
 <script type="text/javascript">
