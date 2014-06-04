@@ -25,9 +25,9 @@ if(!isset($sql_is_included)) {
 		$db_off_reason = "MySQL support not available in PHP (mysql_connect not callable).";
 	} else {
 		$link = @mysql_connect("localhost", $mysql_user, $mysql_pass);
-		if(!$link)
-			$db_off_reason = "Cannot connect to MySQL server.";
-		else {
+		if(!$link) {
+			$db_off_reason = "Cannot connect to MySQL server: " . @mysql_error();
+		} else {
 			$db_online = true;
 			mysql_select_db("homepage");
 		}
