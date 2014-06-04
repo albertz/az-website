@@ -14,6 +14,10 @@
 	}
 ?>
 
+<script data-gittip-username="albertz"
+        data-gittip-widget="button"
+        src="//gttp.co/v1.js"></script>
+
 <span style="display: inline; overflow: visible;">
 <a class="FlattrButton" style="display:none;"
  href="http://www.az2000.de/"
