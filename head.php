@@ -21,7 +21,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="author" content="Albert Zeyer">
 <meta name="keywords" content="<?php echo $titel; ?>,Albert Zeyer">
-<?php if($description != "") { ?>
+<?php if(isset($description) && $description != "") { ?>
 <meta name="description" content="<?php echo $description; ?>">
 <?php } ?>
 <meta name="viewport" content="width=320;">
