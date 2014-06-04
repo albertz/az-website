@@ -135,10 +135,14 @@ function putFlattrButton() {
 <p>
 <?php
 switch($lang) {
-case "de": echo "Falls Sie meine Arbeit unterstützen wollen, bitte spenden Sie via Flattr hier: ";
-default: echo "If you want to support my work, please donate via Flattr here: ";
+case "de": echo "Falls Sie meine Arbeit unterstützen wollen, bitte spenden Sie via Gittip/Flattr hier: ";
+default: echo "If you want to support my work, please donate via Gittip/Flattr here: ";
 }
 ?>
+
+<script data-gittip-username="albertz"
+        data-gittip-widget="button"
+        src="//gttp.co/v1.js"></script>
 
 <span style="display: inline-block; vertical-align: middle; height: 60px;">
 <?php putFlattrButton(); ?>
