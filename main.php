@@ -44,7 +44,7 @@
 		if($id == $main_id) {
 			$titel = $_SERVER["HTTP_HOST"];
 		} else if($id == $projects_id) {
-			$titel = "Projekte";
+			$titel = "Projects";
 		} else {
 			$titel = "X";
 		}
