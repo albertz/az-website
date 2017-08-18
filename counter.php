@@ -8,15 +8,15 @@ if($db_online) {
 
 srand();
 
-$res = mysql_query(
+$res = mysqli_query($db_con,
 	"SELECT description " .
 	"FROM content " .
 	"WHERE parent_id = 0 and name='COUNTER'");
-if($row = mysql_fetch_row($res)) {
+if($row = mysqli_fetch_row($res)) {
 	//$row[0] : description (counter)
 	$count = $row[0];
 	$count = $count + 1;
-	mysql_query(
+	mysqli_query($db_con,
 		"UPDATE content ".
 		"SET description = '$count' ".
 		"WHERE parent_id = 0 and name='COUNTER'");

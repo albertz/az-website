@@ -79,7 +79,7 @@ function make_entry($name, $url, $desc, $date = "0000.00.00") {
 	$loop = true;
 	if($db_online) {
 		// get the shit
-        	$res = mysql_query(
+        	$res = mysqli_query($db_con,
 			"SELECT name, url, description, date, marking " .
 			"FROM content " .
 			"WHERE parent_id = $id " .
@@ -103,7 +103,7 @@ function make_entry($name, $url, $desc, $date = "0000.00.00") {
 
 	while($loop) {
 	if($db_online) {
-		if($row = mysql_fetch_row($res)) {
+		if($row = mysqli_fetch_row($res)) {
 			$e_name = $row[0];
 			$e_link = $row[1];
 			$e_desc = $row[2];

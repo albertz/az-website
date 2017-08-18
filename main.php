@@ -37,9 +37,9 @@
 
 	// load title
 	if($db_online) {
-        	$res = mysql_query(
+        	$res = mysqli_query($db_con,
 			"SELECT name,description FROM content WHERE id = $id" );
-        	list($titel, $description) = mysql_fetch_row($res);
+        	list($titel, $description) = mysqli_fetch_row($res);
 	} else {
 		if($id == $main_id) {
 			$titel = $_SERVER["HTTP_HOST"];
