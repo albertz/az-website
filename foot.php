@@ -46,7 +46,7 @@ if(0) {
 <p><?php system("uptime");?></p>
 
 <h2>About this homepage</h2>
-<p>The code can be seen <a href="https://gitorious.org/az-website/website/trees/master">here</a>. Please contact me if you find any problems. :)</p>
+<p>The code can be seen <a href="https://github.com/albertz/az-website/">here</a>. Please contact me if you find any problems. :)</p>
 
 <?php
 if(!$db_online) {
