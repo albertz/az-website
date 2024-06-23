@@ -16,18 +16,22 @@ if(!isset($sql_is_included)) {
 	$db_online = true;
 	$main_id = 1;
 	$projects_id = 2;
-		
+
 	include("/etc/mysql.php");
-	$db_online = false;		
+	$db_online = false;
 	if(!function_exists("mysqli_connect")) {
 		$db_off_reason = "MySQL support not available in PHP (mysqli_connect not available).";
-    } else if(!is_callable("mysqli_connect")) {
+	} else if(!is_callable("mysqli_connect")) {
 		$db_off_reason = "MySQL support not available in PHP (mysqli_connect not callable).";
 	} else {
-		$db_con = @mysqli_connect("localhost", $mysql_user, $mysql_pass);
-		if(!$db_con) {
-			$db_off_reason = "Cannot connect to MySQL server: " . @mysql_error();
-		} else {
+		try {
+			$db_con = mysqli_connect("localhost", $mysql_user, $mysql_pass);
+		} catch (Exception $e) {
+			$db_con = false;
+			// or @mysql_error()?
+			$db_off_reason = "Cannot connect to MySQL server: " . $e->getMessage();
+		}
+		if($db_con) {
 			$db_online = true;
 			mysqli_select_db($db_con, "homepage");
 		}
@@ -44,7 +48,7 @@ if(!isset($sql_is_included)) {
 		$row = mysqli_fetch_row($res);
 		return $row[0];
 	}
-		
+
 	function DB_GetID__URL($parent_id, $url) {
 		$url = str_replace("/", "", $url);
 		$url2 = $url."/";
@@ -62,7 +66,7 @@ if(!isset($sql_is_included)) {
 		if(substr($url, strlen($url) - 1) != "/")
 			$url = $url."/";
 		$id = 1;
-			
+
 		while($p = strpos($url, "/")) {
 			$id = DB_GetID__URL($id, substr($url, 0, $p));
 			$url = substr($url, $p + 1);
