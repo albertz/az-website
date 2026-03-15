@@ -43,15 +43,5 @@ if(!$db_online) {
 }
 ?>
 
-<script type="text/javascript">
-function loadFlattr() {
-	if(typeof(FlattrLoader) == "undefined")
-		setTimeout(loadFlattr, 100);
-	else
-		FlattrLoader.setup();
-}
-loadFlattr();
-</script>
-
 </body>
 </html>
