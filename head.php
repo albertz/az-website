@@ -24,7 +24,7 @@
 <?php if(isset($description) && $description != "") { ?>
 <meta name="description" content="<?php echo $description; ?>">
 <?php } ?>
-<meta name="viewport" content="width=320;">
+<meta name="viewport" content="width=320">
 <link rel="home" title="Webserver of Albert Zeyer" href="https://www.az2000.de/">
 <link rel="start" title="Webserver of Albert Zeyer" href="https://www.az2000.de/">
 <link rel="stylesheet" type="text/css" href="/style.css.php">
