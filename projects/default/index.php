@@ -28,71 +28,17 @@
 	} else {
 		include("../../mysql_fileio.php");
 		$id = 0;
-		$titel = read_from_file("mysql.name");		
+		$titel = read_from_file("mysql.name");
 		$description = read_from_file("mysql.description");
-	}	
+	}
 	$titel2 = ucfirst($contenttype) . ": " . $titel;
 	include("../../head.php");
 ?>
 
 <?php
-function flattrTitle() {
-	global $titel, $titel2;
-	if(strlen($titel) >= 5) return $titel;
-	if(strlen($titel2) >= 5) return $titel2;
-	if(strlen($titel) > 0) return $titel . " Albert Zeyer";
-	return "Something by Albert Zeyer";
-}
-
-function flattrCategorie() {
-	global $contenttype;
-	switch($contenttype) {
-	case "project": return "software";
-	case "text": return "text";
-	case "artwork": return "images";
-	}
-	return "rest";
-}
-
-function flattrLang() {
-	global $lang;
-	$ln = ($lang == "de") ? "de_DE" : "en_US";
-	return $ln;
-}
-
-function flattrDescription() {
-	global $description, $contenttype;
-	if(strlen($description) >= 5) return $description;
-	return flattrTitle() . ". " . ucfirst($contenttype) . " by Albert Zeyer.";
-}
-
-function putFlattrButton() {
-	$url = (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") ? "http://" : "https://";
-	$url .= $_SERVER["HTTP_HOST"];
-	$tmp = explode("?", $_SERVER["REQUEST_URI"]);
-	$url .= $tmp[0];
-
-	// TODO: as long as we don't have separate Flattr buttons:
-	//$url = "http://www.az2000.de/";
-
-	echo "<a class=\"FlattrButton\" style=\"display:none;\"\n";
-	echo " href=\"" . $url . "\"\n"; 
-	echo " title=\"" . flattrTitle() . "\"\n";
-	echo " rev=\"flattr;category:" . flattrCategorie() . ";\"\n";
-	echo " lang=\"" . flattrLang() . "\">\n";
-	echo flattrDescription();
-	echo "</a>\n";
-}
-?>
-
-<div style="float: right; overflow: visible; text-align: right; z-index: 100;">
-<?php putFlattrButton(); ?>
-</div>
-
-<?php
 	$file = "main." . $lang . ".php";
 	if(!file_exists($file)) {
-		$file = "main.en.php"; 
+		$file = "main.en.php";
 		if(!file_exists($file))
 			$file = "main.php";
 	}
@@ -139,14 +85,6 @@ case "de": echo "Falls Sie meine Arbeit unterstützen wollen, bitte spenden Sie 
 default: echo "If you want to support my work, please donate via Gittip/Flattr here: ";
 }
 ?>
-
-<script data-gittip-username="albertz"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script>
-
-<span style="display: inline-block; vertical-align: middle; height: 60px;">
-<?php putFlattrButton(); ?>
-</span></p>
 
 <?php
 	include("../default/copyright.php");
