@@ -14,18 +14,6 @@
 	}
 ?>
 
-<script data-gittip-username="albertz"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script>
-
-<span style="display: inline; overflow: visible;">
-<a class="FlattrButton" style="display:none;"
- href="http://www.az2000.de/"
- title="Homepage of Albert Zeyer"
- rev="flattr;category:rest;button:compact;">
-Homepage with many open source projects including source code, artworks, both images and music, pictures and some writings about technical stuff, tutorials and some stories.
-</a>
-</span>
 </p>
 
 <?php
