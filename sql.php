@@ -21,8 +21,10 @@ if(!isset($sql_is_included)) {
 	$db_online = false;
 	if(!function_exists("mysqli_connect")) {
 		$db_off_reason = "MySQL support not available in PHP (mysqli_connect not available).";
+		$db_con = false;
 	} else if(!is_callable("mysqli_connect")) {
 		$db_off_reason = "MySQL support not available in PHP (mysqli_connect not callable).";
+		$db_con = false;
 	} else {
 		try {
 			$db_con = mysqli_connect("localhost", $mysql_user, $mysql_pass);
@@ -38,18 +40,21 @@ if(!isset($sql_is_included)) {
 	}
 
 	function DB_GetName($id) {
+		global $db_con;
 		$res = mysqli_query($db_con, "SELECT name FROM content WHERE id = $id");
 		$row = mysqli_fetch_row($res);
 		return $row[0];
 	}
 
 	function DB_GetDescription($id) {
+		global $db_con;
 		$res = mysqli_query($db_con, "SELECT description FROM content WHERE id = $id");
 		$row = mysqli_fetch_row($res);
 		return $row[0];
 	}
 
 	function DB_GetID__URL($parent_id, $url) {
+		global $db_con;
 		$url = str_replace("/", "", $url);
 		$url2 = $url."/";
 		$res = mysqli_query($db_con, "SELECT id FROM content WHERE parent_id = $parent_id AND url = '$url' OR url = '$url2'");
@@ -61,6 +66,7 @@ if(!isset($sql_is_included)) {
 	}
 
 	function DB_GetID__FullURL($url) {
+		global $db_con;
 		if($url[0] == "/")
 			$url = substr($url, 1);
 		if(substr($url, strlen($url) - 1) != "/")
