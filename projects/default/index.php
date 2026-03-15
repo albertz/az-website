@@ -78,14 +78,6 @@
 	} // end of else-part of if(file_exists($file))
 ?>
 
-<p>
-<?php
-switch($lang) {
-case "de": echo "Falls Sie meine Arbeit unterstützen wollen, bitte spenden Sie via Gittip/Flattr hier: ";
-default: echo "If you want to support my work, please donate via Gittip/Flattr here: ";
-}
-?>
-
 <?php
 	include("../default/copyright.php");
 	include("../default/other.php");
