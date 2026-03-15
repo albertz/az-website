@@ -25,8 +25,8 @@
 <meta name="description" content="<?php echo $description; ?>">
 <?php } ?>
 <meta name="viewport" content="width=320;">
-<link rel="home" title="Webserver of Albert Zeyer" href="http://www.az2000.de/">
-<link rel="start" title="Webserver of Albert Zeyer" href="http://www.az2000.de/">
+<link rel="home" title="Webserver of Albert Zeyer" href="https://www.az2000.de/">
+<link rel="start" title="Webserver of Albert Zeyer" href="https://www.az2000.de/">
 <link rel="stylesheet" type="text/css" href="/style.css.php">
 <style type="text/css"></style>
 
