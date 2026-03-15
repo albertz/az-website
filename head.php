@@ -30,24 +30,6 @@
 <link rel="stylesheet" type="text/css" href="/style.css.php">
 <style type="text/css"></style>
 
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-    
-    (function() {
-        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
-        
-        s.type = 'text/javascript';
-        s.async = true;
-		s.src = 
-		<?php echo (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") ? "'http://'" : "'https://'"; ?>
-        + 'api.flattr.com/js/0.5.0/load.js?uid=albert';
-        
-        t.parentNode.insertBefore(s, t);
-    })();
-    
-//--><!]]>
-</script>
-
 </head>
 <body>
 
